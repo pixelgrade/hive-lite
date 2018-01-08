@@ -1,0 +1,569 @@
+.comments-area {
+	position: relative;
+	@include rhythm(margin-top, 2);
+	@include rhythm(padding-top, 4);
+	border-top: 1px solid $borders;
+
+	&:before {
+		content: "";
+		position: absolute;
+		@include rhythm(left, 2);
+		@include rhythm(top, 4);
+		bottom: 0;
+		border-left: 1px solid $borders;
+	}
+
+	&:after {
+		@extend %comment-number;
+		@extend %comment-number--dark;
+
+		content: '\00b7';
+		position: absolute;
+		left: 0;
+		top: 100%;
+
+		font-size: 1.75em;
+		line-height: 1.8;
+	}
+
+	&.no-comments:after{
+		display: none;
+	}
+}
+
+.comment-number, %comment-number {
+	@include rhythm(width, 4);
+	@include rhythm(height, 4);
+	@include rhythm(line-height, 4);
+
+	border: 1px solid $borders;
+	text-align: center;
+
+	color: $borders;
+	background: white;
+
+}
+
+.comment-number--dark, %comment-number--dark {
+	@extend %comment-number;
+
+	display: inline-block;
+	@include rhythm(width, 4, 28px);
+	@include rhythm(height, 4, 28px);
+	@include rhythm(line-height, 3.8, 28px);
+	@include rhythm(margin-right, 2, 28px);
+	font-size: 28px;
+
+	border: 0;
+
+	background-color: $dark;
+	color: white;
+}
+
+.comment-number.no-comments{
+	position: relative;
+	z-index: 1;
+}
+
+.comments-area-title, .comment-reply-title {
+	@extend %clearfix;
+
+	.comments-title, a {
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	.comments-title {
+		margin: 0;
+		margin-right: $u/4;
+
+		@include font-size(28px);
+
+		@include query-below($lap) {
+			font-size: 21px;
+
+			.comment-number {
+				font-size: 28px;
+			}
+		}
+
+		text-transform: none;
+		transform: none;
+	}
+
+	.total {
+		position: relative;
+		z-index: 1;
+	}
+}
+
+.comments-area-title{
+	padding-left: 3 * $u;
+
+	.comment-number{
+		position: relative;
+		left: -3 * $u;
+		margin-right: -2 * $u;
+	}
+}
+
+.commentlist > .comment, .commentlist > .pingback, .commentlist > .trackback {
+	@include rhythm(padding-left, 4);
+}
+
+@include query-below($lap) {
+	.depth-1 > .comment-article > .comment-number {
+		left: 0;
+	}
+}
+
+.comments_add-comment {
+	margin-top: 3px;
+}
+
+.commentlist {
+	list-style: none;
+	margin: 0;
+	border-left: 0;
+	padding-left: 0;
+}
+
+li.comment, li.pingback, li.trackback {
+	position: relative;
+
+	display: block;
+	margin-bottom: 0;
+	@include rhythm(margin-top, 4);
+	@include rhythm(margin-bottom, 4);
+
+	.comment-number {
+		position: absolute;
+		left: 0;
+		top: 0;
+		z-index: 1;
+
+		@include query-below($lap) {
+			@include rhythm(left, -4);
+		}
+	}
+
+	&:last-child{
+		margin-bottom: 0;
+	}
+
+	.children {
+		position: relative;
+
+		margin-top: $u;
+
+		@include query-below($lap){
+			margin-left: 0;
+		}
+
+		li {
+			@include query-above($lap) {
+				@include rhythm(padding-left, 4);
+
+				&:before {
+					content: "";
+					position: absolute;
+					top: 24px;
+					border-top: 1px solid $borders;
+				}
+			}
+
+			.comment-number {
+				border: 1px solid $borders;
+				background: $borders;
+				color: white;
+			}
+		}
+	}
+}
+
+$first-padding-unit: 24px;
+$second-padding-unit: 48px;
+
+li.depth-2:before {
+	left: -2 * $first-padding-unit;
+	width: 60px;
+}
+
+@include query-above($lap) {
+	@for $i from 3 through 10 {
+		li.depth-#{$i}:before {
+			left: - ( $i * $first-padding-unit + $second-padding-unit * ( $i - 2 ) );
+			width: $i * $first-padding-unit + $second-padding-unit * ( $i - 2 );
+		}
+	}
+}
+
+.comment__author-name {
+	font-size: 14px;
+
+	a{
+		font-size: 16px;
+		color: black;
+	}
+}
+
+.comment-article {
+	margin-bottom: 0;
+	@include rhythm(margin-left, 2);
+
+	&:hover {
+		.comment-edit-link, .comment-reply-link {
+			opacity: 1;
+		}
+	}
+}
+
+.comment__avatar {
+	@include rhythm(margin-right, 1);
+
+	img {
+		@include rhythm(width, 5);
+		height: auto;
+	}
+
+	&:empty{
+		display: none;
+	}
+}
+
+.comment__timestamp {
+	color: $gray;
+}
+
+.comment__avatar {
+	margin-bottom: $u;
+}
+
+.comment__content {
+	position: relative;
+
+	@include rhythm(margin-bottom, 2, 14px);
+	@include font-size(14px);
+	color: $light;
+}
+
+.comment__links {
+	display: inline-block;
+	@include rhythm(margin-left, 2, 14px);
+	@include font-size(14px);
+}
+
+.comment-edit-link, .comment-reply-link {
+	color: $gray;
+	opacity: 0;
+	@include rhythm(margin-right, 1, 14px);
+	transition: opacity .15s ease-in-out;
+	transform: translateZ(0);
+
+	@include query-below($lap) {
+		opacity: 1;
+	}
+}
+
+.comment-reply-link {
+	color: $light;
+}
+
+// Comments Likes
+p.comment-likes {
+	position: absolute;
+	right: 0;
+	top: -28px;
+	width: auto;
+}
+
+.comment-form p.logged-in-as {
+	// @include rhythm(margin-left, 3);
+	@include rhythm(margin-bottom, 1);
+}
+
+.comment-reply-title {
+
+	margin-top: 0;
+	margin-bottom: $u;
+
+	@include font-size(28px);
+	transform: none;
+
+	@include query-below($lap) {
+		font-size: 21px;
+	}
+
+
+	&:before {
+		content: "+";
+		@extend %comment-number;
+		@extend %comment-number--dark;
+
+		@include query-below($lap) {
+			font-size: (28/21) + em;
+		}
+
+		.comment & {
+			display: none;
+		}
+	}
+
+	.comment-number{
+		line-height: 44px;
+	}
+
+	a {
+		margin-top: -7px;
+	}
+}
+
+.comment-respond {
+	position: relative;
+	@include rhythm(margin-bottom, 2);
+
+	@include query-above($lap) {
+
+		.comment & {
+			padding-left: 0;
+			margin-right: 0;
+		}
+	}
+
+	.comment &{
+		@include rhythm(margin-left, 2);
+	}
+}
+
+#cancel-comment-reply-link {
+	text-decoration: underline;
+}
+
+
+
+
+
+/* Comments Form */
+
+.comment-form {
+	@extend %grid;
+	@extend %clearfix;
+
+	@include query-above($lap) {
+		@include rhythm(padding-left, 6);
+	}
+
+	.comment & {
+		padding-left: 0;
+	}
+
+	input, textarea {
+		font-weight: 300;
+		border-radius: 0;
+		border: 1px solid $borders;
+		box-shadow: none;
+	}
+
+	p{
+		@extend %grid__item;
+	}
+
+	// for jetpack comments
+	iframe{
+		padding-left: 1.5*$u;
+	}
+
+	@include query-above($lap){
+		& > .comment-subscription-form{
+			width: 70%;
+		}
+	}
+}
+
+.comment-form-author,
+.comment-form-email,
+.comment-form-url {
+	margin-bottom: 0;
+
+	input {
+		width: 100%;
+		@include rhythm(margin-bottom, 2);
+
+		@include query-below($lap) {
+			@include rhythm(margin-bottom, 1);
+		}
+	}
+}
+
+p.comment-form-author,
+p.comment-form-email{
+	@include query-above($lap) {
+		width: 50%;
+	}
+}
+
+.comment-form-comment,
+.logged-in-as {
+	@extend %grid__item;
+	width: 100%;
+}
+
+.comment-form-comment,
+.comment-subscription-form {
+
+	textarea {
+		width: 100%;
+		max-width: 100%;
+		@include rhythm(padding, 1);
+
+
+		border: 1px solid $borders;
+		@include font-size(16px);
+	}
+}
+
+
+.form-submit {
+	@include rhythm(margin-top, 1);
+	margin-bottom: 0;
+	text-align: right;
+
+	@include query-above($lap){
+		&.form-submit{
+			float: right;
+			width: 30%;
+		}
+	}
+
+	#submit {
+		border: 0;
+
+		@include query-below($lap){
+			width: 100%;
+		}
+	}
+}
+
+.comment-subscription-form {
+	float: left;
+	clear: left;
+	@include rhythm(margin-top, 1);
+	@include rhythm(margin-bottom, 1/2);
+
+	& + & {
+		margin-top: 0;
+	}
+
+	input[type="checkbox"] {
+		@include rhythm(margin-right, 1);
+		position: relative;
+		top: -0.05em;
+	}
+}
+
+.add-comment {
+	@include rhythm(margin-top, 4);
+
+	.add-comment__button {
+		@extend %comment-number--dark;
+
+		position: relative;
+		z-index: 1;
+
+		@include rhythm(margin-right, 1, 24px);
+		@include font-size(24px);
+	}
+
+	.add-comment__text {
+		@include font-size(20px);
+		font-weight: bold;
+	}
+}
+
+
+
+
+/* Comments Navigation */
+
+.comment-navigation {
+	@extend %clearfix;
+
+	position: relative;
+
+	@include rhythm(padding-left, 5);
+	@include rhythm(margin-top, 4);
+	@include rhythm(margin-bottom, 4);
+
+	.comment-number{
+		position: absolute;
+		left: 0;
+		top: 0;
+
+		line-height: 30px;
+	}
+
+	.assistive-text {
+		margin-top: 0;
+		margin-left: 8px;
+		font-size: 28px;
+		transform: none;
+	}
+
+	.nav-previous, .nav-next{
+		a{
+			font-size: 18px;
+		}
+	}
+
+	.nav-previous{
+		float: left;
+
+		a:before {
+			content: "\2190 ";
+		}
+
+		a:after {
+			content: "";
+		}
+	}
+
+	.nav-next{
+		float: right;
+
+		a:before {
+			content: "";
+		}
+
+		a:after {
+			content: " \2192";
+		}
+	}
+}
+
+.nocomments{
+	transform: none;
+
+	span{
+		display: inline-block;
+		vertical-align: middle;
+		@include font-size(28px);
+		line-height: 48px;
+	}
+}
+
+.no-comments-box{
+	position: relative;
+	z-index: 1;
+}
+
+div#respond{
+	padding-top: 0;
+
+	#reply-title{
+		margin-top: 0;
+	}
+
+	p.comment-subscription-form label{
+		color: #999;
+	}
+}

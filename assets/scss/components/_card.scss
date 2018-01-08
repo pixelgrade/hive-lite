@@ -1,0 +1,28 @@
+// the card
+
+.card_wrap {
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+
+.card {
+    background: white;
+    margin-bottom: 1.5rem;
+    cursor: pointer;
+    position: relative;
+    transform: translate3d(0,0,0);
+    backface-visibility: hidden;
+}
+
+.card_contents {
+    position: relative;
+    z-index: 20;
+}
+
+.card_back {
+    @extend .cover;
+    background: #fff;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+    box-shadow: rgba(black, 0.25) 0 0 1em;
+}

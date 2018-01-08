@@ -1,0 +1,358 @@
+# Translation of WordPress.com - Themes - Hive in Norwegian
+# This file is distributed under the same license as the WordPress.com - Themes - Hive package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2016-10-26 04:38:36+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/2.3.0-alpha\n"
+"Language: no\n"
+"Project-Id-Version: WordPress.com - Themes - Hive\n"
+
+#: inc/extras.php:489
+msgid "Two Columns"
+msgstr "To kolonner"
+
+#: inc/customizer.php:71
+msgid "Large"
+msgstr "Stor"
+
+#: inc/customizer.php:70
+msgid "Medium"
+msgstr "Medium"
+
+#: inc/customizer.php:69
+msgid "Small"
+msgstr "Liten"
+
+#: templates/toolbar.php:38
+msgid "Begin typing your search above and press return to search. Press Esc to cancel."
+msgstr "Start å skrive inn søket ditt over og trykk enter for å søke. Trykk Esc for å avbryte."
+
+#: templates/toolbar.php:23
+msgid "Search"
+msgstr "Søk"
+
+#: templates/toolbar.php:9
+msgid "Secondary navigation"
+msgstr "Sekundærnavigasjon"
+
+#: templates/featured-hover.php:16
+msgid "Read More"
+msgstr "Les mer"
+
+#: search.php:15
+msgid "Search Results for: %s"
+msgstr "Søkeresultater for: %s"
+
+#: inc/template-tags.php:86
+msgid "Post navigation"
+msgstr "Innleggsnavigasjon"
+
+#: inc/template-tags.php:53 inc/template-tags.php:59
+msgid "Next"
+msgstr "Neste"
+
+#: inc/template-tags.php:42 inc/template-tags.php:52
+msgid "Previous"
+msgstr "Forrige"
+
+#: inc/template-tags.php:35
+msgid "Posts navigation"
+msgstr "Innleggsnavigasjon"
+
+#: inc/extras.php:180
+msgid "Your comment is awaiting moderation."
+msgstr "Din kommentar avventer moderasjon."
+
+#: inc/extras.php:96
+msgid "Page %s"
+msgstr "Side %s"
+
+#: inc/customizer.php:52
+msgid "Hide search button in toolbar"
+msgstr "Skjul søkeknappen fra verktøylinjen"
+
+#: inc/customizer.php:41
+msgid "Disable auto-style post titles"
+msgstr "Deaktiver auto-style innleggstitler"
+
+#: inc/customizer.php:31
+msgid "Hive Options"
+msgstr "Hive Alternativer"
+
+#: inc/customizer.php:24
+msgid "Display Site Title &amp; Tagline"
+msgstr "Vis nettstedstittel og slagord"
+
+#: header.php:65
+msgid "Menu"
+msgstr "Meny"
+
+#: header.php:52
+msgid "Main navigation"
+msgstr "Hovednavigering"
+
+#: header.php:32
+msgid "Skip to content"
+msgstr "Gå til innhold"
+
+#: functions.php:108
+msgid "Sidebar"
+msgstr "Sidekolonnen"
+
+#: functions.php:55
+msgid "Social Menu"
+msgstr "Sosial Meny"
+
+#: functions.php:54
+msgid "Footer Menu"
+msgstr "Footer meny"
+
+#: functions.php:53
+msgid "Primary Menu"
+msgstr "Primærmeny"
+
+#: footer.php:27
+msgid "Footer navigation"
+msgstr "Footer navigering"
+
+#: footer.php:17
+msgid "Theme: %1$s by %2$s."
+msgstr "Tema: %1$s av %2$s."
+
+#: footer.php:15
+msgid "Proudly powered by %s"
+msgstr "Stolt drevet av %s"
+
+#: footer.php:15
+msgid "http://wordpress.org/"
+msgstr "http://wordpress.org/"
+
+#: content-single-audio.php:71 content-single-chat.php:72
+#: content-single-gallery.php:75 content-single-image.php:75
+#: content-single-quote.php:85 content-single-status.php:61
+#: content-single-video.php:68 content-single.php:75
+msgid "Previous page"
+msgstr "Forrige side"
+
+#: content-single-audio.php:70 content-single-chat.php:71
+#: content-single-gallery.php:74 content-single-image.php:74
+#: content-single-quote.php:84 content-single-status.php:60
+#: content-single-video.php:67 content-single.php:74
+msgid "Next page"
+msgstr "Neste side"
+
+#: content-single-audio.php:41 content-single-chat.php:39
+#: content-single-gallery.php:38 content-single-image.php:37
+#: content-single-link.php:37 content-single-quote.php:37
+#: content-single-status.php:36 content-single-video.php:39
+msgid "All %s posts"
+msgstr "Alle %s innlegg"
+
+#: content-single-audio.php:32 content-single-chat.php:28
+#: content-single-gallery.php:29 content-single-image.php:29
+#: content-single-link.php:29 content-single-quote.php:29
+#: content-single-status.php:28 content-single-video.php:31
+#: content-single.php:28
+msgid "Posted in %1$s. Bookmark the <a href=\"%3$s\" rel=\"bookmark\">permalink</a>."
+msgstr "Publisert under %1$s. Bokmerk denne <a href=\"%3$s\" rel=\"bookmark\">permalinken</a>."
+
+#: content-single-audio.php:30 content-single-chat.php:26
+#: content-single-gallery.php:27 content-single-image.php:27
+#: content-single-link.php:27 content-single-quote.php:27
+#: content-single-status.php:26 content-single-video.php:29
+#: content-single.php:26
+msgid "Posted in %1$s and tagged %2$s. Bookmark the <a href=\"%3$s\" rel=\"bookmark\">permalink</a>."
+msgstr "Publisert under %1$s med stikkord %2$s. Bokmerk denne <a href=\"%3$s\" rel=\"bookmark\">permalinken</a>."
+
+#: content-single-audio.php:24 content-single-chat.php:20
+#: content-single-gallery.php:21 content-single-image.php:21
+#: content-single-link.php:21 content-single-quote.php:21
+#: content-single-status.php:20 content-single-video.php:23
+#: content-single.php:20
+msgid "Bookmark the <a href=\"%3$s\" rel=\"bookmark\">permalink</a>."
+msgstr "Lagre <a href=\"%3$s\" rel=\"bookmark\">permalink</a>."
+
+#: content-search.php:43
+msgid "% Comments"
+msgstr "% kommentarer"
+
+#: content-search.php:43
+msgid "1 Comment"
+msgstr "1 kommentar"
+
+#: content-search.php:43
+msgid "Leave a comment"
+msgstr "Legg igjen en kommentar"
+
+#: content-search.php:37
+msgid "Tagged %1$s"
+msgstr "Stikkord %1$s"
+
+#: content-search.php:29
+msgid "Posted in %1$s"
+msgstr "Publisert i %1$s"
+
+#: content-none.php:26
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr "Vi klarer ikke å finne det du leter etter. Prøv å søke."
+
+#: content-none.php:21
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr "Beklager, men intet passet til ditt søkeuttrykk. Vennligst prøv igjen med noen andre nøkkelord."
+
+#: content-none.php:17
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr "Klar for å publisere ditt første innlegg? <a href=\"%1$s\">Kom i gang her</a>."
+
+#: content-none.php:11
+msgid "Nothing Found"
+msgstr "Ingenting funnet"
+
+#. translators: used between list items, there is a space after the comma
+#: content-aside.php:25 content-audio.php:39 content-gallery.php:40
+#: content-link.php:37 content-search.php:26 content-search.php:34
+#: content-single-audio.php:14 content-single-audio.php:17
+#: content-single-chat.php:10 content-single-chat.php:13
+#: content-single-gallery.php:11 content-single-gallery.php:14
+#: content-single-image.php:11 content-single-image.php:14
+#: content-single-link.php:11 content-single-link.php:14
+#: content-single-quote.php:11 content-single-quote.php:14
+#: content-single-status.php:10 content-single-status.php:13
+#: content-single-video.php:13 content-single-video.php:16
+#: content-single.php:10 content-single.php:13 content-status.php:49
+#: content-video.php:39 content.php:49
+msgid ", "
+msgstr ", "
+
+#: content-aside.php:18 content-audio.php:32 content-gallery.php:33
+#: content-image.php:27 content-link.php:30 content-page.php:27
+#: content-quote.php:43 content-search.php:47 content-single-audio.php:87
+#: content-single-chat.php:79 content-single-gallery.php:82
+#: content-single-image.php:85 content-single-link.php:70
+#: content-single-quote.php:94 content-single-status.php:77
+#: content-single-video.php:77 content-single.php:82 content-status.php:42
+#: content-video.php:32 content.php:40 inc/extras.php:168
+msgid "Edit"
+msgstr "Rediger"
+
+#: content-aside.php:13 content-audio.php:27 content-gallery.php:28
+#: content-status.php:32 content-video.php:27 content.php:33
+msgid "Pages:"
+msgstr "Sider:"
+
+#: content-aside.php:11 content-quote.php:27 content-single-quote.php:64
+#: content-status.php:29 content.php:28
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Les videre <span class=\"meta-nav\">&rarr;</span>"
+
+#: comments.php:75
+msgid "Comments are closed."
+msgstr "Kommentarer er stengt."
+
+#: comments.php:43 comments.php:63
+msgid "Newer Comments"
+msgstr "Nyere kommentarer"
+
+#: comments.php:42 comments.php:62
+msgid "Older Comments"
+msgstr "Eldre kommentarer"
+
+#: comments.php:40 comments.php:60
+msgid "Comment navigation"
+msgstr "Kommentarnavigasjon"
+
+#: comments.php:29
+msgid "Add yours"
+msgstr "Legg til din"
+
+#: comments.php:27
+msgid "There are no comments"
+msgstr "Det er ingen kommentarer"
+
+#: comments.php:25
+msgid "Comment"
+msgid_plural "Comments"
+msgstr[0] "Kommentar"
+msgstr[1] "Kommentarer"
+
+#: archive.php:64
+msgid "Archives"
+msgstr "Arkiver"
+
+#: archive.php:61
+msgid "Chats"
+msgstr "Samtaler"
+
+#: archive.php:58
+msgid "Audios"
+msgstr "Lyder"
+
+#: archive.php:55
+msgid "Statuses"
+msgstr "Statuser"
+
+#: archive.php:52
+msgid "Links"
+msgstr "Lenker"
+
+#: archive.php:49
+msgid "Quotes"
+msgstr "Sitater"
+
+#: archive.php:46
+msgid "Videos"
+msgstr "Filmer"
+
+#: archive.php:43
+msgid "Images"
+msgstr "Bilder"
+
+#: archive.php:40
+msgid "Galleries"
+msgstr "Gallerier"
+
+#: archive.php:37
+msgid "Asides"
+msgstr "Notiser"
+
+#: archive.php:34
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr "Y"
+
+#: archive.php:34
+msgid "Year: %s"
+msgstr "År: %s"
+
+#: archive.php:31
+msgctxt "monthly archives date format"
+msgid "F Y"
+msgstr "F Y"
+
+#: archive.php:31
+msgid "Month: %s"
+msgstr "Måned: %s"
+
+#: archive.php:28
+msgid "Day: %s"
+msgstr "Dag: %s"
+
+#: archive.php:25
+msgid "Author: %s"
+msgstr "Forfatter: %s"
+
+#: archive.php:19
+msgid "Category Archive:"
+msgstr "Kategoriarkiv:"
+
+#: 404.php:19
+msgid "It looks like nothing was found at this location. Try a search."
+msgstr "Det ser ut til at ingenting finnes her. Prøv å søke etter det du var ute etter. "
+
+#: 404.php:14
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "Oops! Siden finnes ikke lenger!"

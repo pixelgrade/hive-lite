@@ -1,0 +1,335 @@
+/*------------------------------------*\
+    #SPACING
+\*------------------------------------*/
+
+/**
+ * Margin and padding helper classes. Use these to tweak layout on a micro
+ * level.
+ *
+ * `.(m|p)(t|r|b|l|h|v)(-|+|0) {}` = margin/padding top/right/bottom/left/horizontal/vertical less/more/none
+ */
+
+// Predefine the variables below in order to alter and enable specific features.
+$margin:                          $base-spacing-unit !default;
+$padding:                         $base-spacing-unit !default;
+
+$enable-margins:                  false !default;
+$enable-margins--tiny:            false !default;
+$enable-margins--small:           false !default;
+$enable-margins--large:           false !default;
+$enable-margins--huge:            false !default;
+
+$enable-margins--negative:        false !default;
+$enable-margins--negative-tiny:   false !default;
+$enable-margins--negative-small:  false !default;
+$enable-margins--negative-large:  false !default;
+$enable-margins--negative-huge:   false !default;
+
+$enable-margins--none:            false !default;
+
+$enable-paddings:                 false !default;
+$enable-paddings--tiny:           false !default;
+$enable-paddings--small:          false !default;
+$enable-paddings--large:          false !default;
+$enable-paddings--huge:           false !default;
+
+$enable-paddings--none:           false !default;
+
+
+
+
+
+@if ($enable-margins == true) {
+
+    /**
+     * Margin helper classes.
+     *
+     * Add margins.
+     */
+
+    .#{$namespace}m       { margin:           $margin !important; }
+    .#{$namespace}mt      { margin-top:       $margin !important; }
+    .#{$namespace}mr      { margin-right:     $margin !important; }
+    .#{$namespace}mb      { margin-bottom:    $margin !important; }
+    .#{$namespace}ml      { margin-left:      $margin !important; }
+    .#{$namespace}mh      { margin-right:     $margin !important; margin-left:      $margin !important; }
+    .#{$namespace}mv      { margin-top:       $margin !important; margin-bottom:    $margin !important; }
+
+}
+
+
+@if ($enable-margins--tiny == true) {
+
+    /**
+     * Add tiny margins.
+     */
+
+    .#{$namespace}m--     { margin:           quarter($margin) !important; }
+    .#{$namespace}mt--    { margin-top:       quarter($margin) !important; }
+    .#{$namespace}mr--    { margin-right:     quarter($margin) !important; }
+    .#{$namespace}mb--    { margin-bottom:    quarter($margin) !important; }
+    .#{$namespace}ml--    { margin-left:      quarter($margin) !important; }
+    .#{$namespace}mh--    { margin-right:     quarter($margin) !important; margin-left:     quarter($margin) !important; }
+    .#{$namespace}mv--    { margin-top:       quarter($margin) !important; margin-bottom:   quarter($margin) !important; }
+
+}
+
+
+@if ($enable-margins--small == true) {
+
+    /**
+     * Add small margins.
+     */
+
+    .#{$namespace}m-      { margin:           halve($margin) !important; }
+    .#{$namespace}mt-     { margin-top:       halve($margin) !important; }
+    .#{$namespace}mr-     { margin-right:     halve($margin) !important; }
+    .#{$namespace}mb-     { margin-bottom:    halve($margin) !important; }
+    .#{$namespace}ml-     { margin-left:      halve($margin) !important; }
+    .#{$namespace}mh-     { margin-right:     halve($margin) !important; margin-left:   halve($margin) !important; }
+    .#{$namespace}mv-     { margin-top:       halve($margin) !important; margin-bottom: halve($margin) !important; }
+
+}
+
+
+@if ($enable-margins--large == true) {
+
+    /**
+     * Add large margins.
+     */
+
+    .#{$namespace}m\+     { margin:           double($margin) !important; }
+    .#{$namespace}mt\+    { margin-top:       double($margin) !important; }
+    .#{$namespace}mr\+    { margin-right:     double($margin) !important; }
+    .#{$namespace}mb\+    { margin-bottom:    double($margin) !important; }
+    .#{$namespace}ml\+    { margin-left:      double($margin) !important; }
+    .#{$namespace}mh\+    { margin-right:     double($margin) !important; margin-left:      double($margin) !important; }
+    .#{$namespace}mv\+    { margin-top:       double($margin) !important; margin-bottom:    double($margin) !important; }
+
+}
+
+
+@if ($enable-margins--huge == true) {
+
+    /**
+     * Add huge margins.
+     */
+
+    .#{$namespace}m\+\+   { margin:           quadruple($margin) !important; }
+    .#{$namespace}mt\+\+  { margin-top:       quadruple($margin) !important; }
+    .#{$namespace}mr\+\+  { margin-right:     quadruple($margin) !important; }
+    .#{$namespace}mb\+\+  { margin-bottom:    quadruple($margin) !important; }
+    .#{$namespace}ml\+\+  { margin-left:      quadruple($margin) !important; }
+    .#{$namespace}mh\+\+  { margin-right:     quadruple($margin) !important; margin-left:   quadruple($margin) !important; }
+    .#{$namespace}mv\+\+  { margin-top:       quadruple($margin) !important; margin-bottom: quadruple($margin) !important; }
+
+}
+
+
+@if ($enable-margins--none == true) {
+
+    /**
+     * Remove margins.
+     */
+
+    .#{$namespace}m0      { margin:           0 !important; }
+    .#{$namespace}mt0     { margin-top:       0 !important; }
+    .#{$namespace}mr0     { margin-right:     0 !important; }
+    .#{$namespace}mb0     { margin-bottom:    0 !important; }
+    .#{$namespace}ml0     { margin-left:      0 !important; }
+    .#{$namespace}mh0     { margin-right:     0 !important; margin-left:      0 !important; }
+    .#{$namespace}mv0     { margin-top:       0 !important; margin-bottom:    0 !important; }
+
+}
+
+
+@if ($enable-margins--negative == true) {
+
+    /**
+     * Negative margins.
+     */
+
+    .#{$namespace}-m      { margin:           -$margin !important; }
+    .#{$namespace}-mt     { margin-top:       -$margin !important; }
+    .#{$namespace}-mr     { margin-right:     -$margin !important; }
+    .#{$namespace}-mb     { margin-bottom:    -$margin !important; }
+    .#{$namespace}-ml     { margin-left:      -$margin !important; }
+    .#{$namespace}-mh     { margin-right:     -$margin !important; margin-left:      -$margin !important; }
+    .#{$namespace}-mv     { margin-top:       -$margin !important; margin-bottom:    -$margin !important; }
+
+}
+
+
+@if ($enable-margins--negative-tiny == true) {
+
+    /**
+     * Tiny negative margins.
+     */
+
+    .#{$namespace}-m--    { margin:           quarter(-$margin) !important; }
+    .#{$namespace}-mt--   { margin-top:       quarter(-$margin) !important; }
+    .#{$namespace}-mr--   { margin-right:     quarter(-$margin) !important; }
+    .#{$namespace}-mb--   { margin-bottom:    quarter(-$margin) !important; }
+    .#{$namespace}-ml--   { margin-left:      quarter(-$margin) !important; }
+    .#{$namespace}-mh--   { margin-right:     quarter(-$margin) !important; margin-left:     quarter(-$margin) !important; }
+    .#{$namespace}-mv--   { margin-top:       quarter(-$margin) !important; margin-bottom:   quarter(-$margin) !important; }
+
+}
+
+
+@if ($enable-margins--negative-small == true) {
+
+    /**
+     * Small negative margins.
+     */
+
+    .#{$namespace}-m-     { margin:           halve(-$margin) !important; }
+    .#{$namespace}-mt-    { margin-top:       halve(-$margin) !important; }
+    .#{$namespace}-mr-    { margin-right:     halve(-$margin) !important; }
+    .#{$namespace}-mb-    { margin-bottom:    halve(-$margin) !important; }
+    .#{$namespace}-ml-    { margin-left:      halve(-$margin) !important; }
+    .#{$namespace}-mh-    { margin-right:     halve(-$margin) !important; margin-left:   halve(-$margin) !important; }
+    .#{$namespace}-mv-    { margin-top:       halve(-$margin) !important; margin-bottom: halve(-$margin) !important; }
+
+}
+
+
+@if ($enable-margins--negative-large == true) {
+
+    /**
+     * Large negative margins.
+     */
+
+    .#{$namespace}-m\+    { margin:           double(-$margin) !important; }
+    .#{$namespace}-mt\+   { margin-top:       double(-$margin) !important; }
+    .#{$namespace}-mr\+   { margin-right:     double(-$margin) !important; }
+    .#{$namespace}-mb\+   { margin-bottom:    double(-$margin) !important; }
+    .#{$namespace}-ml\+   { margin-left:      double(-$margin) !important; }
+    .#{$namespace}-mh\+   { margin-right:     double(-$margin) !important; margin-left:      double(-$margin) !important; }
+    .#{$namespace}-mv\+   { margin-top:       double(-$margin) !important; margin-bottom:    double(-$margin) !important; }
+
+}
+
+
+@if ($enable-margins--negative-huge == true) {
+
+    /**
+     * Huge negative margins.
+     */
+
+    .#{$namespace}-m\+\+  { margin:           quadruple(-$margin) !important; }
+    .#{$namespace}-mt\+\+ { margin-top:       quadruple(-$margin) !important; }
+    .#{$namespace}-mr\+\+ { margin-right:     quadruple(-$margin) !important; }
+    .#{$namespace}-mb\+\+ { margin-bottom:    quadruple(-$margin) !important; }
+    .#{$namespace}-ml\+\+ { margin-left:      quadruple(-$margin) !important; }
+    .#{$namespace}-mh\+\+ { margin-right:     quadruple(-$margin) !important; margin-left:   quadruple(-$margin) !important; }
+    .#{$namespace}-mv\+\+ { margin-top:       quadruple(-$margin) !important; margin-bottom: quadruple(-$margin) !important; }
+
+}
+
+
+
+
+
+@if ($enable-paddings == true) {
+
+    /**
+     * Padding helper classes.
+     *
+     * Add paddings.
+     */
+
+    .#{$namespace}p       { padding:          $padding !important; }
+    .#{$namespace}pt      { padding-top:      $padding !important; }
+    .#{$namespace}pr      { padding-right:    $padding !important; }
+    .#{$namespace}pb      { padding-bottom:   $padding !important; }
+    .#{$namespace}pl      { padding-left:     $padding !important; }
+    .#{$namespace}ph      { padding-right:    $padding !important; padding-left:    $padding !important; }
+    .#{$namespace}pv      { padding-top:      $padding !important; padding-bottom:  $padding !important; }
+
+}
+
+
+@if ($enable-paddings--tiny == true) {
+
+    /**
+     * Add tiny paddings.
+     */
+
+    .#{$namespace}p--     { padding:           quarter($padding) !important; }
+    .#{$namespace}pt--    { padding-top:       quarter($padding) !important; }
+    .#{$namespace}pr--    { padding-right:     quarter($padding) !important; }
+    .#{$namespace}pb--    { padding-bottom:    quarter($padding) !important; }
+    .#{$namespace}pl--    { padding-left:      quarter($padding) !important; }
+    .#{$namespace}ph--    { padding-right:     quarter($padding) !important; padding-left:      quarter($padding) !important; }
+    .#{$namespace}pv--    { padding-top:       quarter($padding) !important; padding-bottom:    quarter($padding) !important; }
+
+}
+
+
+@if ($enable-paddings--small == true) {
+
+    /**
+     * Add small paddings.
+     */
+
+    .#{$namespace}p-      { padding:           halve($padding) !important; }
+    .#{$namespace}pt-     { padding-top:       halve($padding) !important; }
+    .#{$namespace}pr-     { padding-right:     halve($padding) !important; }
+    .#{$namespace}pb-     { padding-bottom:    halve($padding) !important; }
+    .#{$namespace}pl-     { padding-left:      halve($padding) !important; }
+    .#{$namespace}ph-     { padding-right:     halve($padding) !important; padding-left:    halve($padding) !important; }
+    .#{$namespace}pv-     { padding-top:       halve($padding) !important; padding-bottom:  halve($padding) !important; }
+
+}
+
+
+@if ($enable-paddings--large == true) {
+
+    /**
+     * Add large paddings.
+     */
+
+    .#{$namespace}p\+     { padding:           double($padding) !important; }
+    .#{$namespace}pt\+    { padding-top:       double($padding) !important; }
+    .#{$namespace}pr\+    { padding-right:     double($padding) !important; }
+    .#{$namespace}pb\+    { padding-bottom:    double($padding) !important; }
+    .#{$namespace}pl\+    { padding-left:      double($padding) !important; }
+    .#{$namespace}ph\+    { padding-right:     double($padding) !important; padding-left:   double($padding) !important; }
+    .#{$namespace}pv\+    { padding-top:       double($padding) !important; padding-bottom: double($padding) !important; }
+
+}
+
+
+@if ($enable-paddings--huge == true) {
+
+    /**
+     * Add huge paddings.
+     */
+
+    .#{$namespace}p\+\+   { padding:           quadruple($padding) !important; }
+    .#{$namespace}pt\+\+  { padding-top:       quadruple($padding) !important; }
+    .#{$namespace}pr\+\+  { padding-right:     quadruple($padding) !important; }
+    .#{$namespace}pb\+\+  { padding-bottom:    quadruple($padding) !important; }
+    .#{$namespace}pl\+\+  { padding-left:      quadruple($padding) !important; }
+    .#{$namespace}ph\+\+  { padding-right:     quadruple($padding) !important; padding-left:    quadruple($padding) !important; }
+    .#{$namespace}pv\+\+  { padding-top:       quadruple($padding) !important; padding-bottom:  quadruple($padding) !important; }
+
+}
+
+
+@if ($enable-paddings--none == true) {
+
+    /**
+     * Remove paddings.
+     */
+
+    .#{$namespace}p0      { padding:          0 !important; }
+    .#{$namespace}pt0     { padding-top:      0 !important; }
+    .#{$namespace}pr0     { padding-right:    0 !important; }
+    .#{$namespace}pb0     { padding-bottom:   0 !important; }
+    .#{$namespace}pl0     { padding-left:     0 !important; }
+    .#{$namespace}ph0     { padding-right:    0 !important; padding-left:     0 !important; }
+    .#{$namespace}pv0     { padding-top:      0 !important; padding-bottom:   0 !important; }
+
+}

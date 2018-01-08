@@ -1,0 +1,49 @@
+// ------ #STYLE GUIDE
+
+$sidebar-width: 			300px;
+$alt-unit: 					60px;
+
+$lap: 						899px;
+$desk: 						1359px;
+
+$lightest:  				#d7d7d7;
+$borders:   				#afafaf;
+$light:     				#8c888c;
+$gray:      				#3d3e40;
+
+$dark:      				#171617;
+$black:     				#000;
+$accent:    				#ffeb00;
+
+$default-font-size: 		16px !default;
+
+
+
+// ------ #SETTINGS
+
+$namespace:                 null;
+
+// High-level base settings.
+$base-font-size:            16px !default;
+$base-line-height:          24px !default;
+
+$base-spacing-unit:         $base-line-height;
+$base-spacing-unit--small:  round($base-line-height / 2);
+$base-spacing-unit--large:  round($base-line-height * 2);
+
+$gallery-columns: 			true;
+$editor-style:				false;
+
+
+
+
+
+// ------ #OBJECTS
+
+$btn-background: 			$dark;
+
+$enable-grid: 				true;
+
+$enable-table--fixed: 		true;
+$enable-table--cosy: 		true;
+$enable-table--rows: 		true;

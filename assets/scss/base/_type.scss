@@ -1,0 +1,267 @@
+body {
+    @extend %beta;
+	line-height: 1.6;
+//	-ms-text-size-adjust: 100%;
+//	-webkit-text-size-adjust: 100%;
+	// -webkit-font-smoothing: antialiased;
+//	text-rendering: optimizeLegibility;
+	color: $gray;
+}
+
+%alpha {
+    font-family: "Playfair Display", serif;
+    font-weight: normal;
+    color: $dark;
+}
+
+%beta {
+    font-family: "Droid Serif", serif;
+}
+
+/* Headings */
+h1 {
+    @extend %alpha;
+    @include font-size(54px);
+    @include baseline(54px);
+    @include rhythm(margin-top, 4, 54px);
+    @include rhythm(margin-bottom, 2, 54px);
+}
+
+h2 {
+    @extend %alpha;
+    @include font-size(36px);
+    @include baseline(36px);
+    @include rhythm(margin-top, 4, 36px);
+    @include rhythm(margin-bottom, 2, 36px);
+}
+
+h3 {
+    @extend %alpha;
+    @include font-size(24px);
+    @include baseline(24px);
+    @include rhythm(margin-top, 4, 24px);
+    @include rhythm(margin-bottom, 2, 24px);
+}
+
+@include query-below($lap) {
+
+	h1 {
+		@include font-size(30px);
+		@include baseline(30px);
+	}
+
+	h2 {
+		@include font-size(24px);
+		@include baseline(24px);
+	}
+
+	h3 {
+		@include font-size(21px);
+		@include baseline(21px);
+	}
+}
+
+
+
+
+
+/* Paragraphs */
+p {
+	margin-top: 0;
+	@include font-size(16px);
+    @include baseline(16px);
+
+    @if $editor-style { @include rhythm(margin-bottom, 3); }
+    	@else { @include rhythm(margin-bottom, 2); }
+}
+
+.entry-content {
+	-webkit-font-smoothing: antialiased;
+}
+
+/* Links */
+a {
+	text-decoration: none;
+	color: $borders;
+
+	&:hover {
+		color: $black;
+	}
+}
+
+
+
+
+
+/* Lists */
+
+acronym {
+	border-bottom: 1px dotted $gray;
+}
+
+
+
+
+
+/* Blockquotes */
+
+blockquote {
+	@extend %alpha;
+	position: relative;
+	text-align: center;
+	@include font-size(25px);
+
+	@include rhythm(margin-top, 6, 28px);
+	@include rhythm(margin-bottom, 5, 28px);
+
+	@include rhythm(padding-top, 4, 28px);
+	@include rhythm(padding-bottom, 4, 28px);
+
+	blockquote {
+		font-size: 1em;
+		margin-bottom: 0;
+		padding-bottom: 0;
+
+		&:after {
+			border-bottom: 0;
+		}
+	}
+
+	@include query-below($lap) {
+		@include font-size(18px);
+		@include rhythm(margin-top, 4, 18px);
+		@include rhythm(margin-bottom, 3, 18px);
+		@include rhythm(padding, 1, 18px);
+		@include rhythm(padding-top, 2, 18px);
+		@include rhythm(padding-bottom, 2, 18px);
+	}
+
+	&:before {
+		content: '\201C';
+
+		position: absolute;
+		top: -0.5em;
+		left: 50%;
+
+		padding: 0 0.857em;
+
+		color: black;
+		background: white;
+
+		transform: translateX(-50%);
+	}
+
+	&:after {
+		content: '';
+
+		display: block;
+		width: 9em;
+		margin-left: -4.5em;
+
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 50%;
+		z-index: -1;
+
+		border: 1px solid #c3c3c3;
+		border-left: 0;
+		border-right: 0;
+
+		.is--ancient-android .archive__grid & {
+			border-bottom: 0;
+			bottom: calc(100% - 4px);
+			bottom: 99%;
+		}
+	}
+
+	cite {
+		@extend %beta;
+		display: block;
+		@include rhythm(margin-top, 2, 16px);
+		@include font-size(16px, 28px, 24px);
+		font-style: normal;
+	}
+
+	@if $editor-style {
+		p {
+			margin-bottom: 0;
+			margin-top: 0;
+			transform: none;
+		}
+	}
+
+	a:hover{
+		color: $accent;
+	}
+}
+
+/* Tables */
+
+table {
+	position: relative;
+	z-index: 1;
+	@include rhythm(margin-bottom, 2);
+	width: 100%;
+	border-top: 0;
+
+	table-layout: fixed;
+
+	th {
+		text-align: left;
+	}
+
+	tr {
+		// @todo why not use table--rows?
+		border-bottom: 1px solid $lightest;
+	}
+
+	th, td {
+		padding: $u/2;
+		vertical-align: middle;
+
+		font: {
+			family: inherit;
+			size: inherit;
+		}
+	}
+}
+
+/* Code */
+
+pre {
+	position: relative;
+
+	@include rhythm(padding-left, 3);
+	@include rhythm(padding-right, 3);
+	@include rhythm(padding-top, 2);
+	@include rhythm(padding-bottom, 2);
+
+	@include rhythm(margin-bottom, 2);
+
+	border: 1px solid $lightest;
+
+	@if $editor-style {
+		font-size: inherit;
+		line-height: inherit;
+	}
+
+	@if $editor-style == false{
+		&:before {
+			content: "\f121";
+
+			position: absolute;
+			top: 0;
+			left: 0;
+
+			display: block;
+			padding: 3px;
+
+			font-family: FontAwesome;
+			font-size: 14px;
+
+			color: white;
+			background: $lightest;
+		}
+	}
+}

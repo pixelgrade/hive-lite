@@ -1,0 +1,96 @@
+html {
+    height: 100%;
+    background: white;
+}
+
+body {
+    border: 0 solid $black;
+    min-height: 100%;
+
+	@include query-above(1000px) {
+		@include rhythm(border-left-width, 4);
+		@include rhythm(border-top-width, 1);
+
+		&:before, &:after {
+			content: "";
+			position: fixed;
+			top: 0; left: 0;
+			z-index: 100;
+			background: $dark;
+		}
+
+		&:before {
+			width: 100%;
+			@include rhythm(height, 1);
+		}
+
+		&.admin-bar:before {
+			top: 32px;
+			@include rhythm(height, 4);
+			@include rhythm(margin-top, -3);
+
+			@media screen and (max-width: 782px) {
+				top: 46px;
+			}
+		}
+
+		&:after {
+			@include rhythm(width, 4);
+			height: 100%;
+		}
+	}
+}
+
+.site-content {
+    @include rhythm(padding-top, 3);
+    @include rhythm(padding-bottom, 7);
+}
+
+.site-header,
+.site-content,
+.site-footer {
+	@include rhythm(padding-left, 1.5);
+	@include rhythm(padding-right, 1.5);
+}
+
+#infinite-footer {
+	@include rhythm(padding-left, 3);
+	@include rhythm(padding-right, 3);
+}
+
+@include query-above(1000px) {
+
+	.site-header,
+	.site-content,
+	.site-footer {
+		@include rhythm(padding-left, 6);
+		@include rhythm(padding-right, 6);
+	}
+
+	#infinite-footer {
+		@include rhythm(padding-left, 10);
+		@include rhythm(padding-right, 11);
+	}
+
+	.site-footer {
+		@include rhythm(padding-right, 11);
+	}
+}
+
+.container {
+	max-width: 85em;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.single, .post {
+	.site-content .container {
+		max-width: 80em;
+	}
+}
+
+#page {
+	@include query-above(1000px) {
+		@include rhythm(padding-right, 4);
+	}
+}

@@ -1,0 +1,75 @@
+.pagination{
+	position: relative;
+
+	margin: 2 * $u 0;
+	padding-left: 0;
+
+	border: none;
+
+	font-size: 0;
+	text-align: center;
+
+	&:after{
+		content: none;
+	}
+
+	a, span {
+		display: inline-block;
+		zoom: 1;
+
+		padding: $u/4 16px;
+		border: 1px solid transparent;
+		position: relative;
+		z-index: 2;
+
+		font-size: 18px;
+
+		color: $light;
+		background: white;
+
+		transition: all .15s linear;
+	}
+
+	a:after{
+		content: none;
+	}
+
+	a:hover{
+		color: $dark;
+	}
+
+	span.current{
+		color: $dark;
+		border: 1px solid $lightest;
+	}
+
+	.neverending & {
+		display: none;
+	}
+}
+
+.page-numbers.prev, .page-numbers.next{
+	@include query-above($lap) {
+		position: absolute;
+		top: 0;
+	}
+
+	color: $dark;
+
+	&.disabled{
+		color: #F0F0F0 !important;
+		pointer-events: none;
+	}
+
+	i{
+		margin: 0 $u/2;
+	}
+}
+
+.page-numbers.prev{
+	left: 0;
+}
+
+.page-numbers.next{
+	right: 0;
+}

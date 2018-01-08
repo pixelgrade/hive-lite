@@ -1,0 +1,399 @@
+# Translation of WordPress.com - Themes - Hive in Portuguese (Brazil)
+# This file is distributed under the same license as the WordPress.com - Themes - Hive package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2017-03-23 04:22:42+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: GlotPress/2.4.0-alpha\n"
+"Language: pt_BR\n"
+"Project-Id-Version: WordPress.com - Themes - Hive\n"
+
+#: inc/wpcom-colors.php:29
+msgid "Main Accent"
+msgstr "Cor principal"
+
+#: inc/extras.php:500
+msgid "Two Columns"
+msgstr "Duas colunas"
+
+#: inc/customizer.php:71
+msgid "Large"
+msgstr "Grande"
+
+#: inc/customizer.php:70
+msgid "Medium"
+msgstr "Médio"
+
+#: inc/customizer.php:69
+msgid "Small"
+msgstr "Pequeno"
+
+#: inc/customizer.php:66
+msgid "Site Title Size"
+msgstr "Tamanho do título do site"
+
+#. Description of the plugin/theme
+#: wp-content/themes/premium/hive/style.css
+msgid "An effortless tool for publishers of all kind, cherished for its clean masonry-style layout, modern typography and flexibility. Whether you’re looking to share your own thoughts, write about your latest findings or just have a scrapbook of photos, videos, quotes or other stuff, HIVE is designed to fulfill these and a lot more."
+msgstr "Uma ferramenta incrível para editores de todos os tipos. Layout clean em estilo grade, tipografia moderna e flexibilidade. HIVE foi criado para você que quer compartilhas suas ideias, escrever sobre suas últimas descobertas, ter sua coleção de fotos, vídeos e citações, e muito mais."
+
+#: templates/toolbar.php:38
+msgid "Begin typing your search above and press return to search. Press Esc to cancel."
+msgstr "Digite sua pesquisa acima e pressione Enter para pesquisar. Pressione Esc para cancelar."
+
+#: templates/toolbar.php:23
+msgid "Search"
+msgstr "Pesquisa"
+
+#: templates/toolbar.php:9
+msgid "Secondary navigation"
+msgstr "Navegação Secundária"
+
+#: templates/featured-hover.php:16
+msgid "Read More"
+msgstr "Leia mais"
+
+#: search.php:15
+msgid "Search Results for: %s"
+msgstr "Resultados da pesquisa por: %s"
+
+#: inc/template-tags.php:86
+msgid "Post navigation"
+msgstr "Navegação de Posts"
+
+#: inc/template-tags.php:53 inc/template-tags.php:59
+msgid "Next"
+msgstr "Avançar"
+
+#: inc/template-tags.php:42 inc/template-tags.php:52
+msgid "Previous"
+msgstr "Anterior"
+
+#: inc/template-tags.php:35
+msgid "Posts navigation"
+msgstr "Navegação de Posts"
+
+#. Translators: If there are characters in your language that are not
+#. * supported by Playfair Display, translate this to 'off'. Do not translate
+#. * into your own language.
+#: inc/extras.php:419
+msgctxt "Playfair Display font: on or off"
+msgid "on"
+msgstr "on"
+
+#. Translators: If there are characters in your language that are not
+#. * supported by Droid Serif, translate this to 'off'. Do not translate
+#. * into your own language.
+#: inc/extras.php:413
+msgctxt "Droid Serif font: on or off"
+msgid "on"
+msgstr "on"
+
+#: inc/extras.php:191
+msgid "Your comment is awaiting moderation."
+msgstr "O seu comentário aguarda moderação."
+
+#: inc/extras.php:174
+msgid "on %s at %s"
+msgstr "em %s em %s"
+
+#: inc/extras.php:107
+msgid "Page %s"
+msgstr "Página %s"
+
+#: inc/customizer.php:52
+msgid "Hide search button in toolbar"
+msgstr "Esconder botão de pesquisa na barra de ferramentas"
+
+#: inc/customizer.php:41
+msgid "Disable auto-style post titles"
+msgstr "Desabilitar auto-estilo em títulos de posts"
+
+#: inc/customizer.php:31
+msgid "Hive Options"
+msgstr "Opções do Hive"
+
+#: inc/customizer.php:24
+msgid "Display Site Title &amp; Tagline"
+msgstr "Mostrar título do site &amp; descrição"
+
+#: header.php:65
+msgid "Menu"
+msgstr "Menu"
+
+#: header.php:52
+msgid "Main navigation"
+msgstr "Navegação Principal"
+
+#: header.php:32
+msgid "Skip to content"
+msgstr "Pular para o conteúdo"
+
+#: functions.php:108
+msgid "Sidebar"
+msgstr "Lateral"
+
+#: functions.php:55
+msgid "Social Menu"
+msgstr "Menu social"
+
+#: functions.php:54
+msgid "Footer Menu"
+msgstr "Menu do Rodapé"
+
+#: functions.php:53
+msgid "Primary Menu"
+msgstr "Menu Principal"
+
+#: footer.php:27
+msgid "Footer navigation"
+msgstr "Navegação no rodapé"
+
+#: footer.php:17
+msgid "Theme: %1$s by %2$s."
+msgstr "Tema: %1$s por %2$s. "
+
+#: footer.php:15
+msgid "Proudly powered by %s"
+msgstr "Orgulhosamente mantido com %s"
+
+#: footer.php:15
+msgid "http://wordpress.org/"
+msgstr "http://wordpress.org/"
+
+#: content-single-audio.php:71 content-single-chat.php:72
+#: content-single-gallery.php:75 content-single-image.php:75
+#: content-single-quote.php:85 content-single-status.php:61
+#: content-single-video.php:68 content-single.php:75
+msgid "Previous page"
+msgstr "Página anterior"
+
+#: content-single-audio.php:70 content-single-chat.php:71
+#: content-single-gallery.php:74 content-single-image.php:74
+#: content-single-quote.php:84 content-single-status.php:60
+#: content-single-video.php:67 content-single.php:74
+msgid "Next page"
+msgstr "Próxima página"
+
+#: content-single-audio.php:41 content-single-chat.php:39
+#: content-single-gallery.php:38 content-single-image.php:37
+#: content-single-link.php:37 content-single-quote.php:37
+#: content-single-status.php:36 content-single-video.php:39
+msgid "All %s posts"
+msgstr "Todos o conteúdo de tipo %s"
+
+#: content-single-audio.php:32 content-single-chat.php:28
+#: content-single-gallery.php:29 content-single-image.php:29
+#: content-single-link.php:29 content-single-quote.php:29
+#: content-single-status.php:28 content-single-video.php:31
+#: content-single.php:28
+msgid "Posted in %1$s. Bookmark the <a href=\"%3$s\" rel=\"bookmark\">permalink</a>."
+msgstr "Publicado em %1$s. Favorite o <a href=\"%3$s\" rel=\"bookmark\">permalink</a>."
+
+#: content-single-audio.php:30 content-single-chat.php:26
+#: content-single-gallery.php:27 content-single-image.php:27
+#: content-single-link.php:27 content-single-quote.php:27
+#: content-single-status.php:26 content-single-video.php:29
+#: content-single.php:26
+msgid "Posted in %1$s and tagged %2$s. Bookmark the <a href=\"%3$s\" rel=\"bookmark\">permalink</a>."
+msgstr "Publicado em %1$s e etiquetado como %2$s. Favorite o <a href=\"%3$s\" rel=\"bookmark\">permalink</a>"
+
+#: content-single-audio.php:24 content-single-chat.php:20
+#: content-single-gallery.php:21 content-single-image.php:21
+#: content-single-link.php:21 content-single-quote.php:21
+#: content-single-status.php:20 content-single-video.php:23
+#: content-single.php:20
+msgid "Bookmark the <a href=\"%3$s\" rel=\"bookmark\">permalink</a>."
+msgstr "Marcar o <a href=\"%3$s\" rel=\"bookmark\">link permanente</a>."
+
+#: content-single-audio.php:22 content-single-chat.php:18
+#: content-single-gallery.php:19 content-single-image.php:19
+#: content-single-link.php:19 content-single-quote.php:19
+#: content-single-status.php:18 content-single-video.php:21
+#: content-single.php:18
+msgid "This entry was tagged %2$s. Bookmark the <a href=\"%3$s\" rel=\"bookmark\">permalink</a>."
+msgstr "Esta entrada foi marcada%2$s. Marcar o <a href=\"%3$s\" rel=\"bookmark\">link permanente</a>."
+
+#: content-search.php:43
+msgid "% Comments"
+msgstr "% Comentários"
+
+#: content-search.php:43
+msgid "1 Comment"
+msgstr "1 comentário"
+
+#: content-search.php:43
+msgid "Leave a comment"
+msgstr "Deixe um comentário"
+
+#: content-search.php:37
+msgid "Tagged %1$s"
+msgstr "Marcado %1$s"
+
+#: content-search.php:29
+msgid "Posted in %1$s"
+msgstr "Postado em %1$s"
+
+#: content-none.php:26
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr "Parece que não podemos encontrar o que você está procurando. Talvez pesquisar pode ajudar."
+
+#: content-none.php:21
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr "Nada foi encontrado com os termos da sua pesquisa. Tente novamente com algumas palavras-chaves diferentes."
+
+#: content-none.php:17
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr "Pronto para publicar seu primeiro post? <a href=\"%1$s\">Comece aqui</a>."
+
+#: content-none.php:11
+msgid "Nothing Found"
+msgstr "Nada Encontrado"
+
+#. translators: used between list items, there is a space after the comma
+#: content-aside.php:25 content-audio.php:39 content-gallery.php:40
+#: content-link.php:37 content-search.php:26 content-search.php:34
+#: content-single-audio.php:14 content-single-audio.php:17
+#: content-single-chat.php:10 content-single-chat.php:13
+#: content-single-gallery.php:11 content-single-gallery.php:14
+#: content-single-image.php:11 content-single-image.php:14
+#: content-single-link.php:11 content-single-link.php:14
+#: content-single-quote.php:11 content-single-quote.php:14
+#: content-single-status.php:10 content-single-status.php:13
+#: content-single-video.php:13 content-single-video.php:16
+#: content-single.php:10 content-single.php:13 content-status.php:49
+#: content-video.php:39 content.php:49
+msgid ", "
+msgstr ", "
+
+#: content-aside.php:18 content-audio.php:32 content-gallery.php:33
+#: content-image.php:27 content-link.php:30 content-page.php:27
+#: content-quote.php:43 content-search.php:47 content-single-audio.php:87
+#: content-single-chat.php:79 content-single-gallery.php:82
+#: content-single-image.php:85 content-single-link.php:70
+#: content-single-quote.php:94 content-single-status.php:77
+#: content-single-video.php:77 content-single.php:82 content-status.php:42
+#: content-video.php:32 content.php:40 inc/extras.php:179
+msgid "Edit"
+msgstr "Editar"
+
+#: content-aside.php:13 content-audio.php:27 content-gallery.php:28
+#: content-status.php:32 content-video.php:27 content.php:33
+msgid "Pages:"
+msgstr "Páginas:"
+
+#: content-aside.php:11 content-quote.php:27 content-single-quote.php:64
+#: content-status.php:29 content.php:28
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Continuar lendo <span class=\"meta-nav\">&rarr;</span>"
+
+#: comments.php:75
+msgid "Comments are closed."
+msgstr "Os comentários estão desativados."
+
+#: comments.php:43 comments.php:63
+msgid "Newer Comments"
+msgstr "Comentários recentes"
+
+#: comments.php:42 comments.php:62
+msgid "Older Comments"
+msgstr "Comentários Antigos"
+
+#: comments.php:40 comments.php:60
+msgid "Comment navigation"
+msgstr "Navegação de Comentários"
+
+#: comments.php:29
+msgid "Add yours"
+msgstr "Adicione o seu"
+
+#: comments.php:27
+msgid "There are no comments"
+msgstr "Nenhum comentário"
+
+#: comments.php:25
+msgid "Comment"
+msgid_plural "Comments"
+msgstr[0] "Comentário"
+msgstr[1] "Comentários"
+
+#: archive.php:64
+msgid "Archives"
+msgstr "Arquivos"
+
+#: archive.php:61
+msgid "Chats"
+msgstr "Chats"
+
+#: archive.php:58
+msgid "Audios"
+msgstr "Áudios"
+
+#: archive.php:55
+msgid "Statuses"
+msgstr "Status"
+
+#: archive.php:52 inc/wpcom-colors.php:19
+msgid "Links"
+msgstr "Links"
+
+#: archive.php:49
+msgid "Quotes"
+msgstr "Citações"
+
+#: archive.php:46
+msgid "Videos"
+msgstr "Vídeos"
+
+#: archive.php:43
+msgid "Images"
+msgstr "Imagens"
+
+#: archive.php:40
+msgid "Galleries"
+msgstr "Galerias"
+
+#: archive.php:37
+msgid "Asides"
+msgstr "Notas"
+
+#: archive.php:34
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr "Y"
+
+#: archive.php:34
+msgid "Year: %s"
+msgstr "Ano: %s"
+
+#: archive.php:31
+msgctxt "monthly archives date format"
+msgid "F Y"
+msgstr "F Y"
+
+#: archive.php:31
+msgid "Month: %s"
+msgstr "Mês: %s"
+
+#: archive.php:28
+msgid "Day: %s"
+msgstr "Dia: %s"
+
+#: archive.php:25
+msgid "Author: %s"
+msgstr "Autor: %s"
+
+#: archive.php:19
+msgid "Category Archive:"
+msgstr "Arquivo da categoria:"
+
+#: 404.php:19
+msgid "It looks like nothing was found at this location. Try a search."
+msgstr "Não encontramos nada por aqui. Tente uma pesquisa."
+
+#: 404.php:14
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "Opa! Esta página não pode ser encontrada."

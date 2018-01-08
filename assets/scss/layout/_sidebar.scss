@@ -1,0 +1,86 @@
+.has_sidebar {
+	.site-content .container{
+		@extend %clearfix;
+		position: relative;
+	}
+
+	.single-post & .site-main, .page & .site-main {
+		max-width: none;
+	}
+
+	.content-area {
+		width: 100%;
+	}
+
+	.sidebar {
+		// position: relative;
+        @include rhythm(padding-top, 2);
+
+		@include query-below($lap){
+			border-top: 1px solid $gray;
+			@include rhythm(padding-top, 4);
+		}
+
+		@include query-above($lap){
+			@include rhythm(padding-bottom, 4);
+		}
+	}
+
+	@include query-above($lap) {
+
+		.content-area {
+			float: left;
+			margin-right: -30%;
+		}
+
+		.site-main {
+			margin-right: 30%;
+			@include rhythm(padding-right, 2.5);
+
+			&:before {
+				content: "";
+
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				right: 30%;
+				border-right: 1px solid $borders;
+			}
+		}
+
+		.sidebar {
+			z-index: 5;
+			float: right;
+			width: 30%;
+			@include rhythm(padding-left, 2.5);
+		}
+ 	}
+
+	@include query-above($desk) {
+
+		.content-area {
+			@include rhythm(margin-right, -30);
+		}
+
+		.site-main {
+			@include rhythm(margin-right, 30);
+			@include rhythm(padding-right, 5);
+
+			&:before {
+				@include rhythm(right, 30);
+			}
+		}
+
+		.sidebar {
+			@include rhythm(width, 30);
+			@include rhythm(padding-left, 5);
+		}
+	}
+}
+
+@include query-above($desk) {
+	.single .site-main, .page .site-main {
+		@include rhythm(padding-right, 10);
+		@include rhythm(padding-left, 10);
+	}
+}

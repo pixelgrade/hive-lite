@@ -1,0 +1,35 @@
+.intro {
+    margin-bottom: 2.25em;
+    font-size: (23/18) + em;
+    -webkit-font-smoothing: auto;
+
+    @include query-below($lap) {
+        font-size: 1em;
+        color: #000000;
+    }
+}
+
+@include query-above(1000px){
+    .twocolumn {
+        column-count: 2;
+        column-gap: 50px;
+    }
+}
+
+.dropcap {
+    @extend %alpha;
+
+    float: left;
+    @include font-size(82px);
+    font-weight: bold;
+    line-height: 1;
+    margin-top: -.1em;
+    @include rhythm(margin-bottom, -1, 82px);
+    @include rhythm(margin-right, 0.5, 82px);
+}
+
+// span.dropcap{ font-weight: bold; }
+
+.highlight{
+    background: $accent;
+}

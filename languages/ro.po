@@ -1,0 +1,412 @@
+# Translation of WordPress.com - Themes - Hive in Romanian
+# This file is distributed under the same license as the WordPress.com - Themes - Hive package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2017-03-23 04:22:42+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < 20)) ? 1 : 2);\n"
+"X-Generator: GlotPress/2.4.0-alpha\n"
+"Language: ro\n"
+"Project-Id-Version: WordPress.com - Themes - Hive\n"
+
+#: inc/wpcom-colors.php:29
+msgid "Main Accent"
+msgstr "Accent principal"
+
+#: inc/extras.php:500
+msgid "Two Columns"
+msgstr "Două coloane"
+
+#: inc/extras.php:499
+msgid "Highlight"
+msgstr "Evidențiere"
+
+#: inc/extras.php:498
+msgid "Dropcap"
+msgstr "Inițială"
+
+#: inc/extras.php:497
+msgid "Intro Text"
+msgstr "Text introductiv"
+
+#: inc/customizer.php:71
+msgid "Large"
+msgstr "Mare"
+
+#: inc/customizer.php:70
+msgid "Medium"
+msgstr "Mediu"
+
+#: inc/customizer.php:69
+msgid "Small"
+msgstr "Mic"
+
+#: inc/customizer.php:66
+msgid "Site Title Size"
+msgstr "Mărime titlu sit"
+
+#. Description of the plugin/theme
+#: wp-content/themes/premium/hive/style.css
+msgid "An effortless tool for publishers of all kind, cherished for its clean masonry-style layout, modern typography and flexibility. Whether you’re looking to share your own thoughts, write about your latest findings or just have a scrapbook of photos, videos, quotes or other stuff, HIVE is designed to fulfill these and a lot more."
+msgstr "Un instrument ușor de folosit pentru editorii de orice fel, îndrăgit datorită stilului său placat, grafiei moderne și flexibilității. Fie că dorești să-ți împărtășești gândurile, să scrii despre ultimele tale descoperiri, sau să-ți creezi un album de fotografii, video-uri, citate sau altceva, HIVE a fost proiectată să le satisfacă pe toate astea și încă multe altele."
+
+#: templates/toolbar.php:38
+msgid "Begin typing your search above and press return to search. Press Esc to cancel."
+msgstr "Începe să tastezi ceea ce cauți deasupra și apoi apasă pe Enter pentru căutare. Esc pentru a anula."
+
+#: templates/toolbar.php:23
+msgid "Search"
+msgstr "Căutare"
+
+#: templates/toolbar.php:9
+msgid "Secondary navigation"
+msgstr "Navigatie secundară"
+
+#: templates/featured-hover.php:16
+msgid "Read More"
+msgstr "Citeşte mai mult"
+
+#: search.php:15
+msgid "Search Results for: %s"
+msgstr "Rezultatele cautarii pentru: %s"
+
+#: inc/template-tags.php:86
+msgid "Post navigation"
+msgstr "Navigare articole"
+
+#: inc/template-tags.php:53 inc/template-tags.php:59
+msgid "Next"
+msgstr "Următor"
+
+#: inc/template-tags.php:42 inc/template-tags.php:52
+msgid "Previous"
+msgstr "Anterior"
+
+#: inc/template-tags.php:35
+msgid "Posts navigation"
+msgstr "Navigare articole"
+
+#. Translators: If there are characters in your language that are not
+#. * supported by Playfair Display, translate this to 'off'. Do not translate
+#. * into your own language.
+#: inc/extras.php:419
+msgctxt "Playfair Display font: on or off"
+msgid "on"
+msgstr "on"
+
+#. Translators: If there are characters in your language that are not
+#. * supported by Droid Serif, translate this to 'off'. Do not translate
+#. * into your own language.
+#: inc/extras.php:413
+msgctxt "Droid Serif font: on or off"
+msgid "on"
+msgstr "on"
+
+#: inc/extras.php:191
+msgid "Your comment is awaiting moderation."
+msgstr "Comentariul tău așteaptă moderarea."
+
+#: inc/extras.php:174
+msgid "on %s at %s"
+msgstr "pe %s la %s"
+
+#: inc/extras.php:107
+msgid "Page %s"
+msgstr "Pagina %s"
+
+#: inc/customizer.php:52
+msgid "Hide search button in toolbar"
+msgstr "Ascunde butonul de căutare în bara de unelte"
+
+#: inc/customizer.php:41
+msgid "Disable auto-style post titles"
+msgstr "Dezactivează stilarea automată a titlurilor articolelor"
+
+#: inc/customizer.php:31
+msgid "Hive Options"
+msgstr "Opțiuni Hive"
+
+#: inc/customizer.php:24
+msgid "Display Site Title &amp; Tagline"
+msgstr "Afișează titlul sitului și sloganul"
+
+#: header.php:65
+msgid "Menu"
+msgstr "Meniu"
+
+#: header.php:52
+msgid "Main navigation"
+msgstr "Navigație principală"
+
+#: header.php:32
+msgid "Skip to content"
+msgstr "Sari la conţinut"
+
+#: functions.php:108
+msgid "Sidebar"
+msgstr "Bară laterală"
+
+#: functions.php:55
+msgid "Social Menu"
+msgstr "Meniu socializare"
+
+#: functions.php:54
+msgid "Footer Menu"
+msgstr "Meniu subsol"
+
+#: functions.php:53
+msgid "Primary Menu"
+msgstr "Meniu principal"
+
+#: footer.php:27
+msgid "Footer navigation"
+msgstr "Navigare subsol"
+
+#: footer.php:17
+msgid "Theme: %1$s by %2$s."
+msgstr "Tema: %1$s de %2$s."
+
+#: footer.php:15
+msgid "Proudly powered by %s"
+msgstr "Propulsat cu mândrie de %s"
+
+#: footer.php:15
+msgid "http://wordpress.org/"
+msgstr "http://wordpress.org/"
+
+#: content-single-audio.php:71 content-single-chat.php:72
+#: content-single-gallery.php:75 content-single-image.php:75
+#: content-single-quote.php:85 content-single-status.php:61
+#: content-single-video.php:68 content-single.php:75
+msgid "Previous page"
+msgstr "Pagina precedentă"
+
+#: content-single-audio.php:70 content-single-chat.php:71
+#: content-single-gallery.php:74 content-single-image.php:74
+#: content-single-quote.php:84 content-single-status.php:60
+#: content-single-video.php:67 content-single.php:74
+msgid "Next page"
+msgstr "Pagina următoare"
+
+#: content-single-audio.php:41 content-single-chat.php:39
+#: content-single-gallery.php:38 content-single-image.php:37
+#: content-single-link.php:37 content-single-quote.php:37
+#: content-single-status.php:36 content-single-video.php:39
+msgid "All %s posts"
+msgstr "Toate %s articole"
+
+#: content-single-audio.php:32 content-single-chat.php:28
+#: content-single-gallery.php:29 content-single-image.php:29
+#: content-single-link.php:29 content-single-quote.php:29
+#: content-single-status.php:28 content-single-video.php:31
+#: content-single.php:28
+msgid "Posted in %1$s. Bookmark the <a href=\"%3$s\" rel=\"bookmark\">permalink</a>."
+msgstr "Publicat în %1$s. Pune un semn de carte cu <a href=\"%3$s\" rel=\"bookmark\">legătura permanentă</a>."
+
+#: content-single-audio.php:30 content-single-chat.php:26
+#: content-single-gallery.php:27 content-single-image.php:27
+#: content-single-link.php:27 content-single-quote.php:27
+#: content-single-status.php:26 content-single-video.php:29
+#: content-single.php:26
+msgid "Posted in %1$s and tagged %2$s. Bookmark the <a href=\"%3$s\" rel=\"bookmark\">permalink</a>."
+msgstr "Publicat în %1$s și etichetat în %2$s. Pune un semn de carte cu <a href=\"%3$s\" rel=\"bookmark\">legătura permanentă</a>."
+
+#: content-single-audio.php:24 content-single-chat.php:20
+#: content-single-gallery.php:21 content-single-image.php:21
+#: content-single-link.php:21 content-single-quote.php:21
+#: content-single-status.php:20 content-single-video.php:23
+#: content-single.php:20
+msgid "Bookmark the <a href=\"%3$s\" rel=\"bookmark\">permalink</a>."
+msgstr "Pune un semn de carte cu <a href=\"%3$s\" rel=\"bookmark\">legătura permanentă</a>."
+
+#: content-single-audio.php:22 content-single-chat.php:18
+#: content-single-gallery.php:19 content-single-image.php:19
+#: content-single-link.php:19 content-single-quote.php:19
+#: content-single-status.php:18 content-single-video.php:21
+#: content-single.php:18
+msgid "This entry was tagged %2$s. Bookmark the <a href=\"%3$s\" rel=\"bookmark\">permalink</a>."
+msgstr "Această intrare a fost etichetată %2$s. Pune un semn de carte cu <a href=\"%3$s\" rel=\"bookmark\">legătura permanentă</a>."
+
+#: content-search.php:43
+msgid "% Comments"
+msgstr "% comentarii"
+
+#: content-search.php:43
+msgid "1 Comment"
+msgstr "1 comentariu"
+
+#: content-search.php:43
+msgid "Leave a comment"
+msgstr "Lasă un comentariu"
+
+#: content-search.php:37
+msgid "Tagged %1$s"
+msgstr "Etichetat %1$s"
+
+#: content-search.php:29
+msgid "Posted in %1$s"
+msgstr "Publicat în %1$s"
+
+#: content-none.php:26
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr "Se pare că nu găsim ceea ce cauți. Poate că ar fi utilă o căutare."
+
+#: content-none.php:21
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr "Regret, dar nu se potrivește nimic cu termenii căutați. Te rog încearcă din nou cu alte cuvinte cheie."
+
+#: content-none.php:17
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr "Ești gata să publici primul tău articol? <a href=\"%1$s\">Începe de aici</a>."
+
+#: content-none.php:11
+msgid "Nothing Found"
+msgstr "Nimic găsit"
+
+#. translators: used between list items, there is a space after the comma
+#: content-aside.php:25 content-audio.php:39 content-gallery.php:40
+#: content-link.php:37 content-search.php:26 content-search.php:34
+#: content-single-audio.php:14 content-single-audio.php:17
+#: content-single-chat.php:10 content-single-chat.php:13
+#: content-single-gallery.php:11 content-single-gallery.php:14
+#: content-single-image.php:11 content-single-image.php:14
+#: content-single-link.php:11 content-single-link.php:14
+#: content-single-quote.php:11 content-single-quote.php:14
+#: content-single-status.php:10 content-single-status.php:13
+#: content-single-video.php:13 content-single-video.php:16
+#: content-single.php:10 content-single.php:13 content-status.php:49
+#: content-video.php:39 content.php:49
+msgid ", "
+msgstr ", "
+
+#: content-aside.php:18 content-audio.php:32 content-gallery.php:33
+#: content-image.php:27 content-link.php:30 content-page.php:27
+#: content-quote.php:43 content-search.php:47 content-single-audio.php:87
+#: content-single-chat.php:79 content-single-gallery.php:82
+#: content-single-image.php:85 content-single-link.php:70
+#: content-single-quote.php:94 content-single-status.php:77
+#: content-single-video.php:77 content-single.php:82 content-status.php:42
+#: content-video.php:32 content.php:40 inc/extras.php:179
+msgid "Edit"
+msgstr "Editare"
+
+#: content-aside.php:13 content-audio.php:27 content-gallery.php:28
+#: content-status.php:32 content-video.php:27 content.php:33
+msgid "Pages:"
+msgstr "Pagini:"
+
+#: content-aside.php:11 content-quote.php:27 content-single-quote.php:64
+#: content-status.php:29 content.php:28
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Continuă lectura <span class=\"meta-nav\">&rarr;</span>"
+
+#: comments.php:75
+msgid "Comments are closed."
+msgstr "Comentariile sunt închise."
+
+#: comments.php:43 comments.php:63
+msgid "Newer Comments"
+msgstr "Comentarii mai noi"
+
+#: comments.php:42 comments.php:62
+msgid "Older Comments"
+msgstr "Comentarii mai vechi"
+
+#: comments.php:40 comments.php:60
+msgid "Comment navigation"
+msgstr "Navigare în comentarii"
+
+#: comments.php:29
+msgid "Add yours"
+msgstr "Adăugă-le pe ale tale"
+
+#: comments.php:27
+msgid "There are no comments"
+msgstr "Nu există comentarii"
+
+#: comments.php:25
+msgid "Comment"
+msgid_plural "Comments"
+msgstr[0] "Comentariu"
+msgstr[1] "Comentarii"
+msgstr[2] "De comentarii"
+
+#: archive.php:64
+msgid "Archives"
+msgstr "Arhive"
+
+#: archive.php:61
+msgid "Chats"
+msgstr "Discuții"
+
+#: archive.php:58
+msgid "Audios"
+msgstr "Audio-uri"
+
+#: archive.php:55
+msgid "Statuses"
+msgstr "Stări"
+
+#: archive.php:52 inc/wpcom-colors.php:19
+msgid "Links"
+msgstr "Legături"
+
+#: archive.php:49
+msgid "Quotes"
+msgstr "Citate"
+
+#: archive.php:46
+msgid "Videos"
+msgstr "Video-uri"
+
+#: archive.php:43
+msgid "Images"
+msgstr "Imagini"
+
+#: archive.php:40
+msgid "Galleries"
+msgstr "Galerii"
+
+#: archive.php:37
+msgid "Asides"
+msgstr "Note"
+
+#: archive.php:34
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr "Y"
+
+#: archive.php:34
+msgid "Year: %s"
+msgstr "Anul: %s"
+
+#: archive.php:31
+msgctxt "monthly archives date format"
+msgid "F Y"
+msgstr "F Y"
+
+#: archive.php:31
+msgid "Month: %s"
+msgstr "Luna: %s"
+
+#: archive.php:28
+msgid "Day: %s"
+msgstr "Ziua: %s"
+
+#: archive.php:25
+msgid "Author: %s"
+msgstr "Autor: %s"
+
+#: archive.php:19
+msgid "Category Archive:"
+msgstr "Arhivă categorii:"
+
+#: 404.php:19
+msgid "It looks like nothing was found at this location. Try a search."
+msgstr "Se pare că nu a fost găsit nimic în acest loc. Încercă o căutare."
+
+#: 404.php:14
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "Hopa! Pagina nu a fost găsită."

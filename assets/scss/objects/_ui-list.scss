@@ -1,0 +1,90 @@
+/*------------------------------------*\
+    #UI-LIST
+\*------------------------------------*/
+
+/**
+ * The UI list object creates blocky list items with a keyline separator out of
+ * a `ul` or `ol`.
+ */
+
+// Predefine the variables below in order to alter and enable specific features.
+$ui-list-padding:         $base-spacing-unit !default;
+$ui-list-padding--small:  halve($ui-list-padding) !default;
+$ui-list-padding--large:  double($ui-list-padding) !default;
+
+$ui-list-border-width:    1px !default;
+$ui-list-border-style:    solid !default;
+$ui-list-border-color:    #ccc !default;
+
+$enable-ui-list--small:   false !default;
+$enable-ui-list--large:   false !default;
+
+.#{$namespace}ui-list,
+%#{$namespace}ui-list,
+    .#{$namespace}ui-list__item,
+    %#{$namespace}ui-list__item {
+        border: 0 $ui-list-border-style $ui-list-border-color;
+    }
+
+.#{$namespace}ui-list,
+%#{$namespace}ui-list {
+    margin:  0;
+    padding: 0;
+    list-style: none;
+    border-top-width: $ui-list-border-width;
+
+    > li {
+        @extend %#{$namespace}ui-list__item;
+    }
+
+}
+
+    .#{$namespace}ui-list__item,
+    %#{$namespace}ui-list__item {
+        padding: $ui-list-padding;
+        border-bottom-width: $ui-list-border-width;
+    }
+
+
+
+
+
+@if ($enable-ui-list--small == true) {
+
+    /**
+     * Small ui-lists.
+     */
+
+    .#{$namespace}ui-list--small,
+    %#{$namespace}ui-list--small {
+
+        > .#{$namespace}ui-list__item,
+        > %#{$namespace}ui-list__item {
+            padding: $ui-list-padding--small;
+        }
+
+    }
+
+}
+
+
+
+
+
+@if ($enable-ui-list--large == true) {
+
+    /**
+     * Large ui-lists.
+     */
+
+    .#{$namespace}ui-list--large,
+    %#{$namespace}ui-list--large {
+
+        > .#{$namespace}ui-list__item,
+        > %#{$namespace}ui-list__item {
+            padding: $ui-list-padding--large;
+        }
+
+    }
+
+}

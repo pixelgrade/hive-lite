@@ -1,0 +1,113 @@
+$enable-nav--stacked:   false !default;
+$enable-nav--banner:    false !default;
+$enable-nav--block:     false !default;
+$enable-nav--fit:       false !default;
+$enable-nav--keywords:  false !default;
+
+.nav {
+    list-style:none;
+    margin-left:0;
+    @extend %clearfix;
+
+    > li {
+
+        &,
+        > a {
+            display:inline-block;
+            *display:inline;
+            zoom:1;
+        }
+    }
+}
+
+
+// `.nav--stacked` extends `.nav` and throws the list into vertical mode, e.g.:
+
+@if $enable-nav--stacked == true {
+
+    .nav--stacked {
+
+        > li {
+            display:list-item;
+
+            > a {
+                display:block;
+            }
+        }
+    }
+
+} // endif
+
+
+
+@if $enable-nav--banner == true {
+
+    .nav--banner {
+        text-align:center;
+    }
+
+} // endif
+
+
+
+@if $enable-nav--block == true {
+
+    .nav--block {
+        line-height:1;
+        /**
+         * Remove whitespace caused by `inline-block`.
+         */
+        letter-spacing:-0.31em;
+        word-spacing:-0.43em;
+        white-space:nowrap;
+
+        > li {
+            letter-spacing:normal;
+            word-spacing:normal;
+
+            > a {
+                @include rhythm(padding, 1);
+            }
+        }
+    }
+
+} // endif
+
+
+
+@if $enable-nav--fit == true {
+
+    .nav--fit {
+        display: table;
+        width: 100%;
+
+        > li {
+            display: table-cell;
+
+            > a {
+                display: block;
+            }
+        }
+    }
+
+} // endif
+
+
+
+@if $enable-nav--keywords == true {
+
+    .nav--keywords {
+
+        > li {
+
+            &:after {
+                content:"\002C" "\00A0";
+            }
+
+            &:last-child:after {
+                display:none;
+            }
+        }
+    }
+
+} // endif

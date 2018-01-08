@@ -1,0 +1,264 @@
+/* Jetpack - ShareDaddy */
+
+div.sd-content{
+
+	ul {
+		margin-bottom: 0 !important;
+	}
+}
+
+
+.sd-social {
+	margin-bottom: -5px;
+}
+
+
+div.sharedaddy .sd-social h3.sd-title {
+	@extend %beta;
+	@include font-size(16px);
+	@include baseline(16px);
+}
+
+div.sharedaddy {
+	margin-bottom: 30px;
+}
+
+
+
+
+
+/* Jetpack - Comment Form */
+
+form.contact-form {
+	max-width: 30em;
+
+	input[type='text'],
+	input[type='email'],
+	textarea {
+		width: 100%;
+		max-width: 100%;
+		@include rhythm(padding, 1);
+		border: 1px solid $lightest;
+	}
+
+	.contact-submit {
+		@extend %clearfix;
+	}
+
+	.pushbutton-wide {
+		float: right;
+	}
+
+	.comment-respond.js & {
+		input[type='text'],
+		input[type='email'],
+		textarea {
+			@include rhythm(margin-bottom, 2);
+		}
+	}
+}
+
+
+
+
+
+/* Jetpack - Infinite Scroll */
+
+$infiniteBarH: 50px;
+
+#infinite-footer {
+	position: relative;
+	z-index: 99;
+
+	width: 100%;
+	background: $dark;
+	-webkit-font-smoothing: auto;
+	transition: bottom .3s ease-in;
+
+	@include query-above($lap){
+		height: $infiniteBarH;
+		position: fixed;
+		bottom: 0 !important;
+	}
+
+	.container {
+		width: 100% !important;
+		min-height: $infiniteBarH;
+		padding: 0;
+		border: 0;
+		background: none;
+		transition: all .3s ease-in;
+	}
+
+	.blog-info,
+	.blog-credits {
+		display: inline-block;
+		width: auto;
+		@include font-size(14px);
+		line-height: $infiniteBarH;
+		color: $light;
+
+		a {
+			color: white;
+
+			&:hover {
+				color: white;
+				text-decoration: none;
+			}
+		}
+	}
+
+	@include query-below($lap){
+		.blog-credits{
+			text-align: left;
+		}
+	}
+
+	.blog-info {
+		float: left;
+		@include rhythm(margin-right, 1, 14px);
+	}
+}
+//
+//body.infinite-scroll{
+//	position: relative;
+//}
+
+
+.infinite-loader {
+	position: absolute;
+	left: 50%;
+	bottom: 0;
+
+	@include query-below($lap) {
+		bottom: -50px;
+		z-index: 50;
+	}
+}
+
+
+.infinite-scroll {
+
+	.pagination {
+		display: none;
+	}
+
+	@include query-above(1000px) {
+		&:not(.neverending) .site-content {
+			@include rhythm(padding-bottom, 10);
+		}
+	}
+
+	&.neverending .site-footer{
+		display: none;
+
+		transform: translateY(100%);
+		transition: .3s linear tansform;
+	}
+
+	&.neverending.infinity-end .site-footer {
+		display: block;
+		transform: none;
+	}
+}
+
+.infinite-loader {
+	position: absolute;
+	left: 50%;
+	left: calc(50% + 1.125em);
+	top: 100%;
+	transform: translateX(-50%);
+
+	display: inline-block;
+}
+
+#infinite-handle {
+	position: absolute;
+	top: 100%;
+	left: 1.125em;
+
+	width: 100%;
+
+	text-align: center;
+}
+
+.infinite-loader .spinner {
+	left: 0 !important;
+}
+
+div#infinite-handle {
+
+	span {
+		cursor: pointer;
+		font-size: 20px;
+		background: transparent;
+
+		&:hover {
+			background: transparent;
+			color: white;
+		}
+	}
+
+
+	button {
+		@extend .btn;
+		position: relative;
+		z-index: 5;
+		border: none;
+
+		&:hover {
+			padding: 11px 23px;
+			background: $dark;
+			color: white;
+		}
+	}
+}
+
+
+/* Jetpack - Related Posts */
+
+.jp-relatedposts {
+	clear: both;
+}
+
+div#jp-relatedposts div.jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-title a{
+	display: block;
+}
+
+div#jp-relatedposts div.jp-relatedposts-items-visual h4.jp-relatedposts-post-title,
+div#jp-relatedposts div.jp-relatedposts-items p{
+	font-size: inherit;
+	line-height: inherit;
+}
+
+div#jp-relatedposts div.jp-relatedposts-items p.jp-relatedposts-post-context,
+div#jp-relatedposts div.jp-relatedposts-items span.jp-relatedposts-post-context{
+	@include font-size(12px);
+}
+
+.jp-relatedposts-post-img{
+	@include rhythm(margin-bottom, 1);
+}
+
+div#jp-relatedposts h3.jp-relatedposts-headline{
+	@include font-size(24px);
+}
+
+
+
+/* Jetpack - Slideshow Galleries */
+
+.jetpack-slideshow.slideshow-window {
+	border-radius: 0;
+	@include rhythm(border-width, 1, 18px);
+}
+
+
+
+
+/* Jetpack - Sharedaddy */
+
+.sd-content ul li{
+	margin-bottom: $u/2 !important;
+	display: inline-block !important;
+}

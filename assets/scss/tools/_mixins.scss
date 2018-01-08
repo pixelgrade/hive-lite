@@ -1,0 +1,95 @@
+///*------------------------------------*\
+//    #MIXINS
+//\*------------------------------------*/
+
+$typography-font-sizes: () !default;
+
+// #TYPOGRAPHY
+
+@mixin new-fs-class($font-size, $direction: null, $value: null, $force: false) {
+
+    @if not index($typography-font-sizes, $font-size) or $force {
+
+        $typography-font-sizes: append($typography-font-sizes, $font-size) !global;
+
+        @if not $direction {
+            .fs-#{$font-size} {
+                @include font-size($font-size);
+            }
+        }
+
+        @if ($direction) {
+            @include query($direction, $value) {
+                .fs-#{$font-size}-#{$direction}-#{$value} {
+                    @include font-size($font-size);
+                }
+            }
+        }
+
+    }
+}
+
+
+
+
+
+@mixin fs($font-size, $top: null, $bottom: null, $overwrite: true) {
+
+    @at-root {
+        @include new-fs-class($font-size);
+    }
+
+    @extend .fs-#{$font-size};
+
+    @if ($top != null) {
+        @include baseline-leader($top, $font-size);
+    }
+
+    @if ($bottom != null) {
+        @include baseline-trailer($bottom, $font-size);
+    }
+}
+
+@mixin fs-query($direction, $value, $font-size, $top, $bottom, $overwrite: true) {
+
+    @extend .fs-#{$font-size}-#{$direction}-#{$value};
+
+    @include query($direction, $value) {
+
+        @if ($top != null) {
+            @include baseline-leader($top, $font-size);
+        }
+
+        @if ($bottom != null) {
+            @include baseline-trailer($bottom, $font-size);
+        }
+    }
+}
+
+@mixin fs-below($value, $font-size, $top: null, $bottom: null, $overwrite: true) {
+    @include fs-query('below', $value, $font-size, $top, $bottom);
+}
+
+@mixin fs-above($value, $font-size, $top: null, $bottom: null, $overwrite: true) {
+    @include fs-query('above', $value, $font-size, $top, $bottom);
+}
+
+
+
+
+
+
+@mixin placeholder {
+	&::-webkit-input-placeholder {
+		@content
+	}
+	&:-moz-placeholder {
+		@content
+	}
+	&::-moz-placeholder {
+		@content
+	}
+	&:-ms-input-placeholder {
+		@content
+	}
+}

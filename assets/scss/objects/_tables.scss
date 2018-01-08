@@ -1,0 +1,149 @@
+// Predefine the variables below in order to alter and enable specific features.
+$table-padding--compact:  quarter($base-spacing-unit) !default;
+$table-padding--cosy:     halve($base-spacing-unit) !default;
+$table-padding--comfy:    $base-spacing-unit !default;
+
+$table-border-width:      1px !default;
+$table-border-style:      solid !default;
+$table-border-color:      #ccc !default;
+
+$enable-table--fixed:     false !default;
+$enable-table--compact:   false !default;
+$enable-table--cosy:      false !default;
+$enable-table--comfy:     false !default;
+$enable-table--cells:     false !default;
+$enable-table--rows:      false !default;
+$enable-table--columns:   false !default;
+
+
+
+
+
+@if ($enable-table--fixed == true) {
+
+    %#{$namespace}table--fixed {
+        table-layout: fixed;
+    }
+
+}
+
+
+
+
+
+@if ($enable-table--compact == true) {
+
+    %#{$namespace}table--compact {
+
+        th,
+        td {
+            padding: $table-padding--compact;
+        }
+
+    }
+
+}
+
+
+
+
+
+@if ($enable-table--cosy == true) {
+
+    %#{$namespace}table--cosy {
+
+        th,
+        td {
+            padding: $table-padding--cosy;
+        }
+
+    }
+
+}
+
+
+
+
+
+@if ($enable-table--comfy == true) {
+
+    %#{$namespace}table--comfy {
+
+        th,
+        td {
+            padding: $table-padding--comfy;
+        }
+
+    }
+
+}
+
+
+
+
+
+@if ($enable-table--cells == true) {
+
+    %#{$namespace}table--cells {
+
+        th,
+        td {
+            border: $table-border-width $table-border-style $table-border-color;
+        }
+
+    }
+
+}
+
+
+
+
+
+@if ($enable-table--rows == true) {
+
+    %#{$namespace}table--rows {
+
+        &,
+        th,
+        td {
+            border: 0 $table-border-style $table-border-color;
+        }
+
+    }
+
+    %#{$namespace}table--rows {
+        border-top-width: $table-border-width;
+
+        th,
+        td {
+            border-bottom-width: $table-border-width;
+        }
+    }
+
+}
+
+
+
+
+
+@if ($enable-table--columns == true) {
+
+    %#{$namespace}table--columns {
+
+        &,
+        th,
+        td {
+            border: 0 $table-border-style $table-border-color;
+        }
+    }
+
+    %#{$namespace}table--columns {
+        border-left-width: $table-border-width;
+
+        th,
+        td {
+            border-right-width: $table-border-width;
+        }
+    }
+
+}

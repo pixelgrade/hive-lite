@@ -1,0 +1,10 @@
+//*------------------------------------*\
+//    $BARE-LIST
+//*------------------------------------*/
+
+.#{$namespace}bare-list,
+%#{$namespace}bare-list {
+    margin:  0;
+    padding: 0;
+    list-style: none;
+}

@@ -1,0 +1,40 @@
+body,
+h1, h2, h3, h4, h5, h6,
+p, blockquote, pre,
+dl, dd, ol, ul,
+form, fieldset, legend,
+table, th, td, caption,
+hr {
+    margin:  0;
+    padding: 0;
+}
+
+// BOX-SIZING
+* {
+    &,
+    &:before,
+    &:after {
+        -webkit-box-sizing: border-box;
+           -moz-box-sizing: border-box;
+                box-sizing: border-box;
+    }
+}
+
+// If we have included this file, set a variable to tell the rest of the
+// framework that global `box-sizing: border-box` has been set.
+$global-border-box: true;
+
+
+abbr[title],
+dfn[title] {
+    cursor: help;
+}
+
+u,
+ins {
+    text-decoration: none;
+}
+
+ins {
+    border-bottom: 1px solid;
+}

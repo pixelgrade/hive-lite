@@ -1,0 +1,80 @@
+.site-footer {
+    @include rhythm(padding-top, 2);
+    @include rhythm(padding-bottom, 3);
+    background: $dark;
+    color: $light;
+    overflow: hidden;
+    -webkit-font-smoothing: auto;
+	position: relative;
+	z-index: 100;
+
+
+	@include query-above(1000px) {
+		@include rhythm(margin-right, -4);
+	}
+
+    a {
+        color: white;
+    }
+
+	.site-info {
+		@include query-below($lap) {
+			@include rhythm(margin-bottom, 1);
+		}
+	}
+
+	.footer-navigation {
+		text-align: right;
+	}
+
+	.site-info, .footer-navigation {
+		width: 50%;
+		@include font-size(14px);
+		@include baseline(14px);
+
+		@include query-below($lap) {
+			width: 100%;
+			text-align: center;
+		}
+	}
+}
+
+
+
+
+/* Footer Navigation */
+
+.nav--footer {
+	margin-left: 2em;
+
+	li {
+		padding-left: 1em;
+
+		&:before {
+			content: "\2022";
+			font-family: monospace;
+			position: relative;
+			top: -0.1em;
+			margin-right: 1.2em;
+			pointer-events: none;
+			color: white;
+		}
+
+		&:first-child {
+			padding-left: 0;
+
+			&:before {
+				display: none;
+			}
+		}
+	}
+
+	ul {
+		display: none;
+	}
+}
+
+/* Footer logged-out-follow-blog-widget-input color */
+#loggedout-follow input#loggedout-follow-field {
+	color: black;
+}

@@ -1,0 +1,36 @@
+$enable-em-queries: true !default;
+
+@mixin query($direction, $value, $use-ems: $enable-em-queries) {
+
+    @if ($use-ems == true) {
+        $value: 1em * $value / $default-font-size;
+    }
+
+    @if ($direction == 'above') {
+        @media only screen and (min-width: $value) {
+            @content;
+        }
+    } @else {
+        @media not screen and (min-width: $value) {
+            @content;
+        }
+    }
+
+}
+
+// shortcuts
+@mixin query-below($value) {
+
+    @include query('below', $value, $default-font-size) {
+        @content;
+    }
+
+}
+
+@mixin query-above($value) {
+
+    @include query('above', $value, $default-font-size) {
+        @content;
+    }
+
+}

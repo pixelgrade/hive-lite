@@ -1,0 +1,321 @@
+.main-navigation {
+    @extend %clearfix;
+    position: relative;
+    z-index: 100;
+}
+
+.navigation__trigger {
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    padding: 0.6em 0.8em;
+
+    border: none;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+
+    @include font-size(20px);
+
+    background: transparent;
+    color: $light;
+
+    transition: background .3s linear;
+
+    @include query-above(1000px) {
+        display: none;
+    }
+}
+
+.nav--main {
+    background: white;
+    font-weight: bold;
+    border-top: 1px solid $borders;
+    margin-top: -1px;
+    // position: relative;
+    z-index: 20;
+    text-align: center;
+
+    // sub-menu
+    ul {
+        @extend .nav;
+        top: inherit;
+        left: 0;
+        z-index: 1;
+        width: 100%;
+        display: none;
+
+        @include query-above(1000px) {
+            position: absolute;
+            background: $dark;
+
+            a {
+                color: white;
+            }
+        }
+    }
+
+    // menu-item
+    li {
+        display: inline-block;
+
+        .menu-item-has-children:after {
+            color: white;
+            @include rhythm(left, -2);
+        }
+
+        // menu-item hover
+        &:hover {
+
+            > ul {
+                display: block;
+            }
+
+            &.menu-item-has-children > a:after {
+                opacity: 1;
+            }
+
+        }
+    }
+
+    // menu-item with children hover
+    .menu-item-has-children > a {
+        position: relative;
+
+        &:after {
+            opacity: 0;
+            content: "";
+            position: absolute;
+            bottom: 0; left: 50%;
+            margin-left: -.5em;
+            border: .5em solid transparent;
+            border-bottom-color: $dark;
+        }
+    }
+
+    .menu-item-has-children:after {
+        content: " +";
+        position: relative;
+        @include rhythm(left, -3);
+    }
+
+    .menu-item--home {
+        @include fs(28px);
+        transform: none;
+        text-transform: uppercase;
+
+        > a {
+            padding: 0;
+            @include rhythm(padding-left, 2, 28px);
+            @include rhythm(padding-right, 2, 28px);
+
+            &:before {
+                display: none !important;
+            }
+        }
+    }
+
+    // hover-intent hack
+    &.hover-intent ul {
+        display: block;
+        opacity: 0;
+        transition: opacity .1s ease-in-out;
+        pointer-events: none;
+
+        .ie10 &, .ie9 & {
+            display: none;
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        @include query-below(1000px) {
+            pointer-events: auto;
+            opacity: 1;
+        }
+    }
+
+    &.hover-intent li.menu-item-has-children {
+
+        > a:after {
+            opacity: 0;
+            transition: opacity .1s ease-in-out;
+            pointer-events: none;
+
+            .ie10 &, .ie9 & {
+                opacity: 1;
+                display: none;
+                pointer-events: auto;
+            }
+        }
+
+        &.hover {
+
+            > a:after,
+            > ul {
+                opacity: 1;
+
+                .ie10 &, .ie9 & {
+                    display: block;
+                }
+            }
+
+            > ul {
+                pointer-events: auto;
+            }
+        }
+    }
+
+    // links
+    a {
+        display: block;
+        padding: 24px;
+        text-decoration: none;
+        color: $dark;
+        //	    white-space: nowrap;
+        max-width: 30em;
+        text-overflow: ellipsis;
+    }
+
+    // top-level menu-items
+    > li {
+
+        > a {
+            @include rhythm(padding-left, 3);
+            @include rhythm(padding-right, 3);
+            position: relative;
+
+            &:before {
+                content: "";
+                width: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 0;
+                background: $dark;
+                pointer-events: none;
+                transition: height .2s ease-in-out;
+
+                .ie10 &, .ie9 & {
+                    pointer-events: auto;
+                }
+            }
+        }
+
+        &:hover {
+
+            > a {
+                color: $dark;
+
+                &:before {
+                    height: 6px;
+                }
+            }
+        }
+
+        &.current-menu-item,
+        &.current-menu-parent,
+        &.current-menu-ancestor {
+            border-color: $dark;
+        }
+    }
+}
+
+@include query-below(1000px) {
+
+    .main-navigation {
+        text-align: left;
+        position: fixed;
+        top: 0 !important;
+        left: 0;
+        z-index: 110;
+
+        .admin-bar & {
+            top: 32px !important;
+        }
+
+        .is--ancient-android .nav--is-open & {
+            left: 70%;
+        }
+
+        &:before {
+            content: "";
+
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
+
+            display: block;
+            width: 70%;
+            height: 100%;
+
+            box-shadow: rgba(0,0,0,0.19) 0 0 2em, rgba(0,0,0,0.23) 0 0 0.6em;
+
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity .10s ease-in-out;
+        }
+
+        &.shadow:before {
+            opacity: 1;
+        }
+    }
+
+    .nav--main {
+        border-top: 0;
+        position: fixed;
+        // overwrite inline properties written by JS
+        top: 0 !important;
+        right: 100% !important;
+        left: auto !important;
+        width: 70% !important;
+        height: 100%;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+
+        .menu-item--home {
+            display: none !important;
+        }
+
+        .is--ancient-android .nav--is-open & {
+            left: 0 !important;
+            right: auto !important;
+        }
+
+        li, ul > li {
+            text-align: left;
+            display: block;
+            width: 100%;
+            overflow: hidden;
+
+            > a {
+                display: block;
+                padding: 1em 2em;
+            }
+
+            &, > a {
+                &:before, &:after {
+                    display: none;
+                }
+            }
+
+            ul {
+                background: white;
+                display: block;
+                padding-left: 2em;
+            }
+        }
+
+        ul ul ul {
+            padding-left: 0;
+        }
+    }
+}
+
+@media screen and (max-width: 782px) {
+    .admin-bar {
+        .main-navigation {
+            top: 46px !important;
+        }
+    }
+}

@@ -1,0 +1,399 @@
+# Translation of WordPress.com - Themes - Hive in Dutch
+# This file is distributed under the same license as the WordPress.com - Themes - Hive package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2017-03-23 04:22:42+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/2.4.0-alpha\n"
+"Language: nl\n"
+"Project-Id-Version: WordPress.com - Themes - Hive\n"
+
+#: inc/wpcom-colors.php:29
+msgid "Main Accent"
+msgstr "Hoofdaccent"
+
+#: inc/extras.php:500
+msgid "Two Columns"
+msgstr "Twee kolommen"
+
+#: inc/extras.php:499
+msgid "Highlight"
+msgstr "Markeren"
+
+#: inc/extras.php:498
+msgid "Dropcap"
+msgstr "Initiaal"
+
+#: inc/extras.php:497
+msgid "Intro Text"
+msgstr "Intro Tekst"
+
+#: inc/customizer.php:71
+msgid "Large"
+msgstr "Groot"
+
+#: inc/customizer.php:70
+msgid "Medium"
+msgstr "Gemiddeld"
+
+#: inc/customizer.php:69
+msgid "Small"
+msgstr "Klein"
+
+#: inc/customizer.php:66
+msgid "Site Title Size"
+msgstr "Formaat website titel"
+
+#. Description of the plugin/theme
+#: wp-content/themes/premium/hive/style.css
+msgid "An effortless tool for publishers of all kind, cherished for its clean masonry-style layout, modern typography and flexibility. Whether you’re looking to share your own thoughts, write about your latest findings or just have a scrapbook of photos, videos, quotes or other stuff, HIVE is designed to fulfill these and a lot more."
+msgstr "Een moeiteloos hulpmiddel voor allerlei soorten publicisten, geliefd vanwege de rustige metselwerk-stijl layout, moderne typografie en flexibiliteit. Of je nu je eigen gedachten wil delen,  over je nieuwste bevindingen wil schrijven of gewoon een plakboek van foto's, video's, citaten of andere dingen wil hebben, HIVE is ontworpen om deze en nog veel meer mogelijk te maken."
+
+#: templates/toolbar.php:38
+msgid "Begin typing your search above and press return to search. Press Esc to cancel."
+msgstr "Begin hierboven met het typen van uw zoekopdracht en druk op Enter om te zoeken. Druk op Esc om te annuleren."
+
+#: templates/toolbar.php:23
+msgid "Search"
+msgstr "Zoeken"
+
+#: templates/toolbar.php:9
+msgid "Secondary navigation"
+msgstr "Secundaire navigatie"
+
+#: templates/featured-hover.php:16
+msgid "Read More"
+msgstr "Lees meer"
+
+#: search.php:15
+msgid "Search Results for: %s"
+msgstr "Zoekresultaten voor: %s"
+
+#: inc/template-tags.php:86
+msgid "Post navigation"
+msgstr "Berichtnavigatie"
+
+#: inc/template-tags.php:53 inc/template-tags.php:59
+msgid "Next"
+msgstr "Volgende"
+
+#: inc/template-tags.php:42 inc/template-tags.php:52
+msgid "Previous"
+msgstr "Voorgaande"
+
+#: inc/template-tags.php:35
+msgid "Posts navigation"
+msgstr "Berichtennavigatie"
+
+#. Translators: If there are characters in your language that are not
+#. * supported by Playfair Display, translate this to 'off'. Do not translate
+#. * into your own language.
+#: inc/extras.php:419
+msgctxt "Playfair Display font: on or off"
+msgid "on"
+msgstr "aan"
+
+#: inc/extras.php:191
+msgid "Your comment is awaiting moderation."
+msgstr "Je reactie is in afwachting van moderatie."
+
+#: inc/extras.php:107
+msgid "Page %s"
+msgstr "Pagina %s"
+
+#: inc/customizer.php:52
+msgid "Hide search button in toolbar"
+msgstr "Verberg zoekknop in werkbalk"
+
+#: inc/customizer.php:41
+msgid "Disable auto-style post titles"
+msgstr "Deactiveer auto-stijl bericht titel"
+
+#: inc/customizer.php:31
+msgid "Hive Options"
+msgstr "Hive opties"
+
+#: inc/customizer.php:24
+msgid "Display Site Title &amp; Tagline"
+msgstr "Toon site titel &amp; tagline"
+
+#: header.php:65
+msgid "Menu"
+msgstr "Menu"
+
+#: header.php:52
+msgid "Main navigation"
+msgstr "Hoofdnavigatie"
+
+#: header.php:32
+msgid "Skip to content"
+msgstr "Spring naar inhoud"
+
+#: functions.php:108
+msgid "Sidebar"
+msgstr "Sidebar"
+
+#: functions.php:55
+msgid "Social Menu"
+msgstr "Social-menu"
+
+#: functions.php:54
+msgid "Footer Menu"
+msgstr "Voettekstmenu"
+
+#: functions.php:53
+msgid "Primary Menu"
+msgstr "Primair menu"
+
+#: footer.php:27
+msgid "Footer navigation"
+msgstr "Footer navigatie"
+
+#: footer.php:17
+msgid "Theme: %1$s by %2$s."
+msgstr "Thema: %1$s door %2$s."
+
+#: footer.php:15
+msgid "Proudly powered by %s"
+msgstr "Met trots ondersteund door %s"
+
+#: footer.php:15
+msgid "http://wordpress.org/"
+msgstr "http://nl.wordpress.org/"
+
+#: content-single-audio.php:71 content-single-chat.php:72
+#: content-single-gallery.php:75 content-single-image.php:75
+#: content-single-quote.php:85 content-single-status.php:61
+#: content-single-video.php:68 content-single.php:75
+msgid "Previous page"
+msgstr "Vorige pagina"
+
+#: content-single-audio.php:70 content-single-chat.php:71
+#: content-single-gallery.php:74 content-single-image.php:74
+#: content-single-quote.php:84 content-single-status.php:60
+#: content-single-video.php:67 content-single.php:74
+msgid "Next page"
+msgstr "Volgende pagina"
+
+#: content-single-audio.php:41 content-single-chat.php:39
+#: content-single-gallery.php:38 content-single-image.php:37
+#: content-single-link.php:37 content-single-quote.php:37
+#: content-single-status.php:36 content-single-video.php:39
+msgid "All %s posts"
+msgstr "Alle %s berichten"
+
+#: content-single-audio.php:32 content-single-chat.php:28
+#: content-single-gallery.php:29 content-single-image.php:29
+#: content-single-link.php:29 content-single-quote.php:29
+#: content-single-status.php:28 content-single-video.php:31
+#: content-single.php:28
+msgid "Posted in %1$s. Bookmark the <a href=\"%3$s\" rel=\"bookmark\">permalink</a>."
+msgstr "Geplaatst in %1$s. Maak een bladwijzer van de <a href=\"%3$s\" rel=\"bookmark\">permalink</a>."
+
+#: content-single-audio.php:30 content-single-chat.php:26
+#: content-single-gallery.php:27 content-single-image.php:27
+#: content-single-link.php:27 content-single-quote.php:27
+#: content-single-status.php:26 content-single-video.php:29
+#: content-single.php:26
+msgid "Posted in %1$s and tagged %2$s. Bookmark the <a href=\"%3$s\" rel=\"bookmark\">permalink</a>."
+msgstr "Geplaatst in %1$s en gekoppeld aan %2$s. Maak een bladwijzer van de <a href=\"%3$s\" rel=\"bookmark\">permalink</a>."
+
+#: content-single-audio.php:24 content-single-chat.php:20
+#: content-single-gallery.php:21 content-single-image.php:21
+#: content-single-link.php:21 content-single-quote.php:21
+#: content-single-status.php:20 content-single-video.php:23
+#: content-single.php:20
+msgid "Bookmark the <a href=\"%3$s\" rel=\"bookmark\">permalink</a>."
+msgstr "Bookmark de <a href=\"%3$s\" rel=\"bookmark\">permalink</a>."
+
+#: content-single-audio.php:22 content-single-chat.php:18
+#: content-single-gallery.php:19 content-single-image.php:19
+#: content-single-link.php:19 content-single-quote.php:19
+#: content-single-status.php:18 content-single-video.php:21
+#: content-single.php:18
+msgid "This entry was tagged %2$s. Bookmark the <a href=\"%3$s\" rel=\"bookmark\">permalink</a>."
+msgstr "Dit bericht is getagd met %2$s. Bookmark de <a href=\"%3$s\" rel=\"bookmark\">permalink</a>."
+
+#: content-search.php:43
+msgid "% Comments"
+msgstr "% reacties"
+
+#: content-search.php:43
+msgid "1 Comment"
+msgstr "1 reactie"
+
+#: content-search.php:43
+msgid "Leave a comment"
+msgstr "Een reactie plaatsen"
+
+#: content-search.php:37
+msgid "Tagged %1$s"
+msgstr "Getagd %1$s"
+
+#: content-search.php:29
+msgid "Posted in %1$s"
+msgstr "Geplaatst in %1$s"
+
+#: content-none.php:26
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr "Het lijkt erop dat we niet kunnen vinden wat je zoekt. Misschien kan zoeken helpen."
+
+#: content-none.php:21
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr "Sorry, maar niets kwam overeen met je zoektermen. Gelieve het opnieuw te proberen met een aantal andere trefwoorden."
+
+#: content-none.php:17
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr "Klaar om je eerste bericht te publiceren? <a href=\"%1$s\">Begin hier</a>."
+
+#: content-none.php:11
+msgid "Nothing Found"
+msgstr "Niets gevonden"
+
+#. translators: used between list items, there is a space after the comma
+#: content-aside.php:25 content-audio.php:39 content-gallery.php:40
+#: content-link.php:37 content-search.php:26 content-search.php:34
+#: content-single-audio.php:14 content-single-audio.php:17
+#: content-single-chat.php:10 content-single-chat.php:13
+#: content-single-gallery.php:11 content-single-gallery.php:14
+#: content-single-image.php:11 content-single-image.php:14
+#: content-single-link.php:11 content-single-link.php:14
+#: content-single-quote.php:11 content-single-quote.php:14
+#: content-single-status.php:10 content-single-status.php:13
+#: content-single-video.php:13 content-single-video.php:16
+#: content-single.php:10 content-single.php:13 content-status.php:49
+#: content-video.php:39 content.php:49
+msgid ", "
+msgstr ", "
+
+#: content-aside.php:18 content-audio.php:32 content-gallery.php:33
+#: content-image.php:27 content-link.php:30 content-page.php:27
+#: content-quote.php:43 content-search.php:47 content-single-audio.php:87
+#: content-single-chat.php:79 content-single-gallery.php:82
+#: content-single-image.php:85 content-single-link.php:70
+#: content-single-quote.php:94 content-single-status.php:77
+#: content-single-video.php:77 content-single.php:82 content-status.php:42
+#: content-video.php:32 content.php:40 inc/extras.php:179
+msgid "Edit"
+msgstr "Bewerken"
+
+#: content-aside.php:13 content-audio.php:27 content-gallery.php:28
+#: content-status.php:32 content-video.php:27 content.php:33
+msgid "Pages:"
+msgstr "Pagina&#39;s:"
+
+#: content-aside.php:11 content-quote.php:27 content-single-quote.php:64
+#: content-status.php:29 content.php:28
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Lees verder <span class=\"meta-nav\">&rarr;</span>"
+
+#: comments.php:75
+msgid "Comments are closed."
+msgstr "Reacties zijn gesloten."
+
+#: comments.php:43 comments.php:63
+msgid "Newer Comments"
+msgstr "Nieuwere reacties"
+
+#: comments.php:42 comments.php:62
+msgid "Older Comments"
+msgstr "Oudere reacties"
+
+#: comments.php:40 comments.php:60
+msgid "Comment navigation"
+msgstr "Reactienavigatie"
+
+#: comments.php:29
+msgid "Add yours"
+msgstr "Voeg uw reactie toe"
+
+#: comments.php:27
+msgid "There are no comments"
+msgstr "Er zijn geen reacties"
+
+#: comments.php:25
+msgid "Comment"
+msgid_plural "Comments"
+msgstr[0] "Reactie"
+msgstr[1] "Reacties"
+
+#: archive.php:64
+msgid "Archives"
+msgstr "Archieven"
+
+#: archive.php:61
+msgid "Chats"
+msgstr "Chats"
+
+#: archive.php:58
+msgid "Audios"
+msgstr "Audio"
+
+#: archive.php:55
+msgid "Statuses"
+msgstr "Statussen"
+
+#: archive.php:52 inc/wpcom-colors.php:19
+msgid "Links"
+msgstr "Links"
+
+#: archive.php:49
+msgid "Quotes"
+msgstr "Gezegden"
+
+#: archive.php:46
+msgid "Videos"
+msgstr "Video&#39;s"
+
+#: archive.php:43
+msgid "Images"
+msgstr "Afbeeldingen"
+
+#: archive.php:40
+msgid "Galleries"
+msgstr "Galerijen"
+
+#: archive.php:37
+msgid "Asides"
+msgstr "Opmerkingen"
+
+#: archive.php:34
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr "Y"
+
+#: archive.php:34
+msgid "Year: %s"
+msgstr "Jaar: %s"
+
+#: archive.php:31
+msgctxt "monthly archives date format"
+msgid "F Y"
+msgstr "F Y"
+
+#: archive.php:31
+msgid "Month: %s"
+msgstr "Maand: %s"
+
+#: archive.php:28
+msgid "Day: %s"
+msgstr "Dag: %s"
+
+#: archive.php:25
+msgid "Author: %s"
+msgstr "Auteur: %s"
+
+#: archive.php:19
+msgid "Category Archive:"
+msgstr "Categorie Archief:"
+
+#: 404.php:19
+msgid "It looks like nothing was found at this location. Try a search."
+msgstr "Het lijkt erop dat er niets is gevonden op deze locatie. Probeer het eens met een zoekopdracht."
+
+#: 404.php:14
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "Oeps! Die pagina kon niet worden gevonden."

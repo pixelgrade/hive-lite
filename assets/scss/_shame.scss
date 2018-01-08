@@ -1,0 +1,43 @@
+// @todo no more shame
+
+.screen-reader-text {
+    display: none;
+}
+
+
+// @todo temp
+// post nav will be moved
+// in the toolbar
+.toolbar .navigation.post-navigation {
+
+    .nav-links {
+
+        span {
+            display: block;
+            white-space: nowrap;
+            position: absolute;
+			left: 0;
+            @include rhythm(top, 14);
+            transform-origin: 1.875em 0 0;
+            transform: rotateZ(90deg) translateZ(0);
+            opacity: 0;
+            transition: opacity .2s ease-in-out;
+
+	        .ie10 &, .ie9 & {
+		        display: none;
+	        }
+        }
+
+        a:hover span {
+            opacity: 1;
+            transition: opacity .2s .2s ease-in-out;
+        }
+
+    }
+}
+
+#wpstats{
+    position: fixed;
+    left: -9999px;
+    bottom: 0;
+}

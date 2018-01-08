@@ -1,0 +1,234 @@
+// Settings     -- Default, settings and variables.
+// Tools        -- Functions and mixins.
+// Generic      -- Generic, high-level styling, like resets, etc.
+// Object       -- Objects and abstractions.
+// Components   -- Your designed UI elements.
+// Trumps       -- Overrides and helper classes.
+// Pages        -- Global styles for specific pages
+// Vendor
+// Shame        -- the place for prototyping, quick fixes and overrides
+
+
+/**
+ *
+ * Table of Contents
+ * --------------------------------------------------
+ *  1.0 - Normalize
+ *  2.0 - Reset
+ *  3.0 - Base Styles
+ *    3.1 - Typography
+ *    3.2 - Images
+ *    3.3 - Forms
+ *  4.0 - Helpers
+ *    4.1 - WordPress Core Elements
+ *  5.0 - Patterns
+ *  6.0 - Basic Structure
+ *    6.1 - Page
+ *  7.0 - Header
+ *  8.0 - Navigation
+ *  9.0 - Content
+ *    9.1 - Archives
+ *    9.2 - Pagination
+ *    9.3 - Singular
+ *    9.4 - Post Formats
+ *    9.5 - Comments
+ *    9.6 - Search Form
+ *  10.0 - Sidebar
+ *    10.1 - Widgets
+ *  11.0 - Footer
+ *  12.0 - Toolbar
+ *  13.0 - Jetpack's plugins styling
+ *  14.0 - Overwrites
+ *
+ */
+
+
+
+// #SETTINGS
+
+@import "settings";
+
+
+
+
+
+// #TOOLS
+
+@import "tools/functions";
+@import "tools/mixins";
+@import "tools/queries";
+@import "tools/baseline";
+@import "tools/aliases";
+
+
+
+
+// #GENERIC
+
+/**
+ * 1.0 - Normalize
+ */
+@import "generic/normalize";
+
+/**
+ * 2.0 - Reset
+ */
+@import "generic/reset";
+
+
+
+
+
+// #BASE
+
+/**
+ * 3.0 - Base Styles
+ *   3.1 - Typography
+ */
+@import "base/type";
+/**
+ *   3.2 - Images
+ */
+@import "base/images";
+/**
+ *   3.3 - Forms
+ */
+@import "base/forms";
+
+
+
+
+
+// #TRUMPS
+
+/**
+ * 4.0 - Helpers
+ */
+@import "trumps/clearfix";
+@import "trumps/misc";
+/**
+ *   4.1 - Theme specific classes
+*/
+@import "trumps/specific";
+/**
+ *   4.2 - Alignments
+*/
+@import "trumps/wp-align";
+
+
+
+
+
+// #OBJECTS
+
+/**
+ * 5.0 - Patterns
+ */
+@import "objects/grid";
+@import "objects/nav";
+@import "objects/tables";
+@import "objects/media";
+@import "objects/buttons";
+
+
+
+
+
+// #VENDOR
+// this is higher than normal because components/toolbar depends on it - desperately
+@import "vendor/font-awesome/variables";
+
+
+
+
+
+// #LAYOUT
+
+/**
+ * 6.0 - Basic Structure
+ *   6.1 - Page
+ */
+@import "layout/page";
+
+
+
+
+
+// #COMPONENTS
+
+/**
+ * 7.0 - Header
+ */
+@import "components/header";
+
+/**
+ * 8.0 - Navigation
+ */
+@import "components/navigation";
+
+/**
+ * 9.0 - Content
+ */
+@import "components/article";
+
+/**
+ *   9.1 - Archive
+ */
+@import "pages/archive";
+
+/**
+ *   9.2 - Pagination
+ */
+@import "components/pagination";
+
+/**
+ *   9.3 - Singular
+ */
+@import "pages/single";
+
+/**
+ *   9.4 - Comments
+ */
+@import "components/comments";
+
+/**
+ *   9.5 - Search Form
+ */
+@import "objects/search-form";
+
+/**
+ * 10.0 - Sidebar
+ */
+@import "layout/sidebar";
+
+/**
+ *   10.1 - Widgets
+ */
+@import "components/widgets";
+
+/**
+ * 11.0 - Footer
+ */
+@import "components/footer";
+// @import "components/card";
+
+/**
+ * 12.0 - Toolbar
+ */
+@import "components/toolbar";
+
+/**
+ * 13.0 - Jetpack's plugins styling
+ */
+@import "components/jetpack";
+
+
+
+
+
+// #SHAME
+
+/**
+ * 14.0 - Overwrites
+ */
+@import "shame";

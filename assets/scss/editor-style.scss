@@ -1,0 +1,141 @@
+// Settings     -- Default, settings and variables.
+// Tools        -- Functions and mixins.
+// Generic      -- Generic, high-level styling, like resets, etc.
+// Object       -- Objects and abstractions.
+// Components   -- Your designed UI elements.
+// Trumps       -- Overrides and helper classes.
+// Pages        -- Global styles for specific pages
+// Vendor
+// Shame        -- the place for prototyping, quick fixes and overrides
+
+
+
+/*
+Theme Name: Hive
+Description: Used to style the TinyMCE editor.
+*/
+
+
+/**
+ *
+ * Table of Contents
+ * --------------------------------------------------
+ *  1.0 - Body
+ *  2.0 - Base Styles
+ *    2.1 - Typography
+ *    2.2 - Images
+ *  3.0 - Helpers
+ *    3.1 - Theme specific classes
+ *    3.2 - Alignments
+ *  4.0 - Media queries
+ */
+
+
+
+
+
+// #SETTINGS
+
+@import "settings";
+
+//Used for Editor Style mode
+$editor-style: true;
+
+
+
+
+// #TOOLS
+
+@import "tools/functions";
+@import "tools/mixins";
+@import "tools/queries";
+@import "tools/baseline";
+@import "tools/aliases";
+
+
+
+// #BODY
+
+/**
+ * 1.0 - Body
+ * --------------------------------------------------
+ */
+
+html {
+	padding: 24px 36px;
+}
+
+body.wp-editor {
+	max-width: 680px;
+	margin-left: auto;
+	margin-right: auto;
+
+	font-size: 18px;
+}
+
+
+
+
+
+/**
+ * 2.0 - Base Styles
+ *   2.1 - Typography
+ *   -------------------------------------------------
+ */
+@import "base/type";
+
+
+
+
+/**
+ *   2.2 - Images
+ *   -------------------------------------------------
+ */
+@import "base/images";
+
+
+
+
+
+// #TRUMPS
+
+/**
+ * 3.0 - Helpers
+ *   3.1 - Theme specific classes
+ *   -------------------------------------------------
+*/
+@import "trumps/specific";
+/**
+ *   3.2 - Alignments
+ *   -------------------------------------------------
+*/
+@import "trumps/wp-align";
+
+.wp-caption {
+	text-align: left;
+
+	&.alignleft		{ @extend .alignleft; }
+	&.alignright     { @extend .alignright; }
+	&.aligncenter    { @extend .aligncenter; }
+	&.alignnone      { @extend .alignnone; }
+}
+
+#wp-image-toolbar {
+	z-index: 2;
+}
+
+.wp-caption-dd {
+	@extend .wp-caption-text;
+}
+
+.wpview iframe {
+	max-width: 100%;
+}
+
+
+
+
+/**
+ * 4.0 - Media queries
+ * --------------------------------------------------
+ */

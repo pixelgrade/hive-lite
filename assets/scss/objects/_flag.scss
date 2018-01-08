@@ -1,0 +1,271 @@
+/*------------------------------------*\
+    $FLAG
+\*------------------------------------*/
+
+ //
+ // The flag object is a design pattern similar to the media object, however it
+ // utilises `display: table[-cell];` to give us control over the vertical
+ // alignments of the text and image. csswizardry.com/2013/05/the-flag-object
+ //
+
+// Predefine the variables below in order to alter and enable specific features.
+$flag-gutter:             $base-spacing-unit !default;
+$flag-gutter--small:      halve($flag-gutter) !default;
+$flag-gutter--large:      double($flag-gutter) !default;
+
+$enable-flag--small:      false !default;
+$enable-flag--large:      false !default;
+$enable-flag--rev:        false !default;
+$enable-flag--flush:      false !default;
+$enable-flag--top:        false !default;
+$enable-flag--bottom:     false !default;
+$enable-flag--responsive: false !default;
+$flag-collapse-at:        720px !default;
+
+
+
+
+
+ // 1. Allows us to control vertical alignments
+ // 2. Force the object to be the full width of its parent. Combined with [1],
+ //    this makes the object behave in a quasi-`display: block;` manner.
+     
+.#{$namespace}flag,
+%#{$namespace}flag {
+    display: table; // [1]
+    width: 100%; // [2]
+}
+
+    .#{$namespace}flag__img,
+    %#{$namespace}flag__img,
+    .#{$namespace}flag__body,
+    %#{$namespace}flag__body {
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+    .#{$namespace}flag__img,
+    %#{$namespace}flag__img {
+        padding-right: $flag-gutter;
+
+        > img {
+            display: block;
+            max-width: none;
+        }
+
+    }
+
+    .#{$namespace}flag__body,
+    %#{$namespace}flag__body {
+        width: 100%; // [1]
+    }
+
+
+
+
+
+@if ($enable-flag--small == true) {
+
+    .#{$namespace}flag--small,
+    %#{$namespace}flag--small {
+
+        > .#{$namespace}flag__img,
+        > %#{$namespace}flag__img {
+            padding-right: $flag-gutter--small;
+        }
+
+        @if ($enable-flag--rev == true) {
+
+            &.#{$namespace}flag--rev,
+            &%#{$namespace}flag--rev {
+
+                > .#{$namespace}flag__img,
+                > %#{$namespace}flag__img {
+                    padding-right: 0;
+                    padding-left:  $flag-gutter--small;
+                }
+
+            }
+
+        }
+
+    }
+
+}
+
+@if ($enable-flag--large == true) {
+
+    .#{$namespace}flag--large,
+    %#{$namespace}flag--large {
+
+        > .#{$namespace}flag__img,
+        > %#{$namespace}flag__img {
+            padding-right: $flag-gutter--large;
+        }
+
+        @if ($enable-flag--rev == true) {
+
+            &.#{$namespace}flag--rev,
+            &%#{$namespace}flag--rev {
+
+                > .#{$namespace}flag__img,
+                > %#{$namespace}flag__img {
+                    padding-right: 0;
+                    padding-left:  $flag-gutter--large;
+                }
+
+            }
+
+        }
+
+    }
+
+}
+
+
+
+
+
+@if ($enable-flag--rev == true) {
+
+    .#{$namespace}flag--rev,
+    %#{$namespace}flag--rev {
+        direction: rtl;
+
+        > .#{$namespace}flag__img,
+        > %#{$namespace}flag__img,
+        > .#{$namespace}flag__body,
+        > %#{$namespace}flag__body {
+            direction: ltr;
+        }
+
+        > .#{$namespace}flag__img,
+        > %#{$namespace}flag__img {
+            padding-right: 0;
+            padding-left: $flag-gutter;
+        }
+
+    }
+
+}
+
+
+
+
+
+@if ($enable-flag--flush == true) {
+
+    .#{$namespace}flag--flush,
+    %#{$namespace}flag--flush {
+
+        > .#{$namespace}flag__img,
+        > %#{$namespace}flag__img {
+            padding-right: 0;
+            padding-left:  0;
+        }
+
+    }
+
+}
+
+
+
+
+
+@if ($enable-flag--top == true) {
+
+    .#{$namespace}flag--top,
+    %#{$namespace}flag--top {
+
+        > .#{$namespace}flag__img,
+        > %#{$namespace}flag__img,
+        > .#{$namespace}flag__body,
+        > %#{$namespace}flag__body {
+            vertical-align: top;
+        }
+
+    }
+
+}
+
+@if ($enable-flag--bottom == true) {
+
+    .#{$namespace}flag--bottom,
+    %#{$namespace}flag--bottom {
+
+        > .#{$namespace}flag__img,
+        > %#{$namespace}flag__img,
+        > .#{$namespace}flag__body,
+        > %#{$namespace}flag__body {
+            vertical-align: bottom;
+        }
+
+    }
+
+}
+
+
+
+
+@if ($enable-flag--responsive == true) {
+
+    @media screen and (max-width: $flag-collapse-at) {
+
+        .#{$namespace}flag--responsive,
+        %#{$namespace}flag--responsive {
+
+            @if ($enable-flag--rev == true) {
+                direction: ltr;
+            }
+
+            &,
+            > .#{$namespace}flag__img,
+            > %#{$namespace}flag__img,
+            > .#{$namespace}flag__body,
+            > %#{$namespace}flag__body {
+                display: block;
+            }
+
+
+            > .#{$namespace}flag__img,
+            > %#{$namespace}flag__img {
+                padding-right: 0;
+                padding-left:  0;
+                margin-bottom: $flag-gutter;
+            }
+
+            @if ($enable-flag--small == true) {
+
+                &.#{$namespace}flag--small,
+                &%#{$namespace}flag--small {
+
+                    > .#{$namespace}flag__img,
+                    > %#{$namespace}flag__img {
+                        padding-right: 0;
+                        padding-left:  0;
+                    }
+
+                }
+
+            }
+
+            @if ($enable-flag--large == true) {
+
+                &.#{$namespace}flag--large,
+                &%#{$namespace}flag--large {
+
+                    > .#{$namespace}flag__img,
+                    > %#{$namespace}flag__img {
+                        padding-right: 0;
+                        padding-left:  0;
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+}

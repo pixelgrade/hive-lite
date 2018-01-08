@@ -1,0 +1,12 @@
+$enable-menu: false !default;
+
+@if $enable-menu {
+
+    .menu {
+        @extend .list--unstyled;
+
+        > li {
+            display: inline-block;
+        }
+    }
+}

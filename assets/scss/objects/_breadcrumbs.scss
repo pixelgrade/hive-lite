@@ -1,0 +1,22 @@
+$enable-breadcrumbs: false !default;
+
+@if $enable-breadcrumbs == true{
+
+    /* Breadcrumbs */
+    .breadcrumb > li + li:before{
+        content:"\00BB" "\00A0";
+    }
+
+    .breadcrumb--path > li + li:before{
+        content:"\002F" "\00A0";
+    }
+
+    .breadcrumb > li + li[data-breadcrumb]:before{
+        content:attr(data-breadcrumb) "\00A0";
+    }
+
+    .breadcrumb__root{
+        font-weight:bold;
+    }
+
+}//endif

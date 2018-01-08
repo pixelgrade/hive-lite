@@ -1,0 +1,359 @@
+//
+//@include query-above(1000px) {
+//
+//	.site-header,
+//	.site-content {
+//		@include rhythm(margin-right, 5);
+//		border-right: 1px solid $borders;
+//	}
+//}
+//
+
+.toolbar {
+	@include rhythm(padding-left, 1);
+	@include rhythm(padding-right, 1);
+	@include rhythm(width, 5);
+	position: fixed;
+	@include rhythm(top, 1);
+	right: 0;
+	bottom: 0;
+	display: block;
+
+	.admin-bar & {
+		margin-top: 32px;
+
+		@media screen and (max-width: 782px) {
+			margin-top: 46px;
+		}
+	}
+
+	.is--ancient-android .nav--is-open &{
+		right: -100%;
+	}
+
+	i[class] {
+		display: table;
+		@include rhythm(width, 3);
+		@include rhythm(height, 3);
+		text-align: center;
+
+		&:before {
+			display: table-cell;
+			vertical-align: middle;
+		}
+	}
+
+	@include query-below(1000px) {
+
+		position: absolute;
+		top: 0; left: 0; right: 0;
+		width: auto;
+		height: auto;
+		bottom: auto;
+		padding-top: 0;
+		z-index: 20;
+		border-bottom: 1px solid $borders;
+	}
+
+	@include query-above(1000px) {
+		border-left: 1px solid $borders;
+	}
+
+}
+
+.toolbar__head {
+	@include rhythm(padding-top, 2);
+	@include rhythm(padding-bottom, 2);
+	@include rhythm(min-height, 28);
+
+	@include query-below($desk) {
+		@include query-above(1000px) {
+			@include rhythm(height, 25);
+		}
+	}
+
+	@include query-below(1000px) {
+		min-height: 0;
+		background: none;
+		border: 0;
+		padding-top: 6px;
+		padding-bottom: 0;
+		@include rhythm(padding-left, 4);
+		text-align: right;
+	}
+}
+
+.toolbar__body {
+	position: relative;
+	border-top: 1px solid $borders;
+	margin-top: -1px;
+	@include rhythm(padding-top, 2);
+
+	a {
+		color: $black;
+	}
+
+	@include query-below(1000px) {
+		display: none;
+	}
+}
+
+.nav--toolbar {
+	word-wrap: normal;
+
+	a {
+		display: block;
+		font-size: 0.8125em; // 13px
+
+		// set height and center label
+		@include rhythm(line-height, 3, 14px);
+
+		// overlap borders
+		margin-top: -1px;
+		@include rhythm(margin-right, 1, 14px);
+		@include rhythm(padding-left, 2, 14px);
+
+		// offset label to the right
+		position: relative;
+		right: 100%;
+		white-space: nowrap;
+
+		// prepare hover state
+		border: 1px solid transparent;
+		border-right-width: 0;
+
+		// hide label
+		color: transparent;
+//		visibility: hidden;
+		pointer-events: none;
+
+		&:before {
+			content: "";
+			font-size: (19/14) + em;
+			display: inline-block;
+			@include rhythm(width, 4, 19px);
+			@include rhythm(height, 3, 19px);
+			@include rhythm(line-height, 3, 19px);
+
+			position: absolute;
+			@include rhythm(right, -4, 19px);
+
+			@include query-above($lap){
+				// because of position absolute, the gap between text and icon
+				// isn't clickable although it should
+				// so we fill it with padding :D
+				@include rhythm(padding-left, 1, 19px);
+			}
+
+			font-family: FontAwesome;
+			-webkit-font-smoothing: antialiased;
+			text-align: center;
+
+			// overwrite styles from parent element to make icon visible
+//			visibility: visible;
+			pointer-events: auto;
+			color: $black;
+		}
+
+		@include query-above(1000px) {
+
+			&:hover {
+				// show background and borders
+				background: white;
+				border-color: $gray;
+
+				// overwrite set to hide labels
+				color: $gray;
+				visibility: visible;
+				pointer-events: auto;
+			}
+		}
+
+		// default share icon used as a fallback
+		&:before                        {content: $fa-var-share-alt;}
+		// now for the social services that are in FA
+		// we will match the href to them - left them looser so we don't have complaints
+		&[href*="mailto:"]:before,
+		&[href*="mail"]:before          {content: $fa-var-envelope;}
+		&[href*="feed"]:before,
+		&[href*="rss"]:before  			{content: $fa-var-rss;}
+		&[href*="behance"]:before       {content: $fa-var-behance;}
+		&[href*="delicious"]:before     {content: $fa-var-delicious;}
+		&[href*="deviantart"]:before    {content: $fa-var-deviantart;}
+		&[href*="digg"]:before          {content: $fa-var-digg;}
+		&[href*="dribbble"]:before      {content: $fa-var-dribbble;}
+		&[href*="facebook"]:before      {content: $fa-var-facebook;}
+		&[href*="flickr"]:before        {content: $fa-var-flickr;}
+		&[href*="foursquare"]:before    {content: $fa-var-foursquare;}
+		&[href*="github"]:before        {content: $fa-var-github;}
+		&[href*="plus.google"]:before   {content: $fa-var-google-plus;}
+		&[href*="instagram"]:before     {content: $fa-var-instagram;}
+		&[href*="linkedin"]:before      {content: $fa-var-linkedin;}
+		&[href*="pinterest"]:before     {content: $fa-var-pinterest;}
+		&[href*="reddit"]:before        {content: $fa-var-reddit;}
+		&[href*="skype"]:before         {content: $fa-var-skype;}
+		&[href*="soundcloud"]:before    {content: $fa-var-soundcloud;}
+		&[href*="spotify"]:before       {content: $fa-var-spotify;}
+		&[href*="stumbleupon"]:before   {content: $fa-var-stumbleupon;}
+		&[href*="tumblr"]:before        {content: $fa-var-tumblr;}
+		&[href*="twitter"]:before       {content: $fa-var-twitter;}
+		&[href*="vimeo"]:before         {content: $fa-var-vimeo-square;}
+		&[href*="vine"]:before          {content: $fa-var-vine;}
+		&[href*="vk.com"]:before        {content: $fa-var-vk;}
+		&[href*="weibo"]:before         {content: $fa-var-weibo;}
+		&[href*="xing"]:before          {content: $fa-var-xing;}
+		&[href*="yahoo"]:before         {content: $fa-var-yahoo;}
+		&[href*="youtube"]:before       {content: $fa-var-youtube;}
+		&[href*="angel.co"]:before       {content: $fa-var-angellist;}
+		&[href*="yelp"]:before       {content: $fa-var-yelp;}
+		&[href*="last.fm"]:before       {content: $fa-var-lastfm;}
+		&[href*="slideshare"]:before       {content: $fa-var-slideshare;}
+		&[href*="twitch.tv"]:before       {content: $fa-var-twitch;}
+	}
+
+	.nav__item--search a:before {
+		content: $fa-var-search;
+	}
+
+	@include query-below(1000px) {
+
+		display: inline-block;
+
+		a {
+			right: 0;
+			margin: 0;
+			width: 3em;
+			padding-left: 3em;
+//			visibility: hidden;
+			overflow: hidden;
+			pointer-events: auto;
+
+			&:before {
+				visibility: visible;
+				position: absolute;
+				top: 0; left: 0;
+				width: 3em;
+			}
+		}
+	}
+}
+
+.overlay--search {
+	position: fixed;
+	top: 0;
+	left: 100%;
+	z-index: 111;
+
+	display: table;
+	@include rhythm(padding-right, 20);
+	@include rhythm(padding-left, 20);
+	width: 100%;
+	height: 100%;
+
+	border-left: 1px solid $borders;
+
+	background: white;
+
+	@include query-below($desk) {
+		@include rhythm(padding-right, 8);
+		@include rhythm(padding-left, 8);
+	}
+
+	@include query-below($lap) {
+		&.overlay--search{
+			@include rhythm(padding-right, 4);
+			@include rhythm(padding-left, 4);
+		}
+	}
+
+	.search-form > label {
+		position: static;
+		height: auto;
+	}
+
+	.search-form, .search-field {
+		display: block;
+		height: auto;
+	}
+
+	.search-field, .search-submit {
+		position: static;
+	}
+
+	.search-submit {
+		display: none;
+	}
+
+	.search-field {
+		border: 0;
+		padding: 0;
+		@include fs(100px);
+		color: $black;
+		outline: 0;
+		height: auto;
+		-webkit-appearance: none;
+
+		@include placeholder {
+			color: $black;
+		}
+
+		@at-root {
+			@include new-fs-class(60px, 'below', $desk, true);
+			@include new-fs-class(24px, 'below', $lap, true);
+		}
+
+		@include fs-below($desk, 60px);
+
+		@include query-below($lap) {
+			@include fs(32px);
+		}
+
+		@include query-below($lap) {
+			@include rhythm(margin-bottom, 1);
+		}
+	}
+}
+
+.overlay__wrapper {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.overlay__close {
+	@include rhythm(width, 5);
+	@include rhythm(height, 5);
+	position: absolute;
+	@include rhythm(top, 8);
+	@include rhythm(right, 5);
+	cursor: pointer;
+
+	&:before, &:after {
+		content: "";
+		display: block;
+		position: absolute;
+		background: $gray;
+		transform: rotate(45deg);
+		pointer-events: none;
+	}
+
+	&:before {
+		top: 50%;
+		width: 100%;
+		height: .16em;
+		margin-top: -.08em;
+	}
+
+	&:after {
+		left: 50%;
+		height: 100%;
+		width: .16em;
+		margin-left: -.08em;
+	}
+
+	@include query-below($desk) {
+		@include rhythm(width, 3);
+		@include rhythm(height, 3);
+		@include rhythm(top, 4);
+		@include rhythm(right, 3);
+	}
+}

@@ -1,0 +1,70 @@
+/*------------------------------------*\
+    $BLOCK-LIST
+\*------------------------------------*/
+
+// The block list object creates blocky list items out of a `ul` or `ol`.
+
+// Predefine the variables below in order to alter and enable specific features.
+$block-list-padding:          $base-spacing-unit !default;
+$block-list-padding--small:   halve($block-list-padding) !default;
+$block-list-padding--large:   double($block-list-padding) !default;
+
+$enable-block-list--small:    false !default;
+$enable-block-list--large:    false !default;
+
+.#{$namespace}block-list,
+%#{$namespace}block-list {
+    margin:  0;
+    padding: 0;
+    list-style: none;
+
+    > li {
+        @extend %#{$namespace}block-list__item;
+    }
+
+}
+
+    .#{$namespace}block-list__item,
+    %#{$namespace}block-list__item {
+        padding: $block-list-padding;
+    }
+
+
+
+
+
+@if ($enable-block-list--small == true) {
+
+    // Small block-lists.
+
+    .#{$namespace}block-list--small,
+    %#{$namespace}block-list--small {
+
+        > .#{$namespace}block-list__item,
+        > %#{$namespace}block-list__item {
+            padding: $block-list-padding--small;
+        }
+
+    }
+
+}
+
+
+
+
+
+@if ($enable-block-list--large == true) {
+
+    // Large block-lists.
+
+    .#{$namespace}block-list--large,
+    %#{$namespace}block-list--large {
+
+        > .#{$namespace}block-list__item,
+        > %#{$namespace}block-list__item {
+            padding: $block-list-padding--large;
+        }
+
+    }
+
+}

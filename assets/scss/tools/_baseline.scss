@@ -1,0 +1,109 @@
+$base-font-size:        16px;
+$base-line-height: 	    24px;
+
+$baseline-scale:            2 !default;
+$baseline-use-ems:          false !default;
+
+// this value may vary for each font
+// unitless value relative to 1em
+$cap-height: 		0.671;
+
+
+@mixin font-size($font-size, $base-font-size: $base-font-size, $base-line-height: $base-line-height) {
+
+    @if (unit($base-line-height) == px) {
+        $base-line-height: $base-line-height / $base-font-size;
+    }
+
+    $baseline-rhythm: $base-font-size * $base-line-height / $baseline-scale;
+
+    // number of rhythm units that can fit the font-size
+    $lines: ceil(($font-size + 0.001px) / $baseline-rhythm);
+
+    // calculate the new line-height
+    $line-height: $baseline-rhythm * $lines / $font-size;
+
+    // use the results
+    font-size: $font-size * 1em / $base-font-size;
+    line-height: $line-height;
+}
+
+@mixin baseline($font-size, $base-font-size: $base-font-size, $base-line-height: $base-line-height) {
+
+    @if (unit($base-line-height) == px) {
+        $base-line-height: $base-line-height / $base-font-size;
+    }
+
+    $baseline-rhythm: $base-font-size * $base-line-height / $baseline-scale;
+
+    // number of rhythm units that can fit the font-size
+    $lines: ceil(($font-size + 0.001px) / $baseline-rhythm);
+
+    // calculate the new line-height
+    $line-height: $baseline-rhythm * $lines / $font-size;
+
+    $baseline-distance: ($line-height - $cap-height) / 2;
+    $offset-top: $baseline-distance * $font-size % $baseline-rhythm;
+
+    // METHOD 1
+    /////////////////
+
+    // this method can relatively move down elements you may not want to
+    // position: $offset-top;
+    // top: $baseline-distance + em;
+
+
+
+    // METHOD 2
+    /////////////////
+
+    // if you use this mixin only on elements that have one direction margins
+    // http://csswizardry.com/2012/06/single-direction-margin-declarations/
+    // you can use this method with no worries.
+    // this method assumes the direction is down and the margin is $base-line-height
+    // padding-top: $offset-top / $font-size + em;
+    // padding-bottom: ($baseline-rhythm - $offset-top) / $font-size + em;
+
+    // METHOD 3
+    /////////////////
+    transform: translateY($offset-top / $font-size + em);
+}
+
+@mixin rhythm($property, $units, $convert-to-ems: $base-font-size, $base-line-height: $base-line-height) {
+
+    $baseline-rhythm:   $base-line-height / $baseline-scale;
+
+    // if use-ems is
+    @if ($convert-to-ems == false) {
+        #{$property}: $units * $baseline-rhythm;
+    } @else {
+        #{$property}: $units * $baseline-rhythm / $convert-to-ems + em;
+    }
+
+}
+
+@mixin baseline-leader($units, $convert-to-ems: $base-font-size, $base-line-height: $base-line-height) {
+
+    $baseline-rhythm:   $base-line-height / $baseline-scale;
+
+    // if use-ems is
+    @if ($convert-to-ems == false) {
+        margin-top: $units * $baseline-rhythm;
+    } @else {
+        margin-top: $units * $baseline-rhythm / $convert-to-ems + em;
+    }
+
+}
+
+@mixin baseline-trailer($units, $convert-to-ems: 16px, $base-line-height: $base-line-height) {
+
+    $baseline-rhythm:   $base-line-height / $baseline-scale;
+
+    // if use-ems is
+    @if ($convert-to-ems == false) {
+        margin-bottom: $units * $baseline-rhythm;
+    } @else {
+        margin-bottom: $units * $baseline-rhythm / $convert-to-ems + em;
+    }
+
+}

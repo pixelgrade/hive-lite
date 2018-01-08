@@ -1,0 +1,134 @@
+.site-header {
+    text-align: center;
+}
+
+.site-logo-link {
+	display: block;
+}
+
+.site-branding {
+    @extend .pr;
+	max-width: 100%;
+	// because elements inside have display: inline-block
+    // there will be space added because of the line-height so we'll remove it for the wrapper
+    // and set it for the children elements with the fs mixin
+    line-height: 1;
+    display: inline-block;
+    @include rhythm(margin-top, 5);
+    @include rhythm(margin-bottom, 7);
+
+    &.logo-image-only:after {
+        display: none;
+    }
+
+	@include query-below($lap) {
+		@include rhythm(margin-top, 7);
+		margin-bottom: 0;
+	}
+}
+
+.site-title {
+    margin: 0;
+    @include font-size(40px);
+	@include baseline(40px);
+	font-weight: 900;
+    text-transform: uppercase;
+
+	max-width: 100%;
+
+	@include query-above($lap) {
+		letter-spacing: -.055em;
+		padding-right: .025em;
+		@include font-size(80px);
+		@include baseline(80px);
+	}
+
+	@include query-above($desk) {
+		@include font-size(123px);
+		@include baseline(123px);
+	}
+
+    a {
+        text-decoration: none;
+        color: $dark;
+    }
+}
+
+.site-title--small {
+
+	@include query-above($lap) {
+		@include font-size(54px);
+		@include baseline(54px);
+	}
+
+	@include query-above($desk) {
+		@include font-size(80px);
+		@include baseline(80px);
+	}
+}
+
+.site-title--large {
+	@include font-size(54px);
+	transform: none;
+
+	@include query-above($lap) {
+		@include font-size(123px);
+		@include baseline(123px);
+	}
+
+	@include query-above($desk) {
+		@include font-size(166px);
+		@include baseline(166px);
+	}
+}
+
+.site-description {
+	@extend .pr;
+	display: block;
+	font-family: sans-serif;
+	font-weight: 300;
+	text-transform: uppercase;
+	word-wrap: break-word;
+	transform: translateY(.7em);
+	@include font-size(19px);
+	letter-spacing: .5em;
+	overflow: hidden;
+
+	@include query-below($lap) {
+		font-size: 1em;
+		letter-spacing: .25em;
+	}
+
+	&:after {
+		@extend .pa;
+		content: "";
+		width: 100%;
+		height: 1px;
+		background: $gray;
+		bottom: 50%;
+		left: 0;
+		z-index: -1;
+	}
+
+}
+
+.site-description-text {
+    @extend .pr;
+    z-index: 10;
+	max-width: 100%;
+    display: inline-block;
+    margin: 0;
+    padding-left: 1.25em;
+    padding-right: .75em;
+    background: white;
+
+	@include query-below($lap) {
+		font-size: 1em;
+		letter-spacing: .25em;
+		padding-right: 1em;
+	}
+
+	&:empty{
+		display: none;
+	}
+}

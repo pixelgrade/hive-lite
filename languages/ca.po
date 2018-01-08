@@ -1,0 +1,284 @@
+# Translation of WordPress.com - Themes - Hive in Catalan
+# This file is distributed under the same license as the WordPress.com - Themes - Hive package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2017-01-15 18:26:03+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/2.3.0-alpha\n"
+"Language: ca\n"
+"Project-Id-Version: WordPress.com - Themes - Hive\n"
+
+#: inc/extras.php:489
+msgid "Two Columns"
+msgstr "Dues columnes"
+
+#: inc/customizer.php:71
+msgid "Large"
+msgstr "Gran"
+
+#: inc/customizer.php:70
+msgid "Medium"
+msgstr "Mitjana"
+
+#: inc/customizer.php:69
+msgid "Small"
+msgstr "Petit"
+
+#: templates/toolbar.php:23
+msgid "Search"
+msgstr "Cerca"
+
+#: templates/featured-hover.php:16
+msgid "Read More"
+msgstr "Llegir més"
+
+#: search.php:15
+msgid "Search Results for: %s"
+msgstr "Resultats de la cerca per a: %s"
+
+#: inc/template-tags.php:86
+msgid "Post navigation"
+msgstr "Navegació d'entrades"
+
+#: inc/template-tags.php:53 inc/template-tags.php:59
+msgid "Next"
+msgstr "Següent"
+
+#: inc/template-tags.php:42 inc/template-tags.php:52
+msgid "Previous"
+msgstr "Anterior"
+
+#: inc/template-tags.php:35
+msgid "Posts navigation"
+msgstr "Navegació d'entrades"
+
+#: inc/extras.php:180
+msgid "Your comment is awaiting moderation."
+msgstr "El comentari està esperant moderació."
+
+#: inc/extras.php:96
+msgid "Page %s"
+msgstr "Pàgina %s"
+
+#: inc/customizer.php:24
+msgid "Display Site Title &amp; Tagline"
+msgstr "Mostra el títol del lloc web &amp; Eslògan"
+
+#: header.php:65
+msgid "Menu"
+msgstr "Menú"
+
+#: header.php:32
+msgid "Skip to content"
+msgstr "Vés al contingut"
+
+#: functions.php:108
+msgid "Sidebar"
+msgstr "Barra lateral"
+
+#: functions.php:55
+msgid "Social Menu"
+msgstr "Menú de xarxes socials"
+
+#: functions.php:54
+msgid "Footer Menu"
+msgstr "Menú del peu de pàgina"
+
+#: functions.php:53
+msgid "Primary Menu"
+msgstr "Menú principal"
+
+#: footer.php:17
+msgid "Theme: %1$s by %2$s."
+msgstr "Tema: %1$s de %2$s."
+
+#: footer.php:15
+msgid "Proudly powered by %s"
+msgstr "Gràcies al %s"
+
+#: footer.php:15
+msgid "http://wordpress.org/"
+msgstr "http://wordpress.org/"
+
+#: content-single-audio.php:71 content-single-chat.php:72
+#: content-single-gallery.php:75 content-single-image.php:75
+#: content-single-quote.php:85 content-single-status.php:61
+#: content-single-video.php:68 content-single.php:75
+msgid "Previous page"
+msgstr "Pàgina prèvia"
+
+#: content-single-audio.php:70 content-single-chat.php:71
+#: content-single-gallery.php:74 content-single-image.php:74
+#: content-single-quote.php:84 content-single-status.php:60
+#: content-single-video.php:67 content-single.php:74
+msgid "Next page"
+msgstr "Pàgina següent"
+
+#: content-single-audio.php:41 content-single-chat.php:39
+#: content-single-gallery.php:38 content-single-image.php:37
+#: content-single-link.php:37 content-single-quote.php:37
+#: content-single-status.php:36 content-single-video.php:39
+msgid "All %s posts"
+msgstr "Totes %s les entrades"
+
+#: content-search.php:43
+msgid "% Comments"
+msgstr "% comentaris"
+
+#: content-search.php:43
+msgid "1 Comment"
+msgstr "1 comentari"
+
+#: content-search.php:43
+msgid "Leave a comment"
+msgstr "Deixa un comentari"
+
+#: content-search.php:37
+msgid "Tagged %1$s"
+msgstr "Etiquetat %1$s"
+
+#: content-search.php:29
+msgid "Posted in %1$s"
+msgstr "Publicat a %1$s"
+
+#: content-none.php:26
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr "Sembla que no podem trobar el que busqueu. Potser el cercador us pot ajudar."
+
+#: content-none.php:21
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr "Res no coincideix amb els termes de cerca. Torneu-ho a provar amb algunes paraules claus diferents."
+
+#: content-none.php:17
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr "Preparats per publicar la primera entrada? <a href=\"%1$s\">Comenceu aquí</a>."
+
+#: content-none.php:11
+msgid "Nothing Found"
+msgstr "No s'ha trobat res"
+
+#. translators: used between list items, there is a space after the comma
+#: content-aside.php:25 content-audio.php:39 content-gallery.php:40
+#: content-link.php:37 content-search.php:26 content-search.php:34
+#: content-single-audio.php:14 content-single-audio.php:17
+#: content-single-chat.php:10 content-single-chat.php:13
+#: content-single-gallery.php:11 content-single-gallery.php:14
+#: content-single-image.php:11 content-single-image.php:14
+#: content-single-link.php:11 content-single-link.php:14
+#: content-single-quote.php:11 content-single-quote.php:14
+#: content-single-status.php:10 content-single-status.php:13
+#: content-single-video.php:13 content-single-video.php:16
+#: content-single.php:10 content-single.php:13 content-status.php:49
+#: content-video.php:39 content.php:49
+msgid ", "
+msgstr ", "
+
+#: content-aside.php:18 content-audio.php:32 content-gallery.php:33
+#: content-image.php:27 content-link.php:30 content-page.php:27
+#: content-quote.php:43 content-search.php:47 content-single-audio.php:87
+#: content-single-chat.php:79 content-single-gallery.php:82
+#: content-single-image.php:85 content-single-link.php:70
+#: content-single-quote.php:94 content-single-status.php:77
+#: content-single-video.php:77 content-single.php:82 content-status.php:42
+#: content-video.php:32 content.php:40 inc/extras.php:168
+msgid "Edit"
+msgstr "Edita"
+
+#: content-aside.php:13 content-audio.php:27 content-gallery.php:28
+#: content-status.php:32 content-video.php:27 content.php:33
+msgid "Pages:"
+msgstr "Pàgines:"
+
+#: content-aside.php:11 content-quote.php:27 content-single-quote.php:64
+#: content-status.php:29 content.php:28
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Continua llegint <span class=\"meta-nav\">&rarr;</span>"
+
+#: comments.php:75
+msgid "Comments are closed."
+msgstr "Els comentaris estan tancats."
+
+#: comments.php:43 comments.php:63
+msgid "Newer Comments"
+msgstr "Comentaris més nous"
+
+#: comments.php:42 comments.php:62
+msgid "Older Comments"
+msgstr "Comentaris més antics"
+
+#: comments.php:40 comments.php:60
+msgid "Comment navigation"
+msgstr "Navegació pels comentaris"
+
+#: archive.php:64
+msgid "Archives"
+msgstr "Arxius"
+
+#: archive.php:61
+msgid "Chats"
+msgstr "Xats"
+
+#: archive.php:58
+msgid "Audios"
+msgstr "Àudios"
+
+#: archive.php:55
+msgid "Statuses"
+msgstr "Estats"
+
+#: archive.php:52
+msgid "Links"
+msgstr "Enllaços"
+
+#: archive.php:49
+msgid "Quotes"
+msgstr "Cites"
+
+#: archive.php:46
+msgid "Videos"
+msgstr "Vídeos"
+
+#: archive.php:43
+msgid "Images"
+msgstr "Imatges"
+
+#: archive.php:40
+msgid "Galleries"
+msgstr "Galeries"
+
+#: archive.php:37
+msgid "Asides"
+msgstr "Notes"
+
+#: archive.php:34
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr "Y"
+
+#: archive.php:34
+msgid "Year: %s"
+msgstr "Any: %s"
+
+#: archive.php:31
+msgctxt "monthly archives date format"
+msgid "F Y"
+msgstr "F \\d\\e Y"
+
+#: archive.php:31
+msgid "Month: %s"
+msgstr "Mes: %s"
+
+#: archive.php:28
+msgid "Day: %s"
+msgstr "Dia: %s"
+
+#: archive.php:25
+msgid "Author: %s"
+msgstr "Autor: %s"
+
+#: 404.php:14
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "Aquesta pàgina no es pot trobar."

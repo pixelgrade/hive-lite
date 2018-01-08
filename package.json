@@ -1,0 +1,21 @@
+{
+  "name": "patch",
+  "devDependencies": {
+    "gulp": "*",
+    "gulp-sass": "*",
+    "gulp-ruby-sass": "~0.7.1",
+    "gulp-autoprefixer": "~1.0.1",
+    "gulp-minify-css": "*",
+    "gulp-ignore": "*",
+    "gulp-livereload": "*",
+    "gulp-notify": "*",
+    "gulp-concat": "~2.1.7",
+    "gulp-exec": "~2.0.1",
+    "gulp-replace": "~0.4.0",
+    "gulp-beautify": "*",
+    "gulp-csscomb": "*",
+    "gulp-merge-media-queries": "*",
+    "gulp-clean": "*",
+    "del": "*"
+  }
+}

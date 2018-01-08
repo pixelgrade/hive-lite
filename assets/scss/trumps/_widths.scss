@@ -1,0 +1,215 @@
+/*------------------------------------*\
+    #WIDTHS
+\*------------------------------------*/
+
+/**
+ * A series of width helper classes that you can use to size things like grid
+ * systems.
+ */
+
+$use-widths:   true !default;
+
+@mixin widths($namespace: null, $placeholder: false) {
+
+    @if not $placeholder {
+
+        /**
+         * Whole.
+         */
+        .#{$namespace}one-whole           { width: 100%; }
+
+        /**
+         * Halves.
+         */
+        .#{$namespace}one-half,
+        .#{$namespace}two-quarters,
+        .#{$namespace}three-sixths,
+        .#{$namespace}four-eighths,
+        .#{$namespace}five-tenths,
+        .#{$namespace}six-twelfths        { width: 50%; }
+
+        /**
+         * Thirds.
+         */
+        .#{$namespace}one-third,
+        .#{$namespace}two-sixths,
+        .#{$namespace}three-ninths,
+        .#{$namespace}four-twelfths       { width: 33.3333333%; }
+        .#{$namespace}two-thirds,
+        .#{$namespace}four-sixths,
+        .#{$namespace}six-ninths,
+        .#{$namespace}eight-twelfths      { width: 66.6666666%; }
+
+        /**
+         * Quarters.
+         */
+        .#{$namespace}one-quarter,
+        .#{$namespace}two-eighths,
+        .#{$namespace}three-twelfths      { width: 25%; }
+        .#{$namespace}three-quarters,
+        .#{$namespace}six-eighths,
+        .#{$namespace}nine-twelfths       { width: 75%; }
+
+        /**
+         * Fifths.
+         */
+        .#{$namespace}one-fifth,
+        .#{$namespace}two-tenths          { width: 20%; }
+        .#{$namespace}two-fifths,
+        .#{$namespace}four-tenths         { width: 40%; }
+        .#{$namespace}three-fifths,
+        .#{$namespace}six-tenths          { width: 60%; }
+        .#{$namespace}four-fifths,
+        .#{$namespace}eight-tenths        { width: 80%; }
+
+        /**
+         * Sixths.
+         */
+        .#{$namespace}one-sixth,
+        .#{$namespace}two-twelfths        { width: 16.6666666%; }
+        .#{$namespace}five-sixths,
+        .#{$namespace}ten-twelfths        { width: 83.3333333%; }
+
+        /**
+         * Eighths.
+         */
+        .#{$namespace}one-eighth          { width: 12.5%; }
+        .#{$namespace}three-eighths       { width: 37.5%; }
+        .#{$namespace}five-eighths        { width: 62.5%; }
+        .#{$namespace}seven-eighths       { width: 87.5%; }
+
+        /**
+         * Ninths.
+         */
+        .#{$namespace}one-ninth           { width: 11.1111111%; }
+        .#{$namespace}two-ninths          { width: 22.2222222%; }
+        .#{$namespace}four-ninths         { width: 44.4444444%; }
+        .#{$namespace}five-ninths         { width: 55.5555555%; }
+        .#{$namespace}seven-ninths        { width: 77.7777777%; }
+        .#{$namespace}eight-ninths        { width: 88.8888888%; }
+
+        /**
+         * Tenths.
+         */
+        .#{$namespace}one-tenth           { width: 10%; }
+        .#{$namespace}three-tenths        { width: 30%; }
+        .#{$namespace}seven-tenths        { width: 70%; }
+        .#{$namespace}nine-tenths         { width: 90%; }
+
+        /**
+         * Twelfths.
+         */
+        .#{$namespace}one-twelfth         { width:  8.3333333%; }
+        .#{$namespace}five-twelfths       { width: 41.6666666%; }
+        .#{$namespace}seven-twelfths      { width: 58.3333333%; }
+        .#{$namespace}eleven-twelfths     { width: 91.6666666%; }
+
+    } @else {
+
+        /**
+         * Whole.
+         */
+        %#{$namespace}one-whole           { width: 100%; }
+
+        /**
+         * Halves.
+         */
+        %#{$namespace}one-half,
+        %#{$namespace}two-quarters,
+        %#{$namespace}three-sixths,
+        %#{$namespace}four-eighths,
+        %#{$namespace}five-tenths,
+        %#{$namespace}six-twelfths        { width: 50%; }
+
+        /**
+         * Thirds.
+         */
+        %#{$namespace}one-third,
+        %#{$namespace}two-sixths,
+        %#{$namespace}three-ninths,
+        %#{$namespace}four-twelfths       { width: 33.3333333%; }
+        %#{$namespace}two-thirds,
+        %#{$namespace}four-sixths,
+        %#{$namespace}six-ninths,
+        %#{$namespace}eight-twelfths      { width: 66.6666666%; }
+
+        /**
+         * Quarters.
+         */
+        %#{$namespace}one-quarter,
+        %#{$namespace}two-eighths,
+        %#{$namespace}three-twelfths      { width: 25%; }
+        %#{$namespace}three-quarters,
+        %#{$namespace}six-eighths,
+        %#{$namespace}nine-twelfths       { width: 75%; }
+
+        /**
+         * Fifths.
+         */
+        %#{$namespace}one-fifth,
+        %#{$namespace}two-tenths          { width: 20%; }
+        %#{$namespace}two-fifths,
+        %#{$namespace}four-tenths         { width: 40%; }
+        %#{$namespace}three-fifths,
+        %#{$namespace}six-tenths          { width: 60%; }
+        %#{$namespace}four-fifths,
+        %#{$namespace}eight-tenths        { width: 80%; }
+
+        /**
+         * Sixths.
+         */
+        %#{$namespace}one-sixth,
+        %#{$namespace}two-twelfths        { width: 16.6666666%; }
+        %#{$namespace}five-sixths,
+        %#{$namespace}ten-twelfths        { width: 83.3333333%; }
+
+        /**
+         * Eighths.
+         */
+        %#{$namespace}one-eighth          { width: 12.5%; }
+        %#{$namespace}three-eighths       { width: 37.5%; }
+        %#{$namespace}five-eighths        { width: 62.5%; }
+        %#{$namespace}seven-eighths       { width: 87.5%; }
+
+        /**
+         * Ninths.
+         */
+        %#{$namespace}one-ninth           { width: 11.1111111%; }
+        %#{$namespace}two-ninths          { width: 22.2222222%; }
+        %#{$namespace}four-ninths         { width: 44.4444444%; }
+        %#{$namespace}five-ninths         { width: 55.5555555%; }
+        %#{$namespace}seven-ninths        { width: 77.7777777%; }
+        %#{$namespace}eight-ninths        { width: 88.8888888%; }
+
+        /**
+         * Tenths.
+         */
+        %#{$namespace}one-tenth           { width: 10%; }
+        %#{$namespace}three-tenths        { width: 30%; }
+        %#{$namespace}seven-tenths        { width: 70%; }
+        %#{$namespace}nine-tenths         { width: 90%; }
+
+        /**
+         * Twelfths.
+         */
+        %#{$namespace}one-twelfth         { width:  8.3333333%; }
+        %#{$namespace}five-twelfths       { width: 41.6666666%; }
+        %#{$namespace}seven-twelfths      { width: 58.3333333%; }
+        %#{$namespace}eleven-twelfths     { width: 91.6666666%; }
+
+    }
+}
+
+@if $use-widths {
+
+    @include widths();
+
+    @include query-above($lap) {
+        @include widths('lap-', true);
+    }
+
+    @include query-above($desk) {
+        @include widths('desk-', true);
+    }
+
+}

@@ -1,0 +1,624 @@
+.page-title {
+	@include rhythm(margin-bottom, 4, 54px);
+	font-weight: bold;
+	text-align: center;
+}
+
+.page-title--search {
+	color: $gray;
+	font-weight: normal;
+
+	span {
+		display: block;
+		color: $black;
+		font-weight: bold;
+	}
+}
+
+.archive__grid {
+
+	.post {
+		width: 100%;
+		transform: translateZ(0);
+		@include rhythm(margin-bottom, 3);
+
+		> * {
+			opacity: 0;
+		}
+
+		figure {
+			max-width: 100%;
+		}
+
+		img {
+			max-width: 100%;
+			height: auto;
+		}
+	}
+
+    .entry-title {
+        @include fs(36px, 0, 2);
+
+	    @include query-below($lap) {
+		    @include font-size(28px);
+		    @include baseline(28px);
+	    }
+
+	    a {
+		    color: $dark;
+
+		    &:hover {
+			    color: $gray;
+		    }
+	    }
+    }
+
+	.entry-content {
+		@include baseline-trailer(2);
+	}
+
+	.alignleft {
+		margin-top: 0;
+		@include rhythm(margin-right, 1.5);
+		@include rhythm(margin-bottom, .5);
+	}
+
+	.alignright {
+		margin-top: 0;
+		@include rhythm(margin-left, 1.5);
+		@include rhythm(margin-bottom, .5);
+	}
+
+	.aligncenter {
+		@include rhythm(margin-top, 1.5);
+		@include rhythm(margin-bottom, 1);
+	}
+
+    @include query-above($desk) {
+
+        .alignnone,
+        .aligncenter {
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        .post {
+            .alignleft,
+            .alignright {
+                max-width: 50%;
+            }
+        }
+
+        .alignleft {
+            margin-left: 0;
+        }
+
+        .alignright {
+            margin-right: 0;
+        }
+    }
+
+	.accent-box {
+		@include rhythm(padding-top, 2.5);
+		@include rhythm(padding-bottom, 2.5);
+		@include rhythm(padding-left, 2);
+		@include rhythm(padding-right, 2);
+
+		background: $accent;
+
+		a {
+			color: $gray;
+		}
+	}
+
+	// in order for the opacity property to work
+	// anchors need a different display than "none"
+	.entry-permalink {
+		display: block;
+	}
+
+	.format-image {
+		@include rhythm(margin-top, 2);
+
+		.hover__handler {
+			background: $dark;
+			@include rhythm(padding, 1, 18px);
+		}
+
+		.entry-permalink {
+
+			&, &:hover {
+				color: white;
+			}
+		}
+
+		.entry-title {
+			@include font-size(18px);
+			@include rhythm(margin, 1, 18px);
+			@include rhythm(margin-bottom, 2, 18px);
+			color: inherit;
+		}
+
+		.entry-thumbnail {
+			margin: 0;
+		}
+
+		.edit-link {
+			@include rhythm(bottom, 1);
+			@include rhythm(right, 1);
+			color: $gray;
+		}
+	}
+
+	.format-quote {
+		@include rhythm(margin-top, 2);
+
+		&.sticky {
+			margin-top: 0;
+		}
+
+		@include query-below(768px) {
+			width: auto;
+			right: 0;
+
+			blockquote {
+				@include font-size(18px);
+				padding-left: 0;
+				padding-right: 0;
+			}
+		}
+
+		// @todo
+		@include query-below(540px) {
+			@include rhythm(margin-right, -1.5);
+			@include rhythm(margin-left, -1.5);
+		}
+
+		.more-link {
+			color: white;
+		}
+
+		.entry-permalink {
+			display: block;
+			overflow: hidden;
+			position: relative;
+		}
+
+		.entry-thumbnail {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+
+
+
+			&:first-child{
+				margin: 0;
+			}
+		}
+
+		.content-quote {
+			@include rhythm(padding-left, 2);
+			@include rhythm(padding-right, 2);
+			color: white;
+		}
+
+		.entry-content {
+			margin: 0;
+
+			blockquote {
+				@include rhythm(padding-top, 2.5);
+				@include rhythm(margin-top, 3);
+				@include rhythm(margin-bottom, 3);
+
+				&:before {
+					font-size: 1.5em;
+					top: -.35em;
+				}
+
+				cite {
+					@include rhythm(margin-top, 3);
+				}
+			}
+		}
+
+		.entry-footer {
+			@include rhythm(margin-top, 1);
+		}
+	}
+
+	.format-gallery {
+		width: 100%;
+
+		> .entry-gallery {
+			@include rhythm(margin-bottom, 2);
+
+			@include query-below($lap) {
+				@include rhythm(margin-bottom, 1);
+			}
+		}
+	}
+
+	.format-status {
+		@include rhythm(margin-top, 2);
+
+		.entry-content, .entry-summary {
+			@include font-size(24px);
+			@include baseline(24px);
+			@include rhythm(margin-top, -2, 24px)
+			// margin-bottom: 0;
+		}
+
+		.entry-footer {
+			@include rhythm(margin-top, 1);
+		}
+	}
+
+	.entry-media {
+		overflow: hidden;
+	}
+
+    .entry-thumbnail {
+        @include baseline-trailer(2);
+	    position: relative;
+
+	    @include query-below($lap) {
+		    @include baseline-trailer(1);
+	    }
+
+        img {
+	        margin: 0;
+	        width: 100%;
+	        height: auto;
+            display: block;
+        }
+
+	    .article__featured-image-meta {
+		    position: absolute;
+		    top: 0;
+		    left: 0;
+		    width: 100%;
+		    height: 100%;
+			background-color: rgba(0,0,0,0.4);
+		    transition: background-color .3s ease-out;
+		    color: white;
+
+		    &:hover {
+			    background-color: rgba(0,0,0,0.7);
+		    }
+
+		    .flexbox {
+			    height: 100%;
+			    text-align: center;
+			    font-size: 6em;
+		    }
+	    }
+
+	    .hover {
+		    position: absolute;
+		    top: 0; left: 0;
+		    width: 100%;
+		    height: 100%;
+		    text-align: center;
+		    color: white;
+		    transform: translateZ(0);
+		    opacity: 1;
+		    overflow: hidden;
+
+		    .flexbox {
+			    height: 100%;
+		    }
+	    }
+
+	    .hover__more {
+		    position: absolute;
+		    top: 50%;
+		    left: 50%;
+		    transform: translateX(-50%) translateY(-50%);
+
+		    white-space: nowrap;
+	    }
+
+	    .hover__bg {
+		    display: block;
+		    position: absolute;
+		    top: 0; left: 0;
+		    width: 100%;
+		    height: 100%;
+		    background-color: black;
+		    opacity: 0.5;
+	    }
+
+	    .hover__letter, .hover__letter-mask {
+			font-size: 12em;
+		    opacity: 0.2;
+		    position: absolute;
+		    top: 50%; left: 50%;
+		    transform: translate(-50%, -50%);
+		    font-weight: 500;
+			text-transform: uppercase;
+	    }
+
+	    .hover__letter-mask {
+		    opacity: 1;
+		    overflow: hidden;
+		    transform: translate(-50%, 50%);
+		    display: block;
+
+		    > span {
+			    display: block;
+			    transform: translateY(-100%);
+		    }
+	    }
+
+	    .hover__line {
+		    position: absolute;
+		    left: 50%;
+		    width: 1px;
+		    background: white;
+		    height: 25%;
+		    transform: rotate(-45deg);
+	    }
+
+	    .hover__line--top {
+		    bottom: 50%;
+		    transform-origin: 50% 100%;
+		    margin-bottom: 2em;
+		    margin-left: -2em;
+	    }
+
+	    .hover__line--bottom {
+		    top: 50%;
+		    transform-origin: 50% 0;
+		    margin-top: 2em;
+		    margin-left: 2em;
+	    }
+    }
+
+    .entry-footer {
+        @extend .pr;
+		margin-top: 0;
+
+		&:before {
+			@extend .pa;
+			bottom: 0;
+			left: 0;
+			content: "";
+			width: 100%;
+			height: 1px;
+			background: $borders;
+		}
+
+    }
+
+	.more-link {
+		display: block;
+		@include rhythm(margin-bottom, 2);
+	}
+
+	@include query-above($desk) {
+
+		.post {
+			@include rhythm(margin-bottom, 5);
+		}
+
+	}
+
+
+    /*  Hide posts loaded with jetpack on scroll
+        So we can arrange them and then fade them in accordingly  */
+    .posts--jetpack {
+        display: none;
+    }
+
+	.jetpack-video-wrapper,
+	.entry-media [class^="embed-"] {
+		@include rhythm(margin-bottom, 2);
+	}
+}// .archive__grid
+
+.touch .entry-thumbnail .hover{
+	.hover__bg, .flexbox{
+		display: none;
+	}
+}
+
+.entry-meta {
+    @extend .pr;
+    @include fs(14px);
+    display: inline-block;
+    background: white;
+    padding-right: .75em;
+
+    .cat-links {
+
+        &:before {
+            content: "/";
+        }
+    }
+
+	.posted-by {
+
+		&:after {
+			content: "/";
+		}
+	}
+}
+
+.entry-format {
+	&:before {
+		content: "/";
+	}
+}
+
+.archive__grid {
+    transition: height .3s ease-in-out;
+
+	@include query-below($lap) {
+		@include rhythm(margin-top, 2);
+	}
+
+    > .grid__item {
+	    @include query-above(768px) {
+		    width: 50%;
+	    }
+	    @include query-above($desk) {
+		    width: 33.3333%
+	    }
+    }
+}
+
+.home, .blog, .archive {
+
+	.site-content {
+
+		.container {
+			@include query-below($desk) {
+				max-width: 60em;
+			}
+		}
+
+		.container.container{
+			@include query-below(768px) {
+				max-width: 30em;
+			}
+		}
+	}
+
+	&.has_sidebar {
+		/* overwrite previous restrains when we have a sidebar involved */
+		.container {
+			max-width: 85em;
+		}
+	}
+
+	@include query-above($desk) {
+		.gallery {
+			@include rhythm(margin-left, -1);
+			margin-right: 0;
+		}
+	}
+}
+
+.has_sidebar .archive__grid {
+    > .grid__item {
+        width: 50%;
+    }
+}
+
+body {
+    word-wrap: break-word;
+    text-overflow: ellipsis;
+}
+
+
+/* Sticky Post */
+.sticky:not(.format-quote) {
+	@include rhythm(padding-bottom, 2.5);
+
+	&.post {
+		@include rhythm(padding-right, 2);
+		@include rhythm(padding-left, 5);
+
+		@include query-below(768px) {
+			@include rhythm(padding-left, 3);
+			padding-right: 0;
+			@include rhythm(padding-bottom, 2);
+		}
+	}
+
+	& + & {
+		margin-top: 0;
+	}
+
+	&:after{
+		content: "";
+
+		position: absolute;
+		top: 0;
+		bottom: 0;
+
+		@include rhythm(left, 1.5);
+		@include rhythm(right, -1.5);
+
+		@include query-above(768px) {
+			@include rhythm(left, 2.5);
+			@include rhythm(right, -0.5);
+		}
+
+		@include query-above($lap) {
+			@include rhythm(left, 3);
+			right: 0;
+		}
+
+		z-index: -1;
+
+		background-color: $accent;
+		opacity: 0;
+		transition: opacity 1s ease-out;
+	}
+
+	&.sticky--bg:after {
+		opacity: 1;
+	}
+
+	.entry-title{
+		@include rhythm(margin-top, 1/2);
+	}
+
+	.entry-meta{
+		background: none;
+	}
+
+	.entry-footer:before{
+		content: none;
+	}
+
+	a{ color: $gray; }
+
+	a[rel*='category'], a[rel*='tag']{ border-bottom: 1px solid; }
+}
+
+
+/* Edit Link */
+.edit-link {
+
+	.archive__grid &{
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		z-index: 1;
+		@include font-size(14px);
+
+		opacity: 0 !important;
+		transition: opacity 0.2s;
+	}
+
+	.touch .archive__grid .post--visible &, .post:hover & {
+		opacity: 1 !important;
+	}
+
+	.sticky & {
+		@include rhythm(bottom, 2.5);
+		@include rhythm(right, 2);
+
+		@include query-below($lap) {
+			@include rhythm(right, 1);
+		}
+
+		@include query-below(768px) {
+			right: 0;
+		}
+	}
+}
+
+.format-quote {
+
+	.edit-link {
+		@include rhythm(bottom, 1);
+		@include rhythm(right, 1);
+
+		a:hover {
+			color: $accent;
+		}
+	}
+}

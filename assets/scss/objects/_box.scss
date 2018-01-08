@@ -1,0 +1,56 @@
+//*------------------------------------*\
+//    $BOX
+//\*------------------------------------*/
+
+// The box object simply boxes off content.
+
+// Predefine the variables below in order to alter and enable specific features.
+$box-padding:         $base-spacing-unit !default;
+$box-padding--small:  halve($box-padding) !default;
+$box-padding--large:  double($box-padding) !default;
+
+$enable-box--small:   false !default;
+$enable-box--large:   false !default;
+
+
+
+
+
+// 1. So we can apply the `.box` class to naturally-inline elements.
+.#{$namespace}box,
+%#{$namespace}box {
+    @extend %clearfix;
+    display: block; /* [1] */
+    padding: $box-padding;
+
+    > :last-child {
+        margin-bottom: 0;
+    }
+
+}
+
+
+
+
+
+@if ($enable-box--small == true) {
+
+    // Small box.
+
+    .#{$namespace}box--small,
+    %#{$namespace}box--small {
+        padding: $box-padding--small;
+    }
+
+}
+
+@if ($enable-box--large == true) {
+
+    // Large box.
+
+    .#{$namespace}box--large,
+    %#{$namespace}box--large {
+        padding: $box-padding--large;
+    }
+
+}

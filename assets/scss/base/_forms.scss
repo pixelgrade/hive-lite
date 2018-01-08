@@ -1,0 +1,232 @@
+input[type="submit"]{
+	@extend .btn;
+}
+
+// Common form controls
+// 
+// Shared size and type resets for form controls. Apply `.form-control` to any
+// of the following form controls:
+ 
+select,
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+.form-control {
+	display: block;
+	vertical-align: middle;
+	width: 100%;
+	padding: $u/2;
+	outline: 0 !important;
+	-webkit-appearance: none;
+
+	&:focus {
+		outline: 1px solid $accent;
+	}
+}
+
+
+// Checkboxes and radios
+//
+// Indent the labels to position radios/checkboxes as hanging controls.
+
+.radio,
+.checkbox {
+	display: block;
+	margin-top: $u/4;
+	margin-bottom: $u/4;
+	padding-left: $u/2;
+	vertical-align: middle;
+	label {
+		display: inline;
+		margin-bottom: 0;
+		font-weight: normal;
+		cursor: pointer;
+	}
+}
+
+.radio input[type="radio"],
+.radio-inline input[type="radio"],
+.checkbox input[type="checkbox"],
+.checkbox-inline input[type="checkbox"] {
+	float: left;
+	margin-left: $u/2;
+}
+
+.radio + .radio,
+.checkbox + .checkbox {
+	margin-top: -$u/4; // Move up sibling radios or checkboxes for tighter spacing
+}
+
+// Radios and checkboxes on same line
+.radio-inline,
+.checkbox-inline {
+	display: inline-block;
+	padding-left: $u/2;
+	margin-bottom: 0;
+	vertical-align: middle;
+	font-weight: normal;
+	cursor: pointer;
+}
+
+.radio-inline + .radio-inline,
+.checkbox-inline + .checkbox-inline {
+	margin-top: 0;
+	margin-left: $u/4; // space out consecutive inline controls
+}
+
+// Inline forms
+ 
+
+.form-inline {
+
+	// Kick in the inline
+	@media (min-width: 768px) {
+		// Inline-block all the things for "inline"
+		.form-group {
+			display: inline-block;
+			margin-bottom: 0;
+			vertical-align: middle;
+		}
+
+		// In navbar-form, allow folks to *not* use `.form-group`
+		.form-control {
+			display: inline-block;
+		}
+
+		// Remove default margin on radios/checkboxes that were used for stacking, and
+		// then undo the floating of radios and checkboxes to match (which also avoids
+		// a bug in WebKit: https://github.com/twbs/bootstrap/issues/1969).
+		.radio,
+		.checkbox {
+			display: inline-block;
+			margin-top: 0;
+			margin-bottom: 0;
+			padding-left: 0;
+		}
+		.radio input[type="radio"],
+		.checkbox input[type="checkbox"] {
+			float: none;
+			margin-left: 0;
+		}
+	}
+}
+
+
+// Input groups
+ 
+
+.input-group {
+	position: relative; // For dropdowns
+	display: table;
+	border-collapse: separate; // prevent input groups from inheriting border styles from table cells when placed within a table
+
+	// Undo padding and float of grid classes
+	&.col {
+		float: none;
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	.form-control {
+		width: 100%;
+		margin-bottom: 0;
+	}
+}
+
+// Display as table-cell
+.input-group-addon,
+.input-group-btn,
+.input-group .form-control {
+	display: table-cell;
+
+	&:not(:first-child):not(:last-child) {
+		border-radius: 0;
+	}
+}
+
+// Addon and addon wrapper for buttons
+.input-group-addon,
+.input-group-btn {
+	width: 1%;
+	white-space: nowrap;
+	vertical-align: middle; // Match the inputs
+}
+
+
+
+
+
+input, textarea {
+	font-weight: 300;
+	border-radius: 0;
+	border: 1px solid $lightest;
+	box-shadow: none;
+	font-size: 16px;
+	padding: $u/2;
+
+	@include placeholder {
+		font-style: normal;
+		font-weight: 300;
+	}
+}
+
+//.contact-form label.grunion-field-label {
+//	margin-top: 1.125em;
+//}
+//
+//.contact-form label.grunion-radio-label,
+//.contact-form label.grunion-field-label.checkbox {
+//	margin-bottom: 1.125em !important;
+//	margin-top: 0 !important;
+//}
+
+.contact-form label {
+	margin-top: 1.125em;
+}
+
+label.checkbox {
+	padding-left: 0;
+
+	input[type=checkbox] {
+		display: inline-block;
+		vertical-align: middle;
+		margin-left: 0;
+		margin-top: -3px;
+		margin-bottom: 0;
+	}
+}
+
+label.radio {
+	padding-left: 0;
+
+	input[type=radio] {
+		display: inline-block;
+		margin-left: 0;
+		margin-top: -3px;
+		margin-bottom: 0;
+	}
+}
+
+form.contact-form {
+	label.checkbox,
+	label.radio {
+		margin-top: 5px;
+		margin-bottom: 5px;
+	}
+}
+
+.grunion-field-label.select + select {
+	margin-top: 8px;
+}

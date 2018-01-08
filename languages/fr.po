@@ -1,0 +1,386 @@
+# Translation of WordPress.com - Themes - Hive in French (France)
+# This file is distributed under the same license as the WordPress.com - Themes - Hive package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2017-09-23 20:56:20+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: GlotPress/2.4.0-alpha\n"
+"Language: fr\n"
+"Project-Id-Version: WordPress.com - Themes - Hive\n"
+
+#: inc/wpcom-colors.php:29
+msgid "Main Accent"
+msgstr "Accent Principal"
+
+#: inc/extras.php:500
+msgid "Two Columns"
+msgstr "Deux colonnes"
+
+#: inc/customizer.php:71
+msgid "Large"
+msgstr "Grande"
+
+#: inc/customizer.php:70
+msgid "Medium"
+msgstr "Moyenne"
+
+#: inc/customizer.php:69
+msgid "Small"
+msgstr "Petit"
+
+#: templates/toolbar.php:38
+msgid "Begin typing your search above and press return to search. Press Esc to cancel."
+msgstr "Commencez à taper votre recherche ci-dessous et appuyez sur Entrée pour chercher. Appuyez sur Esc pour annuler."
+
+#: templates/toolbar.php:23
+msgid "Search"
+msgstr "Recherche"
+
+#: templates/toolbar.php:9
+msgid "Secondary navigation"
+msgstr "Navigation Secondaire"
+
+#: templates/featured-hover.php:16
+msgid "Read More"
+msgstr "Lire la Suite"
+
+#: search.php:15
+msgid "Search Results for: %s"
+msgstr "Résultats de recherche pour : %s"
+
+#: inc/template-tags.php:86
+msgid "Post navigation"
+msgstr "Navigation des articles"
+
+#: inc/template-tags.php:53 inc/template-tags.php:59
+msgid "Next"
+msgstr "Suivant"
+
+#: inc/template-tags.php:42 inc/template-tags.php:52
+msgid "Previous"
+msgstr "Précédent"
+
+#: inc/template-tags.php:35
+msgid "Posts navigation"
+msgstr "Navigation des articles"
+
+#. Translators: If there are characters in your language that are not
+#. * supported by Playfair Display, translate this to 'off'. Do not translate
+#. * into your own language.
+#: inc/extras.php:419
+msgctxt "Playfair Display font: on or off"
+msgid "on"
+msgstr "on"
+
+#. Translators: If there are characters in your language that are not
+#. * supported by Droid Serif, translate this to 'off'. Do not translate
+#. * into your own language.
+#: inc/extras.php:413
+msgctxt "Droid Serif font: on or off"
+msgid "on"
+msgstr "on"
+
+#: inc/extras.php:191
+msgid "Your comment is awaiting moderation."
+msgstr "Votre commentaire est en attente de modération"
+
+#: inc/extras.php:174
+msgid "on %s at %s"
+msgstr "le %s à %s"
+
+#: inc/extras.php:107
+msgid "Page %s"
+msgstr "Page %s"
+
+#: inc/customizer.php:52
+msgid "Hide search button in toolbar"
+msgstr "Masquer le bouton de recherche dans la barre d&rsquo;outils"
+
+#: inc/customizer.php:41
+msgid "Disable auto-style post titles"
+msgstr "Désactiver la mise en forme automatique des titres"
+
+#: inc/customizer.php:31
+msgid "Hive Options"
+msgstr "Options de Hive"
+
+#: inc/customizer.php:24
+msgid "Display Site Title &amp; Tagline"
+msgstr "Afficher le titre du site et son slogan"
+
+#: header.php:65
+msgid "Menu"
+msgstr "Menu"
+
+#: header.php:52
+msgid "Main navigation"
+msgstr "Navigation principale"
+
+#: header.php:32
+msgid "Skip to content"
+msgstr "Aller au contenu principal"
+
+#: functions.php:108
+msgid "Sidebar"
+msgstr "Colonne latérale"
+
+#: functions.php:55
+msgid "Social Menu"
+msgstr "Menu Social"
+
+#: functions.php:54
+msgid "Footer Menu"
+msgstr "Menu du pied de page"
+
+#: functions.php:53
+msgid "Primary Menu"
+msgstr "Menu principal"
+
+#: footer.php:27
+msgid "Footer navigation"
+msgstr "Navigation du pied de page"
+
+#: footer.php:17
+msgid "Theme: %1$s by %2$s."
+msgstr "Thème %1$s par %2$s."
+
+#: footer.php:15
+msgid "Proudly powered by %s"
+msgstr "Fièrement propulsé par %s"
+
+#: footer.php:15
+msgid "http://wordpress.org/"
+msgstr "http://wordpress.org/"
+
+#: content-single-audio.php:71 content-single-chat.php:72
+#: content-single-gallery.php:75 content-single-image.php:75
+#: content-single-quote.php:85 content-single-status.php:61
+#: content-single-video.php:68 content-single.php:75
+msgid "Previous page"
+msgstr "Page précédente"
+
+#: content-single-audio.php:70 content-single-chat.php:71
+#: content-single-gallery.php:74 content-single-image.php:74
+#: content-single-quote.php:84 content-single-status.php:60
+#: content-single-video.php:67 content-single.php:74
+msgid "Next page"
+msgstr "Page suivante"
+
+#: content-single-audio.php:41 content-single-chat.php:39
+#: content-single-gallery.php:38 content-single-image.php:37
+#: content-single-link.php:37 content-single-quote.php:37
+#: content-single-status.php:36 content-single-video.php:39
+msgid "All %s posts"
+msgstr "Tous les articles de %s"
+
+#: content-single-audio.php:32 content-single-chat.php:28
+#: content-single-gallery.php:29 content-single-image.php:29
+#: content-single-link.php:29 content-single-quote.php:29
+#: content-single-status.php:28 content-single-video.php:31
+#: content-single.php:28
+msgid "Posted in %1$s. Bookmark the <a href=\"%3$s\" rel=\"bookmark\">permalink</a>."
+msgstr "Publié dans %1$s. Ajoutez <a href=\"%3$s\" rel=\"bookmark\">ce permalien</a> à vos favoris."
+
+#: content-single-audio.php:30 content-single-chat.php:26
+#: content-single-gallery.php:27 content-single-image.php:27
+#: content-single-link.php:27 content-single-quote.php:27
+#: content-single-status.php:26 content-single-video.php:29
+#: content-single.php:26
+msgid "Posted in %1$s and tagged %2$s. Bookmark the <a href=\"%3$s\" rel=\"bookmark\">permalink</a>."
+msgstr "Publié dans %1$s et tagué %2$s. Ajoutez <a href=\"%3$s\" rel=\"bookmark\">ce permalien</a> à vos favoris."
+
+#: content-single-audio.php:24 content-single-chat.php:20
+#: content-single-gallery.php:21 content-single-image.php:21
+#: content-single-link.php:21 content-single-quote.php:21
+#: content-single-status.php:20 content-single-video.php:23
+#: content-single.php:20
+msgid "Bookmark the <a href=\"%3$s\" rel=\"bookmark\">permalink</a>."
+msgstr "Bookmarquez ce <a href=\"%3$s\" rel=\"bookmark\">permalien</a>."
+
+#: content-single-audio.php:22 content-single-chat.php:18
+#: content-single-gallery.php:19 content-single-image.php:19
+#: content-single-link.php:19 content-single-quote.php:19
+#: content-single-status.php:18 content-single-video.php:21
+#: content-single.php:18
+msgid "This entry was tagged %2$s. Bookmark the <a href=\"%3$s\" rel=\"bookmark\">permalink</a>."
+msgstr "Cette entr&eacute;e est tagu&eacute;e %2$s. Bookmarquez ce <a href=\"%3$s\" rel=\"bookmark\">permalien</a>."
+
+#: content-search.php:43
+msgid "% Comments"
+msgstr "% commentaires"
+
+#: content-search.php:43
+msgid "1 Comment"
+msgstr "Un commentaire"
+
+#: content-search.php:43
+msgid "Leave a comment"
+msgstr "Laisser un commentaire"
+
+#: content-search.php:37
+msgid "Tagged %1$s"
+msgstr "Tagu&eacute; %1$s"
+
+#: content-search.php:29
+msgid "Posted in %1$s"
+msgstr "Posté dans %1$s"
+
+#: content-none.php:26
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr "Contenu Introuvable. Voulez-vous lancer une recherche?"
+
+#: content-none.php:21
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr "Contenu Introuvable. Réessayez en modifiant les termes de recherche."
+
+#: content-none.php:17
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr "Pr&ecirc;t &agrave; publier votre premier article ? <a href=\"%1$s\">Allons-y !</a>."
+
+#: content-none.php:11
+msgid "Nothing Found"
+msgstr "Aucun Résultat"
+
+#. translators: used between list items, there is a space after the comma
+#: content-aside.php:25 content-audio.php:39 content-gallery.php:40
+#: content-link.php:37 content-search.php:26 content-search.php:34
+#: content-single-audio.php:14 content-single-audio.php:17
+#: content-single-chat.php:10 content-single-chat.php:13
+#: content-single-gallery.php:11 content-single-gallery.php:14
+#: content-single-image.php:11 content-single-image.php:14
+#: content-single-link.php:11 content-single-link.php:14
+#: content-single-quote.php:11 content-single-quote.php:14
+#: content-single-status.php:10 content-single-status.php:13
+#: content-single-video.php:13 content-single-video.php:16
+#: content-single.php:10 content-single.php:13 content-status.php:49
+#: content-video.php:39 content.php:49
+msgid ", "
+msgstr ", "
+
+#: content-aside.php:18 content-audio.php:32 content-gallery.php:33
+#: content-image.php:27 content-link.php:30 content-page.php:27
+#: content-quote.php:43 content-search.php:47 content-single-audio.php:87
+#: content-single-chat.php:79 content-single-gallery.php:82
+#: content-single-image.php:85 content-single-link.php:70
+#: content-single-quote.php:94 content-single-status.php:77
+#: content-single-video.php:77 content-single.php:82 content-status.php:42
+#: content-video.php:32 content.php:40 inc/extras.php:179
+msgid "Edit"
+msgstr "Modifier"
+
+#: content-aside.php:13 content-audio.php:27 content-gallery.php:28
+#: content-status.php:32 content-video.php:27 content.php:33
+msgid "Pages:"
+msgstr "Pages&nbsp;:"
+
+#: content-aside.php:11 content-quote.php:27 content-single-quote.php:64
+#: content-status.php:29 content.php:28
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Lire la suite <span class=\"meta-nav\">&rarr;</span>"
+
+#: comments.php:75
+msgid "Comments are closed."
+msgstr "Les commentaires sont fermés."
+
+#: comments.php:43 comments.php:63
+msgid "Newer Comments"
+msgstr "Commentaires Récents"
+
+#: comments.php:42 comments.php:62
+msgid "Older Comments"
+msgstr "Commentaires Précédents"
+
+#: comments.php:40 comments.php:60
+msgid "Comment navigation"
+msgstr "Navigation des commentaires"
+
+#: comments.php:29
+msgid "Add yours"
+msgstr "Ajoutez le vôtre"
+
+#: comments.php:27
+msgid "There are no comments"
+msgstr "Il n&rsquo;y a pas de commentaire."
+
+#: comments.php:25
+msgid "Comment"
+msgid_plural "Comments"
+msgstr[0] "commentaire"
+msgstr[1] "commentaires"
+
+#: archive.php:64
+msgid "Archives"
+msgstr "Archives"
+
+#: archive.php:61
+msgid "Chats"
+msgstr "Chats"
+
+#: archive.php:58
+msgid "Audios"
+msgstr "Audios"
+
+#: archive.php:55
+msgid "Statuses"
+msgstr "États"
+
+#: archive.php:52 inc/wpcom-colors.php:19
+msgid "Links"
+msgstr "Liens"
+
+#: archive.php:49
+msgid "Quotes"
+msgstr "Citations"
+
+#: archive.php:46
+msgid "Videos"
+msgstr "Vidéos"
+
+#: archive.php:43
+msgid "Images"
+msgstr "Images"
+
+#: archive.php:40
+msgid "Galleries"
+msgstr "Galeries"
+
+#: archive.php:37
+msgid "Asides"
+msgstr "Apart&eacute;s"
+
+#: archive.php:34
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr "Y"
+
+#: archive.php:34
+msgid "Year: %s"
+msgstr "Ann&eacute;e: %s"
+
+#: archive.php:31
+msgctxt "monthly archives date format"
+msgid "F Y"
+msgstr "F Y"
+
+#: archive.php:31
+msgid "Month: %s"
+msgstr "Mois: %s"
+
+#: archive.php:28
+msgid "Day: %s"
+msgstr "Jour: %s"
+
+#: archive.php:25
+msgid "Author: %s"
+msgstr "Auteur : %s"
+
+#: 404.php:19
+msgid "It looks like nothing was found at this location. Try a search."
+msgstr "Rien n&rsquo;a été trouvé à cette adresse. Essayez une recherche."
+
+#: 404.php:14
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "Oups ! Cette page est introuvable."

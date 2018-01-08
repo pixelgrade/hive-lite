@@ -1,0 +1,74 @@
+.pa {
+    position: absolute;
+}
+
+.pr {
+    position: relative;
+}
+
+.stretch {
+    @extend .pa;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.fill {
+    width: 100%;
+    height: 100%;
+}
+
+.cover {
+    @extend .pa;
+    @extend .fill;
+    top: 0;
+    left: 0;
+}
+
+.center {
+    @extend .pa;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.center--vertical {
+    transform: translateY(-50%);
+
+}
+
+.center--horizontal {
+    transform: translateX(-50%);
+}
+
+.text--center {
+    text-align: center;
+}
+
+.text--left {
+    text-align: left;
+}
+
+.text--right {
+    text-align: right;
+}
+
+.text--justify {
+    text-align: justify;
+}
+
+.list--unstyled {
+//    margin-left: 0;
+    list-style: none;
+}
+
+.flexbox{
+	display: table;
+	width: 100%;
+
+	> .flexbox__item{
+		display: table-cell;
+		vertical-align: middle;
+	}
+}
