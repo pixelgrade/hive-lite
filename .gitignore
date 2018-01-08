@@ -19,7 +19,6 @@ build
 node_modules/
 .idea
 .sass-cache
-assets/js/main.js
 *.css.map
 *.js.map
 
