@@ -552,4 +552,24 @@ function hive_get_media_embedded_in_content( $content, $types = null ) {
 function filter_infinite_scroll_has_footer_widgets( ) {
 	return has_nav_menu( 'footer' );
 };
-add_filter( 'infinite_scroll_has_footer_widgets', 'filter_infinite_scroll_has_footer_widgets', 10, 1 ); ?>
+add_filter( 'infinite_scroll_has_footer_widgets', 'filter_infinite_scroll_has_footer_widgets', 10, 1 );
+
+/**
+ * A function that removes the post format classes from post_class()
+ */
+
+function remove_post_format_class ( $classes ) {
+	$classes = array_diff ( $classes, array(
+		'format-quote',
+		'format-image',
+		'format-aside',
+		'format-gallery',
+		'format-audio',
+		'format-video',
+		'format-link',
+		'format-status',
+		'format-chat',
+		));
+	return $classes;
+};
+add_filter( 'post_class', 'remove_post_format_class', 20 ); ?>
