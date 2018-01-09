@@ -102,7 +102,7 @@ gulp.task('server', ['styles-prod', 'scripts'], function () {
 gulp.task('copy-folder', ['styles-prod', 'scripts'], function () {
 
 	return gulp.src('./')
-		.pipe(exec('rm -Rf ./../build; mkdir -p ./../build/hive; rsync -av --exclude="node_modules" ./* ./../build/hive/', options));
+		.pipe(exec('rm -Rf ./../build; mkdir -p ./../build/hive-lite; rsync -av --exclude="node_modules" ./* ./../build/hive-lite/', options));
 });
 
 /**
@@ -135,7 +135,7 @@ gulp.task('build', ['copy-folder'], function () {
 	];
 
 	files_to_remove.forEach(function (e, k) {
-		files_to_remove[k] = '../build/hive/' + e;
+		files_to_remove[k] = '../build/hive-lite/' + e;
 	});
 
 	return gulp.src(files_to_remove, {read: false})
@@ -148,7 +148,7 @@ gulp.task('build', ['copy-folder'], function () {
 gulp.task('zip', ['build'], function(){
 
 	return gulp.src('./')
-		.pipe(exec('cd ./../; rm -rf hive.zip; cd ./build/; zip -r -X ./../hive.zip ./hive; cd ./../; rm -rf build'));
+		.pipe(exec('cd ./../; rm -rf hive-lite.zip; cd ./build/; zip -r -X ./../hive-lite.zip ./hive-lite; cd ./../; rm -rf build'));
 
 });
 
