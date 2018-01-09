@@ -52,7 +52,6 @@ if ( ! function_exists( 'hive_setup' ) ) :
 		register_nav_menus( array(
 			'primary'   => __( 'Primary Menu', 'hive_txtd' ),
 			'footer'    => __( 'Footer Menu', 'hive_txtd' ),
-			'social'    => __( 'Social Menu', 'hive_txtd' ),
 		) );
 
 		/*

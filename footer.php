@@ -33,8 +33,7 @@
 </footer><!-- #colophon -->
 </div><!-- #page -->
 
-<?php get_template_part( 'templates/toolbar' );
-wp_footer();?>
+<?php wp_footer(); ?>
 
 </body>
 </html>

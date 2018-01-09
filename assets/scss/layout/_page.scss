@@ -88,9 +88,3 @@ body {
 		max-width: 80em;
 	}
 }
-
-#page {
-	@include query-above(1000px) {
-		@include rhythm(padding-right, 4);
-	}
-}

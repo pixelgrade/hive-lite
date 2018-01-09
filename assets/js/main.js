@@ -207,7 +207,6 @@
         navWidth = $nav.outerWidth(),
         containerWidth = $navContainer.outerWidth(),
         navHeight = $nav.outerHeight(),
-        $toolbar = $('.toolbar'),
         isOpen = false,
         pageTop = $('#page').offset().top,
         sticked = false;
