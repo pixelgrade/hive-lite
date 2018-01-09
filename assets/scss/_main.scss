@@ -39,6 +39,7 @@
  *  12.0 - Toolbar
  *  13.0 - Jetpack's plugins styling
  *  14.0 - Overwrites
+ *  15.0 - Hive Lite
  *
  */
 
@@ -232,3 +233,12 @@
  * 14.0 - Overwrites
  */
 @import "shame";
+
+
+
+// #HIVE LITE
+
+/**
+ * 15.0 - Hive Lite Specific Styles
+ */
+@import "lite";
