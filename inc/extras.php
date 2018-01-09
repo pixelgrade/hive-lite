@@ -62,15 +62,9 @@ add_filter( 'body_class', 'hive_body_classes' );
  * @return array The filtered post class list.
  */
 function hive_post_classes( $classes ) {
-	$post_format = get_post_format();
 
 	if ( is_archive() || is_home() || is_search() ) {
 		$classes[] = 'grid__item';
-	} elseif ( is_single() ) {
-		//we need to add a class for some post formats if the featured image is portrait
-		if ( false === $post_format || in_array( $post_format, array( 'image', 'link' ) ) ) {
-			$classes[] = hive_featured_image_portrait_class();
-		}
 	}
 
 	return $classes;
@@ -270,32 +264,6 @@ function hive_read_more_link( $link ) {
 }
 
 add_filter( 'the_content_more_link', 'hive_read_more_link' );
-
-/**
- * Return a class if the featured image is portrait
- * @return string
- */
-function hive_featured_image_portrait_class() {
-
-	if ( has_post_thumbnail() ) {
-		$image_data = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), "full" );
-		$type       = '';
-
-		//now test for portraityness
-		//height bigger the 1.1 the width - no need to do anything for slightly portraity images
-		//$image_data[1] is width
-		//$image_data[2] is height
-		if ( ! empty( $image_data[ 1 ] ) && ! empty( $image_data[ 2 ] ) ) {
-			if ( $image_data[ 2 ] > ( $image_data[ 1 ] * 1.1 ) ) {
-				$type = 'featured-portrait';
-			}
-		}
-
-		return $type;
-	}
-
-	return '';
-}
 
 /**
  * PHP's DOM classes are recursive but don't provide an implementation of
