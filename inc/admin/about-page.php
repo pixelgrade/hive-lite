@@ -1,8 +1,8 @@
 <?php
 /**
- * Silk Lite Theme About Page logic.
+ * Hive Lite Theme About Page logic.
  *
- * @package Silk Lite
+ * @package Hive Lite
  */
 
 function hivelite_admin_setup() {
@@ -16,13 +16,13 @@ function hivelite_admin_setup() {
 	*/
 	$config = array(
 		// Menu name under Appearance.
-		'menu_name'               => esc_html__( 'About Silk Lite', 'hive-lite' ),
+		'menu_name'               => esc_html__( 'About Hive Lite', 'hive-lite' ),
 		// Page title.
-		'page_name'               => esc_html__( 'About Silk Lite', 'hive-lite' ),
+		'page_name'               => esc_html__( 'About Hive Lite', 'hive-lite' ),
 		// Main welcome title
-		'welcome_title'         => sprintf( esc_html__( 'Welcome to %s! - Version ', 'hive-lite' ), 'Silk Lite' ),
+		'welcome_title'         => sprintf( esc_html__( 'Welcome to %s! - Version ', 'hive-lite' ), 'Hive Lite' ),
 		// Main welcome content
-		'welcome_content'       => esc_html__( ' Silk Lite is a free magazine-style theme designed to empower fashion bloggers to write more beautiful stories into an eye-candy playground.', 'hive-lite' ),
+		'welcome_content'       => esc_html__( ' Hive Lite is a free magazine-style theme designed to empower fashion bloggers to write more beautiful stories into an eye-candy playground.', 'hive-lite' ),
 		/**
 		 * Tabs array.
 		 *
@@ -42,7 +42,7 @@ function hivelite_admin_setup() {
 			'first' => array (
 				'title' => esc_html__( 'Contact Support','hive-lite' ),
 				'icon' => 'dashicons dashicons-sos',
-				'text' => __( 'We want to make sure you have the best experience using Silk Lite. If you <strong>do not have a paid upgrade</strong>, please post your question in our community forums.','hive-lite' ),
+				'text' => __( 'We want to make sure you have the best experience using Hive Lite. If you <strong>do not have a paid upgrade</strong>, please post your question in our community forums.','hive-lite' ),
 				'button_label' => esc_html__( 'Contact Support','hive-lite' ),
 				'button_link' => esc_url( 'https://wordpress.org/support/theme/hive-lite' ),
 				'is_button' => true,
@@ -51,7 +51,7 @@ function hivelite_admin_setup() {
 			'second' => array(
 				'title' => esc_html__( 'Documentation','hive-lite' ),
 				'icon' => 'dashicons dashicons-book-alt',
-				'text' => esc_html__( 'Need more details? Please check our full documentation for detailed information on how to use Silk Lite.','hive-lite' ),
+				'text' => esc_html__( 'Need more details? Please check our full documentation for detailed information on how to use Hive Lite.','hive-lite' ),
 				'button_label' => esc_html__( 'Read The Documentation','hive-lite' ),
 				'button_link' => 'https://pixelgrade.com/hive-lite-documentation/',
 				'is_button' => false,
@@ -81,7 +81,7 @@ function hivelite_admin_setup() {
 			),
 			'third' => array(
 				'title' => esc_html__( 'Read the documentation','hive-lite' ),
-				'text' => esc_html__( 'Need more details? Please check our full documentation for detailed information on how to use Silk Lite.','hive-lite' ),
+				'text' => esc_html__( 'Need more details? Please check our full documentation for detailed information on how to use Hive Lite.','hive-lite' ),
 				'button_label' => esc_html__( 'Documentation','hive-lite' ),
 				'button_link' => 'https://pixelgrade.com/hive-lite-documentation/',
 				'is_button' => false,
@@ -91,14 +91,14 @@ function hivelite_admin_setup() {
 		),
 		// Free vs pro array.
 		'free_pro'                => array(
-			'free_theme_name'     => 'Silk Lite',
-			'pro_theme_name'      => 'Silk PRO',
+			'free_theme_name'     => 'Hive Lite',
+			'pro_theme_name'      => 'Hive PRO',
 			'pro_theme_link'      => 'https://pixelgrade.com/themes/hive-lite/?utm_source=hive-lite-clients&utm_medium=about-page&utm_campaign=hive-lite#pro',
-			'get_pro_theme_label' => sprintf( __( 'View %s', 'hive-lite' ), 'Silk Pro' ),
+			'get_pro_theme_label' => sprintf( __( 'View %s', 'hive-lite' ), 'Hive Pro' ),
 			'features'            => array(
 				array(
 					'title'       => esc_html__( 'Exquisite Design', 'hive-lite' ),
-					'description' => esc_html__( 'Design is a great way to share appealing stories. Silk helps you to become a better storyteller into the digital world. Thanks to a very human approach in terms of interaction, a gentle and eye-candy typography and stylish details, you can definitely reach the right audience.', 'hive-lite' ),
+					'description' => esc_html__( 'Design is a great way to share appealing stories. Hive helps you to become a better storyteller into the digital world. Thanks to a very human approach in terms of interaction, a gentle and eye-candy typography and stylish details, you can definitely reach the right audience.', 'hive-lite' ),
 					'is_in_lite'  => 'true',
 					'is_in_pro'   => 'true',
 				),
@@ -116,7 +116,7 @@ function hivelite_admin_setup() {
 				),
 				array(
 					'title'       => esc_html__( 'Personalize to Match Your Style', 'hive-lite' ),
-					'description' => esc_html__( 'Having different tastes and preferences might be tricky for users, but not with Silk onboard. It has an intuitive and catchy interface which allows you to change fonts, colors or layout sizes in a blink of an eye.', 'hive-lite' ),
+					'description' => esc_html__( 'Having different tastes and preferences might be tricky for users, but not with Hive onboard. It has an intuitive and catchy interface which allows you to change fonts, colors or layout sizes in a blink of an eye.', 'hive-lite' ),
 					'is_in_lite'  => 'false',
 					'is_in_pro'   => 'true',
 				),
@@ -140,7 +140,7 @@ function hivelite_admin_setup() {
 				),
 				array(
 					'title'       => esc_html__( 'No credit footer link', 'hive-lite' ),
-					'description' => esc_html__( 'Remove "Theme: Silk Lite by Pixelgrade" copyright from the footer area.', 'hive-lite' ),
+					'description' => esc_html__( 'Remove "Theme: Hive Lite by Pixelgrade" copyright from the footer area.', 'hive-lite' ),
 					'is_in_lite'  => 'false',
 					'is_in_pro'   => 'true',
 				)
@@ -160,9 +160,9 @@ function hivelite_admin_setup() {
 				array(
 					'slug' => 'wordpress-seo'
 				),
-				array(
-					'slug' => 'gridable'
-				)
+//				array(
+//					'slug' => 'gridable'
+//				)
 			),
 		),
 		// Required actions array.
