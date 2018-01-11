@@ -1,0 +1,123 @@
+#accordion-section-hivelite_style_presets h3:before,
+#accordion-section-hivelite_colors h3:before,
+#accordion-section-hivelite_fonts h3:before,
+#accordion-section-hivelite_style_view_pro h3:before,
+a.badge-hive-pro {
+  position: relative;
+  top: 2px;
+  float: right;
+  content: "Pro";
+  margin-left: 8px;
+  margin-right: 32px;
+  padding: 3px 6px !important;
+  font-size: 9px !important;
+  font-weight: bold;
+  line-height: 1.5 !important;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #ffffff !important;
+  background-color: #018ec2;
+  border-radius: 2px;
+  -webkit-font-smoothing: subpixel-antialiased !important;
+}
+
+a.badge-silk-pro {
+  float: none;
+  margin: 0;
+}
+
+a.badge-silk-pro:hover {
+  background-color: #00a0d2 !important;
+}
+
+.upsell_link_details {
+  position: relative;
+  left: 6px;
+  top: 2px;
+  display: inline-block;
+  font-size: 10px;
+  color: #5C5C5C;
+}
+
+.upsell_link_details a {
+  color: #5C5C5C !important;
+  text-decoration: underline !important;
+}
+
+.upsell_link_details a:hover {
+  color: #00a0d2 !important;
+}
+
+.upsell_links_dismissed .badge-silk-pro,
+.upsell_links_dismissed .upsell_link_details,
+.upsell_links_dismissed #accordion-section-silklite_style_presets,
+.upsell_links_dismissed #accordion-section-silklite_colors,
+.upsell_links_dismissed #accordion-section-silklite_fonts {
+  display: none !important;
+}
+
+#accordion-section-silklite_style_presets .accordion-section-content,
+#accordion-section-silklite_colors .accordion-section-content,
+#accordion-section-silklite_fonts .accordion-section-content {
+  background: #eaf9fe;
+}
+
+#accordion-section-silklite_style_presets .description,
+#accordion-section-silklite_colors .description,
+#accordion-section-silklite_fonts .description {
+  color: #88B6CE;
+  line-height: 1.65;
+}
+
+#accordion-section-silklite_style_presets a,
+#accordion-section-silklite_colors a,
+#accordion-section-silklite_fonts a {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.upsell-container {
+  background: white;
+  padding: 16px;
+  border-radius: 2px;
+  font-size: 14px;
+}
+
+.upsell-container .button-primary {
+  height: 40px;
+  width: 100%;
+  text-align: center;
+  line-height: 40px;
+  text-shadow: none;
+  background: #018ec2;
+  border-color: #982851 #982851 #982851;
+  box-shadow: none;
+}
+
+ul.upsell-features li {
+  margin-bottom: 20px;
+}
+
+ul.upsell-features li .description {
+  font-size: 13px;
+}
+
+ul.upsell-features li h4:before {
+  position: relative;
+  float: left;
+  content: "Pro";
+  margin-left: 0;
+  margin-right: 8px;
+  padding: 3px 6px !important;
+  font-size: 9px !important;
+  font-weight: bold;
+  line-height: 1.5 !important;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #ffffff !important;
+  background-color: #018ec2;
+  border-radius: 2px;
+  -webkit-font-smoothing: subpixel-antialiased !important;
+}
