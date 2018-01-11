@@ -22,7 +22,7 @@ function hivelite_admin_setup() {
 		// Main welcome title
 		'welcome_title'         => sprintf( esc_html__( 'Welcome to %s! - Version ', 'hive-lite' ), 'Hive Lite' ),
 		// Main welcome content
-		'welcome_content'       => esc_html__( ' Hive Lite is a free magazine-style theme designed to empower fashion bloggers to write more beautiful stories into an eye-candy playground.', 'hive-lite' ),
+		'welcome_content'       => esc_html__( ' Hive Lite is a free magazine-style theme with clean type, smart layouts and a design flexibility that makes it perfect for publishers of all kinds.', 'hive-lite' ),
 		/**
 		 * Tabs array.
 		 *
@@ -103,15 +103,27 @@ function hivelite_admin_setup() {
 					'is_in_pro'   => 'true',
 				),
 				array(
+					'title'       => esc_html__( 'Steady SEO', 'hive-lite' ),
+					'description' => esc_html__( 'We’ve made everything it requires in terms of SEO practices so that you can have a proper start. In the end, everyone has a thing for how they show up in search engines.', 'hive-lite' ),
+					'is_in_lite'  => 'true',
+					'is_in_pro'   => 'true',
+				),
+				array(
 					'title'       => esc_html__( 'Mobile-Ready and Responsive for All Devices', 'hive-lite' ),
-					'description' => esc_html__( 'One of the perks of living these days is the tremendous chance to stay connected with everything you love without boundaries. That’s why SIlk is mobile-ready and facilitates your users to easily enjoy your content, no matter the device they like to use on a daily basis.', 'hive-lite' ),
+					'description' => esc_html__( 'One of the perks of living these days is the tremendous chance to stay connected with everything you love without boundaries. That’s why HIVE is mobile-ready and facilitates your users to easily enjoy your content, no matter the device they like to use on a daily basis.', 'hive-lite' ),
+					'is_in_lite'  => 'true',
+					'is_in_pro'   => 'true',
+				),
+				array(
+					'title'       => esc_html__( 'Smart and Customizable Type', 'hive-lite' ),
+					'description' => esc_html__( 'Hive‘s elements all fit together seamlessly, and we’ve created a way to emphasize specific portions of your post and page titles.', 'hive-lite' ),
 					'is_in_lite'  => 'true',
 					'is_in_pro'   => 'true',
 				),
 				array(
 					'title'       => esc_html__( 'Social Integration', 'hive-lite' ),
 					'description' => esc_html__( 'Let your voice be heard by the right people. Aim to build a strong community around your fashion blog and start a smart dialogue with those who admire your work. Facebook, Twitter, Instagram, you name it, but be aware that all can boost your content and increase awareness.', 'hive-lite' ),
-					'is_in_lite'  => 'true',
+					'is_in_lite'  => 'false',
 					'is_in_pro'   => 'true',
 				),
 				array(
@@ -121,8 +133,14 @@ function hivelite_admin_setup() {
 					'is_in_pro'   => 'true',
 				),
 				array(
-					'title'       => esc_html__( 'Featured Posts Slider', 'hive-lite' ),
-					'description' => esc_html__( 'Showcase the latest posts from a category under menu without losing precious time and money. Highlight those articles you feel proud about with no effort and let people know about your appetite for a topic or another.', 'hive-lite' ),
+					'title'       => esc_html__( 'Adaptive Layouts For Your Posts', 'hive-lite' ),
+					'description' => esc_html__( 'We offer you the freedom to mix-and-match portrait images or long titles to bring extra value. Whether your featured image is in portrait or landscape mode, Hive takes care of it by changing the post layout to provide the right fit.', 'hive-lite' ),
+					'is_in_lite'  => 'false',
+					'is_in_pro'   => 'true',
+				),
+				array(
+					'title'       => esc_html__( 'Post Formats', 'hive-lite' ),
+					'description' => esc_html__( 'Make room for a wide range of post formats to pack your engaging stories so that people will enjoy sharing. Text, image, video, audio—you name it, and you’re covered.', 'hive-lite' ),
 					'is_in_lite'  => 'false',
 					'is_in_pro'   => 'true',
 				),

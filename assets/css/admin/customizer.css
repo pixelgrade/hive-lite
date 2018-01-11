@@ -85,14 +85,14 @@ a.badge-silk-pro:hover {
 }
 
 .upsell-container .button-primary {
-  height: 40px;
-  width: 100%;
-  text-align: center;
-  line-height: 40px;
-  text-shadow: none;
-  background: #018ec2;
-  border-color: #982851 #982851 #982851;
-  box-shadow: none;
+  height: 40px  !important;
+  width: 100%  !important;
+  text-align: center  !important;
+  line-height: 30px !important;
+  text-shadow: none  !important;
+  background: #018ec2  !important;
+  border-color: #982851 #982851 #982851  !important;
+  box-shadow: none  !important;
 }
 
 ul.upsell-features li {
