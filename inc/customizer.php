@@ -41,13 +41,13 @@
                             </li>
 
                             <li>
-                            	<h4>Featured Posts Slider</h4>
-                            	<div class="description">Bring your best stories in the front of the world by adding them into the posts slider. It’s an extra opportunity to grab attention and to refresh some content that is still meaningful. Don’t miss any occasion to increase the value of your stories.</div>
+                            	<h4>Post Formats</h4>
+                            	<div class="description">Hive Pro takes advantage of Post Formats. Use the various features or custom-styled elements to get your message across.</div>
                             </li>
 
                             <li>
-                            	<h4>Custom Mega Menu</h4>
-                            	<div class="description">Showcase the latest posts from a category under menu without losing precious time and money. Highlight those articles you feel proud about with no effort and let people know about your appetite for a topic or another.</div>
+                            	<h4>Adaptive Layouts For Your Posts</h4>
+                            	<div class="description">Whether your featured image is in portrait or landscape mode, Hive takes care of it by changing the post layout to provide the right fit.</div>
                             </li>
 
                             <li>
