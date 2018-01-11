@@ -337,41 +337,6 @@
     }());
 
     /**
-     * function used to make the navigation bar on big screens
-     * sticky or static depending on the scroll position
-     */
-
-    function updateStickyMenu() {
-
-        // pin
-        if (latestKnownScrollY + pageTop > navTop && !sticked) {
-            $nav.css({
-                position: 'fixed',
-                top: pageTop,
-                left: navLeft,
-                width: navWidth
-            });
-
-            sticked = true;
-            return;
-        }
-
-        // unpin
-        if (latestKnownScrollY + pageTop <= navTop && sticked) {
-
-            $nav.css({
-                position: '',
-                left: '',
-                top: '',
-                width: ''
-            });
-
-            sticked = false;
-        }
-
-    }
-
-    /**
      * because we hard-code properties on the navigation bar when we stick it at the top of the window
      * we need to update some properties on window resize
      */
@@ -741,9 +706,6 @@
 
         ticking = false;
 
-        if (!is_android) {
-            updateStickyMenu();
-        }
     }
 
     /* ====== INTERNAL FUNCTIONS END ====== */
