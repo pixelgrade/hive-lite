@@ -46,7 +46,6 @@ if ( ! function_exists( 'hive_setup' ) ) :
 		add_theme_support( 'post-thumbnails' );
 		add_image_size( 'hive-masonry-image', 450, 9999, false );
 		add_image_size( 'hive-single-image', 1024, 9999, false );
-		add_image_size( 'hive-site-logo', 1360, 600, false );
 
 		// This theme uses wp_nav_menu() in three locations.
 		register_nav_menus( array(
@@ -170,11 +169,6 @@ require get_template_directory() . '/inc/extras.php';
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
-
-/**
- * Load Jetpack compatibility file.
- */
-require get_template_directory() . '/inc/jetpack.php';
 
 /**
  * Load the Hybrid Media Grabber class

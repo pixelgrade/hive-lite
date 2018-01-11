@@ -35,8 +35,6 @@
 
 		<div class="container">
 			<div class="site-branding">
-				<?php if ( function_exists( 'jetpack_the_site_logo' ) ) jetpack_the_site_logo(); ?>
-
 				<h1 class="site-title <?php echo get_theme_mod( 'hive_title_size', 'site-title--large' ); ?>">
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 						<?php bloginfo( 'name' ); ?>
