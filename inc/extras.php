@@ -211,19 +211,6 @@ function hive_link_pages( $link ) {
 
 add_filter( 'wp_link_pages_link', 'hive_link_pages' );
 
-/**
- * When dealing with gallery post format, we need to strip the first gallery in the content since we show it at the top
- */
-function hive_strip_first_content_gallery( $content ) {
-	if ( 'gallery' == get_post_format() ) {
-		$regex   = '/\[gallery.*]/';
-		$content = preg_replace( $regex, '', $content, 1 );
-	}
-
-	return $content;
-}
-
-add_filter( 'the_content', 'hive_strip_first_content_gallery' );
 
 function hive_excerpt_length( $length ) {
 	return 18;
@@ -510,22 +497,10 @@ function hive_get_media_embedded_in_content( $content, $types = null ) {
 	return $html;
 }
 
-/**
- * Checking if there is a footer menu or not and adjusting
- * the behaviour of the infinite scroll considering this
- * by using the 'infinite_scroll_has_footer_widgets' filter.
- *
- * @return bool
- */
-function filter_infinite_scroll_has_footer_widgets( ) {
-	return has_nav_menu( 'footer' );
-};
-add_filter( 'infinite_scroll_has_footer_widgets', 'filter_infinite_scroll_has_footer_widgets', 10, 1 );
 
 /**
  * A function that removes the post format classes from post_class()
  */
-
 function remove_post_format_class ( $classes ) {
 	$classes = array_diff ( $classes, array(
 		'format-quote',
