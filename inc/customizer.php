@@ -42,7 +42,7 @@
 
                             <li>
                             	<h4>Post Formats</h4>
-                            	<div class="description">Hive Pro takes advantage of Post Formats. Use the various features or custom-styled elements to get your message across.</div>
+                            	<div class="description">Make room for a wide range of post formats to pack your engaging stories so that people will enjoy sharing. Text, image, video, audio—you name it, and you’re covered.</div>
                             </li>
 
                             <li>
