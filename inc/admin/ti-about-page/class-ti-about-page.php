@@ -510,12 +510,12 @@ if ( ! class_exists( 'TI_About_Page' ) ) {
 
 						$hidden = false;
 
-						if ( @$ti_about_page_show_required_actions[ $action_value['id'] ] === false ) {
-							$hidden = true;
-						}
-						if ( @$action_value['check'] ) {
-							continue;
-						}
+//						if ( @$ti_about_page_show_required_actions[ $action_value['id'] ] === false ) {
+//							$hidden = true;
+//						}
+//						if ( @$action_value['check'] ) {
+//							continue;
+//						}
 
 						echo '<div class="ti-about-page-action-required-box">';
 
@@ -891,7 +891,7 @@ if ( ! class_exists( 'TI_About_Page' ) ) {
 					'nr_actions_required'      => count( $required_actions ),
 					'ajaxurl'                  => admin_url( 'admin-ajax.php' ),
 					'template_directory'       => get_template_directory_uri(),
-					'activating_string'        => __( 'Activating', 'silk-lite' )
+					'activating_string'        => __( 'Activating', 'hive-lite' )
 				) );
 
 			}

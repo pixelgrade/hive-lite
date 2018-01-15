@@ -29,7 +29,7 @@
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
 
-	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'hive_txtd' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'hive-lite' ); ?></a>
 
 	<header id="masthead" class="site-header" role="banner">
 
@@ -47,7 +47,7 @@
 			</div>
 
 			<nav id="site-navigation" class="main-navigation" role="navigation">
-				<h5 class="screen-reader-text"><?php _e( 'Main navigation', 'hive_txtd' ); ?></h5>
+				<h5 class="screen-reader-text"><?php _e( 'Main navigation', 'hive-lite' ); ?></h5>
 				<?php
 				$menu_args = array(
 					'theme_location' => 'primary',
@@ -60,7 +60,7 @@
 
 				if( false !== $menu ) : ?>
 					<button class="navigation__trigger">
-						<i class="fa fa-bars"></i><span class="screen-reader-text"><?php _e( 'Menu', 'hive_txtd' ); ?></span>
+						<i class="fa fa-bars"></i><span class="screen-reader-text"><?php _e( 'Menu', 'hive-lite' ); ?></span>
 					</button>
 				<?php
 					echo $menu;

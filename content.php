@@ -25,19 +25,19 @@
 		$has_more = strpos( $post->post_content, '<!--more' );
 
 		if ( $has_more ) {
-			the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'hive_txtd' ) );
+			the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'hive-lite' ) );
 		} else {
 			the_excerpt();
 		}
 		wp_link_pages( array(
-			'before' => '<div class="page-links">' . __( 'Pages:', 'hive_txtd' ),
+			'before' => '<div class="page-links">' . __( 'Pages:', 'hive-lite' ),
 			'after'  => '</div>',
 		) ); ?>
 	</div><!-- .entry-content -->
 
 	<?php
 
-	edit_post_link( __( 'Edit', 'hive_txtd' ), '<div class="edit-link">', '</div>' );
+	edit_post_link( __( 'Edit', 'hive-lite' ), '<div class="edit-link">', '</div>' );
 
 	// Hide category and tag text for pages on Search
 	if ( 'post' == get_post_type() ) { ?>
@@ -46,7 +46,7 @@
 				<?php hive_posted_on();
 
 				/* translators: used between list items, there is a space after the comma */
-				$categories_list = get_the_category_list( __( ', ', 'hive_txtd' ) );
+				$categories_list = get_the_category_list( __( ', ', 'hive-lite' ) );
 				if ( $categories_list && hive_categorized_blog() ) { ?>
 					<span class="cat-links">
                         <?php echo $categories_list; ?>

@@ -98,7 +98,7 @@ if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
 
 		// Add a page number if necessary:
 		if ( ( $paged >= 2 || $page >= 2 ) && ! is_404() ) {
-			$title .= " $sep " . sprintf( __( 'Page %s', 'hive_txtd' ), max( $paged, $page ) );
+			$title .= " $sep " . sprintf( __( 'Page %s', 'hive-lite' ), max( $paged, $page ) );
 		}
 
 		return $title;
@@ -165,12 +165,12 @@ function hive_comment( $comment, $args, $depth ) {
 			<header class="comment__meta comment-author">
 				<?php printf( '<span class="comment__author-name">%s</span>', get_comment_author_link() ) ?>
 				<time class="comment__time" datetime="<?php comment_time( 'c' ); ?>">
-					<a href="<?php echo esc_url( get_comment_link( get_comment_ID() ) ) ?>" class="comment__timestamp"><?php printf( __( 'on %s at %s', 'hive_txtd' ), get_comment_date(), get_comment_time() ); ?> </a>
+					<a href="<?php echo esc_url( get_comment_link( get_comment_ID() ) ) ?>" class="comment__timestamp"><?php printf( __( 'on %s at %s', 'hive-lite' ), get_comment_date(), get_comment_time() ); ?> </a>
 				</time>
 				<div class="comment__links">
 					<?php
 					//we need some space before Edit
-					edit_comment_link( __( 'Edit', 'hive_txtd' ), '  ' );
+					edit_comment_link( __( 'Edit', 'hive-lite' ), '  ' );
 
 					comment_reply_link( array_merge( $args, array(
 						'depth'     => $depth,
@@ -182,7 +182,7 @@ function hive_comment( $comment, $args, $depth ) {
 			<!-- .comment-meta -->
 			<?php if ( $comment->comment_approved == '0' ) : ?>
 				<div class="alert info">
-					<p><?php _e( 'Your comment is awaiting moderation.', 'hive_txtd' ) ?></p>
+					<p><?php _e( 'Your comment is awaiting moderation.', 'hive-lite' ) ?></p>
 				</div>
 			<?php endif; ?>
 			<section class="comment__content comment">
@@ -367,13 +367,13 @@ function hive_fonts_url() {
 	* supported by Droid Serif, translate this to 'off'. Do not translate
 	* into your own language.
 	*/
-	$droid_serif = _x( 'on', 'Droid Serif font: on or off', 'hive_txtd' );
+	$droid_serif = _x( 'on', 'Droid Serif font: on or off', 'hive-lite' );
 
 	/* Translators: If there are characters in your language that are not
 	* supported by Playfair Display, translate this to 'off'. Do not translate
 	* into your own language.
 	*/
-	$playfair_display = _x( 'on', 'Playfair Display font: on or off', 'hive_txtd' );
+	$playfair_display = _x( 'on', 'Playfair Display font: on or off', 'hive-lite' );
 
 
 	if ( 'off' !== $droid_serif || 'off' !== $playfair_display ) {
@@ -451,10 +451,10 @@ add_filter( 'tiny_mce_before_init', 'hive_mce_before_init' );
 function hive_mce_before_init( $settings ) {
 
 	$style_formats =array(
-		array( 'title' => __( 'Intro Text', 'hive_txtd' ), 'selector' => 'p', 'classes' => 'intro'),
-		array( 'title' => __( 'Dropcap', 'hive_txtd' ), 'inline' => 'span', 'classes' => 'dropcap'),
-		array( 'title' => __( 'Highlight', 'hive_txtd' ), 'inline' => 'span', 'classes' => 'highlight' ),
-		array( 'title' => __( 'Two Columns', 'hive_txtd' ), 'selector' => 'p', 'classes' => 'twocolumn', 'wrapper' => true )
+		array( 'title' => __( 'Intro Text', 'hive-lite' ), 'selector' => 'p', 'classes' => 'intro'),
+		array( 'title' => __( 'Dropcap', 'hive-lite' ), 'inline' => 'span', 'classes' => 'dropcap'),
+		array( 'title' => __( 'Highlight', 'hive-lite' ), 'inline' => 'span', 'classes' => 'highlight' ),
+		array( 'title' => __( 'Two Columns', 'hive-lite' ), 'selector' => 'p', 'classes' => 'twocolumn', 'wrapper' => true )
 	);
 
 	$settings['style_formats'] = json_encode( $style_formats );

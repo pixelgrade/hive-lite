@@ -23,27 +23,27 @@
 	<footer class="entry-footer">
 		<?php
 		/* translators: used between list items, there is a space after the comma */
-		$categories_list = get_the_category_list( __( ', ', 'hive_txtd' ) );
+		$categories_list = get_the_category_list( __( ', ', 'hive-lite' ) );
 		if ( $categories_list && hive_categorized_blog() ) { ?>
 			<span class="cat-links">
-			<?php printf( __( 'Posted in %1$s', 'hive_txtd' ), $categories_list ); ?>
+			<?php printf( __( 'Posted in %1$s', 'hive-lite' ), $categories_list ); ?>
 		</span>
 		<?php } // End if categories
 
 		/* translators: used between list items, there is a space after the comma */
-		$tags_list = get_the_tag_list( '', __( ', ', 'hive_txtd' ) );
+		$tags_list = get_the_tag_list( '', __( ', ', 'hive-lite' ) );
 		if ( $tags_list ) { ?>
 			<span class="tags-links">
-			<?php printf( __( 'Tagged %1$s', 'hive_txtd' ), $tags_list ); ?>
+			<?php printf( __( 'Tagged %1$s', 'hive-lite' ), $tags_list ); ?>
 		</span>
 		<?php
 		} // End if $tags_list
 
 		if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) { ?>
-			<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'hive_txtd' ), __( '1 Comment', 'hive_txtd' ), __( '% Comments', 'hive_txtd' ) ); ?></span>
+			<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'hive-lite' ), __( '1 Comment', 'hive-lite' ), __( '% Comments', 'hive-lite' ) ); ?></span>
 		<?php
 		}
 
-		edit_post_link( __( 'Edit', 'hive_txtd' ), '<span class="edit-link">', '</span>' ); ?>
+		edit_post_link( __( 'Edit', 'hive-lite' ), '<span class="edit-link">', '</span>' ); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

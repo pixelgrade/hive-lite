@@ -24,7 +24,7 @@
 	) ); ?>
 
 	<footer class="entry-footer">
-		<?php edit_post_link( __( 'Edit', 'hive_txtd' ), '<span class="edit-link">', '</span>' ); ?>
+		<?php edit_post_link( __( 'Edit', 'hive-lite' ), '<span class="edit-link">', '</span>' ); ?>
 	</footer><!-- .entry-footer -->
 
 </article><!-- #post-## -->

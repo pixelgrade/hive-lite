@@ -32,14 +32,14 @@ if ( ! function_exists( 'hive_paging_nav' ) ) :
 		$format .= $wp_rewrite->using_permalinks() ? user_trailingslashit( $wp_rewrite->pagination_base . '/%#%', 'paged' ) : '?paged=%#%'; ?>
 
 		<nav class="pagination" role="navigation">
-			<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'hive_txtd' ); ?></h1>
+			<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'hive-lite' ); ?></h1>
 
 			<div class="nav-links">
 
 				<?php
 				//output a disabled previous "link" if on the fist page
 				if ( $paged == 1 ) {
-					echo '<span class="prev page-numbers disabled"><i class="fa fa-long-arrow-left prev-arrow"></i>' . __( 'Previous', 'hive_txtd' ) . '</span>';
+					echo '<span class="prev page-numbers disabled"><i class="fa fa-long-arrow-left prev-arrow"></i>' . __( 'Previous', 'hive-lite' ) . '</span>';
 				}
 
 				//output the numbered page links
@@ -49,14 +49,14 @@ if ( ! function_exists( 'hive_paging_nav' ) ) :
 						'total'     => $wp_query->max_num_pages,
 						'current'   => $paged,
 						'prev_next' => true,
-						'prev_text' => '<i class="fa fa-long-arrow-left prev-arrow"></i>' . __( 'Previous', 'hive_txtd' ),
-						'next_text' => __( 'Next', 'hive_txtd' ) . '<i class="fa fa-long-arrow-right next-arrow"></i>',
+						'prev_text' => '<i class="fa fa-long-arrow-left prev-arrow"></i>' . __( 'Previous', 'hive-lite' ),
+						'next_text' => __( 'Next', 'hive-lite' ) . '<i class="fa fa-long-arrow-right next-arrow"></i>',
 						'add_args'  => array_map( 'urlencode', $query_args ),
 				) );
 
 				//output a disabled next "link" if on the last page
 				if ( $paged == $wp_query->max_num_pages ) {
-					echo '<span class="next page-numbers disabled">' . __( 'Next', 'hive_txtd' ) . '<i class="fa fa-long-arrow-right next-arrow"></i></span>';
+					echo '<span class="next page-numbers disabled">' . __( 'Next', 'hive-lite' ) . '<i class="fa fa-long-arrow-right next-arrow"></i></span>';
 				} ?>
 
 			</div><!-- .nav-links -->
@@ -83,7 +83,7 @@ if ( ! function_exists( 'hive_post_nav' ) ) :
 			}
 			?>
 			<nav class="navigation post-navigation" role="navigation">
-				<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'hive_txtd' ); ?></h1>
+				<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'hive-lite' ); ?></h1>
 
 				<div class="nav-links">
 					<?php

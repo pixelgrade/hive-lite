@@ -25,7 +25,7 @@ if ( ! function_exists( 'hive_setup' ) ) :
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
 		 */
-		load_theme_textdomain( 'hive_txtd', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'hive-lite', get_template_directory() . '/languages' );
 
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
@@ -49,8 +49,8 @@ if ( ! function_exists( 'hive_setup' ) ) :
 
 		// This theme uses wp_nav_menu() in three locations.
 		register_nav_menus( array(
-			'primary'   => __( 'Primary Menu', 'hive_txtd' ),
-			'footer'    => __( 'Footer Menu', 'hive_txtd' ),
+			'primary'   => __( 'Primary Menu', 'hive-lite' ),
+			'footer'    => __( 'Footer Menu', 'hive-lite' ),
 		) );
 
 		/*
@@ -87,7 +87,7 @@ add_action( 'after_setup_theme', 'hive_setup' );
  */
 function hive_widgets_init() {
 	register_sidebar( array(
-		'name'          => __( 'Sidebar', 'hive_txtd' ),
+		'name'          => __( 'Sidebar', 'hive-lite' ),
 		'id'            => 'sidebar-1',
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',

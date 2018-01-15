@@ -16,25 +16,25 @@ get_header(); ?>
 					<h1 class="page-title">
 						<?php
 						if ( is_category() ) : ?>
-							<span class="screen-reader-text"><?php _e( 'Category Archive:', 'hive_txtd' ); ?> </span> <?php single_cat_title();
+							<span class="screen-reader-text"><?php esc_html_e( 'Category Archive:', 'hive-lite' ); ?> </span> <?php single_cat_title();
 
 						elseif ( is_tag() ) :
 							single_tag_title();
 
 						elseif ( is_author() ) :
-							printf( __( 'Author: %s', 'hive_txtd' ), '<span class="vcard">' . get_the_author() . '</span>' );
+							printf( __( 'Author: %s', 'hive-lite' ), '<span class="vcard">' . get_the_author() . '</span>' );
 
 						elseif ( is_day() ) :
-							printf( __( 'Day: %s', 'hive_txtd' ), '<span>' . get_the_date() . '</span>' );
+							printf( __( 'Day: %s', 'hive-lite' ), '<span>' . get_the_date() . '</span>' );
 
 						elseif ( is_month() ) :
-							printf( __( 'Month: %s', 'hive_txtd' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'hive_txtd' ) ) . '</span>' );
+							printf( __( 'Month: %s', 'hive-lite' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'hive-lite' ) ) . '</span>' );
 
 						elseif ( is_year() ) :
-							printf( __( 'Year: %s', 'hive_txtd' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'hive_txtd' ) ) . '</span>' );
+							printf( __( 'Year: %s', 'hive-lite' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'hive-lite' ) ) . '</span>' );
 
 						else :
-							_e( 'Archives', 'hive_txtd' );
+							_e( 'Archives', 'hive-lite' );
 
 						endif; ?>
 					</h1>
