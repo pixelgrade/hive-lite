@@ -306,7 +306,7 @@ img {
     .alignleft, .wp-caption.alignleft {
       margin-right: 3em; } }
   @media not screen and (min-width: 899px) {
-    .alignleft.wp-caption {
+    .alignleft.wp-caption, .alignleft.gallery-caption {
       margin-left: 0; } }
   .blog .alignleft, .archive .alignleft {
     margin-left: 0; }
@@ -318,7 +318,7 @@ img {
     .alignright, .wp-caption.alignright {
       margin-left: 3em; } }
   @media not screen and (min-width: 899px) {
-    .alignright.wp-caption {
+    .alignright.wp-caption, .alignright.gallery-caption {
       margin-right: 0; } }
   .blog .alignright, .archive .alignright {
     margin-right: 0; }
