@@ -22,19 +22,23 @@ get_header(); ?>
 							single_tag_title();
 
 						elseif ( is_author() ) :
-							printf( __( 'Author: %s', 'hive-lite' ), '<span class="vcard">' . get_the_author() . '</span>' );
+							/* translators: %s: author name */
+							printf( esc_html__( 'Author: %s', 'hive-lite' ), '<span class="vcard">' . get_the_author() . '</span>' );
 
 						elseif ( is_day() ) :
-							printf( __( 'Day: %s', 'hive-lite' ), '<span>' . get_the_date() . '</span>' );
+							/* translators: %s: day */
+							printf( esc_html__( 'Day: %s', 'hive-lite' ), '<span>' . get_the_date() . '</span>' );
 
 						elseif ( is_month() ) :
-							printf( __( 'Month: %s', 'hive-lite' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'hive-lite' ) ) . '</span>' );
+							/* translators: %s: month name */
+							printf( esc_html__( 'Month: %s', 'hive-lite' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'hive-lite' ) ) . '</span>' );
 
 						elseif ( is_year() ) :
-							printf( __( 'Year: %s', 'hive-lite' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'hive-lite' ) ) . '</span>' );
+							/* translators: %s: year */
+							printf( esc_html__( 'Year: %s', 'hive-lite' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'hive-lite' ) ) . '</span>' );
 
 						else :
-							_e( 'Archives', 'hive-lite' );
+							esc_html_e( 'Archives', 'hive-lite' );
 
 						endif; ?>
 					</h1>
@@ -43,7 +47,8 @@ get_header(); ?>
 					$term_description = term_description();
 
 					if ( ! empty( $term_description ) ) {
-						printf( '<div class="taxonomy-description">%s</div>', $term_description );
+						/* translators: %s: term description */
+						printf( esc_html__( '<div class="taxonomy-description">%s</div>', 'hive-lite' ), esc_html( $term_description ) );
 					} ?>
 				</header><!-- .page-header -->
 

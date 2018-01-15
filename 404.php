@@ -11,12 +11,12 @@ get_header(); ?>
 
 			<section class="error-404 not-found">
 				<header class="page-header">
-					<h1 class="page-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'hive-lite' ); ?></h1>
+					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'hive-lite' ); ?></h1>
 				</header>
 				<!-- .page-header -->
 
 				<div class="page-content">
-					<p><?php _e( 'It looks like nothing was found at this location. Try a search.', 'hive-lite' ); ?></p>
+					<p><?php esc_html_e( 'It looks like nothing was found at this location. Try a search.', 'hive-lite' ); ?></p>
 
 					<?php get_search_form(); ?>
 
