@@ -22,7 +22,8 @@
     }
 
     @include query-below($lap) {
-        &.wp-caption{
+        &.wp-caption,
+        &.gallery-caption {
             margin-left: 0;
         }
     }
@@ -43,7 +44,8 @@
     }
 
     @include query-below($lap) {
-        &.wp-caption{
+        &.wp-caption,
+        &.gallery-caption {
             margin-right: 0;
         }
     }
