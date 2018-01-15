@@ -50,7 +50,7 @@ if ( post_password_required() ) {
 				 * to use hive_comment() to format the comments.
 				 * See hive_comment() in inc/extras.php for more.
 				 */
-				wp_list_comments( array( 'callback' => 'hive_comment', 'short_ping' => true ) ); ?>
+				wp_list_comments(); ?>
 			</ol><!-- .commentlist -->
 
 			<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) { // are there comments to navigate through ?>

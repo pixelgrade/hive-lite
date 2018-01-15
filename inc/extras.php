@@ -105,94 +105,7 @@ if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
 	}
 	add_filter( 'wp_title', 'hive_wp_title', 10, 2 );
 
-	/**
-	 * Title shim for sites older than WordPress 4.1.
-	 *
-	 * @link https://make.wordpress.org/core/2014/10/29/title-tags-in-4-1/
-	 * @todo Remove this function when WordPress 4.3 is released.
-	 */
-	function hive_render_title() {
-		?>
-		<title><?php wp_title( '|', true, 'right' ); ?></title>
-	<?php
-	}
-	add_action( 'wp_head', 'hive_render_title' );
 endif;
-
-/**
- * Sets the authordata global when viewing an author archive.
- * This provides backwards compatibility with
- * http://core.trac.wordpress.org/changeset/25574
- * It removes the need to call the_post() and rewind_posts() in an author
- * template to print information about the author.
- * @global WP_Query $wp_query WordPress Query object.
- * @return void
- */
-function hive_setup_author() {
-	global $wp_query;
-
-	if ( $wp_query->is_author() && isset( $wp_query->post ) ) {
-		$GLOBALS[ 'authordata' ] = get_userdata( $wp_query->post->post_author );
-	}
-}
-
-add_action( 'wp', 'hive_setup_author' );
-
-
-/*
- * Individual comment layout
- */
-function hive_comment( $comment, $args, $depth ) {
-	static $comment_number;
-
-	if ( ! isset( $comment_number ) ) {
-		$comment_number = $args[ 'per_page' ] * ( $args[ 'page' ] - 1 ) + 1;
-	} else {
-		$comment_number ++;
-	}
-
-	$GLOBALS[ 'comment' ] = $comment; ?>
-<li <?php comment_class(); ?>>
-	<article id="comment-<?php comment_ID() ?>" class="comment-article  media">
-		<span class="comment-number"><?php echo $comment_number ?></span>
-		<?php
-		//grab the avatar - by default the Mystery Man
-		$avatar = get_avatar( $comment ); ?>
-
-		<aside class="comment__avatar  media__img"><?php echo $avatar; ?></aside>
-
-		<div class="media__body">
-			<header class="comment__meta comment-author">
-				<?php printf( '<span class="comment__author-name">%s</span>', get_comment_author_link() ) ?>
-				<time class="comment__time" datetime="<?php comment_time( 'c' ); ?>">
-					<a href="<?php echo esc_url( get_comment_link( get_comment_ID() ) ) ?>" class="comment__timestamp"><?php printf( __( 'on %s at %s', 'hive-lite' ), get_comment_date(), get_comment_time() ); ?> </a>
-				</time>
-				<div class="comment__links">
-					<?php
-					//we need some space before Edit
-					edit_comment_link( __( 'Edit', 'hive-lite' ), '  ' );
-
-					comment_reply_link( array_merge( $args, array(
-						'depth'     => $depth,
-						'max_depth' => $args[ 'max_depth' ]
-					) ) );
-					?>
-				</div>
-			</header>
-			<!-- .comment-meta -->
-			<?php if ( $comment->comment_approved == '0' ) : ?>
-				<div class="alert info">
-					<p><?php _e( 'Your comment is awaiting moderation.', 'hive-lite' ) ?></p>
-				</div>
-			<?php endif; ?>
-			<section class="comment__content comment">
-				<?php comment_text() ?>
-			</section>
-		</div>
-	</article>
-	<!-- </li> is added by WordPress automatically -->
-<?php
-} // don't remove this bracket!
 
 /**
  * Filter wp_link_pages to wrap current page in span.
@@ -397,43 +310,6 @@ function hive_fonts_url() {
 
 	return $fonts_url;
 }
-
-/*
- * Due to the fact that we need a wrapper for center aligned images and for the ones with alignnone, we need to wrap the images without a caption
- * The images with captions already are wrapped by the figure tag
- */
-function hive_wrap_images_in_figure( $content ) {
-	$classes = array ('aligncenter', 'alignnone');
-
-	foreach ($classes as $class) {
-
-		//this regex basically tells this
-		//match all the images that are not in captions and that have the X class
-		//when an image is wrapped by an anchor tag, match that too
-		$regex = '~\[caption[^\]]*\].*\[\/caption\]|((?:<a[^>]*>\s*)?<img.*class="[^"]*' . $class . '[^"]*[^>]*>(?:\s*<\/a>)?)~i';
-
-		// Replace the matches
-		$content = preg_replace_callback(
-			$regex,
-			// in the callback function, if Group 1 is empty,
-			// set the replacement to the whole match,
-			// i.e. don't replace
-			// PS: I know this is a PHP 5.3 but it's too elegant to pass :)
-			function ( $m ) use ($class) {
-
-				if ( empty( $m[1] ) ) {
-					return $m[0];
-				}
-
-				return '<span class="' . $class . '">' . $m[1] . '</span>';
-			},
-			$content );
-	}
-
-	return $content;
-}
-
-add_filter( 'the_content', 'hive_wrap_images_in_figure' );
 
 /**
  * Add "Styles" drop-down
