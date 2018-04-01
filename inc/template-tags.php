@@ -96,7 +96,7 @@ if ( ! function_exists( 'hive_post_nav' ) ) :
 							$home_url = get_home_url();
 						}
 
-						echo '<div class="nav-home"><a href="' . $home_url . '"><i class="fa fa-th-large"></i></a></div>';
+						echo '<div class="nav-home"><a href="' . esc_url( $home_url ) . '"><i class="fa fa-th-large"></i></a></div>';
 					}
 					$prev_link = get_previous_post_link( '<div class="nav-previous">%link</div>', '<i class="fa fa-long-arrow-left prev-arrow"></i><span>%title</span>' );
 					if ( ! empty( $prev_link ) ) {

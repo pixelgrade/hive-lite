@@ -68,69 +68,6 @@
 			'section' => 'hivelite_style_view_pro',
 			'type'    => 'hidden',
 		) );
-
-
-		// Style Presets
-		$wp_customize->add_section( 'hivelite_style_presets', array(
-			'title'       => '&#x1f3ad; ' . esc_html__( 'Style Presets', 'hive-lite' ),
-			'priority'    => 29,
-			'description' => sprintf(
-				__( '<p>%s provides you hand-crafted style presets so that you never go out of trends and add some real value to the full package. You can instantly achieve a different visual approach and level up the users interest. </p><p> Our designer did his best to carefully match the colors and fonts so that you can easily refresh the overall style of your website.</p>', 'hive-lite' ),
-				sprintf( '<a href="%1$s" target="_blank">%2$s</a>', esc_url( hivelite_get_pro_link() ), esc_html__( 'Hive Pro', 'hive-lite' ) )
-			)
-		) );
-
-		$wp_customize->add_setting( 'hivelite_style_presets_desc', array(
-			'default'           => '',
-			'sanitize_callback' => 'hivelite_sanitize_checkbox',
-		) );
-		$wp_customize->add_control( 'hivelite_style_presets_desc', array(
-			'section' => 'hivelite_style_presets',
-			'type'    => 'hidden',
-		) );
-
-
-		// Colors
-		$wp_customize->add_section( 'hivelite_colors', array(
-			'title'       => '&#x1f3a8; ' . esc_html__( 'Colors', 'hive-lite' ),
-			'priority'    => 30,
-			'description' => sprintf(
-				__( '<p>Play around with colors that fits your vision, your mood or both of them. You can smoothly make a design twist to quickly catch your wide preferences.</p><p>%s to switch colors and fonts in order to nurture your visual approach.</p>', 'hive-lite' ),
-				sprintf( '<a href="%1$s" target="_blank">%2$s</a>', esc_url( hivelite_get_pro_link() ), esc_html__( 'Upgrade to Hive Pro', 'hive-lite' )
-				)
-			)
-		) );
-
-		$wp_customize->add_setting( 'hivelite_colors_desc', array(
-			'default'           => '',
-			'sanitize_callback' => 'hivelite_sanitize_checkbox',
-		) );
-		$wp_customize->add_control( 'hivelite_colors_desc', array(
-			'section' => 'hivelite_colors',
-			'type'    => 'hidden',
-		) );
-
-		// Fonts
-		$wp_customize->add_section( 'hivelite_fonts', array(
-			'title'       => '&#x1f4dd; ' . esc_html__( 'Fonts', 'hive-lite' ),
-			'priority'    => 31,
-			'description' => sprintf(
-				__( '<p>Typography can make it or break it. %s gives you a generous playground to match your needs in terms of fonts and sizes.</p><p>You have full-access to 600+ Google Fonts to mingle with for fine-tuning your style.', 'hive-lite' ),
-				sprintf( '<a href="%1$s" target="_blank">%2$s</a>', esc_url( hivelite_get_pro_link() ), esc_html__( 'Hive Pro', 'hive-lite' )
-				)
-			)
-		) );
-
-
-		$wp_customize->add_setting( 'hivelite_fonts_desc', array(
-			'default'           => '',
-			'sanitize_callback' => 'hivelite_sanitize_checkbox',
-		) );
-		$wp_customize->add_control( 'hivelite_fonts_desc', array(
-			'section' => 'hivelite_fonts',
-			'type'    => 'hidden',
-		) );
-
 	}
 
 	add_action( 'customize_register', 'hivelite_customize_register', 15 );
@@ -164,16 +101,6 @@
 
 		return $outline;
 	}
-
-	/**
-	 * JavaScript that handles the Customizer AJAX logic
-	 * This will be added in the preview part
-	 */
-	function hivelite_customizer_preview_assets() {
-		wp_enqueue_script( 'hivelite_customizer_preview', get_template_directory_uri() . '/assets/js/customizer_preview.js', array( 'customize-preview' ), '1.0.4', true );
-	}
-
-	add_action( 'customize_preview_init', 'hivelite_customizer_preview_assets' );
 
 	/**
 	 * Assets that will be loaded for the customizer sidebar

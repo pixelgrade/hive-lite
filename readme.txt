@@ -1,5 +1,5 @@
 Theme Name: Hive Lite
-Theme URI: https://demos.pixelgrade.com/hive-lite/
+Theme URI: https://pixelgrade.com/themes/hive-lite/
 Author: Pixelgrade
 Author URI: https://pixelgrade.com
 Description: An effortless tool for publishers of all kind, cherished for its clean masonry-style layout, modern typography and flexibility. Whether you’re looking to share your own thoughts, write about your latest findings or just have a scrapbook of photos, videos, quotes or other stuff, HIVE Lite is designed to fulfill these and a lot more.
