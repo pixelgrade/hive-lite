@@ -3,7 +3,7 @@ Theme URI: https://pixelgrade.com/themes/hive-lite/
 Author: Pixelgrade
 Author URI: https://pixelgrade.com
 Description: An effortless tool for publishers of all kind, cherished for its clean masonry-style layout, modern typography and flexibility. Whether you’re looking to share your own thoughts, write about your latest findings or just have a scrapbook of photos, videos, quotes or other stuff, HIVE Lite is designed to fulfill these and a lot more.
-Version: 1.0.1
+Version: 1.0.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, three-columns, grid-layout, right-sidebar, editor-style, featured-images, rtl-language-support, sticky-post, translation-ready, blog, news
@@ -19,6 +19,10 @@ Hive Lite is a magazine-style theme with clean type, smart layouts and a design 
 3. Click Activate to use your new theme right away.
 
 == Changelog ==
+
+= 1.0.2 =
+* Changes screenshot images to be properly licensed 
+* Fixed Mobile Navigation button
 
 = 1.0.1 =
 * Code cleaning
@@ -38,4 +42,4 @@ Unless otherwise specified, all the theme files, scripts and images are licensed
 
 * requestAnimationFrame: polyfill by Erik Möller, licensed under the [MIT License](http://opensource.org/licenses/mit-license.html).
 
-* Images: images by Adam Przewoski (https://unsplash.com/@adamprzewoski) - [Source](https://unsplash.com/photos/umchkHwkdyM), Felipe P. Lima Rizo (https://unsplash.com/@plqmr) - [Source](https://unsplash.com/photos/3wWzdboeqOo), Peter Sjo - [Source](https://unsplash.com/photos/Nxy-6QwGMzA), Leonardo Burgos - [Source](https://unsplash.com/photos/_OYIxRbFBNw).
+* Images: images by Stefan Stefancik (https://www.pexels.com/@stefanstefancik) - [Source](https://www.pexels.com/photo/man-young-happy-smiling-91227/), Bruce Mars (https://www.pexels.com/@olly) - [Source](https://www.pexels.com/photo/women-s-white-and-black-button-up-collared-shirt-774909/), Pixabay (https://www.pexels.com/@pixabay) - [Source](https://www.pexels.com/photo/gray-scale-photography-of-woman-157886/), Docks (https://www.pexels.com/@docks-326745) - [Source](https://www.pexels.com/photo/person-holding-guitar-in-grayscale-photography-938975/), licensed under CC0 Public Domain.
