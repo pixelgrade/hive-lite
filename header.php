@@ -60,7 +60,12 @@
 
 				if( false !== $menu ) : ?>
 					<button class="navigation__trigger">
-						<i class="fa fa-bars"></i><span class="screen-reader-text"><?php _e( 'Menu', 'hive-lite' ); ?></span>
+						<span class="c-burger c-burger--fade">
+							<b class="c-burger__slice c-burger__slice--top"></b>
+							<b class="c-burger__slice c-burger__slice--middle"></b>
+							<b class="c-burger__slice c-burger__slice--bottom"></b>
+						</span>
+						<span class="screen-reader-text"><?php _e( 'Menu', 'hive-lite' ); ?></span>
 					</button>
 				<?php
 					echo $menu;

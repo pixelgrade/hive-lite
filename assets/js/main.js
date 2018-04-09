@@ -248,8 +248,8 @@
                         translateX: 0,
                         translateZ: 0.01
                     }, {
-                        duration: 300,
-                        easing: "easeInQuart",
+                        duration: 400,
+                        easing: "ease",
                         begin: function () {
                             $navContainer.removeClass('shadow');
                         }
@@ -263,8 +263,8 @@
                         translateX: offset,
                         translateZ: 0.01
                     }, {
-                        easing: "easeOutCubic",
-                        duration: 300,
+                        easing: "ease",
+                        duration: 400,
                         complete: function () {
                             $navContainer.addClass('shadow');
                         }
