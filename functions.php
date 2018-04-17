@@ -140,6 +140,49 @@ function hive_scripts_styles() {
 
 add_action( 'wp_enqueue_scripts', 'hive_scripts_styles' );
 
+
+
+/**
+ * Freemius Integration
+ */
+// Create a helper function for easy SDK access.
+function hivelitefreemius() {
+    global $hivelitefreemius;
+
+    if ( ! isset( $hivelitefreemius ) ) {
+        // Include Freemius SDK.
+        require_once dirname(__FILE__) . '/freemius/start.php';
+
+        $hivelitefreemius = fs_dynamic_init( array(
+            'id'                  => '1954',
+            'slug'                => 'hive-lite',
+            'type'                => 'theme',
+            'public_key'          => 'pk_f2719141bbfacd5141beb49abe8f3',
+            'is_premium'          => false,
+            'has_addons'          => false,
+            'has_paid_plans'      => false,
+            'menu'                => array(
+                'slug'           => 'hive-lite-welcome',
+                'account'        => false,
+                'contact'        => false,
+                'support'        => false,
+                'parent'         => array(
+                    'slug' => 'themes.php',
+                ),
+            ),
+        ) );
+    }
+
+    return $hivelitefreemius;
+}
+
+// Init Freemius.
+hivelitefreemius();
+// Signal that SDK was initiated.
+do_action( 'hivelitefreemius_loaded' );
+
+
+
 /**
  * Custom template tags for this theme.
  */
