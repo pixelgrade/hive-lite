@@ -384,15 +384,6 @@
 	.site-content {
 		@include rhythm(margin-bottom, 6);
 	}
-
-	@include query-above(1000px) {
-		.site-footer {
-			position: fixed;
-			bottom: 0;
-			left: 0;
-			right: 0;
-		}
-	}
 }
 
 .entry-media iframe,

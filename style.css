@@ -690,7 +690,6 @@ body { word-wrap: break-word; text-overflow: ellipsis; }
 
 .error404 .page-content, .search-no-results .page-content { text-align: center; }
 .error404 .site-content, .search-no-results .site-content { margin-bottom: 4.5em; }
-@media only screen and (min-width: 1000px) { .error404 .site-footer, .search-no-results .site-footer { position: fixed; bottom: 0; left: 0; right: 0; } }
 
 .entry-media iframe, .entry-content [class^="embed-"] > iframe { display: block; max-width: 100%; }
 
