@@ -48,7 +48,7 @@ get_header(); ?>
 
 					if ( ! empty( $term_description ) ) {
 						/* translators: %s: term description */
-						printf( esc_html__( '<div class="taxonomy-description">%s</div>', 'hive-lite' ), esc_html( $term_description ) );
+						the_archive_description( '<div class="taxonomy-description">', '</div>' );
 					} ?>
 				</header><!-- .page-header -->
 
