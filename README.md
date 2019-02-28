@@ -13,6 +13,9 @@ Hive Lite is a magazine-style theme with clean type, smart layouts and a design 
 
 ## Changelog
 
+= 1.0.5 =
+* Fixed a security issue
+
 = 1.0.4 =
 * Added WPForms recommended plugin
 
