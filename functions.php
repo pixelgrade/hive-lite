@@ -133,7 +133,7 @@ function hive_scripts_styles() {
 	wp_register_script( 'velocity', get_stylesheet_directory_uri() . '/assets/js/velocity.js', array(), '1.1.0', true );
 
 	// Enqueue Hive Custom Scripts
-	wp_enqueue_script( 'hive-scripts', get_stylesheet_directory_uri() . '/assets/js/main.js', array( 'jquery', 'masonry', 'hoverintent', 'velocity' ), '1.0.0', true );
+	wp_enqueue_script( 'hive-scripts', get_stylesheet_directory_uri() . '/assets/js/main.js', array( 'jquery', 'masonry', 'hoverintent', 'velocity' ), array(), $theme->get( 'Version' ), true );
 
 	if( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
