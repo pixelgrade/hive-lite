@@ -401,13 +401,12 @@ add_filter( 'post_class', 'remove_post_format_class', 20 );
  * @return array
  */
 function hive_wupdates_add_id_wporg( $ids = array() ) {
-
 	// First get the theme directory name (unique)
 	$slug = basename( get_template_directory() );
 
 	// Now add the predefined details about this product
 	// Do not tamper with these please!!!
-	$ids[ $slug ] = array( 'name' => 'Hive Lite', 'slug' => 'hive-lite', 'id' => 'PMAGv', 'type' => 'theme_wporg', 'digest' => '3b21deb951f1ecc3a378533e293adc13', );
+	$ids[ $slug ] = array( 'name' => 'Hive', 'slug' => 'hive', 'id' => 'PMAGv', 'type' => 'theme_wporg', 'digest' => '5c48e4dee63f1d92dfab010c8e051022', );
 
 	return $ids;
 }

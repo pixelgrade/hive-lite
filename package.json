@@ -1,21 +1,23 @@
 {
-  "name": "patch",
-  "devDependencies": {
-    "del": "*",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "~1.0.1",
-    "gulp-beautify": "*",
-    "gulp-clean": "*",
-    "gulp-concat": "~2.1.7",
-    "gulp-csscomb": "*",
-    "gulp-exec": "~2.0.1",
-    "gulp-ignore": "*",
-    "gulp-livereload": "*",
-    "gulp-merge-media-queries": "*",
-    "gulp-minify-css": "*",
-    "gulp-notify": "*",
-    "gulp-replace": "~0.4.0",
-    "gulp-ruby-sass": "~0.7.1",
-    "gulp-sass": "*"
-  }
+	"name": "patch-lite",
+	"devDependencies": {
+		"del": "^4.1.0",
+		"gulp": "^4.0.0",
+		"gulp-autoprefixer": "^6.0.0",
+		"gulp-beautify": "^3.0.0",
+		"gulp-combine-media-queries": "*",
+		"gulp-concat": "*",
+		"gulp-exec": "^3.0.2",
+		"gulp-livereload": "^4.0.1",
+		"gulp-load-plugins": "^1.5.0",
+		"gulp-notify": "^3.2.0",
+		"gulp-prompt": "^1.2.0",
+		"gulp-rename": "^1.4.0",
+		"gulp-replace": "^1.0.0",
+		"gulp-rsync": "0.0.8",
+		"gulp-rtlcss": "^1.3.0",
+		"gulp-sass": "^4.0.2",
+		"gulp-sourcemaps": "^2.6.5",
+		"gulp-util": "^3.0.8"
+	}
 }
