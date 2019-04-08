@@ -51,6 +51,30 @@ function stylesRTL() {
 stylesRTL.description = 'Generate style-rtl.css file based on style.css';
 gulp.task('styles-rtl', stylesRTL)
 
+function stylesAdmin() {
+
+	return gulp.src('inc/admin/scss/**/*.scss')
+		.pipe(plugins.sourcemaps.init())
+		.pipe(plugins.sass().on('error', logError))
+		.pipe(plugins.autoprefixer())
+		.pipe(plugins.replace(/^@charset \"UTF-8\";\n/gm, ''))
+		.pipe(gulp.dest('./inc/admin/css'))
+}
+stylesAdmin.description = 'Compiles WordPress admin Sass and uses autoprefixer';
+gulp.task('styles-admin', stylesAdmin )
+
+function stylesPixcareNotice() {
+
+	return gulp.src('inc/admin/pixcare-notice/*.scss')
+		.pipe(plugins.sourcemaps.init())
+		.pipe(plugins.sass().on('error', logError))
+		.pipe(plugins.autoprefixer())
+		.pipe(plugins.replace(/^@charset \"UTF-8\";\n/gm, ''))
+		.pipe(gulp.dest('./inc/admin/pixcare-notice'))
+}
+stylesAdmin.description = 'Compiles PixCare admin notice Sass and uses autoprefixer';
+gulp.task('styles-pixcare-notice', stylesPixcareNotice )
+
 function stylesWatch() {
 	plugins.livereload.listen();
 	return gulp.watch('assets/scss/**/*.scss', stylesMain);
@@ -58,7 +82,7 @@ function stylesWatch() {
 gulp.task('styles-watch', stylesWatch);
 
 function stylesSequence(cb) {
-	return gulp.series( 'styles-main', 'styles-rtl' )(cb);
+	return gulp.series( 'styles-main', 'styles-rtl', 'styles-pixcare-notice', 'styles-admin' )(cb);
 }
 stylesSequence.description = 'Compile the styles and generate RTL version.';
 gulp.task( 'styles', stylesSequence  );

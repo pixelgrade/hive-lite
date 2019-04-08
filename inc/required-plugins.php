@@ -27,11 +27,6 @@ function hive_lite_register_required_plugins() {
 			'version'            => '1.5.0',
 			'is_automatic'       => false,
 		),
-		array(
-			'name'      => 'WPForms Lite',
-			'slug'      => 'wpforms-lite',
-			'required'  => false,
-		),
 	);
 
 	$config = array(

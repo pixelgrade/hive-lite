@@ -1,0 +1,27 @@
+$label-bg-color: #DE1651;
+$label-border-radius: 8px;
+$label-font-size: 14px;
+
+/*Label for Pro Widgets*/
+
+[id*="featured-posts-carousel"],
+[id*="featured-posts-6cards"],
+[id*="featured-posts-list"],
+[id*="categories-image-grid"],
+[id*="pixelgrade-promo-box"] {
+  .widget-title h3:before {
+    content: "pro";
+    display: inline-block;
+    margin-right: 5px;
+    padding: 4px 12px;
+    border-radius: $label-border-radius;
+
+    font-size: $label-font-size;
+    font-weight: 300;
+    line-height: 1;
+    text-transform: capitalize;
+
+    background-color: $label-bg-color;
+    color: #ffffff;
+  }
+}

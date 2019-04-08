@@ -1,0 +1,17 @@
+/*Label for Pro Widgets*/
+[id*="featured-posts-carousel"] .widget-title h3:before,
+[id*="featured-posts-6cards"] .widget-title h3:before,
+[id*="featured-posts-list"] .widget-title h3:before,
+[id*="categories-image-grid"] .widget-title h3:before,
+[id*="pixelgrade-promo-box"] .widget-title h3:before {
+  content: "pro";
+  display: inline-block;
+  margin-right: 5px;
+  padding: 4px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1;
+  text-transform: capitalize;
+  background-color: #DE1651;
+  color: #ffffff; }
