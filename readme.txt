@@ -1,7 +1,7 @@
 Theme Name: Hive Lite
 Author: Pixelgrade
 Author URI: https://pixelgrade.com
-Description: An effortless tool for publishers of all kind, cherished for its clean masonry-style layout, modern typography and flexibility. Whether you’re looking to share your own thoughts, write about your latest findings or just have a scrapbook of photos, videos, quotes or other stuff, HIVE Lite is designed to fulfill these and a lot more.
+Description: An effortless tool for publishers of all kind, cherished for its clean masonry-style layout, modern typography and flexibility. Whether you're looking to share your own thoughts, write about your latest findings or just have a scrapbook of photos, videos, quotes or other stuff, HIVE Lite is designed to fulfill these and a lot more.
 Version: 1.1.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -11,7 +11,7 @@ Tags: one-column, two-columns, three-columns, grid-layout, right-sidebar, editor
 
 == Description ==
 
-Hive Lite is a magazine-style theme with clean type, smart layouts and a design flexibility that makes it perfect for publishers of all kinds. Whether you’re looking to share your own thoughts, write about your latest findings, or create a scrapbook of other content, Hive fits the bill.
+Hive Lite is a magazine-style theme with clean type, smart layouts and a design flexibility that makes it perfect for publishers of all kinds. Whether you're looking to share your own thoughts, write about your latest findings, or create a scrapbook of other content, Hive fits the bill.
 
 == Installation ==
 

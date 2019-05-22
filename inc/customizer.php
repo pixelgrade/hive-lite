@@ -43,7 +43,7 @@ function hivelite_customize_register( $wp_customize ) {
 
                             <li>
                             	<h4>Post Formats</h4>
-                            	<div class="description">Make room for a wide range of post formats to pack your engaging stories so that people will enjoy sharing. Text, image, video, audio—you name it, and you’re covered.</div>
+                            	<div class="description">Make room for a wide range of post formats to pack your engaging stories so that people will enjoy sharing. Text, image, video, audio—you name it, and you\'re covered.</div>
                             </li>
 
                             <li>
@@ -55,7 +55,7 @@ function hivelite_customize_register( $wp_customize ) {
                             	<h4>Premium Customer Support</h4>
                             	<div class="description">You will benefit by priority support from a caring and devoted team, eager to help and to spread happiness. We work hard to provide a flawless experience for those who vote us with trust and choose to be our special clients.</div>
                             </li>
-                            
+
                     </ul> %s </div>', 'hive-lite' ),
 			/* translators: %1$s: The view pro URL, %2$s: The view pro link text. */
 			sprintf( '<a href="%1$s" target="_blank" class="button button-primary">%2$s</a>', esc_url( hivelite_get_pro_link() ), esc_html__( 'View Hive PRO', 'hive-lite' ) )
