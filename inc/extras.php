@@ -40,7 +40,7 @@ function hivelite_body_classes( $classes ) {
 		 * This special case when there is only one `EU Cookie law` widget in sidebar
 		 * This widget does not output html and the class `has_sidebar` should not be present with an empty sidebar
 		 */
-		if ( 1 !== count( $sidebars_widgets['sidebar-1'] ) || false === strpos( $sidebars_widgets['sidebar-1']['0'], 'eu_cookie_law' ) ) {
+		if ( 1 < count( $sidebars_widgets['sidebar-1'] ) || ( ! empty( $sidebars_widgets['sidebar-1'] ) && false === strpos( reset( $sidebars_widgets['sidebar-1'] ), 'eu_cookie_law' ) ) ) {
 			$classes[] = 'has_sidebar';
 		}
 	}
