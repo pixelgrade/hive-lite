@@ -1,9 +1,9 @@
 {
 	"name": "patch-lite",
 	"devDependencies": {
-		"del": "^4.1.0",
-		"gulp": "^4.0.0",
-		"gulp-autoprefixer": "^6.0.0",
+		"del": "^4.1.1",
+		"gulp": "^4.0.2",
+		"gulp-autoprefixer": "^6.1.0",
 		"gulp-beautify": "^3.0.0",
 		"gulp-combine-media-queries": "*",
 		"gulp-concat": "*",

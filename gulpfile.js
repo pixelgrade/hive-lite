@@ -1,7 +1,8 @@
 var gulp = require('gulp'),
 	plugins = require('gulp-load-plugins')(),
 	del = require('del'),
-	fs = require('fs');
+	fs = require('fs'),
+	cp = require('child_process');
 
 var u = plugins.util,
 	c = plugins.util.colors,
@@ -190,17 +191,32 @@ function removeUnneededFiles(done) {
 }
 gulp.task( 'remove-files', removeUnneededFiles );
 
-/**
- * Copy theme folder outside in a build folder, recreate styles before that
- */
-function maybeFixBuildPermissions() {
-	var dir = process.cwd();
-	return gulp.src( './*' )
-		// Make sure that file and directory permissions are right
-		.pipe(plugins.exec('find ./../build -type d -exec chmod 755 {} \\;'))
-		.pipe(plugins.exec(' find ./../build -type f -exec chmod 644 {} \\;'));
+function maybeFixBuildDirPermissions(done) {
+
+	cp.execSync('find ./../build -type d -exec chmod 755 {} \\;');
+
+	return done();
 }
-gulp.task( 'fix-build-permissions', maybeFixBuildPermissions );
+maybeFixBuildDirPermissions.description = 'Make sure that all directories in the build directory have 755 permissions.';
+gulp.task( 'fix-build-dir-permissions', maybeFixBuildDirPermissions );
+
+function maybeFixBuildFilePermissions(done) {
+
+	cp.execSync('find ./../build -type f -exec chmod 644 {} \\;');
+
+	return done();
+}
+maybeFixBuildFilePermissions.description = 'Make sure that all files in the build directory have 644 permissions.';
+gulp.task( 'fix-build-file-permissions', maybeFixBuildFilePermissions );
+
+function maybeFixIncorrectLineEndings(done) {
+
+	cp.execSync('find ./../build -type f -print0 | xargs -0 -n 1 -P 4 dos2unix');
+
+	return done();
+}
+maybeFixIncorrectLineEndings.description = 'Make sure that all line endings in the files in the build directory are UNIX line endings.';
+gulp.task( 'fix-line-endings', maybeFixIncorrectLineEndings );
 
 // -----------------------------------------------------------------------------
 // Replace the themes' text domain with the actual text domain (think variations)
@@ -249,7 +265,7 @@ function createZipFile(){
 gulp.task( 'make-zip', createZipFile );
 
 function buildSequence(cb) {
-	return gulp.series( 'copy-folder', 'remove-files', 'fix-build-permissions', 'txtdomain-replace' )(cb);
+	return gulp.series( 'copy-folder', 'remove-files', 'fix-build-dir-permissions', 'fix-build-file-permissions', 'fix-line-endings', 'txtdomain-replace' )(cb);
 }
 buildSequence.description = 'Sets up the build folder';
 gulp.task( 'build', buildSequence );
@@ -262,7 +278,7 @@ gulp.task( 'zip', zipSequence  );
 
 function updateDemoInstall() {
 
-	var run_exec = require('child_process').exec;
+	var run_exec = cp.exec;
 
 	gulp.src('./')
 		.pipe(plugins.prompt.confirm( "This task will stash all your local changes without commiting them,\n Make sure you did all your commits and pushes to the main " + main_branch + " branch! \n Are you sure you want to continue?!? "))
