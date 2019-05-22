@@ -1,8 +1,12 @@
 <?php
 /**
  * The template for displaying search results pages.
- * @package Hive
+ * @package Hive Lite
  */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
 
 get_header(); ?>
 
@@ -12,7 +16,9 @@ get_header(); ?>
 			<?php if ( have_posts() ) : ?>
 
 				<header class="page-header">
-					<h1 class="page-title  page-title--search"><?php printf( __( 'Search Results for: %s', 'hive-lite' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+					<h1 class="page-title  page-title--search"><?php
+						/* translators: %s: The search query. */
+						printf( esc_html__( 'Search Results for: %s', 'hive-lite' ), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?></h1>
 				</header><!-- .page-header -->
 
 				<div id="posts" class="archive__grid  grid  masonry">
@@ -29,7 +35,7 @@ get_header(); ?>
 					endwhile; ?>
 				</div>
 
-				<?php hive_paging_nav();
+				<?php hivelite_paging_nav();
 
 			else :
 
@@ -41,4 +47,4 @@ get_header(); ?>
 		<!-- #main -->
 	</section><!-- #primary -->
 
-<?php get_footer(); ?>
+<?php get_footer();

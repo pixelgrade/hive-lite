@@ -2,8 +2,12 @@
 /**
  * The template for displaying archive pages.
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
- * @package Hive
+ * @package Hive Lite
  */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
 
 get_header(); ?>
 
@@ -65,7 +69,7 @@ get_header(); ?>
 					endwhile; ?>
 				</div>
 
-				<?php hive_paging_nav();
+				<?php hivelite_paging_nav();
 
 			else :
 
@@ -77,4 +81,4 @@ get_header(); ?>
 		<!-- #main -->
 	</section><!-- #primary -->
 
-<?php get_footer(); ?>
+<?php get_footer();

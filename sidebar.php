@@ -1,8 +1,12 @@
 <?php
 /**
  * The sidebar containing the main widget area.
- * @package Hive
+ * @package Hive Lite
  */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
 
 if( ! is_active_sidebar( 'sidebar-1' ) ) {
 	return;

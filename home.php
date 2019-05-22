@@ -2,8 +2,12 @@
 /**
  * The template for displaying posts home.
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
- * @package Hive
+ * @package Hive Lite
  */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
 
 get_header(); ?>
 
@@ -24,7 +28,7 @@ get_header(); ?>
 				endwhile; ?>
 			</div>
 
-			<?php hive_paging_nav();
+			<?php hivelite_paging_nav();
 		else :
 
 			get_template_part( 'content', 'none' );
@@ -36,4 +40,4 @@ get_header(); ?>
 <?php
 //no sidebar on home please
 
-get_footer(); ?>
+get_footer();

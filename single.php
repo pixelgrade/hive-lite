@@ -1,8 +1,12 @@
 <?php
 /**
  * The template for displaying all single posts.
- * @package Hive
+ * @package Hive Lite
  */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
 
 get_header(); ?>
 
@@ -30,4 +34,4 @@ get_header(); ?>
 
 <?php
 get_sidebar();
-get_footer(); ?>
+get_footer();

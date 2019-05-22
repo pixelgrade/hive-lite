@@ -1,8 +1,8 @@
 <?php
 /**
- * Hive functions and definitions
+ * Hive Lite functions and definitions
  *
- * @package Hive
+ * @package Hive Lite
  */
 
 /**
@@ -12,14 +12,14 @@ if ( ! isset( $content_width ) ) {
 	$content_width = 940; /* pixels */
 }
 
-if ( ! function_exists( 'hive_setup' ) ) :
+if ( ! function_exists( 'hivelite_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 * Note that this function is hooked into the after_setup_theme hook, which
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support for post thumbnails.
 	 */
-	function hive_setup() {
+	function hivelite_setup() {
 
 		/*
 		 * Make theme available for translation.
@@ -69,23 +69,22 @@ if ( ! function_exists( 'hive_setup' ) ) :
 		 * Add editor custom style to make it look more like the frontend
 		 * Also enqueue the custom Google Fonts also
 		 */
-		add_editor_style( array( 'editor-style.css', hive_fonts_url() ) );
+		add_editor_style( array( 'editor-style.css', hivelite_fonts_url() ) );
 
 		/*
 		 * Now some cleanup to remove features that we do not support
 		 */
 		remove_theme_support( 'custom-header' );
 	}
-endif; // hive_setup
-
-add_action( 'after_setup_theme', 'hive_setup' );
+endif;
+add_action( 'after_setup_theme', 'hivelite_setup' );
 
 /**
  * Register widget area.
  *
  * @link http://codex.wordpress.org/Function_Reference/register_sidebar
  */
-function hive_widgets_init() {
+function hivelite_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'Sidebar', 'hive-lite' ),
 		'id'            => 'sidebar-1',
@@ -97,26 +96,25 @@ function hive_widgets_init() {
 	) );
 }
 
-add_action( 'widgets_init', 'hive_widgets_init' );
+add_action( 'widgets_init', 'hivelite_widgets_init' );
 
 /**
  * Filter the post titles
  *
  * Hooked to wp_loaded because we need to have access to theme mods
  */
-function hive_filter_post_titles() {
+function hivelite_filter_post_titles() {
 	//make ultra mega nice post titles only if we are allowed to from Customizer > Theme Options
 	if ( ! get_theme_mod( 'hive_disable_autostyle_titles' , false ) ) {
-		add_filter( 'the_title', 'hive_auto_style_title' );
+		add_filter( 'the_title', 'hivelite_auto_style_title' );
 	}
 }
-
-add_action( 'loop_start', 'hive_filter_post_titles' );
+add_action( 'loop_start', 'hivelite_filter_post_titles' );
 
 /**
  * Enqueue scripts and styles.
  */
-function hive_scripts_styles() {
+function hivelite_scripts_styles() {
 	$theme = wp_get_theme( get_template() );
 
 	//Main Stylesheet
@@ -124,22 +122,19 @@ function hive_scripts_styles() {
 	wp_style_add_data( 'hive-style', 'rtl', 'replace' );
 
 	//Default Fonts
-	wp_enqueue_style( 'hive-fonts', hive_fonts_url(), array(), null );
-
-	// Register HoverIntent plugin
-	wp_register_script( 'hoverintent', get_stylesheet_directory_uri() . '/assets/js/jquery.hoverIntent.js', array( 'jquery' ), '1.8.0', true );
+	wp_enqueue_style( 'hive-fonts', hivelite_fonts_url(), array(), null );
 
 	// Register Velocity.js plugin
 	wp_register_script( 'velocity', get_stylesheet_directory_uri() . '/assets/js/velocity.js', array(), '1.1.0', true );
 
 	// Enqueue Hive Custom Scripts
-	wp_enqueue_script( 'hive-scripts', get_stylesheet_directory_uri() . '/assets/js/main.js', array( 'jquery', 'masonry', 'hoverintent', 'velocity' ), $theme->get( 'Version' ), true );
+	wp_enqueue_script( 'hive-scripts', get_stylesheet_directory_uri() . '/assets/js/main.js', array( 'jquery', 'masonry', 'hoverIntent', 'velocity' ), $theme->get( 'Version' ), true );
 
 	if( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'hive_scripts_styles' );
+add_action( 'wp_enqueue_scripts', 'hivelite_scripts_styles' );
 
 /**
  * Custom template tags for this theme.
@@ -152,19 +147,9 @@ require get_template_directory() . '/inc/template-tags.php';
 require get_template_directory() . '/inc/extras.php';
 
 /**
- * Load the required plugins (TGMPA) logic.
- */
-require get_template_directory() . '/inc/required-plugins.php';
-
-/**
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
-
-/**
- * Load the Hybrid Media Grabber class
- */
-require get_template_directory() . '/inc/hive-hybrid-media-grabber.php';
 
 /**
  * Admin dashboard logic.

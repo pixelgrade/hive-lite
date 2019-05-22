@@ -31,6 +31,7 @@ function hivelite_customize_register( $wp_customize ) {
 		'title'       => '' . esc_html__( 'View PRO Version', 'hive-lite' ),
 		'priority'    => 2,
 		'description' => sprintf(
+			/* translators: %s: The view pro link. */
 			__( '<div class="upsell-container">
 					<h2>Need More? Go PRO</h2>
 					<p>Take it to the next level. See the features below:</p>
@@ -56,6 +57,7 @@ function hivelite_customize_register( $wp_customize ) {
                             </li>
                             
                     </ul> %s </div>', 'hive-lite' ),
+			/* translators: %1$s: The view pro URL, %2$s: The view pro link text. */
 			sprintf( '<a href="%1$s" target="_blank" class="button button-primary">%2$s</a>', esc_url( hivelite_get_pro_link() ), esc_html__( 'View Hive PRO', 'hive-lite' ) )
 		),
 	) );
@@ -111,7 +113,7 @@ function hivelite_get_pro_link() {
 	return 'https://pixelgrade.com/themes/blogging/hive-lite?utm_source=hive-lite-clients&utm_medium=customizer&utm_campaign=hive-lite#pro';
 }
 
-function hive_add_customify_options( $config ) {
+function hivelite_add_customify_options( $config ) {
 
 	$config['sections'] = array();
 	$config['panels']   = array();
@@ -119,4 +121,4 @@ function hive_add_customify_options( $config ) {
 	return $config;
 }
 
-add_filter( 'customify_filter_fields', 'hive_add_customify_options' );
+add_filter( 'customify_filter_fields', 'hivelite_add_customify_options' );

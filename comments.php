@@ -2,9 +2,12 @@
 /**
  * The template for displaying Comments.
  *
- * @package Hive
- * @since   Hive 1.0
+ * @package Hive Lite
  */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
 
 /*
  * If the current post is protected by a password and

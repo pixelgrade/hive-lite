@@ -2,8 +2,13 @@
 /**
  * The template part for displaying a message that posts cannot be found.
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
- * @package Hive
+ * @package Hive Lite
  */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
+
 ?>
 
 <section class="no-results not-found">
@@ -14,8 +19,9 @@
 	<div class="page-content">
 		<?php if ( is_home() && current_user_can( 'publish_posts' ) ) { ?>
 
-			<?php /* translators: %s: link to adding a new post */ ?>
-			<p><?php printf( esc_html__( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'hive-lite' ), esc_url( admin_url( 'post-new.php' ) ) ); ?></p>
+			<p><?php
+				/* translators: %1$s: link to adding a new post */
+				printf( esc_html__( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'hive-lite' ), esc_url( admin_url( 'post-new.php' ) ) ); ?></p>
 
 		<?php } elseif ( is_search() ) { ?>
 

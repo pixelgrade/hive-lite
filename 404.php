@@ -1,8 +1,12 @@
 <?php
 /**
  * The template for displaying 404 pages (not found).
- * @package Hive
+ * @package Hive Lite
  */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
 
 get_header(); ?>
 
@@ -29,4 +33,4 @@ get_header(); ?>
 		<!-- #main -->
 	</div><!-- #primary -->
 
-<?php get_footer(); ?>
+<?php get_footer();

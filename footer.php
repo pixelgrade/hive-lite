@@ -2,8 +2,13 @@
 /**
  * The template for displaying the footer.
  * Contains the closing of the #content div and all content after
- * @package Hive
- */ ?>
+ * @package Hive Lite
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
+?>
 </div><!-- .container -->
 
 </div><!-- #content -->
@@ -12,9 +17,13 @@
 	<div class="container">
 		<div class="grid">
 			<div class="grid__item  site-info">
-				<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'hive-lite' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'hive-lite' ), 'WordPress' ); ?></a>
+				<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'hive-lite' ) ); ?>"><?php
+					/* translators: %s: WordPress */
+					printf( esc_html__( 'Proudly powered by %s', 'hive-lite' ), 'WordPress' ); ?></a>
 				<span class="sep"> | </span>
-				<?php printf( __( 'Theme: %1$s by %2$s.', 'hive-lite' ), 'Hive Lite', '<a href="http://pixelgrade.com" rel="designer">PixelGrade</a>' ); ?>
+				<?php
+				/* translators: %1$s: The theme name, %2$s: The theme author name. */
+				printf( esc_html__( 'Theme: %1$s by %2$s.', 'hive-lite' ), 'Hive Lite', '<a href="https://pixelgrade.com/" rel="designer">Pixelgrade</a>' ); ?>
 			</div><!-- .site-info -->
 
 			<div class="grid__item  footer-navigation">
@@ -24,7 +33,7 @@
 						'theme_location' => 'footer',
 						'container'      => '',
 						'menu_class'     => 'nav  nav--footer',
-						'items_wrap'         => '<nav><h5 class="screen-reader-text">'.__( 'Footer navigation', 'hive-lite' ).'</h5><ul id="%1$s" class="%2$s">%3$s</ul></nav>',
+						'items_wrap'         => '<nav><h5 class="screen-reader-text">' . esc_html__( 'Footer navigation', 'hive-lite' ) . '</h5><ul id="%1$s" class="%2$s">%3$s</ul></nav>',
 					)
 				); ?>
 			</div>

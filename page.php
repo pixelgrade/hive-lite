@@ -5,8 +5,12 @@
  * Please note that this is the WordPress construct of pages
  * and that other 'pages' on your WordPress site will use a
  * different template.
- * @package Hive
+ * @package Hive Lite
  */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
 
 get_header(); ?>
 
@@ -28,4 +32,4 @@ get_header(); ?>
 
 <?php
 get_sidebar();
-get_footer(); ?>
+get_footer();

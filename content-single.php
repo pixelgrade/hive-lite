@@ -1,7 +1,14 @@
 <?php
 /**
- * @package Hive
+ * Template part for displaying single posts.
+ *
+ * @link https://codex.wordpress.org/Template_Hierarchy
+ * @package Hive Lite
  */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -12,19 +19,23 @@
 	/* translators: used between list items, there is a space after the comma */
 	$tag_list = get_the_tag_list( '', __( ', ', 'hive-lite' ) );
 
-	if ( ! hive_categorized_blog() ) {
+	if ( ! hivelite_categorized_blog() ) {
 		// This blog only has 1 category so we just need to worry about tags in the meta text
 		if ( '' != $tag_list ) {
+			/* translators: %2$s: The tags list, %3$s The post URL. */
 			$meta_text = __( 'This entry was tagged %2$s. Bookmark the <a href="%3$s" rel="bookmark">permalink</a>.', 'hive-lite' );
 		} else {
+			/* translators: %3$s The post URL. */
 			$meta_text = __( 'Bookmark the <a href="%3$s" rel="bookmark">permalink</a>.', 'hive-lite' );
 		}
 
 	} else {
 		// But this blog has loads of categories so we should probably display them here
 		if ( '' != $tag_list ) {
+			/* translators: %1$s: The categories list, %2$s: The tags list, %3$s The post URL. */
 			$meta_text = __( 'Posted in %1$s and tagged %2$s. Bookmark the <a href="%3$s" rel="bookmark">permalink</a>.', 'hive-lite' );
 		} else {
+			/* translators: %1$s: The categories list, %3$s The post URL. */
 			$meta_text = __( 'Posted in %1$s. Bookmark the <a href="%3$s" rel="bookmark">permalink</a>.', 'hive-lite' );
 		}
 
@@ -34,9 +45,9 @@
 	<header class="entry-header">
 
 		<div class="entry-meta">
-			<?php hive_posted_on();
+			<?php hivelite_posted_on();
 
-			if ( $category_list && hive_categorized_blog() ) { ?>
+			if ( $category_list && hivelite_categorized_blog() ) { ?>
 				<span class="cat-links">
 					<?php echo $category_list; ?>
 				</span>
@@ -62,9 +73,10 @@
 	<?php
 	// We need to first get the rendered content, and then echo it.
 	// This way we can process the rendered content without firing the 'the_content' filter multiple times.
-	$content = hive_get_rendered_content();
+	$content = hivelite_get_rendered_content();
 	?>
-	<div class="entry-content" <?php $first_letter = hive_first_content_character( $content );
+	<div class="entry-content" <?php
+	$first_letter = hivelite_first_content_character( $content );
 	if ( ! empty( $first_letter ) ) {
 		echo 'data-first_letter="' . esc_attr( $first_letter ) . '"';
 	} ?>>
@@ -76,15 +88,15 @@
 		'before'           => '<div class="page-links  pagination">',
 		'after'            => '</div>',
 		'next_or_number'   => 'number',
-		'nextpagelink'     => __( 'Next page', 'hive-lite' ),
-		'previouspagelink' => __( 'Previous page', 'hive-lite' ),
+		'nextpagelink'     => esc_html__( 'Next page', 'hive-lite' ),
+		'previouspagelink' => esc_html__( 'Previous page', 'hive-lite' ),
 		'pagelink'         => '%',
 		'echo'             => 1,
 	) ); ?>
 
 	<footer class="entry-footer">
 		<?php printf( $meta_text, $category_list, $tag_list, get_permalink() );
-		edit_post_link( __( 'Edit', 'hive-lite' ), '<span class="edit-link">', '</span>' ); ?>
+		edit_post_link( esc_html__( 'Edit', 'hive-lite' ), '<span class="edit-link">', '</span>' ); ?>
 	</footer><!-- .entry-footer -->
 
 </article><!-- #post-## -->

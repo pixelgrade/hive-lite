@@ -6,8 +6,12 @@
  * It is used to display a page when nothing more specific matches a query.
  * E.g., it puts together the home page when no home.php file exists.
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
- * @package Hive
+ * @package Hive Lite
  */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
 
 get_header(); ?>
 	<div id="primary" class="content-area">
@@ -27,7 +31,7 @@ get_header(); ?>
 					endwhile; ?>
 
 				</div>
-				<?php hive_paging_nav();
+				<?php hivelite_paging_nav();
 			else :
 				get_template_part( 'content', 'none' );
 			endif; ?>
@@ -35,4 +39,4 @@ get_header(); ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-<?php get_footer(); ?>
+<?php get_footer();

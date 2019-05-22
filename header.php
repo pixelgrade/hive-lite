@@ -4,38 +4,30 @@
  * Displays all of the <head> section and everything up till <div id="content">
  * @package Hive
  */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
+
 ?><!DOCTYPE html>
-<!--[if IE 9]>
-<html class="ie9 lt-ie10" <?php language_attributes(); ?>> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!-->
-<html <?php language_attributes(); ?>> <!--<![endif]-->
+<html <?php language_attributes(); ?>>
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
-	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-
 	<?php wp_head(); ?>
-
-	<!--[if !IE]><!-->
-	<script>
-		if (/*@cc_on!@*/false) {
-			document.documentElement.className += ' ie10';
-		}
-	</script>
-	<!--<![endif]-->
 </head>
 
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
 
-	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'hive-lite' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'hive-lite' ); ?></a>
 
 	<header id="masthead" class="site-header" role="banner">
 
 		<div class="container">
 			<div class="site-branding">
-				<h1 class="site-title <?php echo get_theme_mod( 'hive_title_size', 'site-title--large' ); ?>">
+				<h1 class="site-title <?php echo esc_attr( get_theme_mod( 'hive_title_size', 'site-title--large' ) ); ?>">
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 						<?php bloginfo( 'name' ); ?>
 					</a>
@@ -47,7 +39,7 @@
 			</div>
 
 			<nav id="site-navigation" class="main-navigation" role="navigation">
-				<h5 class="screen-reader-text"><?php _e( 'Main navigation', 'hive-lite' ); ?></h5>
+				<h5 class="screen-reader-text"><?php esc_html_e( 'Main navigation', 'hive-lite' ); ?></h5>
 				<?php
 				$menu_args = array(
 					'theme_location' => 'primary',
@@ -65,7 +57,7 @@
 							<b class="c-burger__slice c-burger__slice--middle"></b>
 							<b class="c-burger__slice c-burger__slice--bottom"></b>
 						</span>
-						<span class="screen-reader-text"><?php _e( 'Menu', 'hive-lite' ); ?></span>
+						<span class="screen-reader-text"><?php esc_html_e( 'Menu', 'hive-lite' ); ?></span>
 					</button>
 				<?php
 					echo $menu;

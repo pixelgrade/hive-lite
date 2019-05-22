@@ -2,7 +2,7 @@
 /**
  * Custom functions that act independently of the theme templates
  * Eventually, some of the functionality here could be replaced by core features
- * @package Hive
+ * @package Hive Lite
  */
 
 /**
@@ -12,13 +12,12 @@
  *
  * @return array
  */
-function hive_page_menu_args( $args ) {
+function hivelite_page_menu_args( $args ) {
 	$args[ 'show_home' ] = true;
 
 	return $args;
 }
-
-add_filter( 'wp_page_menu_args', 'hive_page_menu_args' );
+add_filter( 'wp_page_menu_args', 'hivelite_page_menu_args' );
 
 /**
  * Adds custom classes to the array of body classes.
@@ -27,7 +26,7 @@ add_filter( 'wp_page_menu_args', 'hive_page_menu_args' );
  *
  * @return array
  */
-function hive_body_classes( $classes ) {
+function hivelite_body_classes( $classes ) {
 	// Adds a class of group-blog to blogs with more than 1 published author.
 	if ( is_multi_author() ) {
 		$classes[ ] = 'group-blog';
@@ -50,8 +49,7 @@ function hive_body_classes( $classes ) {
 
 	return $classes;
 }
-
-add_filter( 'body_class', 'hive_body_classes' );
+add_filter( 'body_class', 'hivelite_body_classes' );
 
 /**
  * Extend the default WordPress post classes.
@@ -61,7 +59,7 @@ add_filter( 'body_class', 'hive_body_classes' );
  * @param array $classes A list of existing post class values.
  * @return array The filtered post class list.
  */
-function hive_post_classes( $classes ) {
+function hivelite_post_classes( $classes ) {
 
 	if ( is_archive() || is_home() || is_search() ) {
 		$classes[] = 'grid__item';
@@ -69,43 +67,7 @@ function hive_post_classes( $classes ) {
 
 	return $classes;
 }
-add_filter( 'post_class', 'hive_post_classes' );
-
-
-if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
-	/**
-	 * Filters wp_title to print a neat <title> tag based on what is being viewed.
-	 *
-	 * @param string $title Default title text for current view.
-	 * @param string $sep Optional separator.
-	 * @return string The filtered title.
-	 */
-	function hive_wp_title( $title, $sep ) {
-		if ( is_feed() ) {
-			return $title;
-		}
-
-		global $page, $paged;
-
-		// Add the blog name
-		$title .= get_bloginfo( 'name', 'display' );
-
-		// Add the blog description for the home/front page.
-		$site_description = get_bloginfo( 'description', 'display' );
-		if ( $site_description && ( is_home() || is_front_page() ) ) {
-			$title .= " $sep $site_description";
-		}
-
-		// Add a page number if necessary:
-		if ( ( $paged >= 2 || $page >= 2 ) && ! is_404() ) {
-			$title .= " $sep " . sprintf( __( 'Page %s', 'hive-lite' ), max( $paged, $page ) );
-		}
-
-		return $title;
-	}
-	add_filter( 'wp_title', 'hive_wp_title', 10, 2 );
-
-endif;
+add_filter( 'post_class', 'hivelite_post_classes' );
 
 /**
  * Filter wp_link_pages to wrap current page in span.
@@ -114,7 +76,7 @@ endif;
  *
  * @return string
  */
-function hive_link_pages( $link ) {
+function hivelite_link_pages( $link ) {
 	if ( is_numeric( $link ) ) {
 		return '<span class="current">' . $link . '</span>';
 	}
@@ -122,16 +84,15 @@ function hive_link_pages( $link ) {
 	return $link;
 }
 
-add_filter( 'wp_link_pages_link', 'hive_link_pages' );
+add_filter( 'wp_link_pages_link', 'hivelite_link_pages' );
 
 
-function hive_excerpt_length( $length ) {
+function hivelite_excerpt_length( $length ) {
 	return 18;
 }
+add_filter( 'excerpt_length', 'hivelite_excerpt_length', 999 );
 
-add_filter( 'excerpt_length', 'hive_excerpt_length', 999 );
-
-function hive_validate_gravatar( $email ) {
+function hivelite_validate_gravatar( $email ) {
 	if ( !empty($email) ) {
 		// Craft a potential url and test the response
 		$email_hash = md5( strtolower( trim( $email ) ) );
@@ -159,11 +120,11 @@ function hive_validate_gravatar( $email ) {
 /**
  * Wrap more link
  */
-function hive_read_more_link( $link ) {
+function hivelite_read_more_link( $link ) {
 	return '<div class="more-link-wrapper">' . $link . '</div>';
 }
 
-add_filter( 'the_content_more_link', 'hive_read_more_link' );
+add_filter( 'the_content_more_link', 'hivelite_read_more_link' );
 
 /**
  * PHP's DOM classes are recursive but don't provide an implementation of
@@ -171,7 +132,7 @@ add_filter( 'the_content_more_link', 'hive_read_more_link' );
  *
  * taken from here: http://php.net/manual/en/class.domnodelist.php#109301
  */
-class DOMNodeRecursiveIterator extends ArrayIterator implements RecursiveIterator {
+class HiveLite_DOMNodeRecursiveIterator extends ArrayIterator implements RecursiveIterator {
 
 	public function __construct (DOMNodeList $node_list) {
 
@@ -202,7 +163,7 @@ class DOMNodeRecursiveIterator extends ArrayIterator implements RecursiveIterato
 /**
  * Based on a set of rules we will try and introduce bold, italic and bold-italic sections in the title
  */
-function hive_auto_style_title( $title ) {
+function hivelite_auto_style_title( $title ) {
 
 	if ( in_the_loop() ) {
 		//we need to use the DOM because the title may have some markup in it due to user input or plugins messing with the title
@@ -212,7 +173,7 @@ function hive_auto_style_title( $title ) {
 		$dom->encoding = 'UTF-8';
 
 		$dit = new RecursiveIteratorIterator(
-			new DOMNodeRecursiveIterator($dom->childNodes),
+			new HiveLite_DOMNodeRecursiveIterator($dom->childNodes),
 			RecursiveIteratorIterator::SELF_FIRST);
 
 		foreach( $dit as $node ) {
@@ -273,7 +234,7 @@ function hive_auto_style_title( $title ) {
  *
  * Based on this article http://themeshaper.com/2014/08/13/how-to-add-google-fonts-to-wordpress-themes/
  */
-function hive_fonts_url() {
+function hivelite_fonts_url() {
 	$fonts_url = '';
 
 	/* Translators: If there are characters in your language that are not
@@ -314,17 +275,16 @@ function hive_fonts_url() {
 /**
  * Add "Styles" drop-down
  */
-add_filter( 'mce_buttons_2', 'hive_mce_editor_buttons' );
-function hive_mce_editor_buttons( $buttons ) {
+function hivelite_mce_editor_buttons( $buttons ) {
 	array_unshift($buttons, 'styleselect' );
 	return $buttons;
 }
+add_filter( 'mce_buttons_2', 'hivelite_mce_editor_buttons' );
 
 /**
  * Add styles/classes to the "Styles" drop-down
  */
-add_filter( 'tiny_mce_before_init', 'hive_mce_before_init' );
-function hive_mce_before_init( $settings ) {
+function hivelite_mce_before_init( $settings ) {
 
 	$style_formats =array(
 		array( 'title' => __( 'Intro Text', 'hive-lite' ), 'selector' => 'p', 'classes' => 'intro'),
@@ -337,47 +297,12 @@ function hive_mce_before_init( $settings ) {
 
 	return $settings;
 }
-
-/**
- * Check the content blob for an audio, video, object, embed, or iframe tags.
- * This is a modified version of the current core one, in line with this
- * https://core.trac.wordpress.org/ticket/26675
- * This should end up in the core in version 4.2 or 4.3 hopefully
- *
- * @param string $content A string which might contain media data.
- * @param array $types array of media types: 'audio', 'video', 'object', 'embed', or 'iframe'
- * @return array A list of found HTML media embeds
- */
-// @todo Remove this when the right get_media_embedded_in_content() ends up in the core, v4.2 hopefully
-function hive_get_media_embedded_in_content( $content, $types = null ) {
-	$html = array();
-
-	$allowed_media_types = apply_filters( 'get_media_embedded_in_content_allowed', array( 'audio', 'video', 'object', 'embed', 'iframe' ) );
-
-	if ( ! empty( $types ) ) {
-		if ( ! is_array( $types ) ) {
-			$types = array( $types );
-		}
-
-		$allowed_media_types = array_intersect( $allowed_media_types, $types );
-	}
-
-	$tags = implode( '|', $allowed_media_types );
-
-	if ( preg_match_all( '#<(?P<tag>' . $tags . ')[^<]*?(?:>[\s\S]*?<\/(?P=tag)>|\s*\/>)#', $content, $matches ) ) {
-		foreach ( $matches[0] as $match ) {
-			$html[] = $match;
-		}
-	}
-
-	return $html;
-}
-
+add_filter( 'tiny_mce_before_init', 'hivelite_mce_before_init' );
 
 /**
  * A function that removes the post format classes from post_class()
  */
-function remove_post_format_class ( $classes ) {
+function hivelite_remove_post_format_class ( $classes ) {
 	$classes = array_diff ( $classes, array(
 		'format-quote',
 		'format-image',
@@ -391,7 +316,7 @@ function remove_post_format_class ( $classes ) {
 		));
 	return $classes;
 };
-add_filter( 'post_class', 'remove_post_format_class', 20 );
+add_filter( 'post_class', 'hivelite_remove_post_format_class', 20 );
 
 /**
  * Handle the WUpdates theme identification.
@@ -400,7 +325,7 @@ add_filter( 'post_class', 'remove_post_format_class', 20 );
  *
  * @return array
  */
-function hive_wupdates_add_id_wporg( $ids = array() ) {
+function hivelite_wupdates_add_id_wporg( $ids = array() ) {
 	// First get the theme directory name (unique)
 	$slug = basename( get_template_directory() );
 
@@ -411,4 +336,23 @@ function hive_wupdates_add_id_wporg( $ids = array() ) {
 	return $ids;
 }
 // The 5 priority is intentional to allow for pro to overwrite.
-add_filter( 'wupdates_gather_ids', 'hive_wupdates_add_id_wporg', 5, 1 );
+add_filter( 'wupdates_gather_ids', 'hivelite_wupdates_add_id_wporg', 5, 1 );
+
+/**
+ * Fix skip link focus in IE11.
+ *
+ * This does not enqueue the script because it is tiny and because it is only for IE11,
+ * thus it does not warrant having an entire dedicated blocking script being loaded.
+ *
+ * @link https://git.io/vWdr2
+ */
+function hivelite_skip_link_focus_fix() {
+	// The following is minified via `terser --compress --mangle -- js/skip-link-focus-fix.js`.
+	?>
+	<script>
+		/(trident|msie)/i.test(navigator.userAgent)&&document.getElementById&&window.addEventListener&&window.addEventListener("hashchange",function(){var t,e=location.hash.substring(1);/^[A-z0-9_-]+$/.test(e)&&(t=document.getElementById(e))&&(/^(?:a|select|input|button|textarea)$/i.test(t.tagName)||(t.tabIndex=-1),t.focus())},!1);
+	</script>
+	<?php
+}
+// We will put this script inline since it is so small.
+add_action( 'wp_print_footer_scripts', 'hivelite_skip_link_focus_fix' );

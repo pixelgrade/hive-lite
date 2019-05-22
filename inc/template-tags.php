@@ -2,14 +2,14 @@
 /**
  * Custom template tags for this theme.
  * Eventually, some of the functionality here could be replaced by core features.
- * @package Hive
+ * @package Hive Lite
  */
 
-if ( ! function_exists( 'hive_paging_nav' ) ) :
+if ( ! function_exists( 'hivelite_paging_nav' ) ) :
 	/**
 	 * Display navigation to next/previous set of posts when applicable.
 	 */
-	function hive_paging_nav() {
+	function hivelite_paging_nav() {
 		global $wp_query, $wp_rewrite;
 		// Don't print empty markup if there's only one page.
 		if ( $wp_query->max_num_pages < 2 ) {
@@ -68,11 +68,11 @@ if ( ! function_exists( 'hive_paging_nav' ) ) :
 endif;
 
 
-if ( ! function_exists( 'hive_post_nav' ) ) :
+if ( ! function_exists( 'hivelite_post_nav' ) ) :
 	/**
 	 * Display navigation to next/previous post when applicable.
 	 */
-	function hive_post_nav() {
+	function hivelite_post_nav() {
 		if ( is_single() || is_attachment() ) {
 			// Don't print empty markup if there's nowhere to navigate.
 			$previous = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', true );
@@ -122,12 +122,12 @@ if ( ! function_exists( 'hive_post_nav' ) ) :
 
 endif;
 
-if ( ! function_exists( 'hive_posted_on' ) ) :
+if ( ! function_exists( 'hivelite_posted_on' ) ) :
 
 	/**
 	 * Prints HTML with meta information for the current post-date/time and author.
 	 */
-	function hive_posted_on() {
+	function hivelite_posted_on() {
 		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
 
 		$time_string = sprintf( $time_string, esc_attr( get_the_date( 'c' ) ), esc_html( get_the_date() ), esc_attr( get_the_modified_date( 'c' ) ), esc_html( get_the_modified_date() ) );
@@ -158,7 +158,7 @@ endif;
  * Returns true if a blog has more than 1 category.
  * @return bool
  */
-function hive_categorized_blog() {
+function hivelite_categorized_blog() {
 	if ( false === ( $all_the_cool_cats = get_transient( 'hive_categories' ) ) ) {
 		// Create an array of all the categories that are attached to posts.
 		$all_the_cool_cats = get_categories(
@@ -188,15 +188,15 @@ function hive_categorized_blog() {
 /**
  * Flush out the transients used in hive_categorized_blog.
  */
-function hive_category_transient_flusher() {
+function hivelite_category_transient_flusher() {
 	// Like, beat it. Dig?
 	delete_transient( 'hive_categories' );
 }
 
-add_action( 'edit_category', 'hive_category_transient_flusher' );
-add_action( 'save_post', 'hive_category_transient_flusher' );
+add_action( 'edit_category', 'hivelite_category_transient_flusher' );
+add_action( 'save_post', 'hivelite_category_transient_flusher' );
 
-if ( ! function_exists( 'hive_get_rendered_content' ) ) :
+if ( ! function_exists( 'hivelite_get_rendered_content' ) ) :
 	/**
 	 * Return the rendered post content.
 	 *
@@ -207,7 +207,7 @@ if ( ! function_exists( 'hive_get_rendered_content' ) ) :
 	 * @param bool   $strip_teaser   Optional. Strip teaser content before the more text. Default is false.
 	 * @return string
 	 */
-	function hive_get_rendered_content( $more_link_text = null, $strip_teaser = false) {
+	function hivelite_get_rendered_content( $more_link_text = null, $strip_teaser = false) {
 		$content = get_the_content( $more_link_text, $strip_teaser );
 
 		/**
@@ -223,7 +223,7 @@ if ( ! function_exists( 'hive_get_rendered_content' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'hive_first_content_character' ) ) :
+if ( ! function_exists( 'hivelite_first_content_character' ) ) :
 	/**
 	 * Returns the first UTF-8 character of the content
 	 * returns empty string if nothing found
@@ -231,7 +231,7 @@ if ( ! function_exists( 'hive_first_content_character' ) ) :
 	 * @param string $content The content to extract the first character from.
 	 * @return string
 	 */
-	function hive_first_content_character( $content = '' ) {
+	function hivelite_first_content_character( $content = '' ) {
 		//no need for this when a password is required
 		if ( post_password_required() ) {
 			return '';
@@ -290,7 +290,7 @@ if ( ! function_exists( 'hive_first_content_character' ) ) :
 
 endif;
 
-if ( ! function_exists( 'hive_first_site_title_character' ) ) :
+if ( ! function_exists( 'hivelite_first_site_title_character' ) ) :
 	/**
 	 * Returns the first UTF-8 character of the site title
 	 * returns empty string if nothing found
@@ -299,7 +299,7 @@ if ( ! function_exists( 'hive_first_site_title_character' ) ) :
 	 *
 	 * @return string
 	 */
-	function hive_first_site_title_character() {
+	function hivelite_first_site_title_character() {
 		$title = get_bloginfo('name');
 
 		if ( empty($title) ) {
