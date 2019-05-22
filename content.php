@@ -56,7 +56,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				$categories_list = get_the_category_list( __( ', ', 'hive-lite' ) );
 				if ( $categories_list && hivelite_categorized_blog() ) { ?>
 					<span class="cat-links">
-                        <?php echo $categories_list; ?>
+                        <?php echo $categories_list; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
                     </span>
 				<?php } ?>
 			</div><!-- .entry-meta -->

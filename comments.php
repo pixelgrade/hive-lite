@@ -25,7 +25,11 @@ if ( post_password_required() ) {
 		<div class="comments-area-title">
 			<h2 class="comments-title"><?php
 				if ( have_comments() ) {
-					echo '<span class="comment-number  comment-number--dark  total">' . number_format_i18n( get_comments_number() ) . '</span>' . _n( 'Comment', 'Comments', get_comments_number(), 'hive-lite' );
+					printf(
+					/* translators: %1$s: The number of comments.  */
+						esc_html( _nx( '%1$s Comment', '%1$s Comments', get_comments_number(), 'comments title', '__theme_txtd' ) ),
+						esc_html( number_format_i18n( get_comments_number() ) )
+					);
 				} else {
 					echo '<span class="comment-number  comment-number--dark  no-comments">i</span>' . esc_html__( 'There are no comments', 'hive-lite' );
 				} ?></h2>

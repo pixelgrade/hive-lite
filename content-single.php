@@ -49,7 +49,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 			if ( $category_list && hivelite_categorized_blog() ) { ?>
 				<span class="cat-links">
-					<?php echo $category_list; ?>
+					<?php echo $category_list; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 				</span>
 			<?php } // End if categories ?>
 		</div>
@@ -64,7 +64,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				$image_caption = get_post( get_post_thumbnail_id() )->post_excerpt;
 
 				if( ! empty( $image_caption ) ) {
-					echo '<span class="entry-featured__caption">' . $image_caption . '</span>';
+					echo '<span class="entry-featured__caption">' . wp_kses_post( $image_caption ) . '</span>';
 				}
 			?>
 		</div>
@@ -80,7 +80,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	if ( ! empty( $first_letter ) ) {
 		echo 'data-first_letter="' . esc_attr( $first_letter ) . '"';
 	} ?>>
-		<?php echo $content; ?>
+		<?php echo $content; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 	</div><!-- .entry-content -->
 
 	<?php
@@ -95,7 +95,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	) ); ?>
 
 	<footer class="entry-footer">
-		<?php printf( $meta_text, $category_list, $tag_list, get_permalink() );
+		<?php printf( $meta_text, $category_list, $tag_list, esc_url( get_permalink() ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		edit_post_link( esc_html__( 'Edit', 'hive-lite' ), '<span class="edit-link">', '</span>' ); ?>
 	</footer><!-- .entry-footer -->
 

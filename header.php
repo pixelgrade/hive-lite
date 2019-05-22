@@ -41,16 +41,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<nav id="site-navigation" class="main-navigation" role="navigation">
 				<h5 class="screen-reader-text"><?php esc_html_e( 'Main navigation', 'hive-lite' ); ?></h5>
 				<?php
-				$menu_args = array(
+				$header_menu_args = array(
 					'theme_location' => 'primary',
 					'container'      => '',
 					'menu_class'     => 'nav  nav--main',
 					'fallback_cb' => false,
 					'echo' => false,
 				);
-				$menu = wp_nav_menu( $menu_args );
+				$header_menu = wp_nav_menu( $header_menu_args );
 
-				if( false !== $menu ) : ?>
+				if( false !== $header_menu ) : ?>
 					<button class="navigation__trigger">
 						<span class="c-burger c-burger--fade">
 							<b class="c-burger__slice c-burger__slice--top"></b>
@@ -60,7 +60,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 						<span class="screen-reader-text"><?php esc_html_e( 'Menu', 'hive-lite' ); ?></span>
 					</button>
 				<?php
-					echo $menu;
+					echo $header_menu; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				endif; ?>
 			</nav><!-- #site-navigation -->
 		</div>

@@ -32,14 +32,14 @@ if ( ! function_exists( 'hivelite_paging_nav' ) ) :
 		$format .= $wp_rewrite->using_permalinks() ? user_trailingslashit( $wp_rewrite->pagination_base . '/%#%', 'paged' ) : '?paged=%#%'; ?>
 
 		<nav class="pagination" role="navigation">
-			<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'hive-lite' ); ?></h1>
+			<h1 class="screen-reader-text"><?php esc_html_e( 'Posts navigation', 'hive-lite' ); ?></h1>
 
 			<div class="nav-links">
 
 				<?php
 				//output a disabled previous "link" if on the fist page
 				if ( $paged == 1 ) {
-					echo '<span class="prev page-numbers disabled"><i class="fa fa-long-arrow-left prev-arrow"></i>' . __( 'Previous', 'hive-lite' ) . '</span>';
+					echo '<span class="prev page-numbers disabled"><i class="fa fa-long-arrow-left prev-arrow"></i>' . esc_html__( 'Previous', 'hive-lite' ) . '</span>';
 				}
 
 				//output the numbered page links
@@ -49,14 +49,14 @@ if ( ! function_exists( 'hivelite_paging_nav' ) ) :
 						'total'     => $wp_query->max_num_pages,
 						'current'   => $paged,
 						'prev_next' => true,
-						'prev_text' => '<i class="fa fa-long-arrow-left prev-arrow"></i>' . __( 'Previous', 'hive-lite' ),
-						'next_text' => __( 'Next', 'hive-lite' ) . '<i class="fa fa-long-arrow-right next-arrow"></i>',
+						'prev_text' => '<i class="fa fa-long-arrow-left prev-arrow"></i>' . esc_html__( 'Previous', 'hive-lite' ),
+						'next_text' => esc_html__( 'Next', 'hive-lite' ) . '<i class="fa fa-long-arrow-right next-arrow"></i>',
 						'add_args'  => array_map( 'urlencode', $query_args ),
 				) );
 
 				//output a disabled next "link" if on the last page
 				if ( $paged == $wp_query->max_num_pages ) {
-					echo '<span class="next page-numbers disabled">' . __( 'Next', 'hive-lite' ) . '<i class="fa fa-long-arrow-right next-arrow"></i></span>';
+					echo '<span class="next page-numbers disabled">' . esc_html__( 'Next', 'hive-lite' ) . '<i class="fa fa-long-arrow-right next-arrow"></i></span>';
 				} ?>
 
 			</div><!-- .nav-links -->
@@ -83,7 +83,7 @@ if ( ! function_exists( 'hivelite_post_nav' ) ) :
 			}
 			?>
 			<nav class="navigation post-navigation" role="navigation">
-				<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'hive-lite' ); ?></h1>
+				<h1 class="screen-reader-text"><?php esc_html_e( 'Post navigation', 'hive-lite' ); ?></h1>
 
 				<div class="nav-links">
 					<?php
@@ -100,7 +100,7 @@ if ( ! function_exists( 'hivelite_post_nav' ) ) :
 					}
 					$prev_link = get_previous_post_link( '<div class="nav-previous">%link</div>', '<i class="fa fa-long-arrow-left prev-arrow"></i><span>%title</span>' );
 					if ( ! empty( $prev_link ) ) {
-						echo $prev_link;
+						echo $prev_link; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 					} else {
 						//put a disabled "link"
 						echo '<div class="nav-previous disabled"><i class="fa fa-long-arrow-left prev-arrow"></i></div>';
@@ -108,7 +108,7 @@ if ( ! function_exists( 'hivelite_post_nav' ) ) :
 
 					$next_link = get_next_post_link( '<div class="nav-next">%link</div>', '<span>%title</span><i class="fa fa-long-arrow-right next-arrow"></i>' );
 					if ( ! empty( $next_link ) ) {
-						echo $next_link;
+						echo $next_link; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 					} else {
 						//put a disabled "link"
 						echo '<div class="nav-next disabled"><i class="fa fa-long-arrow-right next-arrow"></i></div>';
@@ -148,7 +148,7 @@ if ( ! function_exists( 'hivelite_posted_on' ) ) :
 			$output = '<span class="posted-by"> ' . $byline . '</span>' . PHP_EOL . $output;
 		}
 
-		echo $output;
+		echo $output; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
 	}
 

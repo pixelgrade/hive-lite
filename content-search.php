@@ -34,7 +34,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<span class="cat-links">
 			<?php
 				/* translators: %s: list of categories */
-				printf( esc_html__( 'Posted in %s', 'hive-lite' ), $categories_list );
+				printf( esc_html__( 'Posted in %s', 'hive-lite' ), $categories_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			?>
 		</span>
 		<?php } // End if categories
@@ -45,7 +45,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<span class="tags-links">
 			<?php
 			/* translators: %s: list of tags. */
-			printf( esc_html__( 'Tagged %s', 'hive-lite' ), $tags_list ); ?>
+			printf( esc_html__( 'Tagged %s', 'hive-lite' ), $tags_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			?>
 		</span>
 		<?php
 		} // End if $tags_list
