@@ -14,10 +14,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php
 	/* translators: used between list items, there is a space after the comma */
-	$category_list = get_the_category_list( __( ', ', 'hive-lite' ) );
+	$category_list = get_the_category_list( esc_html__( ', ', 'hive-lite' ) );
 
 	/* translators: used between list items, there is a space after the comma */
-	$tag_list = get_the_tag_list( '', __( ', ', 'hive-lite' ) );
+	$tag_list = get_the_tag_list( '', esc_html__( ', ', 'hive-lite' ) );
 
 	if ( ! hivelite_categorized_blog() ) {
 		// This blog only has 1 category so we just need to worry about tags in the meta text
@@ -95,7 +95,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	) ); ?>
 
 	<footer class="entry-footer">
-		<?php printf( $meta_text, $category_list, $tag_list, esc_url( get_permalink() ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		<?php printf( wp_kses_post( $meta_text ), $category_list, $tag_list, esc_url( get_permalink() ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		edit_post_link( esc_html__( 'Edit', 'hive-lite' ), '<span class="edit-link">', '</span>' ); ?>
 	</footer><!-- .entry-footer -->
 

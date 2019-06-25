@@ -192,7 +192,6 @@ function hivelite_category_transient_flusher() {
 	// Like, beat it. Dig?
 	delete_transient( 'hive_categories' );
 }
-
 add_action( 'edit_category', 'hivelite_category_transient_flusher' );
 add_action( 'save_post', 'hivelite_category_transient_flusher' );
 

@@ -26,7 +26,7 @@ if ( post_password_required() ) {
 			<h2 class="comments-title"><?php
 				if ( have_comments() ) {
 					printf(
-					/* translators: %1$s: The number of comments.  */
+						/* translators: %1$s: The number of comments.  */
 						esc_html( _nx( '%1$s Comment', '%1$s Comments', get_comments_number(), 'comments title', '__theme_txtd' ) ),
 						esc_html( number_format_i18n( get_comments_number() ) )
 					);
@@ -70,19 +70,18 @@ if ( post_password_required() ) {
 					<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'hive-lite' ) ); ?></div>
 				</nav><!-- #comment-nav-below .site-navigation .comment-navigation -->
 			<?php
-			} // check for comment navigation
-		} // have_comments() ?>
+			}
+		} ?>
 
-	</div>
-	<!-- #comments .comments-area -->
+	</div><!-- #comments .comments-area -->
 	<?php
 	// If comments are closed and there are comments, let's leave a little note, shall we?
 	if ( ! comments_open() && '0' != get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) : ?>
 		<p class="nocomments">
 			<span class="comment-number comment-number--dark  no-comments-box">&middot;</span><span><?php esc_html_e( 'Comments are closed.', 'hive-lite' ); ?></span>
 		</p>
-	<?php endif; ?>
+	<?php endif;
 
-	<?php comment_form(); ?>
+	comment_form(); ?>
 
 </aside>

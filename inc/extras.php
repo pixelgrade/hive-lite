@@ -120,7 +120,6 @@ function hivelite_validate_gravatar( $email ) {
 function hivelite_read_more_link( $link ) {
 	return '<div class="more-link-wrapper">' . $link . '</div>';
 }
-
 add_filter( 'the_content_more_link', 'hivelite_read_more_link' );
 
 /**
@@ -284,10 +283,10 @@ add_filter( 'mce_buttons_2', 'hivelite_mce_editor_buttons' );
 function hivelite_mce_before_init( $settings ) {
 
 	$style_formats =array(
-		array( 'title' => __( 'Intro Text', 'hive-lite' ), 'selector' => 'p', 'classes' => 'intro'),
-		array( 'title' => __( 'Dropcap', 'hive-lite' ), 'inline' => 'span', 'classes' => 'dropcap'),
-		array( 'title' => __( 'Highlight', 'hive-lite' ), 'inline' => 'span', 'classes' => 'highlight' ),
-		array( 'title' => __( 'Two Columns', 'hive-lite' ), 'selector' => 'p', 'classes' => 'twocolumn', 'wrapper' => true )
+		array( 'title' => esc_html__( 'Intro Text', 'hive-lite' ), 'selector' => 'p', 'classes' => 'intro'),
+		array( 'title' => esc_html__( 'Dropcap', 'hive-lite' ), 'inline' => 'span', 'classes' => 'dropcap'),
+		array( 'title' => esc_html__( 'Highlight', 'hive-lite' ), 'inline' => 'span', 'classes' => 'highlight' ),
+		array( 'title' => esc_html__( 'Two Columns', 'hive-lite' ), 'selector' => 'p', 'classes' => 'twocolumn', 'wrapper' => true )
 	);
 
 	$settings['style_formats'] = json_encode( $style_formats );
@@ -314,26 +313,6 @@ function hivelite_remove_post_format_class ( $classes ) {
 	return $classes;
 };
 add_filter( 'post_class', 'hivelite_remove_post_format_class', 20 );
-
-/**
- * Handle the WUpdates theme identification.
- *
- * @param array $ids
- *
- * @return array
- */
-function hivelite_wupdates_add_id_wporg( $ids = array() ) {
-	// First get the theme directory name (unique)
-	$slug = basename( get_template_directory() );
-
-	// Now add the predefined details about this product
-	// Do not tamper with these please!!!
-	$ids[ $slug ] = array( 'name' => 'Hive', 'slug' => 'hive', 'id' => 'PMAGv', 'type' => 'theme_wporg', 'digest' => '5c48e4dee63f1d92dfab010c8e051022', );
-
-	return $ids;
-}
-// The 5 priority is intentional to allow for pro to overwrite.
-add_filter( 'wupdates_gather_ids', 'hivelite_wupdates_add_id_wporg', 5, 1 );
 
 /**
  * Fix skip link focus in IE11.

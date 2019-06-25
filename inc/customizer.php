@@ -43,7 +43,7 @@ function hivelite_customize_register( $wp_customize ) {
 
                             <li>
                             	<h4>Post Formats</h4>
-                            	<div class="description">Make room for a wide range of post formats to pack your engaging stories so that people will enjoy sharing. Text, image, video, audio—you name it, and you\'re covered.</div>
+                            	<div class="description">Make room for a wide range of post formats to pack your engaging stories so that people will enjoy sharing. Text, image, video, audio - you name it, you\'re all covered.</div>
                             </li>
 
                             <li>
@@ -93,7 +93,7 @@ function hivelite_sanitize_site_title_outline( $outline ) {
  * Assets that will be loaded for the customizer sidebar
  */
 function hivelite_customizer_assets() {
-	wp_enqueue_style( 'hivelite_customizer_style', get_template_directory_uri() . '/inc/admin/css/customizer.css', null, '1.1.1', false );
+	wp_enqueue_style( 'hivelite_customizer_style', get_template_directory_uri() . '/inc/admin/css/customizer.css', null, '1.1.3', false );
 }
 add_action( 'customize_controls_enqueue_scripts', 'hivelite_customizer_assets' );
 
@@ -102,7 +102,7 @@ add_action( 'customize_controls_enqueue_scripts', 'hivelite_customizer_assets' )
  * This will be added in the preview part
  */
 function hivelite_customizer_preview_assets() {
-	wp_enqueue_script( 'hivelite_customizer_preview', get_template_directory_uri() . '/assets/js/customizer-preview.js', array( 'customize-preview' ), '1.1.1', true );
+	wp_enqueue_script( 'hivelite_customizer_preview', get_template_directory_uri() . '/assets/js/customizer-preview.js', array( 'customize-preview' ), '1.1.3', true );
 }
 add_action( 'customize_preview_init', 'hivelite_customizer_preview_assets' );
 
@@ -120,5 +120,4 @@ function hivelite_add_customify_options( $config ) {
 
 	return $config;
 }
-
 add_filter( 'customify_filter_fields', 'hivelite_add_customify_options' );

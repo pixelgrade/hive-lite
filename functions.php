@@ -49,8 +49,8 @@ if ( ! function_exists( 'hivelite_setup' ) ) :
 
 		// This theme uses wp_nav_menu() in three locations.
 		register_nav_menus( array(
-			'primary'   => __( 'Primary Menu', 'hive-lite' ),
-			'footer'    => __( 'Footer Menu', 'hive-lite' ),
+			'primary'   => esc_html__( 'Primary Menu', 'hive-lite' ),
+			'footer'    => esc_html__( 'Footer Menu', 'hive-lite' ),
 		) );
 
 		/*
@@ -86,7 +86,7 @@ add_action( 'after_setup_theme', 'hivelite_setup' );
  */
 function hivelite_widgets_init() {
 	register_sidebar( array(
-		'name'          => __( 'Sidebar', 'hive-lite' ),
+		'name'          => esc_html__( 'Sidebar', 'hive-lite' ),
 		'id'            => 'sidebar-1',
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -95,7 +95,6 @@ function hivelite_widgets_init() {
 		'after_title'   => '</h1>',
 	) );
 }
-
 add_action( 'widgets_init', 'hivelite_widgets_init' );
 
 /**
@@ -125,7 +124,7 @@ function hivelite_scripts_styles() {
 	wp_enqueue_style( 'hive-fonts', hivelite_fonts_url(), array(), null );
 
 	// Register Velocity.js plugin
-	wp_register_script( 'velocity', get_stylesheet_directory_uri() . '/assets/js/velocity.js', array(), '1.1.0', true );
+	wp_register_script( 'velocity', get_stylesheet_directory_uri() . '/assets/js/velocity.js', array(), '1.1.3', true );
 
 	// Enqueue Hive Custom Scripts
 	wp_enqueue_script( 'hive-scripts', get_stylesheet_directory_uri() . '/assets/js/main.js', array( 'jquery', 'masonry', 'hoverIntent', 'velocity' ), $theme->get( 'Version' ), true );
@@ -150,8 +149,3 @@ require get_template_directory() . '/inc/extras.php';
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
-
-/**
- * Admin dashboard logic.
- */
-require get_template_directory() . '/inc/admin/admin.php';

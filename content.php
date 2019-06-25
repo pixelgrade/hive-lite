@@ -19,8 +19,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		<?php if ( has_post_thumbnail() ) { ?>
 			<aside class="entry-thumbnail">
-				<?php the_post_thumbnail( 'hive-masonry-image' ) ?>
-				<?php get_template_part( 'templates/featured-hover' ); ?>
+				<?php
+				the_post_thumbnail( 'hive-masonry-image' );
+				get_template_part( 'templates/featured-hover' );
+				?>
 			</aside>
 		<?php } ?>
 	</div>
@@ -32,7 +34,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		$has_more = strpos( $post->post_content, '<!--more' );
 
 		if ( $has_more ) {
-			the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'hive-lite' ) );
+			the_content( wp_kses_post( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'hive-lite' ) ) );
 		} else {
 			the_excerpt();
 		}
@@ -53,7 +55,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<?php hivelite_posted_on();
 
 				/* translators: used between list items, there is a space after the comma */
-				$categories_list = get_the_category_list( __( ', ', 'hive-lite' ) );
+				$categories_list = get_the_category_list( esc_html__( ', ', 'hive-lite' ) );
 				if ( $categories_list && hivelite_categorized_blog() ) { ?>
 					<span class="cat-links">
                         <?php echo $categories_list; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>

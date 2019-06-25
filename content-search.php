@@ -29,7 +29,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<footer class="entry-footer">
 		<?php
 		/* translators: used between list items, there is a space after the comma */
-		$categories_list = get_the_category_list( __( ', ', 'hive-lite' ) );
+		$categories_list = get_the_category_list( esc_html__( ', ', 'hive-lite' ) );
 		if ( $categories_list && hivelite_categorized_blog() ) { ?>
 			<span class="cat-links">
 			<?php

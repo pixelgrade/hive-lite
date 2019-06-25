@@ -27,19 +27,19 @@ get_header(); ?>
 
 						elseif ( is_author() ) :
 							/* translators: %s: author name */
-							printf( esc_html__( 'Author: %s', 'hive-lite' ), '<span class="vcard">' . get_the_author() . '</span>' );
+							printf( esc_html__( 'Author: %s', 'hive-lite' ), '<span class="vcard">' . esc_html( get_the_author() ) . '</span>' );
 
 						elseif ( is_day() ) :
 							/* translators: %s: day */
-							printf( esc_html__( 'Day: %s', 'hive-lite' ), '<span>' . get_the_date() . '</span>' );
+							printf( esc_html__( 'Day: %s', 'hive-lite' ), '<span>' . esc_html( get_the_date() ) . '</span>' );
 
 						elseif ( is_month() ) :
 							/* translators: %s: month name */
-							printf( esc_html__( 'Month: %s', 'hive-lite' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'hive-lite' ) ) . '</span>' );
+							printf( esc_html__( 'Month: %s', 'hive-lite' ), '<span>' . esc_html( get_the_date( _x( 'F Y', 'monthly archives date format', 'hive-lite' ) ) ) . '</span>' );
 
 						elseif ( is_year() ) :
 							/* translators: %s: year */
-							printf( esc_html__( 'Year: %s', 'hive-lite' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'hive-lite' ) ) . '</span>' );
+							printf( esc_html__( 'Year: %s', 'hive-lite' ), '<span>' . esc_html( get_the_date( _x( 'Y', 'yearly archives date format', 'hive-lite' ) ) ) . '</span>' );
 
 						else :
 							esc_html_e( 'Archives', 'hive-lite' );
@@ -77,8 +77,7 @@ get_header(); ?>
 
 			endif; ?>
 
-		</main>
-		<!-- #main -->
+		</main><!-- #main -->
 	</section><!-- #primary -->
 
 <?php get_footer();
