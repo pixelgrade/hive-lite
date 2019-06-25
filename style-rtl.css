@@ -1,22 +1,28 @@
 /*
 Theme Name: Hive Lite
+Theme URI: https://github.com/pixelgrade/hive-lite
 Author: Pixelgrade
 Author URI: https://pixelgrade.com
 Description: An effortless tool for publishers of all kind, cherished for its clean masonry-style layout, modern typography and flexibility. Whether you're looking to share your own thoughts, write about your latest findings or just have a scrapbook of photos, videos, quotes or other stuff, HIVE Lite is designed to fulfill these and a lot more.
-Version: 1.1.2
+Version: 1.1.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 4.9.9
-Tested up to: 5.2
+Tested up to: 5.2.2
 Text Domain: hive-lite
 Domain Path: /languages/
 Tags: one-column, two-columns, three-columns, grid-layout, right-sidebar, editor-style, featured-images, rtl-language-support, sticky-post, translation-ready, blog, news
 
+Hive Lite WordPress Theme, Copyright (C) 2016-2019, Pixelgrade.
+Hive Lite is distributed under the terms of the GNU GPL v2 or later.
 
-This theme, like WordPress, is licensed under the GPL.
-Use it to make something cool, have fun, and share what you've learned with others.
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html
 
 Hive Lite is based on Underscores http://underscores.me/, (C) 2012-2018 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
 
 Resetting and rebuilding styles have been helped along thanks to the fine work of
 Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
