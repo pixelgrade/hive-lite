@@ -180,7 +180,8 @@ function removeUnneededFiles(done) {
 		'.jscsrc',
 		'.jshintignore',
 		'browserslist',
-		'babel.config.js'
+		'babel.config.js',
+		'inc/admin/scss'
 	];
 
 	files_to_remove.forEach(function (e, k) {
