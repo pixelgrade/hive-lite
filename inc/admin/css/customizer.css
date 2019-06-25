@@ -15,14 +15,14 @@
   text-transform: capitalize; }
 
 /* Styling for buttons */
-.upsell-container .button.button-primary {
+#customize-theme-controls .upsell-container .button.button-primary {
   width: 100%;
   cursor: pointer;
   -webkit-transition-duration: .2s;
           transition-duration: .2s;
   -webkit-transition-timing-function: cubic-bezier(0, 0, 0.58, 1);
           transition-timing-function: cubic-bezier(0, 0, 0.58, 1);
-  transition-property: transform,background,background-color,color,box-shadow,-webkit-transform;
+  transition-property: transform, background, background-color, color, box-shadow, -webkit-transform;
   border: 0;
   text-align: center;
   font-weight: 500;
@@ -36,7 +36,7 @@
   padding: 10px 16px 10px;
   height: auto;
   text-shadow: none; }
-  .upsell-container .button.button-primary:hover, .upsell-container .button.button-primary:focus {
+  #customize-theme-controls .upsell-container .button.button-primary:hover, #customize-theme-controls .upsell-container .button.button-primary:focus {
     -webkit-box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.7);
             box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.7);
     -webkit-transform: scale(1.05) translateY(-3px);
