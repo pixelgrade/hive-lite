@@ -42,7 +42,7 @@ if ( ! function_exists( 'hivelite_paging_nav' ) ) :
 					echo '<span class="prev page-numbers disabled"><i class="fa fa-long-arrow-left prev-arrow"></i>' . esc_html__( 'Previous', 'hive-lite' ) . '</span>';
 				}
 
-				//output the numbered page links
+				// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				echo paginate_links( array(
 						'base'      => $pagenum_link,
 						'format'    => $format,
