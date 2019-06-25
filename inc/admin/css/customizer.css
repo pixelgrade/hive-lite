@@ -1,8 +1,5 @@
 /* Label for Viw Pro Customizer Section */
-[id*="pro__section"] .accordion-section-title:before,
-[id*="patch_lite_colors"] .accordion-section-title:before,
-[id*="patch_lite_fonts"] .accordion-section-title:before,
-[id*="patch_lite_style_presets"] .accordion-section-title:before {
+[id*="pro__section"] .accordion-section-title:before {
   position: absolute;
   right: 30px;
   content: "pro";
@@ -18,7 +15,7 @@
   text-transform: capitalize; }
 
 /* Styling for buttons */
-.upsell-container .button-primary {
+.upsell-container .button.button-primary {
   width: 100%;
   cursor: pointer;
   -webkit-transition-duration: .2s;
@@ -39,7 +36,7 @@
   padding: 10px 16px 10px;
   height: auto;
   text-shadow: none; }
-  .upsell-container .button-primary:hover, .upsell-container .button-primary:focus {
+  .upsell-container .button.button-primary:hover, .upsell-container .button.button-primary:focus {
     -webkit-box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.7);
             box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.7);
     -webkit-transform: scale(1.05) translateY(-3px);

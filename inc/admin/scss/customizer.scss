@@ -6,10 +6,7 @@ $button-bg-color: #8E65C0;
 
 /* Label for Viw Pro Customizer Section */
 
-[id*="pro__section"],
-[id*="patch_lite_colors"],
-[id*="patch_lite_fonts"],
-[id*="patch_lite_style_presets"] {
+[id*="pro__section"] {
   .accordion-section-title:before {
     position: absolute;
     right: 30px;
@@ -33,7 +30,7 @@ $button-bg-color: #8E65C0;
 /* Styling for buttons */
 
 .upsell-container {
-  .button-primary {
+  .button.button-primary {
     width: 100%;
     cursor: pointer;
     transition-duration: .2s;
