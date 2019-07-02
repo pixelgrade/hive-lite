@@ -43,7 +43,7 @@ if ( ! function_exists( 'hivelite_paging_nav' ) ) :
 				}
 
 				// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-				echo paginate_links( array(
+				 the_posts_pagination( array(
 						'base'      => $pagenum_link,
 						'format'    => $format,
 						'total'     => $wp_query->max_num_pages,
@@ -91,9 +91,9 @@ if ( ! function_exists( 'hivelite_post_nav' ) ) :
 					if ( is_single() ) {
 						$static_posts_page = get_option( 'page_for_posts' );
 						if ( $static_posts_page ) {
-							$home_url = get_permalink( $static_posts_page );
+							$home_url = esc_url( get_permalink( $static_posts_page ) );
 						} else {
-							$home_url = get_home_url();
+							$home_url = home_url();
 						}
 
 						echo '<div class="nav-home"><a href="' . esc_url( $home_url ) . '"><i class="fa fa-th-large"></i></a></div>';
