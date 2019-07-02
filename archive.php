@@ -20,10 +20,10 @@ get_header(); ?>
 					<h1 class="page-title">
 						<?php
 						if ( is_category() ) : ?>
-							<span class="screen-reader-text"><?php esc_html_e( 'Category Archive:', 'hive-lite' ); ?> </span> <?php single_cat_title();
+							<span class="screen-reader-text"><?php esc_html_e( 'Category Archive:', 'hive-lite' ); ?> </span> <?php the_archive_title();
 
 						elseif ( is_tag() ) :
-							single_tag_title();
+							the_archive_title();
 
 						elseif ( is_author() ) :
 							/* translators: %s: author name */
