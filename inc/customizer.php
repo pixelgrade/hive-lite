@@ -42,11 +42,6 @@ function hivelite_customize_register( $wp_customize ) {
                             </li>
 
                             <li>
-                            	<h4>Post Formats Styling</h4>
-                            	<div class="description">Make room for a wide range of post formats styles to pack your engaging stories so that people will enjoy sharing. Text, image, video, audio - you name it, you\'re all covered.</div>
-                            </li>
-
-                            <li>
                             	<h4>Adaptive Layouts For Your Posts</h4>
                             	<div class="description">Whether your featured image is in portrait or landscape mode, Hive takes care of it by changing the post layout to provide the right fit.</div>
                             </li>
