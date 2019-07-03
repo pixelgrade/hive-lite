@@ -66,6 +66,22 @@ if ( ! function_exists( 'hivelite_setup' ) ) :
 		) );
 
 		/*
+		 * Enable support for Post Formats.
+		 * See http://codex.wordpress.org/Post_Formats
+		 */
+		add_theme_support( 'post-formats', array(
+			'aside',
+			'gallery',
+			'image',
+			'audio',
+			'video',
+			'quote',
+			'link',
+			'status',
+			'chat'
+		) );
+
+		/*
 		 * Add editor custom style to make it look more like the frontend
 		 * Also enqueue the custom Google Fonts also
 		 */

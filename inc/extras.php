@@ -296,25 +296,6 @@ function hivelite_mce_before_init( $settings ) {
 add_filter( 'tiny_mce_before_init', 'hivelite_mce_before_init' );
 
 /**
- * A function that removes the post format classes from post_class()
- */
-function hivelite_remove_post_format_class ( $classes ) {
-	$classes = array_diff ( $classes, array(
-		'format-quote',
-		'format-image',
-		'format-aside',
-		'format-gallery',
-		'format-audio',
-		'format-video',
-		'format-link',
-		'format-status',
-		'format-chat',
-	));
-	return $classes;
-};
-add_filter( 'post_class', 'hivelite_remove_post_format_class', 20 );
-
-/**
  * Fix skip link focus in IE11.
  *
  * This does not enqueue the script because it is tiny and because it is only for IE11,
