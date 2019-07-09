@@ -325,3 +325,81 @@ if ( ! function_exists( 'hivelite_first_site_title_character' ) ) :
 	}
 
 endif;
+
+if ( ! function_exists( 'hivelite_get_post_format_first_image' ) ) :
+
+	function hivelite_get_post_format_first_image() {
+		global $post;
+
+		$output = preg_match( '/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches );
+
+		if ( empty( $matches[0] ) ) {
+			return '';
+		}
+
+		return $matches[0];
+	}
+
+endif;
+
+if ( ! function_exists( 'hivelite_get_post_format_link_url' ) ) :
+	/**
+	 * Returns the URL to use for the link post format.
+	 *
+	 * First it tries to get the first URL in the content; if not found it uses the permalink instead
+	 *
+	 * @return string URL
+	 */
+	function hivelite_get_post_format_link_url() {
+		$content = get_the_content();
+		$has_url = get_url_in_content( $content );
+
+		return ( $has_url ) ? $has_url : apply_filters( 'the_permalink', get_permalink() );
+	}
+
+endif;
+
+/**
+ * Handles the output of the media for audio attachment posts. This should be used within The Loop.
+ *
+ * @return string
+ */
+function hive_audio_attachment() {
+	return hive_hybrid_media_grabber( array( 'type' => 'audio', 'split_media' => true ) );
+}
+/**
+ * Handles the output of the media for video attachment posts. This should be used within The Loop.
+ *
+ * @return string
+ */
+function hive_video_attachment() {
+	return hive_hybrid_media_grabber( array( 'type' => 'video', 'split_media' => true ) );
+}
+
+if ( ! function_exists( 'hivelite_get_rendered_content' ) ) :
+	/**
+	 * Return the rendered post content.
+	 *
+	 * This is the same as the_content() except for the fact that it doesn't display the content, but returns it.
+	 * Do make sure not to use this function twice for a post inside the loop, because it would defeat the purpose.
+	 *
+	 * @param string $more_link_text Optional. Content for when there is more text.
+	 * @param bool   $strip_teaser   Optional. Strip teaser content before the more text. Default is false.
+	 * @return string
+	 */
+	function hivelite_get_rendered_content( $more_link_text = null, $strip_teaser = false) {
+		$content = get_the_content( $more_link_text, $strip_teaser );
+
+		/**
+		 * Filters the post content.
+		 *
+		 * @since 0.71
+		 *
+		 * @param string $content Content of the current post.
+		 */
+		$content = apply_filters( 'the_content', $content );
+		$content = str_replace( ']]>', ']]&gt;', $content );
+		return $content;
+	}
+endif;
+

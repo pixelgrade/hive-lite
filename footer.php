@@ -23,7 +23,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<span class="sep"> | </span>
 				<?php
 				/* translators: %1$s: The theme name, %2$s: The theme author name. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'hive-lite' ), 'Hive Lite', '<a href="https://pixelgrade.com/?utm_source=hive-lite-clients&utm_medium=footer&utm_campaign=hive-lite" title="' . esc_html__( 'The Pixelgrade Website', '__theme_txtd' ) . '" rel="nofollow">Pixelgrade</a>' ); ?>
+				printf( esc_html__( 'Theme: %1$s by %2$s.', 'hive-lite' ), 'Hive Lite', '<a href="https://pixelgrade.com/?utm_source=hive-lite-clients&utm_medium=footer&utm_campaign=hive-lite" title="' . esc_html__( 'The Pixelgrade Website', 'hive-lite' ) . '" rel="nofollow">Pixelgrade</a>' ); ?>
 			</div><!-- .site-info -->
 
 			<div class="grid__item  footer-navigation">

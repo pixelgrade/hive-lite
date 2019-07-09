@@ -27,7 +27,7 @@ if ( post_password_required() ) {
 				if ( have_comments() ) {
 					printf(
 						/* translators: %1$s: The number of comments.  */
-						esc_html( _nx( '%1$s Comment', '%1$s Comments', get_comments_number(), 'comments title', '__theme_txtd' ) ),
+						esc_html( _nx( '%1$s Comment', '%1$s Comments', get_comments_number(), 'comments title', 'hive-lite' ) ),
 						esc_html( number_format_i18n( get_comments_number() ) )
 					);
 				} else {
