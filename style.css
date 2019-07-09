@@ -2910,9 +2910,6 @@ div#respond {
   -webkit-font-smoothing: auto;
   position: relative;
   z-index: 100; }
-  @media only screen and (min-width: 1000px) {
-    .site-footer {
-      margin-right: -3em; } }
   .site-footer a {
     color: white; }
   @media not screen and (min-width: 899px) {

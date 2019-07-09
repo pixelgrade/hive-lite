@@ -8,11 +8,6 @@
 	position: relative;
 	z-index: 100;
 
-
-	@include query-above(1000px) {
-		@include rhythm(margin-right, -4);
-	}
-
     a {
         color: white;
     }
