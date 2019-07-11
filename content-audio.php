@@ -24,19 +24,19 @@ $media = hive_audio_attachment(); ?>
 		the_excerpt();
 
 		wp_link_pages( array(
-			'before' => '<div class="page-links">' . __( 'Pages:', 'hive_txtd' ),
+			'before' => '<div class="page-links">' . __( 'Pages:', 'hive_lite' ),
 			'after'  => '</div>',
 		) ); ?>
     </div><!-- .entry-summary -->
 
-	<?php edit_post_link( __( 'Edit', 'hive_txtd' ), '<div class="edit-link">', '</div>' ); ?>
+	<?php edit_post_link( __( 'Edit', 'hive_lite' ), '<div class="edit-link">', '</div>' ); ?>
 
     <footer class="entry-footer">
         <div class="entry-meta">
 			<?php hivelite_posted_on();
 
 			/* translators: used between list items, there is a space after the comma */
-			$categories_list = get_the_category_list( __( ', ', 'hive_txtd' ) );
+			$categories_list = get_the_category_list( __( ', ', 'hive_lite' ) );
 			if ( $categories_list && hivelite_categorized_blog() ) { ?>
                 <span class="cat-links">
                         <?php echo $categories_list; ?>

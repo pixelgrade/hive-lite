@@ -3,12 +3,12 @@ Theme URI: https://github.com/pixelgrade/hive-lite
 Author: Pixelgrade
 Author URI: https://pixelgrade.com
 Description: An effortless tool for publishers of all kind, cherished for its clean masonry-style layout, modern typography and flexibility. Whether you're looking to share your own thoughts, write about your latest findings or just have a scrapbook of photos, videos, quotes or other stuff, HIVE Lite is designed to fulfill these and a lot more.
-Version: 1.1.6
+Version: 1.2.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 4.9.9
 Tested up to: 5.2.2
-Tags: one-column, two-columns, three-columns, grid-layout, right-sidebar, editor-style, featured-images, rtl-language-support, sticky-post, translation-ready, blog, news, custom-menu, threaded-comments
+Tags: one-column, two-columns, three-columns, grid-layout, right-sidebar, editor-style, featured-images, rtl-language-support, sticky-post, translation-ready, blog, news, custom-menu, threaded-comments, post-formats
 
 == Description ==
 
@@ -22,7 +22,7 @@ Hive Lite is a magazine-style theme with clean type, smart layouts and a design 
 
 == Changelog ==
 
-= 1.1.6 =
+= 1.2.0 =
 * Added Post Formats styles
 
 = 1.1.5 =
