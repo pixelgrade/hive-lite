@@ -85,7 +85,7 @@ $media = hive_audio_attachment(); ?>
 			$meta_text,
 			$category_list,
 			$tag_list,
-			get_permalink()
+			esc_url( get_permalink() )
 		);
 
 		edit_post_link( esc_html__( 'Edit', 'hive-lite' ), '<span class="edit-link">', '</span>' ); ?>

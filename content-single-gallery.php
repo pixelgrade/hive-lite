@@ -88,7 +88,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	) ); ?>
 
 	<footer class="entry-footer">
-		<?php printf( $meta_text, $category_list, $tag_list, get_permalink() );
+		<?php printf( $meta_text, $category_list, $tag_list, esc_url( get_permalink() ) );
 		edit_post_link( __( 'Edit', 'hive-lite' ), '<span class="edit-link">', '</span>' ); ?>
 	</footer><!-- .entry-footer -->
 
