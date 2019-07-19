@@ -2,7 +2,7 @@
 ### An effortless tool for publishers of all kind, cherished for its clean masonry-style layout, modern typography and flexibility. Whether you're looking to share your own thoughts, write about your latest findings or just have a scrapbook of photos, videos, quotes or other stuff, Hive Lite is designed to fulfill these and a lot more. 
 ### Hive Lite is a magazine-style theme with clean type, smart layouts and a design flexibility that makes it perfect for publishers of all kinds. Whether you're looking to share your own thoughts, write about your latest findings, or create a scrapbook of other content, Hive fits the bill.
 
-[Download for Free](https://downloads.wordpress.org/theme/hive-lite.latest-stable.zip) &nbsp;·&nbsp; [Demo Preview](https://demos.pixelgrade.com/hive-lite/) &nbsp;·&nbsp; [ Hive Pro](https://pixelgrade.com/themes/hive-pro/)
+[View Demo](https://demos.pixelgrade.com/hive-lite/) &nbsp;·&nbsp; [Documentation](https://pixelgrade.com/hive-lite-documentation/) &nbsp;·&nbsp; [Download for Free](https://downloads.wordpress.org/theme/hive-lite.latest-stable.zip) &nbsp;·&nbsp; [View Pro Version](https://pixelgrade.com/themes/hive-pro/)
 
 [![](https://img.shields.io/github/issues-closed/pixelgrade/hive-lite.svg?color=6cc644&label=Issues)](https://github.com/pixelgrade/hive-lite/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aclosed+) [![](https://img.shields.io/github/issues/pixelgrade/hive-lite.svg?color=4078c0&label=%20)](https://github.com/pixelgrade/hive-lite/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen)
 
