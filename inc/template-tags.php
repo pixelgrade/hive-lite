@@ -403,3 +403,20 @@ if ( ! function_exists( 'hivelite_get_rendered_content' ) ) :
 	}
 endif;
 
+if ( ! function_exists( 'wp_body_open' ) ) :
+	/**
+	 * Fire the wp_body_open action.
+	 *
+	 * Added for backwards compatibility to support pre 5.2.0 WordPress versions.
+	 *
+	 * @since Hive Lite 1.2.2
+	 */
+	function wp_body_open() {
+		/**
+		 * Triggered after the opening <body> tag.
+		 *
+		 * @since Hive Lite 1.2.2
+		 */
+		do_action( 'wp_body_open' );
+	}
+endif;
