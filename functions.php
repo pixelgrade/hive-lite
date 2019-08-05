@@ -91,6 +91,11 @@ if ( ! function_exists( 'hivelite_setup' ) ) :
 		 * Now some cleanup to remove features that we do not support
 		 */
 		remove_theme_support( 'custom-header' );
+
+		/**
+		 * Enable support for the Style Manager Customizer section (via Customify).
+		 */
+		add_theme_support( 'customizer_style_manager' );
 	}
 endif;
 add_action( 'after_setup_theme', 'hivelite_setup' );
@@ -172,3 +177,8 @@ require get_template_directory() . '/inc/hive-hybrid-media-grabber.php';
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
+
+/**
+ * Load Customify plugin configuration
+ */
+require get_template_directory() . '/inc/integrations.php';

@@ -225,6 +225,15 @@ function hivelite_auto_style_title( $title ) {
 	) );
 }
 
+function hive_lite_remove_customify_controls( $data ) {
+	$data['remove_panels'] = array( 'theme_options_panel', );
+
+	return $data;
+}
+if ( class_exists( 'PixCustomifyPlugin' ) ) {
+	add_filter( 'customify_final_config', 'hive_lite_remove_customify_controls' );
+}
+
 /**
  * Generate the Google Fonts URL
  *

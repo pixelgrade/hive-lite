@@ -107,12 +107,3 @@ add_action( 'customize_preview_init', 'hivelite_customizer_preview_assets' );
 function hivelite_get_pro_link() {
 	return 'https://pixelgrade.com/themes/blogging/hive-lite?utm_source=hive-lite-clients&utm_medium=customizer&utm_campaign=hive-lite#pro';
 }
-
-function hivelite_add_customify_options( $config ) {
-
-	$config['sections'] = array();
-	$config['panels']   = array();
-
-	return $config;
-}
-add_filter( 'customify_filter_fields', 'hivelite_add_customify_options' );
