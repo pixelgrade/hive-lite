@@ -225,19 +225,33 @@ function hivelite_auto_style_title( $title ) {
 	) );
 }
 
-function hive_lite_remove_customify_controls( $data ) {
+/**
+ * @param array $data Contains the Customify Customizer config.
+ *
+ * @return array $data The modified config.
+ */
+function hivelite_remove_customify_controls( $data ) {
 	$data['remove_panels'] = array( 'theme_options_panel', );
 
-	foreach( $data['panels']['style_manager_panel']['sections']['sm_color_palettes_section']['options'] as $key => $option ) {
-		if ( $key != 'sm_palettes_description' && $key != 'sm_color_palette' ) {
-		    $data['panels']['style_manager_panel']['sections']['sm_color_palettes_section']['options'][$key]['type'] = 'hidden_controls';
+	// Create an array with the required options
+	$required_options = array(
+		'sm_palettes_description',
+		'sm_color_palette',
+		'sm_dark_color_primary_slider'
+	);
+
+	// Hide controls for every other option
+	foreach ( $data['panels']['style_manager_panel']['sections']['sm_color_palettes_section']['options'] as $key => $option ) {
+		if ( false === in_array( $key, $required_options ) ) {
+			$data['panels']['style_manager_panel']['sections']['sm_color_palettes_section']['options'][ $key ]['type'] = 'hidden';
 		}
 	}
 
 	return $data;
 }
+
 if ( class_exists( 'PixCustomifyPlugin' ) ) {
-	add_filter( 'customify_final_config', 'hive_lite_remove_customify_controls' );
+	add_filter( 'customify_final_config', 'hivelite_remove_customify_controls' );
 }
 
 /**
