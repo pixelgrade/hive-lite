@@ -660,6 +660,7 @@ function hive_modify_customify_options( $options ) {
 							'selector' => '.entry-meta a,
 								.entry-meta:before,
 								.entry-meta a:hover > *,
+								.sticky:not(.format-quote) a,
 								.single .posted-on,
 								.single .posted-on:before,
 								.single .posted-by,
