@@ -182,3 +182,8 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Customify plugin configuration
  */
 require get_template_directory() . '/inc/integrations.php';
+
+/**
+ * Load Recommended plugins notification
+ */
+require get_template_directory() . '/inc/required-plugins.php';
