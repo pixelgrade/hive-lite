@@ -243,7 +243,7 @@ function hivelite_remove_customify_controls( $data ) {
 	// Hide controls for every other option
 	foreach ( $data['panels']['style_manager_panel']['sections']['sm_color_palettes_section']['options'] as $key => $option ) {
 		if ( false === in_array( $key, $required_options ) ) {
-			$data['panels']['style_manager_panel']['sections']['sm_color_palettes_section']['options'][ $key ]['type'] = 'hidden';
+			$data['panels']['style_manager_panel']['sections']['sm_color_palettes_section']['options'][ $key ]['type'] = 'hidden_control';
 		}
 	}
 

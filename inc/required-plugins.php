@@ -8,7 +8,7 @@
 
 require_once get_template_directory() . '/inc/required-plugins/class-tgm-plugin-activation.php';
 
-function timber_register_required_plugins() {
+function hive_register_required_plugins() {
 
 	$plugins = array(
 		array(
@@ -58,4 +58,4 @@ function timber_register_required_plugins() {
 
 	tgmpa( $plugins, $config );
 }
-add_action( 'tgmpa_register', 'timber_register_required_plugins', 999 );
+add_action( 'tgmpa_register', 'hive_register_required_plugins', 999 );
