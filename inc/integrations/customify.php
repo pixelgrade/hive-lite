@@ -197,6 +197,10 @@ function hive_lite_modify_customify_options( $options ) {
 							'selector' => 'div#infinite-footer, .site-footer',
 							'property' => 'background-color',
 						),
+						array(
+							'selector' => 'body',
+							'property' => 'border-color',
+						),
 					),
 				),
 				'body_color'                                => array(
