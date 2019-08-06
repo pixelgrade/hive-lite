@@ -39,7 +39,7 @@ if ( ! function_exists( 'hivelite_paging_nav' ) ) :
 				<?php
 				//output a disabled previous "link" if on the fist page
 				if ( $paged == 1 ) {
-					echo '<span class="prev page-numbers disabled"><i class="fa fa-long-arrow-left prev-arrow"></i>' . esc_html__( 'Previous', 'hive-lite' ) . '</span>';
+					echo '<span class="prev page-numbers disabled">' . esc_html__( '« Previous', 'hive-lite' ) . '</span>';
 				}
 
 				// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
@@ -49,14 +49,14 @@ if ( ! function_exists( 'hivelite_paging_nav' ) ) :
 						'total'     => $wp_query->max_num_pages,
 						'current'   => $paged,
 						'prev_next' => true,
-						'prev_text' => '<i class="fa fa-long-arrow-left prev-arrow"></i>' . esc_html__( 'Previous', 'hive-lite' ),
-						'next_text' => esc_html__( 'Next', 'hive-lite' ) . '<i class="fa fa-long-arrow-right next-arrow"></i>',
+						'prev_text' => esc_html__( '« Previous', 'hive-lite' ),
+						'next_text' => esc_html__( 'Next »', 'hive-lite' ),
 						'add_args'  => array_map( 'urlencode', $query_args ),
 				) );
 
 				//output a disabled next "link" if on the last page
 				if ( $paged == $wp_query->max_num_pages ) {
-					echo '<span class="next page-numbers disabled">' . esc_html__( 'Next', 'hive-lite' ) . '<i class="fa fa-long-arrow-right next-arrow"></i></span>';
+					echo '<span class="next page-numbers disabled">' . esc_html__( 'Next »', 'hive-lite' );
 				} ?>
 
 			</div><!-- .nav-links -->

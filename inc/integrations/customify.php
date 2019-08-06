@@ -213,7 +213,9 @@ function hive_modify_customify_options( $options ) {
 								.site-title a,
 								.widget a,
 								.comment__author-name a,
-								a:hover',
+								a:hover,
+								.page-numbers.prev.disabled, 
+								.page-numbers.next.disabled',
 							'property' => 'color',
 						),
 						array(

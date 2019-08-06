@@ -1898,7 +1898,7 @@ body {
       position: absolute;
       top: 0; } }
   .page-numbers.prev.disabled, .page-numbers.next.disabled {
-    color: #F0F0F0 !important;
+    color: #F0F0F0;
     pointer-events: none; }
   .page-numbers.prev i, .page-numbers.next i {
     margin: 0 12px; }
