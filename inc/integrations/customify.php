@@ -15,10 +15,10 @@
  *
  * @return array The returned options are required, if you don't need options return an empty array
  */
-add_filter( 'customify_filter_fields', 'hive_add_customify_options', 11, 1 );
+add_filter( 'customify_filter_fields', 'hive_lite_add_customify_options', 11, 1 );
 add_filter( 'customify_filter_fields', 'pixelgrade_add_customify_style_manager_section', 12, 1 );
 
-add_filter( 'customify_filter_fields', 'hive_modify_customify_options', 20 );
+add_filter( 'customify_filter_fields', 'hive_lite_modify_customify_options', 20 );
 
 // Color Constants
 define( 'SM_COLOR_PRIMARY', '#ffeb00' );
@@ -34,7 +34,7 @@ define( 'SM_LIGHT_SECONDARY', '#fcfcf5' );
 define( 'SM_LIGHT_TERTIARY', '#f4f7e6' );
 
 
-function hive_add_customify_options( $options ) {
+function hive_lite_add_customify_options( $options ) {
 	$options['opt-name'] = 'hive_options';
 
 	//start with a clean slate - no Customify default sections
@@ -132,7 +132,7 @@ function pixelgrade_add_customify_style_manager_section( $options ) {
  *
  * @return array The modified Customify config.
  */
-function hive_modify_customify_options( $options ) {
+function hive_lite_modify_customify_options( $options ) {
 
 	$options['sections'] = array_replace_recursive( $options['sections'], array(
 
@@ -799,7 +799,7 @@ if ( ! function_exists('hive_color_opacity_darker_cb_customizer_preview') ) {
 	add_action( 'customize_preview_init', 'hive_color_opacity_darker_cb_customizer_preview' );
 }
 
-function hive_add_default_color_palette( $color_palettes ) {
+function hive_lite_add_default_color_palette( $color_palettes ) {
 
 	$color_palettes = array_merge(array(
 		'default' => array(
@@ -823,4 +823,4 @@ function hive_add_default_color_palette( $color_palettes ) {
 
 	return $color_palettes;
 }
-add_filter( 'customify_get_color_palettes', 'hive_add_default_color_palette' );
+add_filter( 'customify_get_color_palettes', 'hive_lite_add_default_color_palette' );
