@@ -1395,7 +1395,7 @@ body {
   display: block;
   width: 1em;
   height: .158em;
-  background: #171617; }
+  background-color: #171617; }
 
 .c-burger__slice--top,
 .c-burger__slice--bottom {

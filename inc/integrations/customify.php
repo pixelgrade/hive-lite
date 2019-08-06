@@ -215,7 +215,9 @@ function hive_modify_customify_options( $options ) {
 								.comment__author-name a,
 								a:hover,
 								.page-numbers.prev.disabled, 
-								.page-numbers.next.disabled',
+								.page-numbers.next.disabled,
+								.page-title--search,
+								.page-title--search span',
 							'property' => 'color',
 						),
 						array(
@@ -307,7 +309,8 @@ function hive_modify_customify_options( $options ) {
 								.add-comment .add-comment__button,
 
 								.archive__grid .entry-thumbnail .hover__bg,
-								.pagination span.current',
+								.pagination span.current,
+								.c-burger__slice',
 							'property' => 'background-color',
 						),
 						array(

@@ -351,7 +351,7 @@ $burger-transition-function:    ease-in-out                                    !
     display: block;
     width: $burger-line-width * 1em / $burger-width;
     height: .158em;
-    background: $burger-color;
+    background-color: $burger-color;
 }
 
 .c-burger__slice--top,
