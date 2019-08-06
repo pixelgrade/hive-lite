@@ -237,7 +237,7 @@ function hivelite_remove_customify_controls( $data ) {
 	$required_options = array(
 		'sm_palettes_description',
 		'sm_color_palette',
-		'sm_dark_color_primary_slider'
+		'sm_dark_color_primary_slider',
 	);
 
 	// Hide controls for every other option

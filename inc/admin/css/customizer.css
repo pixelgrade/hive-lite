@@ -59,3 +59,8 @@
   background-color: #DE1651;
   color: #ffffff;
   text-transform: capitalize; }
+
+/* Temporary Fix for Style Manager spacings */
+[id='customize-control-sm_color_palette_control'] .color_palette[class][class] {
+  padding-left: 20px;
+  padding-right: 20px; }
