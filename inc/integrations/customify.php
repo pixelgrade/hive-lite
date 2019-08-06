@@ -489,11 +489,6 @@ function hive_modify_customify_options( $options ) {
 								.content-quote blockquote:after,
 								.sticky:not(.format-quote):after',
 						),
-						array(
-							'property'        => 'color',
-							'selector'        => '.sticky, .sticky a, .sticky .posted-on a, .sticky .entry-title',
-							'callback_filter' => 'hive_sticky_accent_callback',
-						),
 					),
 				),
 
@@ -662,9 +657,9 @@ function hive_modify_customify_options( $options ) {
 					'css'     => array(
 						array(
 							'property' => 'color',
-							'selector' => '.entry-meta__primary,
-								 .entry-meta__secondary:before,
-								.entry-meta__secondary:hover > *,
+							'selector' => '.entry-meta a,
+								.entry-meta:before,
+								.entry-meta a:hover > *,
 								.single .posted-on,
 								.single .posted-on:before,
 								.single .posted-by,
