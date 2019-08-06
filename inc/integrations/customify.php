@@ -317,19 +317,6 @@ function hive_modify_customify_options( $options ) {
 							'selector' => '.nav--main .menu-item-has-children > a:after',
 							'property' => 'border-bottom-color',
 						),
-//						array(
-//							'selector' => '
-//								.edit-post-visual-editor[class],
-//								.editor-post-title__block .editor-post-title__input[class],
-//								.edit-post-visual-editor[class] a:hover',
-//							'property' => 'color',
-//							'editor' => true,
-//						),
-//						array(
-//							'selector' => '.edit-post-visual-editor[class] blockquote:after',
-//							'property' => 'border-color',
-//							'editor' => true,
-//						),
 					),
 				),
 				'body_background_color'                                => array(
@@ -410,18 +397,6 @@ function hive_modify_customify_options( $options ) {
 							'property' => 'background-color',
 							'media' => 'not screen and (min-width: 1000px)',
 						),
-//						array(
-//							'selector' => '
-//								.edit-post-visual-editor[class],
-//								.edit-post-visual-editor[class] blockquote:before',
-//							'property' => 'background-color',
-//							'editor' => true,
-//						),
-//						array(
-//							'selector' => '.edit-post-visual-editor[class] pre:before',
-//							'property' => 'color',
-//							'editor' => true,
-//						),
 					),
 				),
 				'body_link_color'                           => array(
@@ -507,13 +482,6 @@ function hive_modify_customify_options( $options ) {
 							'property' => 'color',
 							'selector' => 'h1, .dropcap',
 						),
-//						array(
-//							'selector' => '
-//								.edit-post-visual-editor[class] h1,
-//								.edit-post-visual-editor[class] .dropcap',
-//							'property' => 'color',
-//							'editor' => true,
-//						),
 					),
 				),
 				'main_content_heading_2_color'              => array(
@@ -526,13 +494,6 @@ function hive_modify_customify_options( $options ) {
 							'property' => 'color',
 							'selector' => 'h2, blockquote',
 						),
-//						array(
-//							'property' => 'color',
-//							'selector' => '
-//								.edit-post-visual-editor[class] h2,
-//								.edit-post-visual-editor[class] blockquote',
-//							'editor' => true,
-//						),
 					),
 				),
 				'main_content_heading_3_color'              => array(
@@ -545,11 +506,6 @@ function hive_modify_customify_options( $options ) {
 							'property' => 'color',
 							'selector' => 'h3',
 						),
-//						array(
-//							'property' => 'color',
-//							'selector' => '.edit-post-visual-editor[class] h3',
-//							'editor' => true,
-//						),
 					),
 				),
 				'main_content_heading_4_color'              => array(
@@ -562,11 +518,6 @@ function hive_modify_customify_options( $options ) {
 							'property' => 'color',
 							'selector' => 'h4',
 						),
-//						array(
-//							'property' => 'color',
-//							'selector' => '.edit-post-visual-editor h4',
-//							'editor' => true,
-//						),
 					),
 				),
 				'main_content_heading_5_color'              => array(
@@ -579,11 +530,6 @@ function hive_modify_customify_options( $options ) {
 							'property' => 'color',
 							'selector' => 'h5',
 						),
-//						array(
-//							'property' => 'color',
-//							'selector' => '.edit-post-visual-editor h5',
-//							'editor' => true
-//						),[class]
 					),
 				),
 			),
