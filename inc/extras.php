@@ -228,11 +228,6 @@ function hivelite_auto_style_title( $title ) {
 function hive_lite_remove_customify_controls( $data ) {
 	$data['remove_panels'] = array( 'theme_options_panel', );
 
-//	if ( 'hive_options' == get_option( 'customify_customizer_opt_name' ) ){
-//		unset( $data['panels']['style_manager_panel']['sections']['sm_color_palettes_section']['options']['sm_current_color_palette'] );
-//	}
-
-
 	foreach( $data['panels']['style_manager_panel']['sections']['sm_color_palettes_section']['options'] as $key => $option ) {
 		if ( $key != 'sm_palettes_description' && $key != 'sm_color_palette' ) {
 		    $data['panels']['style_manager_panel']['sections']['sm_color_palettes_section']['options'][$key]['type'] = 'hidden_controls';
