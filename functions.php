@@ -161,29 +161,29 @@ add_action( 'wp_enqueue_scripts', 'hivelite_scripts_styles' );
 /**
  * Custom template tags for this theme.
  */
-require get_template_directory() . '/inc/template-tags.php';
+require_once trailingslashit( get_template_directory() ) . 'inc/template-tags.php';
 
 /**
  * Custom functions that act independently of the theme templates.
  */
-require get_template_directory() . '/inc/extras.php';
+require_once trailingslashit( get_template_directory() ) . 'inc/extras.php';
 
 /**
  * Load the Hybrid Media Grabber class
  */
-require get_template_directory() . '/inc/hive-hybrid-media-grabber.php';
+require_once trailingslashit( get_template_directory() ) . 'inc/hive-hybrid-media-grabber.php';
 
 /**
  * Customizer additions.
  */
-require get_template_directory() . '/inc/customizer.php';
+require_once trailingslashit( get_template_directory() ) . 'inc/customizer.php';
 
 /**
- * Load Customify plugin configuration
+ * Load various plugin integrations.
  */
-require get_template_directory() . '/inc/integrations.php';
+require_once trailingslashit( get_template_directory() ) . 'inc/integrations.php';
 
 /**
- * Load Recommended plugins notification
+ * Admin dashboard related logic.
  */
-require get_template_directory() . '/inc/required-plugins.php';
+require_once trailingslashit( get_template_directory() ) . 'inc/admin.php';

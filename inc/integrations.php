@@ -6,6 +6,7 @@
  */
 
 /**
-* Load theme's configuration file (via Customify plugin)
-*/
+ * Load Customify compatibility file.
+ * https://wordpress.org/plugins/customify/
+ */
 require get_parent_theme_file_path( '/inc/integrations/customify.php' );

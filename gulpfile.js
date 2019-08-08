@@ -64,17 +64,17 @@ function stylesAdmin() {
 stylesAdmin.description = 'Compiles WordPress admin Sass and uses autoprefixer';
 gulp.task('styles-admin', stylesAdmin )
 
-function stylesPixcareNotice() {
+function stylesPixassistNotice() {
 
-	return gulp.src('inc/admin/pixcare-notice/*.scss')
+	return gulp.src('inc/admin/pixelgrade-assistant-notice/*.scss')
 		.pipe(plugins.sourcemaps.init())
 		.pipe(plugins.sass().on('error', logError))
 		.pipe(plugins.autoprefixer())
 		.pipe(plugins.replace(/^@charset \"UTF-8\";\n/gm, ''))
-		.pipe(gulp.dest('./inc/admin/pixcare-notice'))
+		.pipe(gulp.dest('./inc/admin/pixelgrade-assistant-notice'))
 }
-stylesAdmin.description = 'Compiles PixCare admin notice Sass and uses autoprefixer';
-gulp.task('styles-pixcare-notice', stylesPixcareNotice )
+stylesAdmin.description = 'Compiles Pixelgrade Assistant admin notice Sass and uses autoprefixer';
+gulp.task('styles-pixassist-notice', stylesPixassistNotice )
 
 function stylesWatch() {
 	plugins.livereload.listen();
@@ -83,7 +83,7 @@ function stylesWatch() {
 gulp.task('styles-watch', stylesWatch);
 
 function stylesSequence(cb) {
-	return gulp.series( 'styles-main', 'styles-rtl', 'styles-pixcare-notice', 'styles-admin' )(cb);
+	return gulp.series( 'styles-main', 'styles-rtl', 'styles-pixassist-notice', 'styles-admin' )(cb);
 }
 stylesSequence.description = 'Compile the styles and generate RTL version.';
 gulp.task( 'styles', stylesSequence  );

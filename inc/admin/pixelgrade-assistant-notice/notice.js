@@ -1,16 +1,11 @@
 (function ($) {
 	$(document).ready(function () {
 		var temp_url = wp.ajax.settings.url,
-			$noticeContainer = $( '.pixcare-notice__container' ),
-			$button = $noticeContainer.find( '.js-handle-pixcare' ),
-			$text = $noticeContainer.find( '.pixcare-notice-button__text' ),
-			$status = $noticeContainer.find( '.js-plugin-message' ),
-			buttonBox;
-
-		if ( $button.length ) {
-			buttonBox = $button[0].getBoundingClientRect();
-			$button.css( 'width', buttonBox.right - buttonBox.left );
-		}
+			$noticeContainer = $( '.pixassist-notice' ),
+			$button = $noticeContainer.find( '.js-handle-pixassist' ),
+			$dismissButton = $noticeContainer.find( '.button.dismiss' ),
+			$text = $noticeContainer.find( '.pixassist-notice-button__text' ),
+			$status = $noticeContainer.find( '.js-plugin-message' );
 
 		$button.on('click', function() {
 			let installedSuccessfully = -1,
@@ -20,18 +15,20 @@
 				folderAlreadyExists = -1
 
 			// Put the button in a loading state
-			$button.css( 'width', $button.parent().width() );
 			$button.addClass('state--plugin-installing').prop('disabled', true);
+
+			// Hide the dismiss button
+			$dismissButton.fadeOut(500);
 
 			/*
 			 * We need to determine what to do first, install or activate.
 			 */
-			if ( pixcareNotice.status === 'missing' ) {
-				$text.html(pixcareNotice.i18n.btnInstalling);
-				wp.ajax.settings.url = pixcareNotice.installUrl;
-			} else if ( pixcareNotice.status === 'installed' ) {
-				$text.html(pixcareNotice.i18n.btnActivating);
-				wp.ajax.settings.url = pixcareNotice.activateUrl;
+			if ( pixassistNotice.status === 'missing' ) {
+				$text.html(pixassistNotice.i18n.btnInstalling);
+				wp.ajax.settings.url = pixassistNotice.installUrl;
+			} else if ( pixassistNotice.status === 'installed' ) {
+				$text.html(pixassistNotice.i18n.btnActivating);
+				wp.ajax.settings.url = pixassistNotice.activateUrl;
 			}
 
 			wp.a11y.speak($text.html());
@@ -44,23 +41,23 @@
 				folderAlreadyExists = -1
 
 				if (typeof response === 'string') {
-					installedSuccessfully = response.indexOf('<p>' + pixcareNotice.i18n.installedSuccessfully + '</p>');
+					installedSuccessfully = response.indexOf('<p>' + pixassistNotice.i18n.installedSuccessfully + '</p>');
 					activatedSuccessfully = response.indexOf('<div id="message" class="updated"><p>');
 					noActionTaken = response.indexOf('<div id="message" class="error"><p>No action taken.');
-					folderAlreadyExists = response.indexOf('<p>' + pixcareNotice.i18n.folderAlreadyExists + '</p>');
+					folderAlreadyExists = response.indexOf('<p>' + pixassistNotice.i18n.folderAlreadyExists + '</p>');
 				}
 
 				if (installedSuccessfully !== -1) {
-					wp.a11y.speak(pixcareNotice.i18n.installedSuccessfully);
+					wp.a11y.speak(pixassistNotice.i18n.installedSuccessfully);
 
 					/*
 					 * We need to activate the plugin
 					 */
 
-					$text.html(pixcareNotice.i18n.btnActivating);
-					wp.a11y.speak(pixcareNotice.i18n.btnActivating);
+					$text.html(pixassistNotice.i18n.btnActivating);
+					wp.a11y.speak(pixassistNotice.i18n.btnActivating);
 
-					wp.ajax.settings.url = pixcareNotice.activateUrl;
+					wp.ajax.settings.url = pixassistNotice.activateUrl;
 
 					$button.removeClass( 'state--plugin-installing' ).addClass( 'state--plugin-activating' );
 
@@ -74,49 +71,49 @@
 						}
 
 						if (activatedSuccessfully !== -1 || noActionTaken !== -1) {
-							wp.a11y.speak(pixcareNotice.i18n.activatedSuccessfully);
-
-							$text.html(pixcareNotice.i18n.btnRedirectingToSetup);
-							wp.a11y.speak(pixcareNotice.i18n.redirectingToSetup);
-
-							$button.removeClass( 'state--plugin-activating' ).addClass( 'state--plugin-redirecting' );
-
-							setTimeout(function () {
-								window.location.href = pixcareNotice.pixcareSetupUrl;
-							}, 2000);
+							doPluginReady();
 						} else {
 							$button.removeClass( 'state--plugin-activating' ).addClass( 'state--plugin-invalidated' );
-							$text.html(pixcareNotice.i18n.btnError);
+							$text.html(pixassistNotice.i18n.btnError);
 
-							$status.html(pixcareNotice.i18n.error);
+							$status.html(pixassistNotice.i18n.error);
 
-							wp.a11y.speak(pixcareNotice.i18n.error);
+							wp.a11y.speak(pixassistNotice.i18n.error);
 						}
 
 						wp.ajax.settings.url = temp_url;
 					});
 
 				} else if (folderAlreadyExists !== -1 || activatedSuccessfully !== -1 || noActionTaken !== -1) {
-					wp.a11y.speak(pixcareNotice.i18n.activatedSuccessfully);
-
-					$text.html(pixcareNotice.i18n.btnRedirectingToSetup);
-					wp.a11y.speak(pixcareNotice.i18n.redirectingToSetup);
-					setTimeout(function () {
-						window.location.href = pixcareNotice.pixcareSetupUrl;
-					}, 2000);
+					doPluginReady();
 				} else {
 					$button.removeClass( 'state--plugin-activating' ).addClass( 'state--plugin-invalidated' );
-					$text.html(pixcareNotice.i18n.btnError);
+					$text.html(pixassistNotice.i18n.btnError);
 
-					$status.html(pixcareNotice.i18n.error);
+					$status.html(pixassistNotice.i18n.error);
 
-					wp.a11y.speak(pixcareNotice.i18n.error);
+					wp.a11y.speak(pixassistNotice.i18n.error);
 				}
 
 				wp.ajax.settings.url = temp_url;
 			});
 			wp.ajax.settings.url = temp_url;
 		})
+
+		function doPluginReady() {
+			setTimeout( function() {
+				wp.a11y.speak(pixassistNotice.i18n.activatedSuccessfully);
+
+				$button.removeClass('state--plugin-activating').removeClass('state--plugin-installing').addClass('state--plugin-ready');
+				// We don't need to take any action. Just leave the normal click.
+				$button.unbind('click');
+
+				$button.attr('href', pixassistNotice.pixassistSetupUrl);
+				$text.html(pixassistNotice.i18n.btnGoToSetup);
+
+				wp.a11y.speak(pixassistNotice.i18n.clickStartTheSiteSetup);
+			}, 1000);
+		}
 
 		// Send ajax on click of dismiss icon
 		$noticeContainer.on( 'click', '.notice-dismiss', function() {
@@ -126,11 +123,11 @@
 		// Send ajax
 		function ajaxDismiss( dismissElement ) {
 			$.ajax({
-				url: pixcareNotice.ajaxurl,
+				url: pixassistNotice.ajaxurl,
 				type: 'post',
 				data: {
-					action: 'pixcare_install_dismiss_admin_notice',
-					nonce_dismiss: $noticeContainer.find('#nonce-pixcare_install-dismiss').val()
+					action: 'pixassist_install_dismiss_admin_notice',
+					nonce_dismiss: $noticeContainer.find('#nonce-pixassist_install-dismiss').val()
 				}
 			})
 		}

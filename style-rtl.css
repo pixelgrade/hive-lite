@@ -4,7 +4,7 @@ Theme URI: https://github.com/pixelgrade/hive-lite
 Author: Pixelgrade
 Author URI: https://pixelgrade.com
 Description: An effortless tool for publishers of all kind, cherished for its clean masonry-style layout, modern typography and flexibility. Whether you're looking to share your own thoughts, write about your latest findings or just have a scrapbook of photos, videos, quotes or other stuff, HIVE Lite is designed to fulfill these and a lot more.
-Version: 1.2.1
+Version: 1.2.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 4.9.9
@@ -1395,7 +1395,7 @@ body {
   display: block;
   width: 1em;
   height: .158em;
-  background: #171617; }
+  background-color: #171617; }
 
 .c-burger__slice--top,
 .c-burger__slice--bottom {
@@ -1898,7 +1898,7 @@ body {
       position: absolute;
       top: 0; } }
   .page-numbers.prev.disabled, .page-numbers.next.disabled {
-    color: #F0F0F0 !important;
+    color: #F0F0F0;
     pointer-events: none; }
   .page-numbers.prev i, .page-numbers.next i {
     margin: 0 12px; }
@@ -2910,9 +2910,6 @@ div#respond {
   -webkit-font-smoothing: auto;
   position: relative;
   z-index: 100; }
-  @media only screen and (min-width: 1000px) {
-    .site-footer {
-      margin-left: -3em; } }
   .site-footer a {
     color: white; }
   @media not screen and (min-width: 899px) {
@@ -3433,8 +3430,40 @@ div#jp-relatedposts h3.jp-relatedposts-headline {
 /**
  * 14.0 - Overwrites
  */
+/* Text meant only for screen readers. */
 .screen-reader-text {
-  display: none; }
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  -webkit-clip-path: inset(50%);
+          clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important;
+  /* Many screen reader and browser combinations announce broken words as they would appear visually. */ }
+  .screen-reader-text:focus {
+    background-color: #FFFFFF;
+    border-radius: 3px;
+    -webkit-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+            box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+    clip: auto !important;
+    -webkit-clip-path: none;
+            clip-path: none;
+    color: #000;
+    display: block;
+    font-weight: bold;
+    height: auto;
+    right: 5px;
+    line-height: normal;
+    padding: 15px 23px 14px;
+    text-decoration: none;
+    top: 5px;
+    width: auto;
+    z-index: 100000;
+    /* Above WP toolbar. */ }
 
 .toolbar .navigation.post-navigation .nav-links span {
   display: block;
@@ -3465,9 +3494,5 @@ div#jp-relatedposts h3.jp-relatedposts-headline {
 /**
  * 15.0 - Hive Lite Specific Styles
  */
-body {
-  border: none; }
-  body:after {
-    display: none; }
 
 /*# sourceMappingURL=to.css.map */
