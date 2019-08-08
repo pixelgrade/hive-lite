@@ -89,7 +89,7 @@ class PixelgradeAssistant_Install_Notice {
 					<h2><?php echo wp_kses( sprintf( __( 'Thanks for installing %s! Are you looking for a better experience to setup your site?', '__theme_txtd' ),  $theme->get( 'Name' ) ), wp_kses_allowed_html('post') ); ?></h2>
 					<p><?php echo wp_kses( __('We\'ve prepared a special onboarding setup through our <strong>Pixelgrade Assistant plugin.</strong> It helps you get started and configure your upcoming website in style. Plus, you can <strong>search the theme documentation and open support tickets.</strong> Let\'s make it shine!', '__theme_txtd' ), wp_kses_allowed_html('post') ); ?></p>
 
-					<div class="message js-plugin-message"></div>
+					<p class="message js-plugin-message"></p>
 					<a class="pixassist-notice-button js-handle-pixassist button button-primary" href="#"><span class="pixassist-notice-button__text"><?php echo $button_text ?></span></a>
 					<button type="submit" class="button dismiss"><span class="screen-reader-text"><?php esc_html_e( 'Dismiss this notice.', '__theme_txtd' ); ?></span><?php esc_html_e( 'No thanks, I\'ll be fine', '__theme_txtd' ); ?></button>
 				</div>
