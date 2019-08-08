@@ -1,6 +1,8 @@
 <?php
 /**
- * Add extra controls in the Customizer
+ * Add extra controls in the Customizer via our Customify plugin.
+ *
+ * @link https://wordpress.org/plugins/customify/
  *
  * @package Hive Lite
  */
@@ -50,8 +52,7 @@ function hivelite_add_customify_style_manager_section( $options ) {
 		$options['sections']['style_manager_section'] = array();
 	}
 
-	// The section might be already defined, thus we merge, not replace the entire section config.
-	$options['sections']['style_manager_section'] = Customify_Array::array_merge_recursive_distinct( $options['sections']['style_manager_section'], array(
+	$new_config = array(
 		'options' => array(
 
 			// Color Palettes Assignment.
@@ -110,7 +111,9 @@ function hivelite_add_customify_style_manager_section( $options ) {
 				'default' => HIVELITE_SM_LIGHT_TERTIARY,
 			),
 		),
-	) );
+	);
+	// The section might be already defined, thus we merge, not replace the entire section config.
+	$options['sections']['style_manager_section'] = Customify_Array::array_merge_recursive_distinct( $options['sections']['style_manager_section'], $new_config );
 
 	return $options;
 }
@@ -123,7 +126,8 @@ function hivelite_add_customify_style_manager_section( $options ) {
  * @return array The modified Customify config.
  */
 function hivelite_fill_customify_options( $options ) {
-	$options['sections'] = Customify_Array::array_merge_recursive_distinct( $options['sections'], array(
+
+	$new_config = array(
 
 		'header_section'       => array(
 			'title'   => '',
@@ -604,7 +608,9 @@ function hivelite_fill_customify_options( $options ) {
 				),
 			),
 		),
-	) );
+	);
+
+	$options['sections'] = Customify_Array::array_merge_recursive_distinct( $options['sections'], $new_config );
 
 	return $options;
 }

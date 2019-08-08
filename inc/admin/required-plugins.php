@@ -12,6 +12,11 @@ function hive_register_required_plugins() {
 
 	$plugins = array(
 		array(
+			'name'               => 'Pixelgrade Assistant',
+			'slug'               => 'pixelgrade-assistant',
+			'required'           => false,
+		),
+		array(
 			'name'               => 'Customify',
 			'slug'               => 'customify',
 			'required'           => false,
