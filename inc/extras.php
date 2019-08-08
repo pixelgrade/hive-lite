@@ -226,35 +226,6 @@ function hivelite_auto_style_title( $title ) {
 }
 
 /**
- * @param array $data Contains the Customify Customizer config.
- *
- * @return array $data The modified config.
- */
-function hivelite_remove_customify_controls( $data ) {
-	$data['remove_panels'] = array( 'theme_options_panel', );
-
-	// Create an array with the required options
-	$required_options = array(
-		'sm_palettes_description',
-		'sm_color_palette',
-		'sm_dark_color_primary_slider',
-	);
-
-	// Hide controls for every other option
-	foreach ( $data['panels']['style_manager_panel']['sections']['sm_color_palettes_section']['options'] as $key => $option ) {
-		if ( false === in_array( $key, $required_options ) ) {
-			$data['panels']['style_manager_panel']['sections']['sm_color_palettes_section']['options'][ $key ]['type'] = 'hidden_control';
-		}
-	}
-
-	return $data;
-}
-
-if ( class_exists( 'PixCustomifyPlugin' ) ) {
-	add_filter( 'customify_final_config', 'hivelite_remove_customify_controls' );
-}
-
-/**
  * Generate the Google Fonts URL
  *
  * Based on this article http://themeshaper.com/2014/08/13/how-to-add-google-fonts-to-wordpress-themes/

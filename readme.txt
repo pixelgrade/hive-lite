@@ -74,4 +74,5 @@ Unless otherwise specified, all the theme files, scripts and images are licensed
 * VelocityJS: script by Julian Shapiro (http://julian.com/research/velocity/), licensed under the [MIT License](http://opensource.org/licenses/mit-license.html).
 * requestAnimationFrame: polyfill by Erik Möller, licensed under the [MIT License](http://opensource.org/licenses/mit-license.html).
 
-* Images: screenshot images by Pxhere - [Source](https://pxhere.com/en/photo/913378), Goldposter - [Source](https://photo.goldposter.com/woman-in-collared-shirt/), Goldposter - [Source](https://photo.goldposter.com/gray-scale-photography-of-woman/), Goldposter - [Source](https://photo.goldposter.com/person-holding-guitar-in-grayscale-photography/), licensed under CC0 Public Domain.
+* Images: screenshot images by Pxhere - [Source](https://pxhere.com/en/photo/913378), Goldposter - [Source](https://photo.goldposter.com/woman-in-collared-shirt/), Goldposter - [Source](https://photo.goldposter.com/gray-scale-photography-of-woman/), Goldposter - [Source](https://photo.goldposter.com/person-holding-guitar-in-grayscale-photography/), licensed under CC0 Public Domain; theme color palette preview image by Pxhere - [Source](https://pxhere.com/en/photo/900622)
+

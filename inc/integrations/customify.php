@@ -5,36 +5,26 @@
  * @package Hive Lite
  */
 
-/**
- * Hook into the Customify's fields and settings.
- *
- * The config can turn to be complex so is best to visit:
- * https://github.com/pixelgrade/customify
- *
- * @param array $options Contains the plugin's options array right before they are used, so edit with care
- *
- * @return array The returned options are required, if you don't need options return an empty array
- */
-add_filter( 'customify_filter_fields', 'hive_lite_add_customify_options', 11, 1 );
-add_filter( 'customify_filter_fields', 'pixelgrade_add_customify_style_manager_section', 12, 1 );
+add_filter( 'customify_filter_fields', 'hivelite_add_customify_options', 11, 1 );
+add_filter( 'customify_filter_fields', 'hivelite_add_customify_style_manager_section', 12, 1 );
 
-add_filter( 'customify_filter_fields', 'hive_lite_modify_customify_options', 20 );
+add_filter( 'customify_filter_fields', 'hivelite_fill_customify_options', 20 );
 
 // Color Constants
-define( 'SM_COLOR_PRIMARY', '#ffeb00' );
-define( 'SM_COLOR_SECONDARY', '#cae00f' );
-define( 'SM_COLOR_TERTIARY', '#bbd916' );
+define( 'HIVELITE_SM_COLOR_PRIMARY', '#ffeb00' );
+define( 'HIVELITE_SM_COLOR_SECONDARY', '#cae00f' );
+define( 'HIVELITE_SM_COLOR_TERTIARY', '#bbd916' );
 
-define( 'SM_DARK_PRIMARY', '#161a03' );
-define( 'SM_DARK_SECONDARY', '#2a2c29' );
-define( 'SM_DARK_TERTIARY', '#7e8073' );
+define( 'HIVELITE_SM_DARK_PRIMARY', '#161a03' );
+define( 'HIVELITE_SM_DARK_SECONDARY', '#2a2c29' );
+define( 'HIVELITE_SM_DARK_TERTIARY', '#7e8073' );
 
-define( 'SM_LIGHT_PRIMARY', '#ffffff' );
-define( 'SM_LIGHT_SECONDARY', '#fcfcf5' );
-define( 'SM_LIGHT_TERTIARY', '#f4f7e6' );
+define( 'HIVELITE_SM_LIGHT_PRIMARY', '#ffffff' );
+define( 'HIVELITE_SM_LIGHT_SECONDARY', '#fcfcf5' );
+define( 'HIVELITE_SM_LIGHT_TERTIARY', '#f4f7e6' );
 
 
-function hive_lite_add_customify_options( $options ) {
+function hivelite_add_customify_options( $options ) {
 	$options['opt-name'] = 'hive_options';
 
 	//start with a clean slate - no Customify default sections
@@ -50,7 +40,7 @@ function hive_lite_add_customify_options( $options ) {
  *
  * @return array
  */
-function pixelgrade_add_customify_style_manager_section( $options ) {
+function hivelite_add_customify_style_manager_section( $options ) {
 	// If the theme hasn't declared support for style manager, bail.
 	if ( ! current_theme_supports( 'customizer_style_manager' ) ) {
 		return $options;
@@ -61,7 +51,7 @@ function pixelgrade_add_customify_style_manager_section( $options ) {
 	}
 
 	// The section might be already defined, thus we merge, not replace the entire section config.
-	$options['sections']['style_manager_section'] = array_replace_recursive( $options['sections']['style_manager_section'], array(
+	$options['sections']['style_manager_section'] = Customify_Array::array_merge_recursive_distinct( $options['sections']['style_manager_section'], array(
 		'options' => array(
 
 			// Color Palettes Assignment.
@@ -69,16 +59,16 @@ function pixelgrade_add_customify_style_manager_section( $options ) {
 				'connected_fields' => array(
 					'accent_color',
 				),
-				'default' => SM_COLOR_PRIMARY,
+				'default' => HIVELITE_SM_COLOR_PRIMARY,
 			),
 			'sm_color_secondary' => array(
-				'default' => SM_COLOR_SECONDARY,
+				'default' => HIVELITE_SM_COLOR_SECONDARY,
 			),
 			'sm_color_tertiary' => array(
-				'default' => SM_COLOR_TERTIARY,
+				'default' => HIVELITE_SM_COLOR_TERTIARY,
 			),
 			'sm_dark_primary' => array(
-				'default' => SM_DARK_PRIMARY,
+				'default' => HIVELITE_SM_DARK_PRIMARY,
 			),
 			'sm_dark_secondary' => array(
 				'connected_fields' => array(
@@ -96,14 +86,14 @@ function pixelgrade_add_customify_style_manager_section( $options ) {
 					'main_content_heading_5_color',
 					'body_color',
 				),
-				'default' => SM_DARK_SECONDARY,
+				'default' => HIVELITE_SM_DARK_SECONDARY,
 			),
 			'sm_dark_tertiary' => array(
 				'connected_fields' => array(
 					'hive_blog_grid_secondary_meta_color',
 					'body_link_color',
 				),
-				'default' => SM_DARK_TERTIARY,
+				'default' => HIVELITE_SM_DARK_TERTIARY,
 			),
 			'sm_light_primary' => array(
 				'connected_fields' => array(
@@ -111,13 +101,13 @@ function pixelgrade_add_customify_style_manager_section( $options ) {
 					'hive_footer_body_text_color',
 					'hive_footer_links_color',
 				),
-				'default' => SM_LIGHT_PRIMARY,
+				'default' => HIVELITE_SM_LIGHT_PRIMARY,
 			),
 			'sm_light_secondary' => array(
-				'default' => SM_LIGHT_SECONDARY,
+				'default' => HIVELITE_SM_LIGHT_SECONDARY,
 			),
 			'sm_light_tertiary' => array(
-				'default' => SM_LIGHT_TERTIARY,
+				'default' => HIVELITE_SM_LIGHT_TERTIARY,
 			),
 		),
 	) );
@@ -126,29 +116,25 @@ function pixelgrade_add_customify_style_manager_section( $options ) {
 }
 
 /**
- * Modify the Customify config.
+ * Fill the Customify config.
  *
  * @param array $options The whole Customify config.
  *
  * @return array The modified Customify config.
  */
-function hive_lite_modify_customify_options( $options ) {
-
-	$options['sections'] = array_replace_recursive( $options['sections'], array(
+function hivelite_fill_customify_options( $options ) {
+	$options['sections'] = Customify_Array::array_merge_recursive_distinct( $options['sections'], array(
 
 		'header_section'       => array(
-			'title'   => esc_html__( 'Header', 'hive' ),
+			'title'   => '',
+			'type'    => 'hidden',
 			'options' => array(
+
 				// [Section] COLORS
-				'header_title_colors_section'    => array(
-					'type' => 'html',
-					'html' => '<span id="section-title-header-colors" class="separator section label large">&#x1f3a8; ' . esc_html__( 'Colors', 'hive' ) . '</span>',
-				),
 				'header_navigation_links_color'       => array(
-					'type'    => 'color',
-					'label'   => esc_html__( 'Navigation Links Color', 'hive' ),
+					'type'    => 'hidden_control',
 					'live'    => true,
-					'default' => SM_DARK_SECONDARY,
+					'default' => HIVELITE_SM_DARK_SECONDARY,
 					'css'     => array(
 						array(
 							'property' => 'color',
@@ -157,10 +143,9 @@ function hive_lite_modify_customify_options( $options ) {
 					),
 				),
 				'header_links_active_color'           => array(
-					'type'    => 'color',
-					'label'   => esc_html__( 'Links Active Color', 'hive' ),
+					'type'    => 'hidden_control',
 					'live'    => true,
-					'default' => SM_DARK_SECONDARY,
+					'default' => HIVELITE_SM_DARK_SECONDARY,
 					'css'     => array(
 						array(
 							'property' => 'color',
@@ -175,18 +160,15 @@ function hive_lite_modify_customify_options( $options ) {
 			),
 		),
 		'main_content_section' => array(
-			'title'   => esc_html__( 'Main Content', 'hive' ),
+			'title'   => '',
+			'type'    => 'hidden',
 			'options' => array(
+
 				// [Section] COLORS
-				'main_content_title_colors_section'    => array(
-					'type' => 'html',
-					'html' => '<span id="section-title-header-colors" class="separator section label large">&#x1f3a8; ' . esc_html__( 'Colors', 'hive' ) . '</span>',
-				),
 				'border_color'                              => array(
-					'type'    => 'color',
-					'label'   => esc_html__( 'Border Color', 'hive' ),
+					'type'    => 'hidden_control',
 					'live'    => true,
-					'default' => SM_DARK_SECONDARY,
+					'default' => HIVELITE_SM_DARK_SECONDARY,
 					'css'     => array(
 						array(
 							'selector' => 'body:before, body:after',
@@ -197,17 +179,12 @@ function hive_lite_modify_customify_options( $options ) {
 							'selector' => 'div#infinite-footer, .site-footer',
 							'property' => 'background-color',
 						),
-						array(
-							'selector' => 'body',
-							'property' => 'border-color',
-						),
 					),
 				),
 				'body_color'                                => array(
-					'type'    => 'color',
-					'label'   => esc_html__( 'Body Text Color', 'hive' ),
+					'type'    => 'hidden_control',
 					'live'    => true,
-					'default' => SM_DARK_SECONDARY,
+					'default' => HIVELITE_SM_DARK_SECONDARY,
 					'css'     => array(
 						array(
 							'selector' => '
@@ -217,11 +194,7 @@ function hive_lite_modify_customify_options( $options ) {
 								.site-title a,
 								.widget a,
 								.comment__author-name a,
-								a:hover,
-								.page-numbers.prev.disabled, 
-								.page-numbers.next.disabled,
-								.page-title--search,
-								.page-title--search span',
+								a:hover',
 							'property' => 'color',
 						),
 						array(
@@ -232,7 +205,7 @@ function hive_lite_modify_customify_options( $options ) {
 								.page .entry-footer a,
 								.comment__content',
 							'property' => 'color',
-							'callback_filter' => 'hive_color_opacity_adjust_cb'
+							'callback_filter' => 'hivelite_color_opacity_adjust_cb'
 						),
 						array(
 							'selector' => '
@@ -253,7 +226,7 @@ function hive_lite_modify_customify_options( $options ) {
 								.single .entry-content:before,
 								.page .entry-content:before',
 							'property' => 'color',
-							'callback_filter' => 'hive_color_opacity_darker_cb'
+							'callback_filter' => 'hivelite_color_opacity_darker_cb'
 						),
 						array(
 							'selector' => '
@@ -262,7 +235,7 @@ function hive_lite_modify_customify_options( $options ) {
 								li.pingback .children li .comment-number,
 								li.trackback .children li .comment-number',
 							'property' => 'background-color',
-							'callback_filter' => 'hive_color_opacity_darker_cb'
+							'callback_filter' => 'hivelite_color_opacity_darker_cb'
 						),
 						array(
 							'selector' => '
@@ -271,7 +244,7 @@ function hive_lite_modify_customify_options( $options ) {
 								input,
 								textarea',
 							'property' => 'border-color',
-							'callback_filter' => 'hive_color_opacity_adjust_cb'
+							'callback_filter' => 'hivelite_color_opacity_adjust_cb'
 						),
 						array(
 							'selector' => '
@@ -285,12 +258,12 @@ function hive_lite_modify_customify_options( $options ) {
 								.comment-form input,
 								.comment-form textarea',
 							'property' => 'border-color',
-							'callback_filter' => 'hive_color_opacity_darker_cb'
+							'callback_filter' => 'hivelite_color_opacity_darker_cb'
 						),
 						array(
 							'selector' => '.comments-area',
 							'property' => 'border-top-color',
-							'callback_filter' => 'hive_color_opacity_adjust_cb'
+							'callback_filter' => 'hivelite_color_opacity_adjust_cb'
 						),
 						array(
 							'selector' => '
@@ -313,8 +286,7 @@ function hive_lite_modify_customify_options( $options ) {
 								.add-comment .add-comment__button,
 
 								.archive__grid .entry-thumbnail .hover__bg,
-								.pagination span.current,
-								.c-burger__slice',
+								.pagination span.current',
 							'property' => 'background-color',
 						),
 						array(
@@ -329,10 +301,9 @@ function hive_lite_modify_customify_options( $options ) {
 					),
 				),
 				'body_background_color'                                => array(
-					'type'    => 'color',
-					'label'   => esc_html__( 'Body Background Color', 'hive' ),
+					'type'    => 'hidden_control',
 					'live'    => true,
-					'default' => SM_LIGHT_PRIMARY,
+					'default' => HIVELITE_SM_LIGHT_PRIMARY,
 					'css'     => array(
 						array(
 							'selector' => '
@@ -409,10 +380,9 @@ function hive_lite_modify_customify_options( $options ) {
 					),
 				),
 				'body_link_color'                           => array(
-					'type'    => 'color',
-					'label'   => esc_html__( 'Body Link Color', 'hive' ),
+					'type'    => 'hidden_control',
 					'live'    => true,
-					'default' => SM_DARK_TERTIARY,
+					'default' => HIVELITE_SM_DARK_TERTIARY,
 					'css'     => array(
 						array(
 							'selector' => 'a',
@@ -421,10 +391,9 @@ function hive_lite_modify_customify_options( $options ) {
 					),
 				),
 				'accent_color'                              => array(
-					'type'    => 'color',
-					'label'   => esc_html__( 'Accent Color', 'hive' ),
+					'type'    => 'hidden_control',
 					'live'    => true,
-					'default' => SM_COLOR_PRIMARY,
+					'default' => HIVELITE_SM_COLOR_PRIMARY,
 					'css'     => array(
 						array(
 							'property' => 'color',
@@ -473,19 +442,19 @@ function hive_lite_modify_customify_options( $options ) {
 								.content-quote blockquote:after,
 								.sticky:not(.format-quote):after',
 						),
+						array(
+							'property'        => 'color',
+							'selector'        => '.sticky, .sticky a, .sticky .posted-on a, .sticky .entry-title',
+							'callback_filter' => 'hivelite_sticky_accent_callback',
+						),
 					),
 				),
 
 				// [Sub Section] Headings Color
-				'main_content_title_headings_color_section' => array(
-					'type' => 'html',
-					'html' => '<span class="separator sub-section label">' . esc_html__( 'Headings Color', 'hive' ) . '</span>',
-				),
 				'main_content_heading_1_color'              => array(
-					'type'    => 'color',
-					'label'   => esc_html__( 'Headings 1', 'hive' ),
+					'type'    => 'hidden_control',
 					'live'    => true,
-					'default' => SM_DARK_SECONDARY,
+					'default' => HIVELITE_SM_DARK_SECONDARY,
 					'css'     => array(
 						array(
 							'property' => 'color',
@@ -494,10 +463,9 @@ function hive_lite_modify_customify_options( $options ) {
 					),
 				),
 				'main_content_heading_2_color'              => array(
-					'type'    => 'color',
-					'label'   => esc_html__( 'Headings 2', 'hive' ),
+					'type'    => 'hidden_control',
 					'live'    => true,
-					'default' => SM_DARK_SECONDARY,
+					'default' => HIVELITE_SM_DARK_SECONDARY,
 					'css'     => array(
 						array(
 							'property' => 'color',
@@ -506,10 +474,9 @@ function hive_lite_modify_customify_options( $options ) {
 					),
 				),
 				'main_content_heading_3_color'              => array(
-					'type'    => 'color',
-					'label'   => esc_html__( 'Headings 3', 'hive' ),
+					'type'    => 'hidden_control',
 					'live'    => true,
-					'default' => SM_DARK_SECONDARY,
+					'default' => HIVELITE_SM_DARK_SECONDARY,
 					'css'     => array(
 						array(
 							'property' => 'color',
@@ -518,10 +485,9 @@ function hive_lite_modify_customify_options( $options ) {
 					),
 				),
 				'main_content_heading_4_color'              => array(
-					'type'    => 'color',
-					'label'   => esc_html__( 'Headings 4', 'hive' ),
+					'type'    => 'hidden_control',
 					'live'    => true,
-					'default' => SM_DARK_SECONDARY,
+					'default' => HIVELITE_SM_DARK_SECONDARY,
 					'css'     => array(
 						array(
 							'property' => 'color',
@@ -530,10 +496,9 @@ function hive_lite_modify_customify_options( $options ) {
 					),
 				),
 				'main_content_heading_5_color'              => array(
-					'type'    => 'color',
-					'label'   => esc_html__( 'Headings 5', 'hive' ),
+					'type'    => 'hidden_control',
 					'live'    => true,
-					'default' => SM_DARK_SECONDARY,
+					'default' => HIVELITE_SM_DARK_SECONDARY,
 					'css'     => array(
 						array(
 							'property' => 'color',
@@ -544,18 +509,14 @@ function hive_lite_modify_customify_options( $options ) {
 			),
 		),
 		'footer_section'       => array(
-			'title'   => esc_html__( 'Footer', 'hive' ),
+			'title'   => '',
+			'type'    => 'hidden',
 			'options' => array(
 				// [Section] COLORS
-				'footer_title_colors_section'    => array(
-					'type' => 'html',
-					'html' => '<span id="section-title-header-colors" class="separator section label large">&#x1f3a8; ' . esc_html__( 'Colors', 'hive' ) . '</span>',
-				),
 				'hive_footer_body_text_color'         => array(
-					'type'    => 'color',
-					'label'   => esc_html__( 'Text Color', 'hive' ),
+					'type'    => 'hidden_control',
 					'live'    => true,
-					'default' => SM_LIGHT_PRIMARY,
+					'default' => HIVELITE_SM_LIGHT_PRIMARY,
 					'css'     => array(
 						array(
 							'property' => 'color',
@@ -563,15 +524,14 @@ function hive_lite_modify_customify_options( $options ) {
 								.site-footer,
 								#infinite-footer .blog-info,
 								#infinite-footer .blog-credits',
-							'callback_filter' => 'hive_color_opacity_adjust_cb'
+							'callback_filter' => 'hivelite_color_opacity_adjust_cb'
 						),
 					),
 				),
 				'hive_footer_links_color'             => array(
-					'type'    => 'color',
-					'label'   => esc_html__( 'Links Color', 'hive' ),
+					'type'    => 'hidden_control',
 					'live'    => true,
-					'default' => SM_LIGHT_PRIMARY,
+					'default' => HIVELITE_SM_LIGHT_PRIMARY,
 					'css'     => array(
 						array(
 							'property' => 'color',
@@ -585,18 +545,14 @@ function hive_lite_modify_customify_options( $options ) {
 			),
 		),
 		'blog_grid_section'    => array(
-			'title'   => esc_html__( 'Blog Grid Items', 'hive' ),
+			'title'   => '',
+			'type'    => 'hidden',
 			'options' => array(
 				// [Section] COLORS
-				'blog_grid_title_colors_section'    => array(
-					'type' => 'html',
-					'html' => '<span id="section-title-header-colors" class="separator section label large">&#x1f3a8; ' . esc_html__( 'Colors', 'hive' ) . '</span>',
-				),
 				'hive_blog_grid_item_title_color'        => array(
-					'type'    => 'color',
-					'label'   => esc_html__( 'Item Title Color', 'hive' ),
+					'type'    => 'hidden_control',
 					'live'    => true,
-					'default' => SM_DARK_SECONDARY,
+					'default' => HIVELITE_SM_DARK_SECONDARY,
 					'css'     => array(
 						array(
 							'property' => 'color',
@@ -605,17 +561,15 @@ function hive_lite_modify_customify_options( $options ) {
 					),
 				),
 				'hive_blog_grid_primary_meta_color'      => array(
-					'type'    => 'color',
-					'label'   => esc_html__( 'Primary Meta Color', 'hive' ),
+					'type'    => 'hidden_control',
 					'live'    => true,
-					'default' => SM_DARK_SECONDARY,
+					'default' => HIVELITE_SM_DARK_SECONDARY,
 					'css'     => array(
 						array(
 							'property' => 'color',
-							'selector' => '.entry-meta a,
-								.entry-meta:before,
-								.entry-meta a:hover > *,
-								.sticky:not(.format-quote) a,
+							'selector' => '.entry-meta__primary,
+								 .entry-meta__secondary:before,
+								.entry-meta__secondary:hover > *,
 								.single .posted-on,
 								.single .posted-on:before,
 								.single .posted-by,
@@ -630,10 +584,9 @@ function hive_lite_modify_customify_options( $options ) {
 					),
 				),
 				'hive_blog_grid_secondary_meta_color'    => array(
-					'type'    => 'color',
-					'label'   => esc_html__( 'Secondary Meta Color', 'hive' ),
+					'type'    => 'hidden_control',
 					'live'    => true,
-					'default' => SM_DARK_TERTIARY,
+					'default' => HIVELITE_SM_DARK_TERTIARY,
 					'css'     => array(
 						array(
 							'property' => 'color',
@@ -656,13 +609,13 @@ function hive_lite_modify_customify_options( $options ) {
 	return $options;
 }
 
-if ( ! function_exists('hive_is_color_light') ) {
+if ( ! function_exists('hivelite_is_color_light') ) {
 	/**
 	 * Returns whether or not given color is considered "light"
 	 * @param string|Boolean $color
 	 * @return boolean
 	 */
-	function hive_is_color_light( $color = '#ffffff' ) {
+	function hivelite_is_color_light( $color = '#ffffff' ) {
 		// Get our color
 		$color = ($color) ? $color : '#ffffff';
 		// Calculate straight from rbg
@@ -673,15 +626,15 @@ if ( ! function_exists('hive_is_color_light') ) {
 	}
 }
 
-if ( ! function_exists( 'hive_sticky_accent_callback' ) ) {
-	function hive_sticky_accent_callback( $value, $selector, $property, $unit ) {
-		$output = $selector . '{' . $property . ': ' . ( hive_is_color_light( $value ) ? '#000000' : '#ffffff' ) . '; }';
+if ( ! function_exists( 'hivelite_sticky_accent_callback' ) ) {
+	function hivelite_sticky_accent_callback( $value, $selector, $property, $unit ) {
+		$output = $selector . '{' . $property . ': ' . ( hivelite_is_color_light( $value ) ? '#000000' : '#ffffff' ) . '; }';
 		return $output;
 	}
 }
 
-if ( ! function_exists('hive_color_opacity_adjust_cb') ) {
-	function hive_color_opacity_adjust_cb( $value, $selector, $property, $unit ) {
+if ( ! function_exists('hivelite_color_opacity_adjust_cb') ) {
+	function hivelite_color_opacity_adjust_cb( $value, $selector, $property, $unit ) {
 
 		// Get our color
 		if ( empty( $value ) || ! preg_match( '/^#[a-f0-9]{6}$/i', $value ) ) {
@@ -699,19 +652,19 @@ if ( ! function_exists('hive_color_opacity_adjust_cb') ) {
 	}
 }
 
-if ( ! function_exists('hive_color_opacity_adjust_cb_customizer_preview') ) {
+if ( ! function_exists('hivelite_color_opacity_adjust_cb_customizer_preview') ) {
 
-	function hive_color_opacity_adjust_cb_customizer_preview() {
+	function hivelite_color_opacity_adjust_cb_customizer_preview() {
 
 		$js = "
 	        function hexdec(hexString) {
 				hexString = (hexString + '').replace(/[^a-f0-9]/gi, '');
 				return parseInt(hexString, 16)
 			}
-			function hive_color_opacity_adjust_cb( value, selector, property, unit ) {
+			function hivelite_color_opacity_adjust_cb( value, selector, property, unit ) {
 
 				var css = '',
-					style = document.getElementById('hive_color_opacity_adjust_cb_style_tag_' + selector.replace(/\W/g, '') ),
+					style = document.getElementById('hivelite_color_opacity_adjust_cb_style_tag_' + selector.replace(/\W/g, '') ),
 					head = document.head || document.getElementsByTagName('head')[0],
 					r = hexdec(value[1] + '' + value[2]),
 					g = hexdec(value[3] + '' + value[4]),
@@ -724,7 +677,7 @@ if ( ! function_exists('hive_color_opacity_adjust_cb_customizer_preview') ) {
 					style.innerHTML = css;
 				} else {
 					style = document.createElement('style');
-					style.setAttribute('id', 'hive_color_opacity_adjust_cb_style_tag_' + selector.replace(/\W/g, '') );
+					style.setAttribute('id', 'hivelite_color_opacity_adjust_cb_style_tag_' + selector.replace(/\W/g, '') );
 
 					style.type = 'text/css';
 					if ( style.styleSheet ) {
@@ -739,11 +692,11 @@ if ( ! function_exists('hive_color_opacity_adjust_cb_customizer_preview') ) {
 
 		wp_add_inline_script( 'customify-previewer-scripts', $js );
 	}
-	add_action( 'customize_preview_init', 'hive_color_opacity_adjust_cb_customizer_preview' );
 }
+add_action( 'customize_preview_init', 'hivelite_color_opacity_adjust_cb_customizer_preview' );
 
-if ( ! function_exists('hive_color_opacity_darker_cb') ) {
-	function hive_color_opacity_darker_cb( $value, $selector, $property, $unit ) {
+if ( ! function_exists('hivelite_color_opacity_darker_cb') ) {
+	function hivelite_color_opacity_darker_cb( $value, $selector, $property, $unit ) {
 
 		// Get our color
 		if ( empty( $value ) || ! preg_match( '/^#[a-f0-9]{6}$/i', $value ) ) {
@@ -761,19 +714,19 @@ if ( ! function_exists('hive_color_opacity_darker_cb') ) {
 	}
 }
 
-if ( ! function_exists('hive_color_opacity_darker_cb_customizer_preview') ) {
+if ( ! function_exists('hivelite_color_opacity_darker_cb_customizer_preview') ) {
 
-	function hive_color_opacity_darker_cb_customizer_preview() {
+	function hivelite_color_opacity_darker_cb_customizer_preview() {
 
 		$js = "
 	        function hexdec(hexString) {
 				hexString = (hexString + '').replace(/[^a-f0-9]/gi, '');
 				return parseInt(hexString, 16)
 			}
-			function hive_color_opacity_darker_cb( value, selector, property, unit ) {
+			function hivelite_color_opacity_darker_cb( value, selector, property, unit ) {
 
 				var css = '',
-					style = document.getElementById('hive_color_opacity_darker_cb_style_tag_' + selector.replace(/\W/g, '') ),
+					style = document.getElementById('hivelite_color_opacity_darker_cb_style_tag_' + selector.replace(/\W/g, '') ),
 					head = document.head || document.getElementsByTagName('head')[0],
 					r = hexdec(value[1] + '' + value[2]),
 					g = hexdec(value[3] + '' + value[4]),
@@ -785,7 +738,7 @@ if ( ! function_exists('hive_color_opacity_darker_cb_customizer_preview') ) {
 					style.innerHTML = css;
 				} else {
 					style = document.createElement('style');
-					style.setAttribute('id', 'hive_color_opacity_darker_cb_style_tag_' + selector.replace(/\W/g, '') );
+					style.setAttribute('id', 'hivelite_color_opacity_darker_cb_style_tag_' + selector.replace(/\W/g, '') );
 
 					style.type = 'text/css';
 					if ( style.styleSheet ) {
@@ -800,31 +753,31 @@ if ( ! function_exists('hive_color_opacity_darker_cb_customizer_preview') ) {
 
 		wp_add_inline_script( 'customify-previewer-scripts', $js );
 	}
-	add_action( 'customize_preview_init', 'hive_color_opacity_darker_cb_customizer_preview' );
 }
+add_action( 'customize_preview_init', 'hivelite_color_opacity_darker_cb_customizer_preview' );
 
-function hive_lite_add_default_color_palette( $color_palettes ) {
+function hivelite_add_default_color_palette( $color_palettes ) {
 
 	$color_palettes = array_merge(array(
 		'default' => array(
-			'label' => 'Theme Default',
+			'label' => esc_html__( 'Theme Default', 'hive-lite' ),
 			'preview' => array(
-				'background_image_url' => 'https://cloud.pixelgrade.com/wp-content/uploads/2018/05/patch-theme-palette.jpg',
+				'background_image_url' => get_template_directory_uri() . '/assets/images/hive-theme-palette.jpg',
 			),
 			'options' => array(
-				'sm_color_primary' => SM_COLOR_PRIMARY,
-				'sm_color_secondary' => SM_COLOR_SECONDARY,
-				'sm_color_tertiary' => SM_COLOR_TERTIARY,
-				'sm_dark_primary' => SM_DARK_PRIMARY,
-				'sm_dark_secondary' => SM_DARK_SECONDARY,
-				'sm_dark_tertiary' => SM_DARK_TERTIARY,
-				'sm_light_primary' => SM_LIGHT_PRIMARY,
-				'sm_light_secondary' => SM_LIGHT_SECONDARY,
-				'sm_light_tertiary' => SM_LIGHT_TERTIARY,
+				'sm_color_primary' => HIVELITE_SM_COLOR_PRIMARY,
+				'sm_color_secondary' => HIVELITE_SM_COLOR_SECONDARY,
+				'sm_color_tertiary' => HIVELITE_SM_COLOR_TERTIARY,
+				'sm_dark_primary' => HIVELITE_SM_DARK_PRIMARY,
+				'sm_dark_secondary' => HIVELITE_SM_DARK_SECONDARY,
+				'sm_dark_tertiary' => HIVELITE_SM_DARK_TERTIARY,
+				'sm_light_primary' => HIVELITE_SM_LIGHT_PRIMARY,
+				'sm_light_secondary' => HIVELITE_SM_LIGHT_SECONDARY,
+				'sm_light_tertiary' => HIVELITE_SM_LIGHT_TERTIARY,
 			),
 		),
 	), $color_palettes);
 
 	return $color_palettes;
 }
-add_filter( 'customify_get_color_palettes', 'hive_lite_add_default_color_palette' );
+add_filter( 'customify_get_color_palettes', 'hivelite_add_default_color_palette', 10, 1 );
