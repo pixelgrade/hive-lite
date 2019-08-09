@@ -41,6 +41,7 @@ $gray-light: #CCCCCC;
 
   p {
     font: inherit;
+    padding: 0;
   }
 
   h2 {
@@ -48,7 +49,7 @@ $gray-light: #CCCCCC;
     line-height: 1.32;
     padding: 0;
     margin-top: 0;
-    margin-bottom: 12px;
+    margin-bottom: 6px;
   }
 }
 
@@ -89,32 +90,12 @@ $pixassist-notice-mobile-spacing: 10px;
     box-shadow: none;
   }
 
-  &.state--plugin-installing,
-  &.state--plugin-activating,
-  &.state--plugin-redirecting {
-    background-image: linear-gradient(-45deg, rgba(255, 255, 255, .3) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .3) 50%, rgba(255, 255, 255, .3) 75%, transparent 75%, transparent);
-    background-size: 50px 50px;
-    box-shadow: none;
-    transform: none;
-    pointer-events: none;
-    animation: progress-bg-anim 2s linear infinite;
-  }
-
   &.state--error {
     background-color: #E3004A;
   }
 
   &:disabled {
     cursor: not-allowed;
-  }
-}
-
-@keyframes progress-bg-anim {
-  0% {
-    background-position: 0 0
-  }
-  100% {
-    background-position: 50px 50px
   }
 }
 

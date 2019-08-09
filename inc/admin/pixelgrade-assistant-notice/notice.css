@@ -7,13 +7,14 @@
   font-size: 14px;
   line-height: 1.5; }
   .pixassist-notice[class] p {
-    font: inherit; }
+    font: inherit;
+    padding: 0; }
   .pixassist-notice[class] h2 {
     font-size: 18px;
     line-height: 1.32;
     padding: 0;
     margin-top: 0;
-    margin-bottom: 12px; }
+    margin-bottom: 6px; }
 
 .pixassist-notice__screenshot {
   width: 20%;
@@ -45,32 +46,10 @@
             transition-duration: .05s;
     -webkit-box-shadow: none;
             box-shadow: none; }
-  .pixassist-notice-button.state--plugin-installing, .pixassist-notice-button.state--plugin-activating, .pixassist-notice-button.state--plugin-redirecting {
-    background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.3) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0.3) 75%, transparent 75%, transparent);
-    background-size: 50px 50px;
-    -webkit-box-shadow: none;
-            box-shadow: none;
-    -webkit-transform: none;
-            transform: none;
-    pointer-events: none;
-    -webkit-animation: progress-bg-anim 2s linear infinite;
-            animation: progress-bg-anim 2s linear infinite; }
   .pixassist-notice-button.state--error {
     background-color: #E3004A; }
   .pixassist-notice-button:disabled {
     cursor: not-allowed; }
-
-@-webkit-keyframes progress-bg-anim {
-  0% {
-    background-position: 0 0; }
-  100% {
-    background-position: 50px 50px; } }
-
-@keyframes progress-bg-anim {
-  0% {
-    background-position: 0 0; }
-  100% {
-    background-position: 50px 50px; } }
 
 .notice {
   display: none; }

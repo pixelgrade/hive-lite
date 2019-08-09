@@ -8,7 +8,7 @@
  * or theme author for support.
  *
  * @package   TGM-Plugin-Activation
- * @version   2.6.1 for parent theme Hive Lite for publication on WordPress.org
+ * @version   2.6.1 for Pixelgrade Assistant
  * @link      http://tgmpluginactivation.com/
  * @author    Thomas Griffin, Gary Jones, Juliette Reinders Folmer
  * @copyright Copyright (c) 2011, Thomas Griffin
@@ -335,59 +335,58 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 				/* translators: 1: plugin name(s). */
 					'This theme requires the following plugin: %1$s.',
 					'This theme requires the following plugins: %1$s.',
-					'__theme_txtd'
+					'pixelgrade_assistant'
 				),
 				'notice_can_install_recommended'  => _n_noop(
 				/* translators: 1: plugin name(s). */
 					'This theme recommends the following plugin: %1$s.',
 					'This theme recommends the following plugins: %1$s.',
-					'__theme_txtd'
+					'pixelgrade_assistant'
 				),
 				'notice_ask_to_update'            => _n_noop(
 				/* translators: 1: plugin name(s). */
 					'The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s.',
 					'The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s.',
-					'__theme_txtd'
+					'pixelgrade_assistant'
 				),
 				'notice_ask_to_update_maybe'      => _n_noop(
 				/* translators: 1: plugin name(s). */
 					'There is an update available for: %1$s.',
 					'There are updates available for the following plugins: %1$s.',
-					'__theme_txtd'
+					'pixelgrade_assistant'
 				),
 				'notice_can_activate_required'    => _n_noop(
 				/* translators: 1: plugin name(s). */
 					'The following required plugin is currently inactive: %1$s.',
 					'The following required plugins are currently inactive: %1$s.',
-					'__theme_txtd'
+					'pixelgrade_assistant'
 				),
 				'notice_can_activate_recommended' => _n_noop(
 				/* translators: 1: plugin name(s). */
 					'The following recommended plugin is currently inactive: %1$s.',
 					'The following recommended plugins are currently inactive: %1$s.',
-					'__theme_txtd'
+					'pixelgrade_assistant'
 				),
 				'install_link'                    => _n_noop(
 					'Begin installing plugin',
 					'Begin installing plugins',
-					'__theme_txtd'
+					'pixelgrade_assistant'
 				),
 				'update_link'                     => _n_noop(
 					'Begin updating plugin',
 					'Begin updating plugins',
-					'__theme_txtd'
+					'pixelgrade_assistant'
 				),
 				'activate_link'                   => _n_noop(
 					'Begin activating plugin',
 					'Begin activating plugins',
-					'__theme_txtd'
+					'pixelgrade_assistant'
 				),
 				'return'                          => esc_html__( 'Return to Required Plugins Installer', '__theme_txtd' ),
 				'dashboard'                       => esc_html__( 'Return to the Dashboard', '__theme_txtd' ),
 				'plugin_activated'                => esc_html__( 'Plugin activated successfully.', '__theme_txtd' ),
 				'activated_successfully'          => esc_html__( 'The following plugin was activated successfully:', '__theme_txtd' ),
-				/* translators: 1: plugin name. */
-				'plugin_already_active'           => esc_html__( 'No action taken. Plugin %1$s was already active.', '__theme_txtd' ),
+				'plugin_already_active'           => esc_html__( 'No action taken. Plugin was already active.', '__theme_txtd' ),
 				/* translators: 1: plugin name. */
 				'plugin_needs_higher_version'     => esc_html__( 'Plugin not activated. A higher version of %s is needed for this theme. Please update the plugin.', '__theme_txtd' ),
 				/* translators: 1: dashboard link. */
