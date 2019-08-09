@@ -64,10 +64,10 @@ class PixelgradeAssistant_Install_Notice {
 	}
 
 	public function outputMarkup() {
-		$button_text = esc_html__( 'Install the Pixelgrade Assistant&reg; plugin', '__theme_txtd' );
+		$button_text = esc_html__( 'Install the Pixelgrade Assistant plugin', '__theme_txtd' );
 		// Pixelgrade Assistant plugin installed, but not activated.
 		if ( ! class_exists( 'PixelgradeAssistant' ) && file_exists( WP_PLUGIN_DIR . '/pixelgrade-assistant/pixelgrade-assistant.php' ) ) {
-			$button_text = esc_html__( 'Activate the Pixelgrade Assistant&reg; plugin', '__theme_txtd' );
+			$button_text = esc_html__( 'Activate the Pixelgrade Assistant plugin', '__theme_txtd' );
 		} ?>
 		<div class="notice notice-info is-dismissible pixelgrade-notice pixassist-notice" >
 			<form class="pixassist-notice-form"
@@ -86,7 +86,7 @@ class PixelgradeAssistant_Install_Notice {
 					<img class="pixassist-notice__screenshot" src="<?php echo $screenshot; ?>" width="1200" height="900" alt="Theme screenshot">
 				<?php } ?>
 				<div class="pixassist-notice__body">
-					<h2><?php echo wp_kses( sprintf( __( 'Thanks for installing %s! Are you looking for a better experience to setup your site?', '__theme_txtd' ),  $theme->get( 'Name' ) ), wp_kses_allowed_html('post') ); ?></h2>
+					<h2><?php echo wp_kses( sprintf( __( '%s is active! Now, are you looking for a better experience to setup your site?', '__theme_txtd' ),  $theme->get( 'Name' ) ), wp_kses_allowed_html('post') ); ?></h2>
 					<p><?php echo wp_kses( __('We\'ve prepared a special onboarding setup through our <strong>Pixelgrade Assistant plugin.</strong> It helps you get started and configure your upcoming website in style. Plus, you can <strong>search the theme documentation and open support tickets.</strong> Let\'s make it shine!', '__theme_txtd' ), wp_kses_allowed_html('post') ); ?></p>
 
 					<p class="message js-plugin-message"></p>
@@ -105,7 +105,10 @@ class PixelgradeAssistant_Install_Notice {
 	}
 
 	public function outputJS() {
-		wp_register_script( 'pixassist_notice_js', $this->get_parent_theme_file_uri( $this->get_theme_relative_path( __DIR__ ) . 'notice.js' ), array( 'jquery') );
+		wp_enqueue_script( 'plugin-install' );
+		wp_enqueue_script( 'updates' );
+
+		wp_register_script( 'pixassist_notice_js', $this->get_parent_theme_file_uri( $this->get_theme_relative_path( __DIR__ ) . 'notice.js' ), array( 'jquery', 'wp-util', 'updates', 'plugin-install') );
 		wp_enqueue_script( 'pixassist_notice_js' );
 
 		$install_url = wp_nonce_url(
@@ -146,23 +149,27 @@ class PixelgradeAssistant_Install_Notice {
 
 		wp_localize_script( 'pixassist_notice_js', 'pixassistNotice', array(
 			'ajaxurl' => esc_url( admin_url( 'admin-ajax.php' ) ),
+			'slug' => 'pixelgrade-assistant',
 			'installUrl' => esc_url_raw( $install_url ),
 			'activateUrl' => esc_url_raw( $activate_url ),
 			'themesPluginsUrl' => esc_url( admin_url( 'themes.php?page=install-required-plugins' ) ),
 			'pixassistSetupUrl' => esc_url( admin_url( 'index.php?page=pixelgrade_assistant-setup-wizard' ) ),
 			'status' => $plugin_status,
 			'i18n' => array(
-				'btnInstall' => esc_html__( 'Install the Pixelgrade Assistant&reg; plugin', '__theme_txtd' ),
-				'btnInstalling' => esc_html__( 'Installing the Pixelgrade Assistant&reg; plugin...', '__theme_txtd' ),
-				'btnActivate' => esc_html__( 'Activate the Pixelgrade Assistant&reg; plugin', '__theme_txtd' ),
-				'btnActivating' => esc_html__( 'Activating the Pixelgrade Assistant&reg; plugin...', '__theme_txtd' ),
-				'btnGoToSetup' => esc_html__( 'Click to start the Site Setup →', '__theme_txtd' ),
+				'btnInstall' => esc_html__( 'Install the Pixelgrade Assistant plugin', '__theme_txtd' ),
+				'btnInstalling' => esc_html__( 'Installing the Pixelgrade Assistant plugin...', '__theme_txtd' ),
+				'btnActivate' => esc_html__( 'Activate the Pixelgrade Assistant plugin', '__theme_txtd' ),
+				'btnActivating' => esc_html__( 'Activating the Pixelgrade Assistant plugin...', '__theme_txtd' ),
+				'btnGoToSetup' => esc_html__( 'Ready to start the Site Setup →', '__theme_txtd' ),
 				'btnError' => esc_html__( 'Please refresh the page 🙏 and try again...', '__theme_txtd' ),
 				'installedSuccessfully' => esc_html__( 'Plugin installed successfully.', '__theme_txtd' ),
 				'activatedSuccessfully' => esc_html__( 'Plugin activated successfully.', '__theme_txtd' ),
-				'clickStartTheSiteSetup' => esc_html__( 'Click to start the site setup provided by Pixelgrade Assistant&reg;.', '__theme_txtd' ),
-				'folderAlreadyExists' => esc_html__( 'Plugin destination folder already exists.', '__theme_txtd' ),
+				'clickStartTheSiteSetup' => esc_html__( 'Click to start the site setup provided by Pixelgrade Assistant.', '__theme_txtd' ),
 				'error' => esc_html__( 'We are truly sorry 😢 Something went wrong and we couldn\'t make sense of it and continue with the plugin setup.', '__theme_txtd' ),
+				'tgmpActivatedSuccessfully' => esc_html__( 'The following plugin was activated successfully:', '__plugin_txtd' ),
+				'tgmpPluginActivated' => esc_html__( 'Plugin activated successfully.', '__plugin_txtd' ),
+				'tgmpPluginAlreadyActive' => esc_html__( 'No action taken. Plugin was already active.', '__plugin_txtd' ),
+				'tgmpNotAllowed' => esc_html__( 'Sorry, you are not allowed to access this page.', '__plugin_txtd' ),
 			),
 		) );
 	}

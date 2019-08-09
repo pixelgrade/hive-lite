@@ -1,6 +1,6 @@
 (function ($) {
 	$(document).ready(function () {
-		var temp_url = wp.ajax.settings.url,
+		let temp_url = wp.ajax.settings.url,
 			$noticeContainer = $( '.pixassist-notice' ),
 			$button = $noticeContainer.find( '.js-handle-pixassist' ),
 			$dismissButton = $noticeContainer.find( '.button.dismiss' ),
@@ -8,15 +8,6 @@
 			$status = $noticeContainer.find( '.js-plugin-message' );
 
 		$button.on('click', function() {
-			let installedSuccessfully = -1,
-				activatedSuccessfully = -1,
-				activatedAlready = -1,
-				noActionTaken = -1,
-				folderAlreadyExists = -1
-
-			// Put the button in a loading state
-			$button.addClass('state--plugin-installing').prop('disabled', true);
-
 			// Hide the dismiss button
 			$dismissButton.fadeOut(500);
 
@@ -24,87 +15,66 @@
 			 * We need to determine what to do first, install or activate.
 			 */
 			if ( pixassistNotice.status === 'missing' ) {
-				$text.html(pixassistNotice.i18n.btnInstalling);
-				wp.ajax.settings.url = pixassistNotice.installUrl;
+				doPluginInstall();
 			} else if ( pixassistNotice.status === 'installed' ) {
-				$text.html(pixassistNotice.i18n.btnActivating);
-				wp.ajax.settings.url = pixassistNotice.activateUrl;
+				doPluginActivate();
 			}
+		})
 
-			wp.a11y.speak($text.html());
+		function doPluginInstall() {
+			$button.addClass('state--plugin-installing updating-message').prop('disabled', true);
+			$text.html(pixassistNotice.i18n.btnInstalling);
+			wp.a11y.speak(pixassistNotice.i18n.btnInstalling);
+
+			wp.updates.installPlugin(
+				{
+					slug: pixassistNotice.slug,
+					success: function ( response ) {
+						$button.removeClass( 'state--plugin-installing updating-message' );
+						wp.a11y.speak(pixassistNotice.i18n.installedSuccessfully);
+
+						if ( response.activateUrl ) {
+							doPluginActivate();
+						} else {
+							// The plugin is already active.
+							doPluginReady();
+						}
+					},
+					error: function ( error ) {
+						doPluginError();
+					}
+				}
+			);
+		}
+
+		function doPluginActivate() {
+			$button.addClass( 'state--plugin-activating updating-message' ).prop('disabled', true);
+			$text.html(pixassistNotice.i18n.btnActivating);
+			wp.a11y.speak(pixassistNotice.i18n.btnActivating);
+
+			wp.ajax.settings.url = pixassistNotice.activateUrl;
 
 			wp.ajax.send({type: 'GET'}).always(function (response) {
-				installedSuccessfully = -1
-				activatedSuccessfully = -1
-				activatedAlready = -1
-				noActionTaken = -1
-				folderAlreadyExists = -1
 
-				if (typeof response === 'string') {
-					installedSuccessfully = response.indexOf('<p>' + pixassistNotice.i18n.installedSuccessfully + '</p>');
-					activatedSuccessfully = response.indexOf('<div id="message" class="updated"><p>');
-					noActionTaken = response.indexOf('<div id="message" class="error"><p>No action taken.');
-					folderAlreadyExists = response.indexOf('<p>' + pixassistNotice.i18n.folderAlreadyExists + '</p>');
-				}
-
-				if (installedSuccessfully !== -1) {
-					wp.a11y.speak(pixassistNotice.i18n.installedSuccessfully);
-
-					/*
-					 * We need to activate the plugin
-					 */
-
-					$text.html(pixassistNotice.i18n.btnActivating);
-					wp.a11y.speak(pixassistNotice.i18n.btnActivating);
-
-					wp.ajax.settings.url = pixassistNotice.activateUrl;
-
-					$button.removeClass( 'state--plugin-installing' ).addClass( 'state--plugin-activating' );
-
-					wp.ajax.send({type: 'GET'}).always(function (response) {
-						activatedSuccessfully = -1
-						noActionTaken = -1
-
-						if (typeof response === 'string') {
-							activatedSuccessfully = response.indexOf('<div id="message" class="updated"><p>');
-							noActionTaken = response.indexOf('<div id="message" class="error"><p>No action taken.');
-						}
-
-						if (activatedSuccessfully !== -1 || noActionTaken !== -1) {
-							doPluginReady();
-						} else {
-							$button.removeClass( 'state--plugin-activating' ).addClass( 'state--plugin-invalidated' );
-							$text.html(pixassistNotice.i18n.btnError);
-
-							$status.html(pixassistNotice.i18n.error);
-
-							wp.a11y.speak(pixassistNotice.i18n.error);
-						}
-
-						wp.ajax.settings.url = temp_url;
-					});
-
-				} else if (folderAlreadyExists !== -1 || activatedSuccessfully !== -1 || noActionTaken !== -1) {
+				if ( response.indexOf('<div id="message" class="updated"><p>') > -1
+					|| response.indexOf('<p>' . pixassistNotice.i18n.tgmpActivatedSuccessfully) > -1
+					|| response.indexOf('<p>' . pixassistNotice.i18n.tgmpPluginActivated) > -1
+					|| response.indexOf('<p>' . pixassistNotice.i18n.tgmpPluginAlreadyActive) > -1
+					|| response.indexOf(pixassistNotice.i18n.tgmpNotAllowed) > -1 ) {
 					doPluginReady();
 				} else {
-					$button.removeClass( 'state--plugin-activating' ).addClass( 'state--plugin-invalidated' );
-					$text.html(pixassistNotice.i18n.btnError);
-
-					$status.html(pixassistNotice.i18n.error);
-
-					wp.a11y.speak(pixassistNotice.i18n.error);
+					doPluginError();
 				}
 
 				wp.ajax.settings.url = temp_url;
 			});
-			wp.ajax.settings.url = temp_url;
-		})
+		}
 
 		function doPluginReady() {
 			setTimeout( function() {
 				wp.a11y.speak(pixassistNotice.i18n.activatedSuccessfully);
 
-				$button.removeClass('state--plugin-activating').removeClass('state--plugin-installing').addClass('state--plugin-ready');
+				$button.removeClass('state--plugin-activating state--plugin-installing updating-message').addClass('state--plugin-ready updated-message').prop('disabled', false);
 				// We don't need to take any action. Just leave the normal click.
 				$button.unbind('click');
 
@@ -113,6 +83,15 @@
 
 				wp.a11y.speak(pixassistNotice.i18n.clickStartTheSiteSetup);
 			}, 1000);
+		}
+
+		function doPluginError() {
+			$button.removeClasses('state--plugin-installing state--plugin-activating updating-message').addClass( 'state--plugin-invalidated state--error' );
+			$text.html(pixassistNotice.i18n.btnError);
+
+			$status.html(pixassistNotice.i18n.error);
+
+			wp.a11y.speak(pixassistNotice.i18n.error);
 		}
 
 		// Send ajax on click of dismiss icon

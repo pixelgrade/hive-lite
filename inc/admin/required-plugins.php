@@ -8,7 +8,7 @@
 
 require_once trailingslashit( get_template_directory() ) . 'inc/admin/required-plugins/class-tgm-plugin-activation.php';
 
-function hive_register_required_plugins() {
+function hivelite_register_required_plugins() {
 
 	$plugins = array(
 		array(
@@ -19,6 +19,7 @@ function hive_register_required_plugins() {
 		array(
 			'name'               => 'Customify',
 			'slug'               => 'customify',
+			'is_callable'        => 'PixCustomifyPlugin',
 			'required'           => false,
 		),
 	);
@@ -60,4 +61,4 @@ function hive_register_required_plugins() {
 
 	tgmpa( $plugins, $config );
 }
-add_action( 'tgmpa_register', 'hive_register_required_plugins', 999 );
+add_action( 'tgmpa_register', 'hivelite_register_required_plugins', 999 );
