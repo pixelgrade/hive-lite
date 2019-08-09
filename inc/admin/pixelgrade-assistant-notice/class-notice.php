@@ -64,10 +64,10 @@ class PixelgradeAssistant_Install_Notice {
 	}
 
 	public function outputMarkup() {
-		$button_text = esc_html__( 'Install the Pixelgrade Assistant&reg; plugin', '__theme_txtd' );
+		$button_text = esc_html__( 'Install the Pixelgrade Assistant plugin', '__theme_txtd' );
 		// Pixelgrade Assistant plugin installed, but not activated.
 		if ( ! class_exists( 'PixelgradeAssistant' ) && file_exists( WP_PLUGIN_DIR . '/pixelgrade-assistant/pixelgrade-assistant.php' ) ) {
-			$button_text = esc_html__( 'Activate the Pixelgrade Assistant&reg; plugin', '__theme_txtd' );
+			$button_text = esc_html__( 'Activate the Pixelgrade Assistant plugin', '__theme_txtd' );
 		} ?>
 		<div class="notice notice-info is-dismissible pixelgrade-notice pixassist-notice" >
 			<form class="pixassist-notice-form"
@@ -156,15 +156,15 @@ class PixelgradeAssistant_Install_Notice {
 			'pixassistSetupUrl' => esc_url( admin_url( 'index.php?page=pixelgrade_assistant-setup-wizard' ) ),
 			'status' => $plugin_status,
 			'i18n' => array(
-				'btnInstall' => esc_html__( 'Install the Pixelgrade Assistant&reg; plugin', '__theme_txtd' ),
-				'btnInstalling' => esc_html__( 'Installing the Pixelgrade Assistant&reg; plugin...', '__theme_txtd' ),
-				'btnActivate' => esc_html__( 'Activate the Pixelgrade Assistant&reg; plugin', '__theme_txtd' ),
-				'btnActivating' => esc_html__( 'Activating the Pixelgrade Assistant&reg; plugin...', '__theme_txtd' ),
+				'btnInstall' => esc_html__( 'Install the Pixelgrade Assistant plugin', '__theme_txtd' ),
+				'btnInstalling' => esc_html__( 'Installing the Pixelgrade Assistant plugin...', '__theme_txtd' ),
+				'btnActivate' => esc_html__( 'Activate the Pixelgrade Assistant plugin', '__theme_txtd' ),
+				'btnActivating' => esc_html__( 'Activating the Pixelgrade Assistant plugin...', '__theme_txtd' ),
 				'btnGoToSetup' => esc_html__( 'Ready to start the Site Setup →', '__theme_txtd' ),
 				'btnError' => esc_html__( 'Please refresh the page 🙏 and try again...', '__theme_txtd' ),
 				'installedSuccessfully' => esc_html__( 'Plugin installed successfully.', '__theme_txtd' ),
 				'activatedSuccessfully' => esc_html__( 'Plugin activated successfully.', '__theme_txtd' ),
-				'clickStartTheSiteSetup' => esc_html__( 'Click to start the site setup provided by Pixelgrade Assistant&reg;.', '__theme_txtd' ),
+				'clickStartTheSiteSetup' => esc_html__( 'Click to start the site setup provided by Pixelgrade Assistant.', '__theme_txtd' ),
 				'error' => esc_html__( 'We are truly sorry 😢 Something went wrong and we couldn\'t make sense of it and continue with the plugin setup.', '__theme_txtd' ),
 				'tgmpActivatedSuccessfully' => esc_html__( 'The following plugin was activated successfully:', '__plugin_txtd' ),
 				'tgmpPluginActivated' => esc_html__( 'Plugin activated successfully.', '__plugin_txtd' ),
