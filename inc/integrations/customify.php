@@ -389,7 +389,11 @@ function hivelite_fill_customify_options( $options ) {
 					'default' => HIVELITE_SM_DARK_TERTIARY,
 					'css'     => array(
 						array(
-							'selector' => 'a',
+							'selector' =>
+								'a, 
+								.sticky .entry-meta .posted-by a:hover,
+								.sticky .entry-meta .posted-on a:hover,
+								.sticky .cat-links a:hover',
 							'property' => 'color',
 						),
 					),
@@ -448,8 +452,8 @@ function hivelite_fill_customify_options( $options ) {
 						),
 						array(
 							'property'        => 'color',
-							'selector'        => '.sticky, .sticky a, .sticky .posted-on a, .sticky .entry-title',
-							'callback_filter' => 'hivelite_sticky_accent_callback',
+							'selector'        => '.sticky[class]',
+							'callback_filter' => 'hivelite_color_contrast',
 						),
 					),
 				),
@@ -560,7 +564,6 @@ function hivelite_fill_customify_options( $options ) {
 					'css'     => array(
 						array(
 							'property' => 'color',
-							'selector' => '.archive__grid .entry-title',
 						),
 					),
 				),
@@ -615,29 +618,92 @@ function hivelite_fill_customify_options( $options ) {
 	return $options;
 }
 
-if ( ! function_exists('hivelite_is_color_light') ) {
-	/**
-	 * Returns whether or not given color is considered "light"
-	 * @param string|Boolean $color
-	 * @return boolean
-	 */
-	function hivelite_is_color_light( $color = '#ffffff' ) {
-		// Get our color
-		$color = ($color) ? $color : '#ffffff';
-		// Calculate straight from rbg
-		$r = hexdec($color[0].$color[1]);
-		$g = hexdec($color[2].$color[3]);
-		$b = hexdec($color[4].$color[5]);
-		return (( $r*299 + $g*587 + $b*114 )/1000 > 90);
-	}
-}
+if ( ! function_exists( 'hivelite_color_contrast' ) ) {
+	function hivelite_color_contrast( $value, $selector, $property, $unit ) {
 
-if ( ! function_exists( 'hivelite_sticky_accent_callback' ) ) {
-	function hivelite_sticky_accent_callback( $value, $selector, $property, $unit ) {
-		$output = $selector . '{' . $property . ': ' . ( hivelite_is_color_light( $value ) ? '#000000' : '#ffffff' ) . '; }';
+		// Get our color
+		if( empty($value) || ! preg_match('/^#[a-f0-9]{6}$/i', $value)) {
+			return '';
+		}
+
+		$color = $value;
+		// Calculate straight from RGB
+		$r = hexdec( $color[0].$color[1] );
+		$g = hexdec( $color[2].$color[3] );
+		$b = hexdec( $color[4].$color[5] );
+
+		$uicolors = array( $r / 255, $g / 255, $b / 255 );
+
+		$c = array_map( function( $col ) {
+			if ( $col <= 0.03928 ) {
+				return $col / 12.92;
+			}
+			return pow( ( $col + 0.055 ) / 1.055, 2.4 );
+		}, $uicolors );
+
+		$L = ( 0.2126 * $c[0] ) + ( 0.7152 * $c[1] ) + ( 0.0722 * $c[2] );
+		$color = ( $L > 0.179 ) ? '#000' : '#FFF';
+
+		// if it is not a dark color, just go for the default way
+		$output = $selector . ' {
+			color: ' . $color .';
+        }';
+
 		return $output;
 	}
 }
+
+if ( ! function_exists('hivelite_color_contrast_customizer_preview') ) {
+	function hivelite_color_contrast_customizer_preview() {
+		$js = "
+            function hivelite_color_contrast(value, selector, property, unit) {
+            
+                var css = '',
+                    style = document.getElementById( 'hivelite_color_contrast_style_tag' ),
+                    head = document.head || document.getElementsByTagName('head')[0];
+                    
+                var hex = value.substring( 1 );  // strip #
+                var rgb = parseInt( hex, 16 );   // convert rrggbb to decimal
+                var r = ( rgb >> 16 ) & 0xff;  // extract red
+                var g = ( rgb >>  8 ) & 0xff;  // extract green
+                var b = ( rgb >>  0 ) & 0xff;  // extract blue
+                var uicolors = [r / 255, g / 255, b / 255];
+                
+                var c = uicolors.map( function(col) {
+                    if ( col <= 0.03928 ) {
+                        return col / 12.92;
+                    }
+                    return Math.pow( ( col + 0.055 ) / 1.055, 2.4 );
+                } );
+                
+                var L = ( 0.2126 * c[0] ) + ( 0.7152 * c[1] ) + ( 0.0722 * c[2] );
+                var color = ( L > 0.179 ) ? '#000' : '#FFF';
+                
+                css = selector + ' { ' +
+                    property + ': ' + color + '; ' +
+                '}'; 
+                
+                if ( style !== null ) {
+                    style.innerHTML = css;
+                } else {
+                    style = document.createElement( 'style' );
+                    style.setAttribute( 'id', 'hivelite_color_contrast_style_tag' );
+
+                    style.type = 'text/css';
+                    if ( style.styleSheet ) {
+                        style.styleSheet.cssText = css;
+                    } else {
+                        style.appendChild( document.createTextNode( css ) );
+                    }
+
+                    head.appendChild( style );
+                }
+            }" . PHP_EOL;
+
+		wp_add_inline_script( 'customify-previewer-scripts', $js );
+	}
+}
+add_action( 'customize_preview_init', 'hivelite_color_contrast_customizer_preview', 20 );
 
 if ( ! function_exists('hivelite_color_opacity_adjust_cb') ) {
 	function hivelite_color_opacity_adjust_cb( $value, $selector, $property, $unit ) {

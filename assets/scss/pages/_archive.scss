@@ -514,6 +514,11 @@ body {
 /* Sticky Post */
 .sticky:not(.format-quote) {
 	@include rhythm(padding-bottom, 2.5);
+	color: $gray;
+
+	.entry-title {
+		color: inherit;
+	}
 
 	&.post {
 		@include rhythm(padding-right, 2);
@@ -573,7 +578,9 @@ body {
 		content: none;
 	}
 
-	a{ color: $gray; }
+	a {
+		color: inherit;
+	}
 
 	a[rel*='category'], a[rel*='tag']{ border-bottom: 1px solid; }
 }
