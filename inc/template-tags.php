@@ -145,7 +145,7 @@ if ( ! function_exists( 'hivelite_posted_on' ) ) :
 					</a>
 				</span>';
 
-			$output = '<span class="posted-by"> ' . $byline . '</span>' . PHP_EOL . $output;
+			$output = '<span class="posted-by"> ' . $byline . '</span>' . "\n" . $output;
 		}
 
 		echo $output; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped

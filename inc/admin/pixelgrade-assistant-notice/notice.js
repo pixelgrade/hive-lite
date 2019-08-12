@@ -4,7 +4,7 @@
 			$noticeContainer = $( '.pixassist-notice' ),
 			$button = $noticeContainer.find( '.js-handle-pixassist' ),
 			$dismissButton = $noticeContainer.find( '.button.dismiss' ),
-			$text = $noticeContainer.find( '.pixassist-notice-button__text' ),
+			$buttonText = $noticeContainer.find( '.pixassist-notice-button__text' ),
 			$status = $noticeContainer.find( '.js-plugin-message' );
 
 		$button.on('click', function() {
@@ -23,7 +23,7 @@
 
 		function doPluginInstall() {
 			$button.addClass('state--plugin-installing updating-message').prop('disabled', true);
-			$text.html(pixassistNotice.i18n.btnInstalling);
+			$buttonText.html(pixassistNotice.i18n.btnInstalling);
 			wp.a11y.speak(pixassistNotice.i18n.btnInstalling);
 
 			wp.updates.installPlugin(
@@ -49,7 +49,7 @@
 
 		function doPluginActivate() {
 			$button.addClass( 'state--plugin-activating updating-message' ).prop('disabled', true);
-			$text.html(pixassistNotice.i18n.btnActivating);
+			$buttonText.html(pixassistNotice.i18n.btnActivating);
 			wp.a11y.speak(pixassistNotice.i18n.btnActivating);
 
 			wp.ajax.settings.url = pixassistNotice.activateUrl;
@@ -79,7 +79,7 @@
 				$button.unbind('click');
 
 				$button.attr('href', pixassistNotice.pixassistSetupUrl);
-				$text.html(pixassistNotice.i18n.btnGoToSetup);
+				$buttonText.html(pixassistNotice.i18n.btnGoToSetup);
 
 				wp.a11y.speak(pixassistNotice.i18n.clickStartTheSiteSetup);
 			}, 1000);
@@ -87,27 +87,32 @@
 
 		function doPluginError() {
 			$button.removeClasses('state--plugin-installing state--plugin-activating updating-message').addClass( 'state--plugin-invalidated state--error' );
-			$text.html(pixassistNotice.i18n.btnError);
+			$buttonText.html(pixassistNotice.i18n.btnError);
 
 			$status.html(pixassistNotice.i18n.error);
 
 			wp.a11y.speak(pixassistNotice.i18n.error);
 		}
 
-		// Send ajax on click of dismiss icon
-		$noticeContainer.on( 'click', '.notice-dismiss', function() {
-			ajaxDismiss( $(this) );
+		// Send ajax on click of dismiss icon or button
+		$noticeContainer.on( 'click', '.button.dismiss, .notice-dismiss', function( event ) {
+			event.preventDefault();
+			ajaxDismiss(event);
 		});
 
 		// Send ajax
-		function ajaxDismiss( dismissElement ) {
+		function ajaxDismiss(event) {
+			$(event.target).addClass('updating-message');
 			$.ajax({
 				url: pixassistNotice.ajaxurl,
 				type: 'post',
 				data: {
 					action: 'pixassist_install_dismiss_admin_notice',
-					nonce_dismiss: $noticeContainer.find('#nonce-pixassist_install-dismiss').val()
+					nonce_dismiss: $noticeContainer.find('[name="nonce_dismiss"]').val()
 				}
+			})
+			.always( function() {
+				$noticeContainer.slideUp();
 			})
 		}
 	});

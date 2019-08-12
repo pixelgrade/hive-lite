@@ -698,7 +698,7 @@ if ( ! function_exists('hivelite_color_contrast_customizer_preview') ) {
 
                     head.appendChild( style );
                 }
-            }" . PHP_EOL;
+            }" . "\n";
 
 		wp_add_inline_script( 'customify-previewer-scripts', $js );
 	}
@@ -760,7 +760,7 @@ if ( ! function_exists('hivelite_color_opacity_adjust_cb_customizer_preview') ) 
 
 					head.appendChild(style);
 				}
-			}" . PHP_EOL;
+			}" . "\n";
 
 		wp_add_inline_script( 'customify-previewer-scripts', $js );
 	}
@@ -780,7 +780,7 @@ if ( ! function_exists('hivelite_color_opacity_darker_cb') ) {
 		$b = hexdec( $value[5] . $value[6] );
 
 		// if it is not a dark color, just go for the default way
-		$output = $selector . ' { ' . $property . ': rgba(' . $r .',' . $g . ',' . $b .', 0.7); }' . PHP_EOL;
+		$output = $selector . ' { ' . $property . ': rgba(' . $r .',' . $g . ',' . $b .', 0.7); }' . "\n";
 
 		return $output;
 	}
@@ -821,7 +821,7 @@ if ( ! function_exists('hivelite_color_opacity_darker_cb_customizer_preview') ) 
 
 					head.appendChild(style);
 				}
-			}" . PHP_EOL;
+			}" . "\n";
 
 		wp_add_inline_script( 'customify-previewer-scripts', $js );
 	}
