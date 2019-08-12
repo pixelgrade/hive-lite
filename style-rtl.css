@@ -1782,7 +1782,10 @@ body {
 
 /* Sticky Post */
 .sticky:not(.format-quote) {
-  padding-bottom: 1.875em; }
+  padding-bottom: 1.875em;
+  color: #3d3e40; }
+  .sticky:not(.format-quote) .entry-title {
+    color: inherit; }
   .sticky:not(.format-quote).post {
     padding-left: 1.5em;
     padding-right: 3.75em; }
@@ -1822,7 +1825,7 @@ body {
   .sticky:not(.format-quote) .entry-footer:before {
     content: none; }
   .sticky:not(.format-quote) a {
-    color: #3d3e40; }
+    color: inherit; }
   .sticky:not(.format-quote) a[rel*='category'], .sticky:not(.format-quote) a[rel*='tag'] {
     border-bottom: 1px solid; }
 

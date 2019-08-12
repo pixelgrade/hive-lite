@@ -17,8 +17,6 @@
     padding: 0;
     margin-top: 0;
     margin-bottom: 6px; }
-  .pixassist-notice[class] .notice-dismiss {
-    display: none; }
   @media screen and (max-width: 782px) {
     .wp-core-ui .pixassist-notice[class] {
       padding-right: 0; } }

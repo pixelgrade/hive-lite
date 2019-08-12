@@ -36,7 +36,7 @@ $gray-light: #CCCCCC;
 .pixassist-notice[class] {
   display: block;
   padding-top: 20px;
-  padding-bottom: 20px; 
+  padding-bottom: 20px;
 
   font-size: 14px;
   line-height: 1.5;
@@ -52,11 +52,6 @@ $gray-light: #CCCCCC;
     padding: 0;
     margin-top: 0;
     margin-bottom: 6px;
-  }
-
-  // Use "dismiss" secondary button instead
-  .notice-dismiss {
-    display: none;
   }
 
   .wp-core-ui & {

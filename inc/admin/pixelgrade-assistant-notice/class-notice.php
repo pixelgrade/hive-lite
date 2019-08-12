@@ -121,6 +121,7 @@ if ( ! class_exists( 'PixelgradeAssistant_Install_Notice' ) ) {
 			wp_register_script( 'pixassist_notice_js', $this->get_parent_theme_file_uri( $this->get_theme_relative_path( __DIR__ ) . 'notice.js' ), array(
 				'jquery',
 				'wp-util',
+				'wp-a11y',
 				'updates',
 				'plugin-install'
 			) );
