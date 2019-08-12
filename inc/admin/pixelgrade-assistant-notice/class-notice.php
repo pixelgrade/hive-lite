@@ -64,12 +64,12 @@ class PixelgradeAssistant_Install_Notice {
 	}
 
 	public function outputMarkup() {
-		$button_text = esc_html__( 'Install the Pixelgrade Assistant plugin', '__theme_txtd' );
+		$button_text = esc_html__( 'Yes, install Pixelgrade Assistant plugin for free', '__theme_txtd' );
 		// Pixelgrade Assistant plugin installed, but not activated.
 		if ( ! class_exists( 'PixelgradeAssistant' ) && file_exists( WP_PLUGIN_DIR . '/pixelgrade-assistant/pixelgrade-assistant.php' ) ) {
 			$button_text = esc_html__( 'Activate the Pixelgrade Assistant plugin', '__theme_txtd' );
 		} ?>
-		<div class="notice notice-info is-dismissible pixelgrade-notice pixassist-notice" >
+		<div class="notice notice-info is-dismissible pixassist-notice" >
 			<form class="pixassist-notice-form"
 			      action="<?php echo admin_url( 'admin-ajax.php?action=pixassist_install_dismiss_admin_notice' ); ?>"
 			      method="post">
@@ -86,8 +86,8 @@ class PixelgradeAssistant_Install_Notice {
 					<img class="pixassist-notice__screenshot" src="<?php echo $screenshot; ?>" width="1200" height="900" alt="Theme screenshot">
 				<?php } ?>
 				<div class="pixassist-notice__body">
-					<h2><?php echo wp_kses( sprintf( __( '%s is active! Now, are you looking for a better experience to setup your site?', '__theme_txtd' ),  $theme->get( 'Name' ) ), wp_kses_allowed_html('post') ); ?></h2>
-					<p><?php echo wp_kses( __('We\'ve prepared a special onboarding setup through our <strong>Pixelgrade Assistant plugin.</strong> It helps you get started and configure your upcoming website in style. Plus, you can <strong>search the theme documentation and open support tickets.</strong> Let\'s make it shine!', '__theme_txtd' ), wp_kses_allowed_html('post') ); ?></p>
+					<h2><?php echo wp_kses( sprintf( __( '%s is active! Are you looking for a better experience to set up your site?', '__theme_txtd' ),  $theme->get( 'Name' ) ), wp_kses_allowed_html('post') ); ?></h2>
+					<p><?php echo wp_kses( __('We\'ve prepared a unique <strong>onboarding process</strong> through our Pixelgrade Assistant plugin. It helps you get started and configure your upcoming website in style. </strong> Let\'s make it shine!', '__theme_txtd' ), wp_kses_allowed_html('post') ); ?></p>
 
 					<p class="message js-plugin-message"></p>
 					<a class="pixassist-notice-button js-handle-pixassist button button-primary" href="#"><span class="pixassist-notice-button__text"><?php echo $button_text ?></span></a>
@@ -157,11 +157,11 @@ class PixelgradeAssistant_Install_Notice {
 			'status' => $plugin_status,
 			'i18n' => array(
 				'btnInstall' => esc_html__( 'Install the Pixelgrade Assistant plugin', '__theme_txtd' ),
-				'btnInstalling' => esc_html__( 'Installing the Pixelgrade Assistant plugin...', '__theme_txtd' ),
+				'btnInstalling' => esc_html__( 'Installing the Pixelgrade Assistant plugin…', '__theme_txtd' ),
 				'btnActivate' => esc_html__( 'Activate the Pixelgrade Assistant plugin', '__theme_txtd' ),
-				'btnActivating' => esc_html__( 'Activating the Pixelgrade Assistant plugin...', '__theme_txtd' ),
-				'btnGoToSetup' => esc_html__( 'Ready to start the Site Setup →', '__theme_txtd' ),
-				'btnError' => esc_html__( 'Please refresh the page 🙏 and try again...', '__theme_txtd' ),
+				'btnActivating' => esc_html__( 'Activating the Pixelgrade Assistant plugin…', '__theme_txtd' ),
+				'btnGoToSetup' => esc_html__( 'Ready! Start the Site Setup →', '__theme_txtd' ),
+				'btnError' => esc_html__( 'Please refresh the page 🙏 and try again…', '__theme_txtd' ),
 				'installedSuccessfully' => esc_html__( 'Plugin installed successfully.', '__theme_txtd' ),
 				'activatedSuccessfully' => esc_html__( 'Plugin activated successfully.', '__theme_txtd' ),
 				'clickStartTheSiteSetup' => esc_html__( 'Click to start the site setup provided by Pixelgrade Assistant.', '__theme_txtd' ),

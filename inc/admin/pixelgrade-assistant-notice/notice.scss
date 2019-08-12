@@ -35,6 +35,8 @@ $gray-light: #CCCCCC;
 
 .pixassist-notice[class] {
   display: block;
+  padding-top: 20px;
+  padding-bottom: 20px; 
 
   font-size: 14px;
   line-height: 1.5;
@@ -51,6 +53,17 @@ $gray-light: #CCCCCC;
     margin-top: 0;
     margin-bottom: 6px;
   }
+
+  // Use "dismiss" secondary button instead
+  .notice-dismiss {
+    display: none;
+  }
+
+  .wp-core-ui & {
+    @media screen and (max-width: 782px) {
+      padding-right: 0;
+    }
+  }
 }
 
 $pixassist-notice-spacing: 20px;
@@ -62,8 +75,8 @@ $pixassist-notice-mobile-spacing: 10px;
   max-width: 160px;
   display: inline-block;
   vertical-align: top;
-  padding-top: 16px;
-  padding-bottom: 16px;
+
+  border: 1px solid #DFE8EF;
 
   @media only screen and (max-width: 1024px) {
     display: none;
@@ -71,9 +84,10 @@ $pixassist-notice-mobile-spacing: 10px;
 }
 
 .pixassist-notice__body {
-  max-width: 80%;
+  max-width: 780px;
   display: inline-block;
-  padding: 16px;
+  padding-left: 16px;
+  padding-right: 40px;
 
   @media only screen and (max-width: 1024px) {
     max-width: 100%;
@@ -84,6 +98,17 @@ $pixassist-notice-mobile-spacing: 10px;
   position: relative;
   overflow: hidden;
 
+  // Icons
+  &.button:before {
+    margin: 0px 5px -1px -6px;
+    color: white;
+  }
+
+  &.button.updated-message:before {
+    content: "\f12a";
+  }
+
+
   &:active {
     transform: perspective(1px) translateY(2px) translateZ(0);
     transition-duration: .05s;
@@ -92,16 +117,60 @@ $pixassist-notice-mobile-spacing: 10px;
 
   &.state--error {
     background-color: #E3004A;
+    border-color: #a00;
+    text-shadow: none;
+
+    &:hover {
+      background-color: #c10240;
+    }
   }
 
   &:disabled {
     cursor: not-allowed;
+  }
+
+  + .button {
+    margin-left: 5px;
+  }
+}
+
+.wp-core-ui {
+  .pixassist-notice-button {
+    &, & + .button {
+      line-height: 1.5;
+      text-align: center;
+      height: auto;
+
+      padding-top: 6px;
+      padding-bottom: 6px;
+      padding-left: 16px;
+      padding-right: 16px;
+
+      margin-top: 5px;
+
+      white-space: normal;
+
+      @media screen and (max-width: 782px) {
+        width: 100%;
+        margin: 0;
+        margin-top: 10px;
+      }
+    }
+  }
+
+  .button-primary {
+    &.state--plugin-installing {
+      cursor: wait !important;
+      color: #fff !important;
+      text-shadow: 0 -1px 1px #006799, 1px 0 1px #006799, 0 1px 1px #006799, -1px 0 1px #006799 !important;
+    }
   }
 }
 
 .notice {
   display: none;
 }
+
 
 .state--plugin-invalidated {
 

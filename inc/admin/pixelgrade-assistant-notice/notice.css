@@ -4,6 +4,8 @@
 
 .pixassist-notice[class] {
   display: block;
+  padding-top: 20px;
+  padding-bottom: 20px;
   font-size: 14px;
   line-height: 1.5; }
   .pixassist-notice[class] p {
@@ -15,6 +17,11 @@
     padding: 0;
     margin-top: 0;
     margin-bottom: 6px; }
+  .pixassist-notice[class] .notice-dismiss {
+    display: none; }
+  @media screen and (max-width: 782px) {
+    .wp-core-ui .pixassist-notice[class] {
+      padding-right: 0; } }
 
 .pixassist-notice__screenshot {
   width: 20%;
@@ -22,16 +29,16 @@
   max-width: 160px;
   display: inline-block;
   vertical-align: top;
-  padding-top: 16px;
-  padding-bottom: 16px; }
+  border: 1px solid #DFE8EF; }
   @media only screen and (max-width: 1024px) {
     .pixassist-notice__screenshot {
       display: none; } }
 
 .pixassist-notice__body {
-  max-width: 80%;
+  max-width: 780px;
   display: inline-block;
-  padding: 16px; }
+  padding-left: 16px;
+  padding-right: 40px; }
   @media only screen and (max-width: 1024px) {
     .pixassist-notice__body {
       max-width: 100%; } }
@@ -39,6 +46,11 @@
 .pixassist-notice-button {
   position: relative;
   overflow: hidden; }
+  .pixassist-notice-button.button:before {
+    margin: 0px 5px -1px -6px;
+    color: white; }
+  .pixassist-notice-button.button.updated-message:before {
+    content: "\f12a"; }
   .pixassist-notice-button:active {
     -webkit-transform: perspective(1px) translateY(2px) translateZ(0);
             transform: perspective(1px) translateY(2px) translateZ(0);
@@ -47,9 +59,36 @@
     -webkit-box-shadow: none;
             box-shadow: none; }
   .pixassist-notice-button.state--error {
-    background-color: #E3004A; }
+    background-color: #E3004A;
+    border-color: #a00;
+    text-shadow: none; }
+    .pixassist-notice-button.state--error:hover {
+      background-color: #c10240; }
   .pixassist-notice-button:disabled {
     cursor: not-allowed; }
+  .pixassist-notice-button + .button {
+    margin-left: 5px; }
+
+.wp-core-ui .pixassist-notice-button, .wp-core-ui .pixassist-notice-button + .button {
+  line-height: 1.5;
+  text-align: center;
+  height: auto;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-top: 5px;
+  white-space: normal; }
+  @media screen and (max-width: 782px) {
+    .wp-core-ui .pixassist-notice-button, .wp-core-ui .pixassist-notice-button + .button {
+      width: 100%;
+      margin: 0;
+      margin-top: 10px; } }
+
+.wp-core-ui .button-primary.state--plugin-installing {
+  cursor: wait !important;
+  color: #fff !important;
+  text-shadow: 0 -1px 1px #006799, 1px 0 1px #006799, 0 1px 1px #006799, -1px 0 1px #006799 !important; }
 
 .notice {
   display: none; }
