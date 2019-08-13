@@ -199,7 +199,7 @@ if ( ! class_exists( 'PixelgradeAssistant_Install_Notice' ) ) {
 		}
 
 		public function cleanup() {
-			// If the theme is about to be deactivated, we want to clear the notice dismissal so next time it is active, it will show.
+			// If the theme is switched, we want to clear the notice dismissal.
 			set_theme_mod( 'pixassist_install_notice_dismissed', false );
 		}
 
