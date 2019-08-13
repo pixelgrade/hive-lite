@@ -23,5 +23,3 @@ node_modules/
 *.js.map
 
 .svn
-README.md
-/package-lock.json

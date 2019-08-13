@@ -1,15 +1,15 @@
 {
 	"name": "patch-lite",
 	"devDependencies": {
-		"del": "^4.1.1",
+		"del": "^5.0.0",
 		"gulp": "^4.0.2",
 		"gulp-autoprefixer": "^6.1.0",
 		"gulp-beautify": "^3.0.0",
 		"gulp-combine-media-queries": "*",
 		"gulp-concat": "*",
-		"gulp-exec": "^3.0.2",
+		"gulp-exec": "^4.0.0",
 		"gulp-livereload": "^4.0.1",
-		"gulp-load-plugins": "^1.6.0",
+		"gulp-load-plugins": "^2.0.1",
 		"gulp-notify": "^3.2.0",
 		"gulp-prompt": "^1.2.0",
 		"gulp-rename": "^1.4.0",

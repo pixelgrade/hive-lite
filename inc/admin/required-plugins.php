@@ -20,6 +20,7 @@ function hivelite_register_required_plugins() {
 		array(
 			'name'               => 'Pixelgrade Assistant',
 			'slug'               => 'pixelgrade-assistant',
+			'is_callable'        => 'PixelgradeAssistant',
 			'required'           => false,
 		),
 	);

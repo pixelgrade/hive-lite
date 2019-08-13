@@ -70,21 +70,6 @@ function hivelite_customize_register( $wp_customize ) {
 add_action( 'customize_register', 'hivelite_customize_register', 15 );
 
 /**
- * Sanitize the Site Title Outline value.
- *
- * @param string $outline Outline thickness.
- *
- * @return string Filtered outline (0|1|2|3).
- */
-function hivelite_sanitize_site_title_outline( $outline ) {
-	if ( ! in_array( $outline, array( '0', '1.2', '3', '5', '10' ) ) ) {
-		$outline = '3';
-	}
-
-	return $outline;
-}
-
-/**
  * Assets that will be loaded for the customizer sidebar
  */
 function hivelite_customizer_assets() {
