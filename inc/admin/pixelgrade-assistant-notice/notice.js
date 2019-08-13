@@ -86,7 +86,7 @@
 		}
 
 		function doPluginError() {
-			$button.removeClasses('state--plugin-installing state--plugin-activating updating-message').addClass( 'state--plugin-invalidated state--error' );
+			$button.removeClass('state--plugin-installing state--plugin-activating updating-message').addClass( 'state--plugin-invalidated state--error' );
 			$buttonText.html(pixassistNotice.i18n.btnError);
 
 			$status.html(pixassistNotice.i18n.error);

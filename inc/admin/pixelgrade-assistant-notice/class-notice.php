@@ -69,7 +69,7 @@ if ( ! class_exists( 'PixelgradeAssistant_Install_Notice' ) ) {
 
 		public function outputMarkup() {
 			/* translators: %s: Pixelgrade Assistant  */
-			$button_text = sprintf( esc_html__( 'Yes, install %s plugin for free', '__theme_txtd' ), 'Pixelgrade Assistant' );
+			$button_text = sprintf( esc_html__( 'Yes, install the %s plugin for free', '__theme_txtd' ), 'Pixelgrade Assistant' );
 			// Pixelgrade Assistant plugin installed, but not activated.
 			if ( ! class_exists( 'PixelgradeAssistant' ) && file_exists( WP_PLUGIN_DIR . '/pixelgrade-assistant/pixelgrade-assistant.php' ) ) {
 				/* translators: %s: Pixelgrade Assistant  */
