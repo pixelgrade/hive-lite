@@ -2128,8 +2128,8 @@ body {
     .content-quote blockquote:after {
       height: 1px;
       background: #ffeb00;
-      -webkit-box-shadow: #ffeb00 5.5em 0 0;
-              box-shadow: #ffeb00 5.5em 0 0;
+      -webkit-box-shadow: currentColor 5.5em 0 0;
+              box-shadow: currentColor 5.5em 0 0;
       width: 3em;
       margin-left: -2.75em;
       -webkit-transform: translateX(-50%);
@@ -2147,9 +2147,9 @@ body {
         border: 1px solid transparent;
         border-left: 0;
         border-right: 0;
-        -o-border-image: linear-gradient(to right, #ffeb00 0%, #ffeb00 40%, transparent 40.1%, transparent 50%, transparent 59.9%, #ffeb00 60%, #ffeb00 100%) 20%;
-           border-image: -webkit-gradient(linear, left top, right top, from(#ffeb00), color-stop(40%, #ffeb00), color-stop(40.1%, transparent), color-stop(50%, transparent), color-stop(59.9%, transparent), color-stop(60%, #ffeb00), to(#ffeb00)) 20%;
-           border-image: linear-gradient(to right, #ffeb00 0%, #ffeb00 40%, transparent 40.1%, transparent 50%, transparent 59.9%, #ffeb00 60%, #ffeb00 100%) 20%;
+        -o-border-image: linear-gradient(to right, currentColor 0%, currentColor 40%, transparent 40.1%, transparent 50%, transparent 59.9%, currentColor 60%, currentColor 100%) 20%;
+           border-image: -webkit-gradient(linear, left top, right top, from(currentColor), color-stop(40%, currentColor), color-stop(40.1%, transparent), color-stop(50%, transparent), color-stop(59.9%, transparent), color-stop(60%, currentColor), to(currentColor)) 20%;
+           border-image: linear-gradient(to right, currentColor 0%, currentColor 40%, transparent 40.1%, transparent 50%, transparent 59.9%, currentColor 60%, currentColor 100%) 20%;
         border-bottom: 0; }
   .content-quote p {
     -webkit-transform: none;

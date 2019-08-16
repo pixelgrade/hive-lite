@@ -323,7 +323,7 @@
 			height: 1px;
 
 			background: $accent;
-			box-shadow: $accent 5.5em 0 0;
+			box-shadow: currentColor 5.5em 0 0;
 			width: 3em;
 			margin-left: -2.75em;
 			transform: translateX(-50%);
@@ -346,13 +346,13 @@
 				border-right: 0;
 
 				border-image: linear-gradient(to right,
-						$accent 0%,
-						$accent 40%,
+						currentColor 0%,
+						currentColor 40%,
 						transparent 40.1%,
 						transparent 50%,
 						transparent 59.9%,
-						$accent 60%,
-						$accent 100%) 20%;
+						currentColor 60%,
+						currentColor 100%) 20%;
 
 				border-bottom: 0;
 			}
