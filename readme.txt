@@ -24,6 +24,7 @@ Hive Lite is a magazine-style theme with clean type, smart layouts and a design 
 
 = 1.2.2 =
 * Added new wp_body_open hook.
+* Added Pixelgrade Assistant recommended plugin.
 
 = 1.2.1 =
 * Fixed skip link focus.

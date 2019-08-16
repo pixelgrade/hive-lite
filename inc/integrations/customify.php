@@ -853,3 +853,12 @@ function hivelite_add_default_color_palette( $color_palettes ) {
 	return $color_palettes;
 }
 add_filter( 'customify_get_color_palettes', 'hivelite_add_default_color_palette', 10, 1 );
+
+function hivelite_change_default_sm_coloration_level( $config ) {
+	if ( ! empty( $config['sections']['style_manager_section']['options']['sm_palette_filter'] ) ) {
+		$config['sections']['style_manager_section']['options']['sm_palette_filter']['default'] = 'vivid';
+	}
+
+	return $config;
+}
+add_filter( 'customify_filter_fields', 'hivelite_change_default_sm_coloration_level', 999, 1 );
