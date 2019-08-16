@@ -857,7 +857,7 @@ add_filter( 'customify_get_color_palettes', 'hivelite_add_default_color_palette'
 
 function hivelite_change_default_sm_coloration_level( $config ) {
 	if ( ! empty( $config['sections']['style_manager_section']['options']['sm_palette_filter'] ) ) {
-		$config['sections']['style_manager_section']['options']['sm_palette_filter']['default'] = 'vivid';
+		$config['sections']['style_manager_section']['options']['sm_palette_filter']['default'] = 'original';
 	}
 
 	return $config;
