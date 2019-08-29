@@ -11,12 +11,6 @@ function hivelite_register_required_plugins() {
 
 	$plugins = array(
 		array(
-			'name'               => 'Customify',
-			'slug'               => 'customify',
-			'is_callable'        => 'PixCustomifyPlugin',
-			'required'           => false,
-		),
-		array(
 			'name'               => 'Pixelgrade Assistant',
 			'slug'               => 'pixelgrade-assistant',
 			'is_callable'        => 'PixelgradeAssistant',
