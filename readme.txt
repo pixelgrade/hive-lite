@@ -24,6 +24,7 @@ Hive Lite is a magazine-style theme with clean type, smart layouts and a design 
 
 = 1.3.0 =
 * Added new color customization features via our Customify plugin (Style Manager).
+* Changed the way the main stylesheet and scripts are enqueued so you don't need to overwrite all of them in a child theme.
 
 = 1.2.2 =
 * Added new wp_body_open hook.
