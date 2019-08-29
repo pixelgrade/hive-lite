@@ -138,17 +138,17 @@ function hivelite_scripts_styles() {
 	$theme = wp_get_theme( get_template() );
 
 	//Main Stylesheet
-	wp_enqueue_style( 'hive-style', get_stylesheet_uri(), array(), $theme->get( 'Version' ) );
+	wp_enqueue_style( 'hive-style', get_template_directory_uri(), array(), $theme->get( 'Version' ) );
 	wp_style_add_data( 'hive-style', 'rtl', 'replace' );
 
 	//Default Fonts
 	wp_enqueue_style( 'hive-fonts', hivelite_fonts_url(), array(), null );
 
 	// Register Velocity.js plugin
-	wp_register_script( 'velocity', get_stylesheet_directory_uri() . '/assets/js/velocity.js', array(), '1.1.3', true );
+	wp_register_script( 'velocity', get_template_directory_uri() . '/assets/js/velocity.js', array(), '1.1.3', true );
 
 	// Enqueue Hive Custom Scripts
-	wp_enqueue_script( 'hive-scripts', get_stylesheet_directory_uri() . '/assets/js/main.js', array( 'jquery', 'masonry', 'hoverIntent', 'velocity' ), $theme->get( 'Version' ), true );
+	wp_enqueue_script( 'hive-scripts', get_template_directory_uri() . '/assets/js/main.js', array( 'jquery', 'masonry', 'hoverIntent', 'velocity' ), $theme->get( 'Version' ), true );
 
 	if( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
