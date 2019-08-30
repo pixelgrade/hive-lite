@@ -112,8 +112,13 @@ function hivelite_add_customify_style_manager_section( $options ) {
 			),
 		),
 	);
+
 	// The section might be already defined, thus we merge, not replace the entire section config.
-	$options['sections']['style_manager_section'] = Customify_Array::array_merge_recursive_distinct( $options['sections']['style_manager_section'], $new_config );
+	if ( class_exists( 'Customify_Array' ) && method_exists( 'Customify_Array', 'array_merge_recursive_distinct' ) ) {
+		$options['sections']['style_manager_section'] = Customify_Array::array_merge_recursive_distinct( $options['sections']['style_manager_section'], $new_config );
+	} else {
+		$options['sections']['style_manager_section'] = array_merge_recursive( $options['sections']['style_manager_section'], $new_config );
+	}
 
 	return $options;
 }
@@ -614,7 +619,11 @@ function hivelite_fill_customify_options( $options ) {
 		),
 	);
 
-	$options['sections'] = Customify_Array::array_merge_recursive_distinct( $options['sections'], $new_config );
+	if ( class_exists( 'Customify_Array' ) && method_exists( 'Customify_Array', 'array_merge_recursive_distinct' ) ) {
+		$options['sections'] = Customify_Array::array_merge_recursive_distinct( $options['sections'], $new_config );
+	} else {
+		$options['sections'] = array_merge_recursive( $options['sections'], $new_config );
+	}
 
 	return $options;
 }
