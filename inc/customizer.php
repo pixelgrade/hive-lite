@@ -23,9 +23,6 @@ function hivelite_customize_register( $wp_customize ) {
 	// Rename the label to "Display Site Title & Tagline" in order to make this option clearer.
 	$wp_customize->get_control( 'display_header_text' )->label = esc_html__( 'Display Site Title &amp; Tagline', 'hive-lite' );
 
-	// Add a pretty icon to Site Identity
-	$wp_customize->get_section( 'title_tagline' )->title = '&#x1f465; ' . esc_html__( 'Site Identity', 'hive-lite' );
-
 	// View Pro
 	$wp_customize->add_section( 'pro__section', array(
 		'title'       => '' . esc_html__( 'View PRO Version', 'hive-lite' ),
