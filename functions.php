@@ -66,6 +66,22 @@ if ( ! function_exists( 'hivelite_setup' ) ) :
 		) );
 
 		/*
+		 * Enable support for custom logo.
+		 *
+		 */
+		add_theme_support( 'custom-logo', array(
+			'width'       => 1360,
+			'height'      => 600,
+			'flex-height' => true,
+			'header-text' => array(
+				'site-title',
+				'site-description-text',
+			)
+		) );
+
+		add_image_size( 'hive-site-logo', 1360, 600, false );
+
+		/*
 		 * Enable support for Post Formats.
 		 * See http://codex.wordpress.org/Post_Formats
 		 */
@@ -86,6 +102,13 @@ if ( ! function_exists( 'hivelite_setup' ) ) :
 		 * Also enqueue the custom Google Fonts also
 		 */
 		add_editor_style( array( 'editor-style.css', hivelite_fonts_url() ) );
+
+		/*
+		 * Enable support for Visible Edit Shortcuts in the Customizer Preview
+		 *
+		 * @link https://make.wordpress.org/core/2016/11/10/visible-edit-shortcuts-in-the-customizer-preview/
+		 */
+		add_theme_support( 'customize-selective-refresh-widgets' );
 
 		/*
 		 * Now some cleanup to remove features that we do not support
