@@ -990,7 +990,8 @@ form.contact-form .contact-submit:after {
  */
 html {
   height: 100%;
-  background: white; }
+  background: white;
+  overflow-x: hidden; }
 
 body {
   border: 0 solid #000;
