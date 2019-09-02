@@ -295,7 +295,8 @@ function hivelite_fill_customify_options( $options ) {
 								.add-comment .add-comment__button,
 
 								.archive__grid .entry-thumbnail .hover__bg,
-								.pagination span.current',
+								.pagination span.current,
+								.c-burger__slice',
 							'property' => 'background-color',
 						),
 						array(
