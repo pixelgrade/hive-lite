@@ -395,11 +395,9 @@ function hivelite_fill_customify_options( $options ) {
 					'css'     => array(
 						array(
 							'selector' =>
-								'a, 
-								.sticky .entry-meta .posted-by a:hover,
-								.sticky .entry-meta .posted-on a:hover,
-								.sticky .cat-links a:hover,
-								.posted-on a, .posted-by a, .entry-title a',
+								'a,
+								.posted-on a, .posted-by a, .entry-title a,
+								.page-title--search span',
 							'property' => 'color',
 						),
 					),
@@ -458,7 +456,7 @@ function hivelite_fill_customify_options( $options ) {
 						),
 						array(
 							'property'        => 'color',
-							'selector'        => '.sticky[class]',
+							'selector'        => '.sticky[class], .sticky a:hover',
 							'callback_filter' => 'hivelite_color_contrast',
 						),
 					),
@@ -652,7 +650,7 @@ if ( ! function_exists( 'hivelite_color_contrast' ) ) {
 		}, $uicolors );
 
 		$L = ( 0.2126 * $c[0] ) + ( 0.7152 * $c[1] ) + ( 0.0722 * $c[2] );
-		$color = ( $L > 0.179 ) ? '#000' : '#FFF';
+		$color = ( $L > 0.143 ) ? '#000' : '#FFF';
 
 		// if it is not a dark color, just go for the default way
 		$output = $selector . ' {

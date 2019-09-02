@@ -132,7 +132,7 @@
         }
     }
 
-    &.hover-intent li.menu-item-has-children {
+    &.hover-intent li.menu-item-has-children{
 
         > a:after {
             opacity: 0;
@@ -148,6 +148,23 @@
 
         &.hover {
 
+            > a:after,
+            > ul {
+                opacity: 1;
+
+                .ie10 &, .ie9 & {
+                    display: block;
+                }
+            }
+
+            > ul {
+                pointer-events: auto;
+            }
+        }
+    }
+
+    li.menu-item-has-children {
+        &:focus {
             > a:after,
             > ul {
                 opacity: 1;
@@ -199,7 +216,8 @@
             }
         }
 
-        &:hover {
+        &:hover,
+        &:focus {
 
             > a {
                 color: $dark;

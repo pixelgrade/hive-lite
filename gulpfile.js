@@ -14,13 +14,7 @@ function logError (err, res) {
 }
 
 jsFiles = [
-	'./assets/js/main/wrapper_start.js',
-	'./assets/js/main/shared_vars.js',
-	'./assets/js/modules/*.js',
-	'./assets/js/main/main.js',
-	'./assets/js/vendor/*.js',
-	'./assets/js/main/functions.js',
-	'./assets/js/main/wrapper_end.js'
+	'./assets/js/main.js'
 ];
 
 var theme_name = 'hive-lite',

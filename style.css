@@ -1288,6 +1288,15 @@ body {
       display: block; }
   .nav--main.hover-intent li.menu-item-has-children.hover > ul {
     pointer-events: auto; }
+  .nav--main li.menu-item-has-children:focus > a:after,
+  .nav--main li.menu-item-has-children:focus > ul {
+    opacity: 1; }
+    .ie10 .nav--main li.menu-item-has-children:focus > a:after, .ie9 .nav--main li.menu-item-has-children:focus > a:after, .ie10
+    .nav--main li.menu-item-has-children:focus > ul, .ie9
+    .nav--main li.menu-item-has-children:focus > ul {
+      display: block; }
+  .nav--main li.menu-item-has-children:focus > ul {
+    pointer-events: auto; }
   .nav--main a {
     display: block;
     padding: 24px;
@@ -1312,9 +1321,9 @@ body {
       transition: height .2s ease-in-out; }
       .ie10 .nav--main > li > a:before, .ie9 .nav--main > li > a:before {
         pointer-events: auto; }
-  .nav--main > li:hover > a {
+  .nav--main > li:hover > a, .nav--main > li:focus > a {
     color: #171617; }
-    .nav--main > li:hover > a:before {
+    .nav--main > li:hover > a:before, .nav--main > li:focus > a:before {
       height: 6px; }
   .nav--main > li.current-menu-item, .nav--main > li.current-menu-parent, .nav--main > li.current-menu-ancestor {
     border-color: #171617; }
@@ -1449,11 +1458,9 @@ and the top and bottom ones rotate to form an X
   text-align: center; }
 
 .page-title--search {
-  color: #3d3e40;
   font-weight: normal; }
   .page-title--search span {
     display: block;
-    color: #000;
     font-weight: bold; }
 
 .archive__grid {

@@ -1,4 +1,4 @@
-(function ($, window, undefined) {
+(function($, window, undefined) {
 
     // /* ====== SHARED VARS  - jQuery ====== */
     // These depend on jQuery
@@ -91,14 +91,14 @@
         }
     }
     // /* ====== Masonry Logic ====== */
-    (function () {
+    (function() {
 
         var $container = $('.archive__grid'),
             $blocks = $container.children().addClass('post--animated  post--loaded'),
             slices = $blocks.first().children().length;
 
         // initialize masonry after the images have loaded
-        $container.imagesLoaded(function () {
+        $container.imagesLoaded(function() {
 
             // prepare hover animations
             if (!$html.hasClass('touch'))
@@ -120,7 +120,7 @@
             function showBlocks($blocks) {
 
                 // use different delays for each card to stagger them
-                $blocks.each(function (i, obj) {
+                $blocks.each(function(i, obj) {
 
                     var $block = $(obj),
                         duration = 200 + slices * 0.1;
@@ -130,7 +130,7 @@
                     }, {
                         duration: 0
                     });
-                    setTimeout(function () {
+                    setTimeout(function() {
                         $block.velocity({
                             translateY: 0
                         }, {
@@ -138,7 +138,7 @@
                             duration: 100
                         });
 
-                        $block.children().each(function (j, child) {
+                        $block.children().each(function(j, child) {
                             var $child = $(child),
                                 timeout = (j + 1) * 100;
 
@@ -158,7 +158,7 @@
                             });
                         });
 
-                        setTimeout(function () {
+                        setTimeout(function() {
                             $block.toggleClass('sticky--bg', $block.hasClass('sticky'));
                             $block.addClass('post--visible');
                         }, 300);
@@ -171,22 +171,22 @@
             showBlocks($blocks);
 
             // update the masonry layout on window.resize
-            $(window).smartresize(function () {
+            $(window).smartresize(function() {
                 $container.masonry('layout');
             });
 
-            $(window).load(function () {
+            $(window).load(function() {
                 $container.masonry('layout');
             });
 
             // handle behavior for infinite scroll
-            $(document.body).on('post-load', function () {
+            $(document.body).on('post-load', function() {
 
                 // figure out which are the new loaded posts
                 var $newBlocks = $('.archive__grid').children().not('.post--loaded').addClass('post--loaded');
 
                 // when images have loaded take care of the layout, prepare hover animations, and animate cards in
-                $newBlocks.imagesLoaded(function () {
+                $newBlocks.imagesLoaded(function() {
                     $container.masonry('appended', $newBlocks, true).masonry('layout');
                     if (!$html.hasClass('touch'))
                         $newBlocks.addHoverAnimation();
@@ -221,7 +221,7 @@
     // Set the Navigation Container Height
     $navContainer.height(navHeight);
 
-    $navTrigger.on(triggerEvents, function (e) {
+    $navTrigger.on(triggerEvents, function(e) {
         // but we still have to prevent the default behavior of the touchstart event
         // because this way we're making sure the click event won't fire anymore
         e.preventDefault();
@@ -243,14 +243,14 @@
         if (!is_android) {
             if (!isOpen) {
 
-                $([$nav, $navTrigger]).each(function (i, obj) {
+                $([$nav, $navTrigger]).each(function(i, obj) {
                     $(obj).velocity({
                         translateX: 0,
                         translateZ: 0.01
                     }, {
                         duration: 400,
                         easing: "ease",
-                        begin: function () {
+                        begin: function() {
                             $navContainer.removeClass('shadow');
                         }
                     });
@@ -258,14 +258,14 @@
 
             } else {
 
-                $([$nav, $navTrigger]).each(function (i, obj) {
+                $([$nav, $navTrigger]).each(function(i, obj) {
                     $(obj).velocity({
                         translateX: offset,
                         translateZ: 0.01
                     }, {
                         easing: "ease",
                         duration: 400,
-                        complete: function () {
+                        complete: function() {
                             $navContainer.addClass('shadow');
                         }
                     });
@@ -282,13 +282,13 @@
             // Make sure there are no open menu items
             $('[class*="has-children"]').removeClass('hover');
 
-            $('[class*="has-children"] > a').each( function(){
+            $('[class*="has-children"] > a').each(function() {
                 // Add a class so we know the items to handle
                 $(this).addClass('prevent-one').attr('hasbeenclicked', false);
             });
 
             $('a.prevent-one').on('click', function(e) {
-                if( $( this ).attr( 'hasbeenclicked' ) == "false" ) {
+                if ($(this).attr('hasbeenclicked') == "false") {
                     e.preventDefault();
                     e.stopPropagation();
 
@@ -296,9 +296,9 @@
 
                     // Open the sub menu of this parent item
                     $(this).parent().addClass('hover')
-                    // When a parent menu item is activated,
-                    // close other menu items on the same level
-                    .siblings().removeClass('hover').find('> a.prevent-one').attr('hasbeenclicked', false);
+                        // When a parent menu item is activated,
+                        // close other menu items on the same level
+                        .siblings().removeClass('hover').find('> a.prevent-one').attr('hasbeenclicked', false);
                 }
             });
         }
@@ -306,7 +306,7 @@
         // Restore the original behaviour when in portrait mode;
         // use case: vertical menu, all menu items are visible.
         function unHandleParentMenuItems() {
-            $('a.prevent-one').each(function(){
+            $('a.prevent-one').each(function() {
                 // Unbind te click handler
                 $(this).unbind();
             });
@@ -317,11 +317,12 @@
         // use case: normal, horizontal menu, touch events,
         // sub menus are not visible.
         function bindOuterNavClick() {
-            $('body').on( 'touchstart', function (e) {
+            $('body').on('touchstart', function(e) {
                 var container = $('.nav--main');
 
                 if (!container.is(e.target) // if the target of the click isn't the container...
-                    && container.has(e.target).length === 0) // ... nor a descendant of the container
+                    &&
+                    container.has(e.target).length === 0) // ... nor a descendant of the container
                 {
                     $('[class*="has-children"]').removeClass('hover');
                     $('a.prevent-one').attr('hasbeenclicked', false);
@@ -361,7 +362,7 @@
         }
 
         if (isOpen) {
-            $([$nav, $navTrigger]).each(function (i, obj) {
+            $([$nav, $navTrigger]).each(function(i, obj) {
                 $(obj).velocity({
                     translateX: navWidth
                 }, {
@@ -380,9 +381,9 @@
      * we need to create a jQuery plugin so we can easily create the hover animations on the archive
      * both an window.load and on jetpack's infinite scroll 'post-load'
      */
-    $.fn.addHoverAnimation = function () {
+    $.fn.addHoverAnimation = function() {
 
-        return this.each(function (i, obj) {
+        return this.each(function(i, obj) {
 
             var $obj = $(obj),
                 $handler = $obj.find('.hover__handler'),
@@ -496,13 +497,13 @@
     };
 
     // /* ====== Search Overlay Logic ====== */
-    (function () {
+    (function() {
 
         var isOpen = false,
             $overlay = $('.overlay--search');
 
         // update overlay position (if it's open) on window.resize
-        $(window).on('smartresize', function () {
+        $(window).on('smartresize', function() {
 
             windowWidth = $(window).outerWidth();
 
@@ -561,7 +562,7 @@
         }
 
         // create animation and run it on
-        $('.nav__item--search').on('click touchstart', function (e) {
+        $('.nav__item--search').on('click touchstart', function(e) {
             // prevent default behavior and stop propagation
             e.preventDefault();
             e.stopPropagation();
@@ -643,7 +644,7 @@
         });
 
         // create function to hide the search overlay and bind it to the click event
-        $('.overlay__close').on('click touchstart', function (e) {
+        $('.overlay__close').on('click touchstart', function(e) {
 
             e.preventDefault();
             e.stopPropagation();
@@ -659,13 +660,13 @@
 
     // /* ====== Smart Resize Logic ====== */
     // It's best to debounce the resize event to a void performance hiccups
-    (function ($, sr) {
+    (function($, sr) {
 
         /**
          * debouncing function from John Hann
          * http://unscriptable.com/index.php/2009/03/20/debouncing-javascript-methods/
          */
-        var debounce = function (func, threshold, execAsap) {
+        var debounce = function(func, threshold, execAsap) {
             var timeout;
 
             return function debounced() {
@@ -684,7 +685,7 @@
             };
         }
         // smartresize
-        jQuery.fn[sr] = function (fn) {
+        jQuery.fn[sr] = function(fn) {
             return fn ? this.bind('resize', debounce(fn)) : this.trigger(sr);
         };
 
@@ -731,24 +732,27 @@
 
     /* ====== ON DOCUMENT READY ====== */
 
-    $(document).ready(function () {
+    $(document).ready(function() {
         init();
     });
 
 
     /* ====== ON WINDOW LOAD ====== */
 
-    $window.load(function () {
+    $window.load(function() {
 
-        if ( !$html.hasClass( 'touch' ) ) {
-            var $nav = $( '.nav--main' ).addClass( 'hover-intent' );
+        var menuItemWithChildren = $('.menu-item-has-children');
 
-            $( '.nav--main li' ).hoverIntent({
+        if (!$html.hasClass('touch')) {
+            var $nav = $('.nav--main').addClass('hover-intent');
+
+            $('.nav--main li').hoverIntent({
                 over: showSubMenu,
                 out: hideSubMenu,
                 timeout: 300
             });
-        } else if ( $html.hasClass( 'touch') && windowWidth > 1000 ) {
+
+        } else if ($html.hasClass('touch') && windowWidth > 1000) {
             HandleParentMenuItems.handle();
             HandleParentMenuItems.bindOuterNavClick();
         }
@@ -761,22 +765,30 @@
             $(this).removeClass('hover');
         }
 
+        menuItemWithChildren.on('focusin', function() {
+            $(this).addClass('hover');
+        });
+
+        menuItemWithChildren.on('focusout', function() {
+            $(this).removeClass('hover');
+        });
+
     });
 
     /* ====== ON RESIZE ====== */
 
-    $(window).smartresize(function () {
+    $(window).smartresize(function() {
         if (!is_android) {
             refreshNavigation();
         }
         windowWidth = $(window).outerWidth();
         windowHeight = $(window).outerHeight();
 
-        if( $html.hasClass( 'touch' ) ) {
-            if( windowWidth >= 1000 ) {
+        if ($html.hasClass('touch')) {
+            if (windowWidth >= 1000) {
                 // Handle parent menu items
                 HandleParentMenuItems.handle();
-            } else if ( windowWidth < 1000 ) {
+            } else if (windowWidth < 1000) {
                 // Remove handlers
                 HandleParentMenuItems.unHandle();
             }
@@ -785,7 +797,7 @@
 
     /* ====== ON SCROLL ====== */
 
-    $window.on('scroll', function (e) {
+    $window.on('scroll', function(e) {
         "use strict";
 
         latestKnownScrollY = window.scrollY;
@@ -830,8 +842,7 @@
         separator = uri.indexOf('?') !== -1 ? "&" : "?";
         if (uri.match(re)) {
             return uri.replace(re, '$1' + key + "=" + value + '$2');
-        }
-        else {
+        } else {
             return uri + separator + key + "=" + value;
         }
     }
@@ -844,27 +855,28 @@
      */
 
     if (!Date.now)
-        Date.now = function () {
+        Date.now = function() {
             return new Date().getTime();
         };
 
-    (function () {
+    (function() {
         'use strict';
 
         var vendors = ['webkit', 'moz'];
         for (var i = 0; i < vendors.length && !window.requestAnimationFrame; ++i) {
             var vp = vendors[i];
             window.requestAnimationFrame = window[vp + 'RequestAnimationFrame'];
-            window.cancelAnimationFrame = (window[vp + 'CancelAnimationFrame']
-            || window[vp + 'CancelRequestAnimationFrame']);
+            window.cancelAnimationFrame = (window[vp + 'CancelAnimationFrame'] ||
+                window[vp + 'CancelRequestAnimationFrame']);
         }
         if (/iP(ad|hone|od).*OS 6/.test(window.navigator.userAgent) // iOS6 is buggy
-            || !window.requestAnimationFrame || !window.cancelAnimationFrame) {
+            ||
+            !window.requestAnimationFrame || !window.cancelAnimationFrame) {
             var lastTime = 0;
-            window.requestAnimationFrame = function (callback) {
+            window.requestAnimationFrame = function(callback) {
                 var now = Date.now();
                 var nextTime = Math.max(lastTime + 16, now);
-                return setTimeout(function () {
+                return setTimeout(function() {
                         callback(lastTime = nextTime);
                     },
                     nextTime - now);
