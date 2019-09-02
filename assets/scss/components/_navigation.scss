@@ -146,25 +146,9 @@
             }
         }
 
-        &.hover {
+        &.hover,
+        &:focus-within {
 
-            > a:after,
-            > ul {
-                opacity: 1;
-
-                .ie10 &, .ie9 & {
-                    display: block;
-                }
-            }
-
-            > ul {
-                pointer-events: auto;
-            }
-        }
-    }
-
-    li.menu-item-has-children {
-        &:focus {
             > a:after,
             > ul {
                 opacity: 1;

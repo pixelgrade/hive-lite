@@ -741,8 +741,6 @@
 
     $window.load(function() {
 
-        var menuItemWithChildren = $('.menu-item-has-children');
-
         if (!$html.hasClass('touch')) {
             var $nav = $('.nav--main').addClass('hover-intent');
 
@@ -764,14 +762,6 @@
         function hideSubMenu() {
             $(this).removeClass('hover');
         }
-
-        menuItemWithChildren.on('focusin', function() {
-            $(this).addClass('hover');
-        });
-
-        menuItemWithChildren.on('focusout', function() {
-            $(this).removeClass('hover');
-        });
 
     });
 

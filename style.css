@@ -1281,22 +1281,16 @@ body {
       display: none;
       pointer-events: auto; }
   .nav--main.hover-intent li.menu-item-has-children.hover > a:after,
-  .nav--main.hover-intent li.menu-item-has-children.hover > ul {
+  .nav--main.hover-intent li.menu-item-has-children.hover > ul, .nav--main.hover-intent li.menu-item-has-children:focus-within > a:after,
+  .nav--main.hover-intent li.menu-item-has-children:focus-within > ul {
     opacity: 1; }
     .ie10 .nav--main.hover-intent li.menu-item-has-children.hover > a:after, .ie9 .nav--main.hover-intent li.menu-item-has-children.hover > a:after, .ie10
     .nav--main.hover-intent li.menu-item-has-children.hover > ul, .ie9
-    .nav--main.hover-intent li.menu-item-has-children.hover > ul {
+    .nav--main.hover-intent li.menu-item-has-children.hover > ul, .ie10 .nav--main.hover-intent li.menu-item-has-children:focus-within > a:after, .ie9 .nav--main.hover-intent li.menu-item-has-children:focus-within > a:after, .ie10
+    .nav--main.hover-intent li.menu-item-has-children:focus-within > ul, .ie9
+    .nav--main.hover-intent li.menu-item-has-children:focus-within > ul {
       display: block; }
-  .nav--main.hover-intent li.menu-item-has-children.hover > ul {
-    pointer-events: auto; }
-  .nav--main li.menu-item-has-children:focus > a:after,
-  .nav--main li.menu-item-has-children:focus > ul {
-    opacity: 1; }
-    .ie10 .nav--main li.menu-item-has-children:focus > a:after, .ie9 .nav--main li.menu-item-has-children:focus > a:after, .ie10
-    .nav--main li.menu-item-has-children:focus > ul, .ie9
-    .nav--main li.menu-item-has-children:focus > ul {
-      display: block; }
-  .nav--main li.menu-item-has-children:focus > ul {
+  .nav--main.hover-intent li.menu-item-has-children.hover > ul, .nav--main.hover-intent li.menu-item-has-children:focus-within > ul {
     pointer-events: auto; }
   .nav--main a {
     display: block;
