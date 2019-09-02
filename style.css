@@ -1738,6 +1738,8 @@ and the top and bottom ones rotate to form an X
     content: "/"; }
   .entry-meta .posted-by:after {
     content: "/"; }
+  .grid__item .entry-meta {
+    margin-right: 2.25em; }
 
 .entry-format:before {
   content: "/"; }

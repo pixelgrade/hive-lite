@@ -442,6 +442,10 @@
 			content: "/";
 		}
 	}
+
+	.grid__item & {
+		@include rhythm(margin-right, 3);
+	}
 }
 
 .entry-format {
