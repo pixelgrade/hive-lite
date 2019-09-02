@@ -2584,6 +2584,9 @@ div#respond {
   div#respond p.comment-subscription-form label {
     color: #999; }
 
+.comment-form-cookies-consent input[type="checkbox"] {
+  margin-right: 0.75em; }
+
 /**
  *   9.5 - Search Form
  */

@@ -571,3 +571,7 @@ div#respond{
 		color: #999;
 	}
 }
+
+.comment-form-cookies-consent input[type="checkbox"] {
+	@include rhythm(margin-right, 1);
+}
