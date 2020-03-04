@@ -57,9 +57,9 @@
 			wp.ajax.send({type: 'GET'}).always(function (response) {
 
 				if ( response.indexOf('<div id="message" class="updated"><p>') > -1
-					|| response.indexOf('<p>' . pixassistNotice.i18n.tgmpActivatedSuccessfully) > -1
-					|| response.indexOf('<p>' . pixassistNotice.i18n.tgmpPluginActivated) > -1
-					|| response.indexOf('<p>' . pixassistNotice.i18n.tgmpPluginAlreadyActive) > -1
+					|| response.indexOf('<p>'+pixassistNotice.i18n.tgmpActivatedSuccessfully) > -1
+					|| response.indexOf('<p>'+pixassistNotice.i18n.tgmpPluginActivated) > -1
+					|| response.indexOf('<p>'+pixassistNotice.i18n.tgmpPluginAlreadyActive) > -1
 					|| response.indexOf(pixassistNotice.i18n.tgmpNotAllowed) > -1 ) {
 					doPluginReady();
 				} else {

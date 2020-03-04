@@ -8,7 +8,7 @@
  * or theme author for support.
  *
  * @package   TGM-Plugin-Activation
- * @version   2.6.1
+ * @version   2.6.5 for parent theme Rosa2 Lite for publication on WordPress.org
  * @link      http://tgmpluginactivation.com/
  * @author    Thomas Griffin, Gary Jones, Juliette Reinders Folmer
  * @copyright Copyright (c) 2011, Thomas Griffin
@@ -55,7 +55,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 		 *
 		 * @const string Version number.
 		 */
-		const TGMPA_VERSION = '2.6.1';
+		const TGMPA_VERSION = '2.6.5';
 
 		/**
 		 * Regular expression to test if a URL is a WP plugin repo URL.
@@ -1324,6 +1324,24 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 		}
 
 		/**
+		 * Remove individual plugin from our collection of plugins.
+		 *
+		 * Pixelgrade addition!!!
+		 *
+		 * @since 2.6.2
+		 *
+		 * @param string $plugin_slug
+		 */
+		public function deregister( $plugin_slug ) {
+			if ( empty( $plugin_slug ) || ! is_string( $plugin_slug ) || isset( $this->plugins[ $plugin_slug ] ) ) {
+				return;
+			}
+
+			unset( $this->plugins[ $plugin_slug ] );
+			unset( $this->sort_order[ $plugin_slug ] );
+		}
+
+		/**
 		 * Determine what type of source the plugin comes from.
 		 *
 		 * @since 2.5.0
@@ -1467,6 +1485,14 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 
 			foreach ( $keys as $key ) {
 				if ( preg_match( '|^' . $slug . '/|', $key ) ) {
+					return $key;
+				}
+
+				// This is a Pixelgrade addition!!!
+				// We want to be a little lenient and discover installed (but not activated) plugins
+				// that may have their directory changed, but that still have their main PHP file with the same name as the plugin slug.
+				// This is pretty safe.
+				if ( false !== strpos( $key, '/' . $slug . '.php' ) ) {
 					return $key;
 				}
 			}
@@ -3505,7 +3531,7 @@ if ( ! function_exists( 'tgmpa_load_bulk_installer' ) ) {
 								// Automatic activation strings.
 								$this->upgrader->strings['skin_upgrade_start'] = esc_html__( 'The installation and activation process is starting. This process may take a while on some hosts, so please be patient.', '__theme_txtd' );
 								/* translators: 1: plugin name. */
-								$this->upgrader->strings['skin_update_successful'] = esc_html__( '%1$s installed and activated successfully.', '__theme_txtd' ) . ' <a href="#" class="hide-if-no-js" onclick="%2$s"><span>' . esc_html__( 'Show Details', '__theme_txtd' ) . '</span><span class="hidden">' . esc_html__( 'Hide Details', '__theme_txtd' ) . '</span>.</a>';
+								$this->upgrader->strings['skin_update_successful'] = esc_html__( '%1$s installed and activated successfully.', '__theme_txtd' );
 								$this->upgrader->strings['skin_upgrade_end']       = esc_html__( 'All installations and activations have been completed.', '__theme_txtd' );
 								/* translators: 1: plugin name, 2: action number 3: total number of actions. */
 								$this->upgrader->strings['skin_before_update_header'] = esc_html__( 'Installing and Activating Plugin %1$s (%2$d/%3$d)', '__theme_txtd' );
@@ -3513,7 +3539,7 @@ if ( ! function_exists( 'tgmpa_load_bulk_installer' ) ) {
 								// Default installation strings.
 								$this->upgrader->strings['skin_upgrade_start'] = esc_html__( 'The installation process is starting. This process may take a while on some hosts, so please be patient.', '__theme_txtd' );
 								/* translators: 1: plugin name. */
-								$this->upgrader->strings['skin_update_successful'] = esc_html__( '%1$s installed successfully.', '__theme_txtd' ) . ' <a href="#" class="hide-if-no-js" onclick="%2$s"><span>' . esc_html__( 'Show Details', '__theme_txtd' ) . '</span><span class="hidden">' . esc_html__( 'Hide Details', '__theme_txtd' ) . '</span>.</a>';
+								$this->upgrader->strings['skin_update_successful'] = esc_html__( '%1$s installed successfully.', '__theme_txtd' );
 								$this->upgrader->strings['skin_upgrade_end']       = esc_html__( 'All installations have been completed.', '__theme_txtd' );
 								/* translators: 1: plugin name, 2: action number 3: total number of actions. */
 								$this->upgrader->strings['skin_before_update_header'] = esc_html__( 'Installing Plugin %1$s (%2$d/%3$d)', '__theme_txtd' );
