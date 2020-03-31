@@ -1,4 +1,4 @@
-# Copyright (C) 2017 PixelGrade
+# Copyright (C) 2017 Pixelgrade
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
@@ -440,7 +440,7 @@ msgstr ""
 
 #. Author of the plugin/theme
 #: wp-content/themes/premium/hive/style.css
-msgid "PixelGrade"
+msgid "Pixelgrade"
 msgstr ""
 
 #. Author URI of the plugin/theme
