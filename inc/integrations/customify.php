@@ -725,7 +725,7 @@ if ( ! function_exists('hivelite_color_opacity_adjust_cb') ) {
 	function hivelite_color_opacity_adjust_cb( $hex, $selector, $property, $unit ) {
 
 		// Get our color
-		if ( empty( $value ) || ! preg_match( '/^#[a-f0-9]{6}$/i', $value ) ) {
+		if ( empty( $hex ) || ! preg_match( '/^#[a-f0-9]{6}$/i', $hex ) ) {
 			return '';
 		}
 
@@ -794,7 +794,7 @@ if ( ! function_exists('hivelite_color_opacity_darker_cb') ) {
 	function hivelite_color_opacity_darker_cb( $hex, $selector, $property, $unit ) {
 
 		// Get our color
-		if ( empty( $value ) || ! preg_match( '/^#[a-f0-9]{6}$/i', $value ) ) {
+		if ( empty( $hex ) || ! preg_match( '/^#[a-f0-9]{6}$/i', $hex ) ) {
 			return '';
 		}
 
