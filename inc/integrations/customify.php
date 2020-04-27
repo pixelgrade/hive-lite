@@ -628,18 +628,24 @@ function hivelite_fill_customify_options( $options ) {
 }
 
 if ( ! function_exists( 'hivelite_color_contrast' ) ) {
-	function hivelite_color_contrast( $value, $selector, $property, $unit ) {
+	function hivelite_color_contrast( $hex, $selector, $property, $unit ) {
 
 		// Get our color
-		if( empty($value) || ! preg_match('/^#[a-f0-9]{6}$/i', $value)) {
+		if( empty($hex) || ! preg_match('/^#[a-f0-9]{6}$/i', $hex)) {
 			return '';
 		}
 
-		$color = $value;
-		// Calculate straight from RGB
-		$r = hexdec( $color[0].$color[1] );
-		$g = hexdec( $color[2].$color[3] );
-		$b = hexdec( $color[4].$color[5] );
+		// Format the hex color string.
+		$hex = str_replace( '#', '', $hex );
+
+		if ( 3 == strlen( $hex ) ) {
+			$hex = str_repeat( substr( $hex, 0, 1 ), 2 ) . str_repeat( substr( $hex, 1, 1 ), 2 ) . str_repeat( substr( $hex, 2, 1 ), 2 );
+		}
+
+		// Get decimal values.
+		$r = hexdec( substr( $hex, 0, 2 ) );
+		$g = hexdec( substr( $hex, 2, 2 ) );
+		$b = hexdec( substr( $hex, 4, 2 ) );
 
 		$uicolors = array( $r / 255, $g / 255, $b / 255 );
 
@@ -651,9 +657,10 @@ if ( ! function_exists( 'hivelite_color_contrast' ) ) {
 		}, $uicolors );
 
 		$L = ( 0.2126 * $c[0] ) + ( 0.7152 * $c[1] ) + ( 0.0722 * $c[2] );
-		$color = ( $L > 0.143 ) ? '#000' : '#FFF';
 
 		// if it is not a dark color, just go for the default way
+		$color = ( $L > 0.143 ) ? '#000' : '#FFF';
+
 		$output = $selector . ' {
 			color: ' . $color .';
         }';
@@ -715,18 +722,25 @@ if ( ! function_exists('hivelite_color_contrast_customizer_preview') ) {
 add_action( 'customize_preview_init', 'hivelite_color_contrast_customizer_preview', 20 );
 
 if ( ! function_exists('hivelite_color_opacity_adjust_cb') ) {
-	function hivelite_color_opacity_adjust_cb( $value, $selector, $property, $unit ) {
+	function hivelite_color_opacity_adjust_cb( $hex, $selector, $property, $unit ) {
 
 		// Get our color
 		if ( empty( $value ) || ! preg_match( '/^#[a-f0-9]{6}$/i', $value ) ) {
 			return '';
 		}
 
-		$r = hexdec( $value[1] . $value[2] );
-		$g = hexdec( $value[3] . $value[4] );
-		$b = hexdec( $value[5] . $value[6] );
+		// Format the hex color string.
+		$hex = str_replace( '#', '', $hex );
 
-		// if it is not a dark color, just go for the default way
+		if ( 3 == strlen( $hex ) ) {
+			$hex = str_repeat( substr( $hex, 0, 1 ), 2 ) . str_repeat( substr( $hex, 1, 1 ), 2 ) . str_repeat( substr( $hex, 2, 1 ), 2 );
+		}
+
+		// Get decimal values.
+		$r = hexdec( substr( $hex, 0, 2 ) );
+		$g = hexdec( substr( $hex, 2, 2 ) );
+		$b = hexdec( substr( $hex, 4, 2 ) );
+
 		$output = $selector . ' { ' . $property . ': rgba(' . $r . ',' . $g . ',' . $b . ', 0.3); }';
 
 		return $output;
@@ -777,18 +791,25 @@ if ( ! function_exists('hivelite_color_opacity_adjust_cb_customizer_preview') ) 
 add_action( 'customize_preview_init', 'hivelite_color_opacity_adjust_cb_customizer_preview' );
 
 if ( ! function_exists('hivelite_color_opacity_darker_cb') ) {
-	function hivelite_color_opacity_darker_cb( $value, $selector, $property, $unit ) {
+	function hivelite_color_opacity_darker_cb( $hex, $selector, $property, $unit ) {
 
 		// Get our color
 		if ( empty( $value ) || ! preg_match( '/^#[a-f0-9]{6}$/i', $value ) ) {
 			return '';
 		}
 
-		$r = hexdec( $value[1] . $value[2] );
-		$g = hexdec( $value[3] . $value[4] );
-		$b = hexdec( $value[5] . $value[6] );
+		// Format the hex color string.
+		$hex = str_replace( '#', '', $hex );
 
-		// if it is not a dark color, just go for the default way
+		if ( 3 == strlen( $hex ) ) {
+			$hex = str_repeat( substr( $hex, 0, 1 ), 2 ) . str_repeat( substr( $hex, 1, 1 ), 2 ) . str_repeat( substr( $hex, 2, 1 ), 2 );
+		}
+
+		// Get decimal values.
+		$r = hexdec( substr( $hex, 0, 2 ) );
+		$g = hexdec( substr( $hex, 2, 2 ) );
+		$b = hexdec( substr( $hex, 4, 2 ) );
+
 		$output = $selector . ' { ' . $property . ': rgba(' . $r .',' . $g . ',' . $b .', 0.7); }' . "\n";
 
 		return $output;
