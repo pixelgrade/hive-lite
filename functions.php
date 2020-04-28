@@ -179,6 +179,13 @@ function hivelite_scripts_styles() {
 }
 add_action( 'wp_enqueue_scripts', 'hivelite_scripts_styles' );
 
+function hive_lite_gutenberg_styles() {
+	wp_enqueue_style( 'hive-lite-gutenberg', get_theme_file_uri( '/gutenberg.css' ), false );
+	wp_enqueue_style( 'hive-lite-fonts', hivelite_fonts_url() );
+}
+add_action( 'enqueue_block_editor_assets', 'hive_lite_gutenberg_styles' );
+
+
 /**
  * Custom template tags for this theme.
  */

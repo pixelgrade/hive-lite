@@ -234,10 +234,10 @@ function hivelite_fonts_url() {
 	$fonts_url = '';
 
 	/* Translators: If there are characters in your language that are not
-	* supported by Droid Serif, translate this to 'off'. Do not translate
+	* supported by Noto Serif, translate this to 'off'. Do not translate
 	* into your own language.
 	*/
-	$droid_serif = _x( 'on', 'Droid Serif font: on or off', 'hive-lite' );
+	$noto_serif = _x( 'on', 'Noto Serif font: on or off', 'hive-lite' );
 
 	/* Translators: If there are characters in your language that are not
 	* supported by Playfair Display, translate this to 'off'. Do not translate
@@ -246,11 +246,11 @@ function hivelite_fonts_url() {
 	$playfair_display = _x( 'on', 'Playfair Display font: on or off', 'hive-lite' );
 
 
-	if ( 'off' !== $droid_serif || 'off' !== $playfair_display ) {
+	if ( 'off' !== $noto_serif || 'off' !== $playfair_display ) {
 		$font_families = array();
 
-		if ( 'off' !== $droid_serif ) {
-			$font_families[] = 'Droid Serif:400,700,400italic';
+		if ( 'off' !== $noto_serif ) {
+			$font_families[] = 'Noto Serif:400,700,400italic';
 		}
 
 		if ( 'off' !== $playfair_display ) {
