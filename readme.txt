@@ -8,7 +8,7 @@ License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 4.9.9
 Tested up to: 5.4.0
-Tags: one-column, two-columns, three-columns, grid-layout, right-sidebar, editor-style, featured-images, rtl-language-support, sticky-post, translation-ready, blog, news, custom-menu, threaded-comments, post-formats, custom-logo, custom-colors
+Tags: one-column, two-columns, three-columns, grid-layout, right-sidebar, editor-style, featured-images, rtl-language-support, sticky-post, translation-ready, blog, news, custom-menu, threaded-comments, post-formats, custom-logo, custom-colors, block-styles
 
 == Description ==
 
