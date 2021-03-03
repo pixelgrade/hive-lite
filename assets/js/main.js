@@ -175,7 +175,7 @@
                 $container.masonry('layout');
             });
 
-            $(window).load(function() {
+            $(window).on('load', function() {
                 $container.masonry('layout');
             });
 
@@ -739,7 +739,7 @@
 
     /* ====== ON WINDOW LOAD ====== */
 
-    $window.load(function() {
+    $window.on('load', function() {
 
         if (!$html.hasClass('touch')) {
             var $nav = $('.nav--main').addClass('hover-intent');
